@@ -1,0 +1,87 @@
+site_name: GameDev 知识库
+site_description: 游戏客户端开发学习笔记 - 图形学、引擎原理、C++、设计模式与项目复盘
+site_author: CPZ66L
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 深色模式
+    - scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 浅色模式
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.arithmatex
+  - pymdownx.details
+  - admonition
+  - footnotes
+
+plugins:
+  - search
+
+nav:
+  - 首页: index.md
+  - 图形学:
+      - graphics/index.md
+      - 渲染管线: graphics/rendering-pipeline.md
+      - Shader 基础: graphics/shader-basics.md
+      - 光照与着色: graphics/lighting-and-shading.md
+      - PBR 理论: graphics/pbr-theory.md
+      - 阴影技术: graphics/shadow-techniques.md
+  - 引擎原理:
+      - engine/index.md
+      - 游戏主循环: engine/game-loop.md
+      - ECS 架构: engine/ecs-pattern.md
+      - 内存管理: engine/memory-management.md
+      - 场景管理: engine/scene-graph.md
+      - 动画系统: engine/animation-system.md
+  - 游戏物理:
+      - physics/index.md
+      - 碰撞检测: physics/collision-detection.md
+      - 刚体动力学: physics/rigidbody-dynamics.md
+      - 角色移动控制器: physics/movement-controllers.md
+  - 游戏设计模式:
+      - patterns/index.md
+      - 组件模式: patterns/component-pattern.md
+      - 观察者模式: patterns/observer-pattern.md
+      - 命令模式: patterns/command-pattern.md
+      - 对象池: patterns/object-pool.md
+      - 状态机: patterns/state-machine.md
+  - 游戏数学:
+      - math/index.md
+      - 向量与矩阵: math/vector-matrix.md
+      - 四元数: math/quaternion.md
+      - 曲线与插值: math/spline-curves.md
+  - C++ 深度:
+      - cpp/index.md
+      - 内存模型: cpp/memory-model.md
+      - 智能指针: cpp/smart-pointers.md
+      - 移动语义: cpp/move-semantics.md
+      - 模板: cpp/templates.md
+      - 多线程: cpp/multithreading.md
+  - 项目复盘:
+      - projects/index.md
+      - 作品集总览: projects/demo-reel.md
+  - 读书笔记:
+      - reading/index.md
