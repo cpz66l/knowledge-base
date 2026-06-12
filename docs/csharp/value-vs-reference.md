@@ -16,7 +16,7 @@
 
 ---
 
-## 一个让你头疼的 Bug
+## 一个让初学者头疼的 Bug
 
 ```csharp
 Vector3 pos = transform.position;  // Vector3 是 struct（值类型）

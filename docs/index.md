@@ -10,12 +10,12 @@
 
 目前正在系统学习：
 
-- 💻 **C# 深度**：GC 机制、值类型与引用类型、async/await、Unity C# 最佳实践
-- 🎯 **Unity 引擎**：生命周期、ScriptableObject、Prefab、Addressables、Editor 工具
-- 🖼️ **图形学**：渲染管线、Shader 编程、PBR、光照模型
-- 🧩 **设计模式**：组件模式、对象池、状态机、命令模式
-- 📐 **游戏数学**：线性代数、四元数、曲线插值
-- 🔧 **项目实践**：Unity Demo 项目、渲染效果、物理模拟
+- 💻 **C# 深度**：GC 机制、值类型与引用类型、async/await、Unity C# 最佳实践、LeetCode-算法笔记等
+- 🎯 **Unity 引擎**：生命周期、ScriptableObject、Prefab、Addressables、Editor 工具等
+- 🖼️ **图形学**：渲染管线、Shader 编程、PBR、光照模型等
+- 🧩 **设计模式**：组件模式、对象池、状态机、命令模式等
+- 📐 **游戏数学**：线性代数、四元数、曲线插值等
+- 🔧 **项目实践**：Unity Demo 项目、渲染效果、物理模拟等
 
 ---
 

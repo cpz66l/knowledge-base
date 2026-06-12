@@ -48,6 +48,7 @@ nav:
       - 值类型 vs 引用类型: csharp/value-vs-reference.md
       - async/await 异步: csharp/async-await.md
       - Unity C# 最佳实践: csharp/unity-csharp-practices.md
+      - LeetCode算法: csharp/LeetCode.md
   - Unity 引擎:
       - unity/index.md
       - 生命周期: unity/lifecycle.md
