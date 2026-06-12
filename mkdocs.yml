@@ -1,5 +1,5 @@
 site_name: GameDev 知识库
-site_description: 游戏客户端开发学习笔记 - 图形学、引擎原理、C++、设计模式与项目复盘
+site_description: Unity 客户端开发学习笔记 - C#、图形学、引擎原理、设计模式与项目复盘
 site_author: CPZ66L
 
 theme:
@@ -42,6 +42,19 @@ plugins:
 
 nav:
   - 首页: index.md
+  - C# 深度:
+      - csharp/index.md
+      - GC 与内存管理: csharp/gc-and-memory.md
+      - 值类型 vs 引用类型: csharp/value-vs-reference.md
+      - async/await 异步: csharp/async-await.md
+      - Unity C# 最佳实践: csharp/unity-csharp-practices.md
+  - Unity 引擎:
+      - unity/index.md
+      - 生命周期: unity/lifecycle.md
+      - ScriptableObject: unity/scriptable-object.md
+      - Prefab 系统: unity/prefab-system.md
+      - 资源管理: unity/addressables.md
+      - Editor 工具开发: unity/editor-tooling.md
   - 图形学:
       - graphics/index.md
       - 渲染管线: graphics/rendering-pipeline.md
@@ -49,18 +62,6 @@ nav:
       - 光照与着色: graphics/lighting-and-shading.md
       - PBR 理论: graphics/pbr-theory.md
       - 阴影技术: graphics/shadow-techniques.md
-  - 引擎原理:
-      - engine/index.md
-      - 游戏主循环: engine/game-loop.md
-      - ECS 架构: engine/ecs-pattern.md
-      - 内存管理: engine/memory-management.md
-      - 场景管理: engine/scene-graph.md
-      - 动画系统: engine/animation-system.md
-  - 游戏物理:
-      - physics/index.md
-      - 碰撞检测: physics/collision-detection.md
-      - 刚体动力学: physics/rigidbody-dynamics.md
-      - 角色移动控制器: physics/movement-controllers.md
   - 游戏设计模式:
       - patterns/index.md
       - 组件模式: patterns/component-pattern.md
@@ -73,13 +74,6 @@ nav:
       - 向量与矩阵: math/vector-matrix.md
       - 四元数: math/quaternion.md
       - 曲线与插值: math/spline-curves.md
-  - C++ 深度:
-      - cpp/index.md
-      - 内存模型: cpp/memory-model.md
-      - 智能指针: cpp/smart-pointers.md
-      - 移动语义: cpp/move-semantics.md
-      - 模板: cpp/templates.md
-      - 多线程: cpp/multithreading.md
   - 项目复盘:
       - projects/index.md
       - 作品集总览: projects/demo-reel.md
