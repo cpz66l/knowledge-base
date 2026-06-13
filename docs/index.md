@@ -10,7 +10,7 @@
 
 目前正在系统学习：
 
-- 💻 **C#**：GC 机制、值类型与引用类型、async/await、Unity C# 最佳实践、LeetCode 算法笔记
+- 💻 **C#**：GC 机制、面向对象编程、async/await、Unity C# 最佳实践、LeetCode 算法笔记
 - 🎯 **Unity**：生命周期、ScriptableObject、Prefab、Addressables、Editor 工具
 - 🖼️ **图形学**：渲染管线、Shader 编程、PBR、光照模型、阴影技术
 - ⚡ **性能优化**：Profiler 深度使用、内存与 GC 优化、渲染性能、CPU/代码优化
