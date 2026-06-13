@@ -76,6 +76,10 @@ nav:
       - Prefab 系统: unity/prefab-system.md
       - 资源管理: unity/addressables.md
       - Editor 工具开发: unity/editor-tooling.md
+      - UGUI:
+          - unity/ugui/index.md
+      - 动画系统:
+          - unity/animation/index.md
   - 图形学:
       - graphics/index.md
       - 渲染管线: graphics/rendering-pipeline.md
