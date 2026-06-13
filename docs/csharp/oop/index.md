@@ -9,6 +9,7 @@
 | 文章 | 内容 |
 |------|------|
 | [值类型 vs 引用类型](value-vs-reference.md) | struct/class 选择、装箱拆箱、ref/in/out |
+| [static 静态](static.md) | 静态类/字段/方法、单例模式、Unity 跨场景数据 |
 
 ---
 
