@@ -12,4 +12,4 @@
 | [值类型 vs 引用类型](value-vs-reference.md) | struct/class 选择、装箱拆箱、ref/in/out |
 | [async/await 异步](async-await.md) | 异步编程模型、Unity 协程对比、Task 最佳实践 |
 | [Unity C# 最佳实践](unity-csharp-practices.md) | 性能优化、空安全、异常处理、编码规范 |
-| [LeetCode算法](LeetCode.md) | 算法题目思路与 C# 实现 |
+| [LeetCode算法](leetcode/index.md) | 17 类题型：哈希、双指针、滑动窗口、二叉树、DP... |

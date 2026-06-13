@@ -48,7 +48,25 @@ nav:
       - 值类型 vs 引用类型: csharp/value-vs-reference.md
       - async/await 异步: csharp/async-await.md
       - Unity C# 最佳实践: csharp/unity-csharp-practices.md
-      - LeetCode算法: csharp/LeetCode.md
+      - LeetCode算法:
+          - csharp/leetcode/index.md
+          - 哈希: csharp/leetcode/hash.md
+          - 双指针: csharp/leetcode/two-pointers.md
+          - 滑动窗口: csharp/leetcode/sliding-window.md
+          - 子串: csharp/leetcode/substring.md
+          - 数组: csharp/leetcode/array.md
+          - 矩阵: csharp/leetcode/matrix.md
+          - 链表: csharp/leetcode/linked-list.md
+          - 二叉树: csharp/leetcode/binary-tree.md
+          - 图论: csharp/leetcode/graph.md
+          - 回溯: csharp/leetcode/backtracking.md
+          - 二分查找: csharp/leetcode/binary-search.md
+          - 栈: csharp/leetcode/stack.md
+          - 堆: csharp/leetcode/heap.md
+          - 贪心算法: csharp/leetcode/greedy.md
+          - 动态规划: csharp/leetcode/dynamic-programming.md
+          - 多维动态规划: csharp/leetcode/multi-dp.md
+          - 技巧: csharp/leetcode/techniques.md
   - Unity:
       - unity/index.md
       - 生命周期: unity/lifecycle.md
