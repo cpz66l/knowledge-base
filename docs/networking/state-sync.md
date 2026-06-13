@@ -1,3 +1,3 @@
-# Component Pattern
+# 状态同步实战
 
 > 🚧 内容施工中，敬请期待。
