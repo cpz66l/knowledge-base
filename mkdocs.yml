@@ -45,7 +45,9 @@ nav:
   - C#:
       - csharp/index.md
       - GC 与内存管理: csharp/gc-and-memory.md
-      - 值类型 vs 引用类型: csharp/value-vs-reference.md
+      - 面向对象编程:
+          - csharp/oop/index.md
+          - 值类型 vs 引用类型: csharp/oop/value-vs-reference.md
       - async/await 异步: csharp/async-await.md
       - Unity C# 最佳实践: csharp/unity-csharp-practices.md
       - LeetCode算法:
