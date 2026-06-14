@@ -48,6 +48,7 @@ nav:
           - 值类型 vs 引用类型: csharp/oop/value-vs-reference.md
           - static 静态: csharp/oop/static.md
           - 运算符重载: csharp/oop/operator-overloading.md
+          - 泛型: csharp/oop/generics.md
       - LeetCode算法:
           - csharp/leetcode/index.md
           - 哈希: csharp/leetcode/hash.md

@@ -179,6 +179,48 @@ public class Power
 
 ---
 
+## 类型转换运算符
+
+### implicit（隐式转换）
+
+```csharp
+public class Rarity
+{
+    private int stars;
+
+    // int → Rarity：自动转换，不会丢失信息
+    public static implicit operator Rarity(int stars)
+    {
+        return new Rarity { stars = stars };
+    }
+}
+
+// 使用 — int 自动变成 Rarity
+Rarity rare = 4;  // 隐式转换，等价于 new Rarity(4)
+```
+
+### explicit（显式转换）
+
+```csharp
+public class Health
+{
+    public float value;
+
+    // Health → int：可能丢失小数，用显式转换提醒调用者
+    public static explicit operator int(Health h)
+    {
+        return (int)h.value;
+    }
+}
+
+// 使用 — 必须手动写 (int)
+Health hp = new Health { value = 66.7f };
+int rounded = (int)hp;  // 66 — 明确舍弃小数
+```
+
+**选择原则**：不会丢失信息用 `implicit`，可能丢失用 `explicit`。
+
+---
 
 ## Unity 实战示例
 
@@ -247,7 +289,7 @@ public struct StatBonus
             speed = a.speed + b.speed
         };
 
-    // 方便与 int 混用
+    // 方便与 float 混用
     public static StatBonus operator *(StatBonus s, float multiplier)
         => new StatBonus
         {
@@ -274,7 +316,7 @@ StatBonus final = sword + gem;  // attack=15, defense=2, speed=4
 ### 3. 资源类型防止误用
 
 ```csharp
-// 类型化 ID — 防止把金币 ID 误传给钻石 ID
+// 类型化包装 — 防止把金币和钻石搞混
 public struct GoldAmount
 {
     public int amount;
@@ -334,7 +376,19 @@ public static Inventory operator >>(Inventory inv, Item item) { ... }
 public void TransferItem(Item item, Inventory target) { ... }
 ```
 
-**原则**：只有运算含义**直观、不意外**时才重载。`Damage + Damage` 是直观的，`Player >> Enemy` 不是。
+**原则**：只有运算含义**直观、不意外**时才重载。`Damage + Damage` 直观，`Player >> Enemy` 不直观。
+
+### 3. 隐式转换的隐蔽性能开销
+
+```csharp
+// implicit 转换可能在不经意间发生，产生临时对象
+GoldAmount gold = 100;
+for (int i = 0; i < 10000; i++)
+{
+    gold += 1;  // 每次循环创建一个新的 GoldAmount 结构体
+}
+// 热路径上注意 — 不过对于 struct 来说影响很小
+```
 
 ---
 
