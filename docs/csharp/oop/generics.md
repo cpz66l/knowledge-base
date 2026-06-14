@@ -151,9 +151,11 @@ public class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour
 
 // 使用 — 一行搞定
 public class AudioManager : SingletonMono<AudioManager>
-{
+{//继承单例基类的单例逻辑，就无需写单例逻辑
     public void PlaySound(string name) { /* ... */ }
 }
+
+通过泛型，确保单例基类可以由多种类继承。
 
 public class UIManager : SingletonMono<UIManager>
 {
