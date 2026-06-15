@@ -174,7 +174,7 @@ public class ObjectPool<T> where T : MonoBehaviour
 {
     private T prefab;
     private Queue<T> pool = new Queue<T>();
-
+    //new一个队列来实现池的存储功能
     public ObjectPool(T prefab, int initialSize)
     {
         this.prefab = prefab;
@@ -182,21 +182,22 @@ public class ObjectPool<T> where T : MonoBehaviour
         {
             T obj = Object.Instantiate(prefab);
             obj.gameObject.SetActive(false);
-            pool.Enqueue(obj);
+            pool.Enqueue(obj);//进池（入队列）
         }
-    }
+    }//对象池的初始化
 
     public T Get()
     {
         T obj = pool.Count > 0 ? pool.Dequeue() : Object.Instantiate(prefab);
+        //先判断池中是否还有空闲的对象，没有就现场新建
         obj.gameObject.SetActive(true);
-        return obj;
+        return obj;//给调用者返回该对象
     }
 
     public void Return(T obj)
     {
         obj.gameObject.SetActive(false);
-        pool.Enqueue(obj);
+        pool.Enqueue(obj);//进池（入队）
     }
 }
 
@@ -204,6 +205,7 @@ public class ObjectPool<T> where T : MonoBehaviour
 ObjectPool<Bullet> bulletPool = new ObjectPool<Bullet>(bulletPrefab, 20);
 Bullet b = bulletPool.Get();   // 拿出一个子弹，类型安全
 bulletPool.Return(b);          // 归还
+
 ```
 
 ### 3. 泛型事件总线
