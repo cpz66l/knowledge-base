@@ -60,9 +60,12 @@ public class Solution
 
 ---
 
-### 三数之和
+### 三数之和 ⭐ 重点
 
 > [LeetCode 15. 3Sum](https://leetcode.cn/problems/3sum/) — Medium
+
+!!! warning "高频重点"
+    这道题是双指针的**标杆题**，面试出现频率极高。排序 + 固定一端 + 对撞指针的组合思路，在四数之和、最接近的三数之和等变体中反复出现。**务必彻底掌握。**
 
 给你一个整数数组 `nums`，判断是否存在三元组 `[nums[i], nums[j], nums[k]]` 满足 `i != j`、`i != k` 且 `j != k`，同时还满足 `nums[i] + nums[j] + nums[k] == 0`。请你返回所有和为 `0` 且不重复的三元组。
 
