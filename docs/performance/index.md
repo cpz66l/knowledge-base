@@ -37,7 +37,7 @@
 | 文章 | 内容 |
 |------|------|
 | [Unity Profiler 深度使用](profiler-deep-dive.md) | Profiler 面板解读、Deep Profile、自定义 Profiler |
-| [内存管理与 GC 优化](memory-and-gc.md) | 堆分配分析、GC 抑制、对象池与缓存 |
+| [内存管理](memory/index.md) | 对象池、堆分配分析、GC 抑制与调优 |
 | [渲染性能优化](rendering-performance.md) | Draw Call 合批、LOD、剔除、Shader 优化 |
 | [CPU 与代码优化](cpu-code-optimization.md) | Job System、Burst Compiler、热点定位与消除 |
 

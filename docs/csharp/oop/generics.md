@@ -208,6 +208,8 @@ bulletPool.Return(b);          // 归还
 
 ```
 
+> 📦 对象池的完整工程实践（`UnityEngine.Pool`、预加热、容量调优、常见坑）见 [对象池专题](../../performance/memory/object-pool.md)
+
 ### 3. 泛型事件总线
 
 ```csharp
