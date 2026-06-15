@@ -277,39 +277,7 @@ public class GameObjectPool
 }
 ```
 
-### 2. 纯 C# 对象池（不涉及 GameObject）
-
-```csharp
-// 适合 List、StringBuilder、网络消息包等非 MonoBehaviour 对象
-public class ListPool<T>
-{
-    private static Stack<List<T>> pool = new Stack<List<T>>();
-
-    public static List<T> Get()
-    {
-        if (pool.Count > 0)
-        {
-            List<T> list = pool.Pop();
-            list.Clear();  // ⚠️ 归还前清空旧数据
-            return list;
-        }
-        return new List<T>();
-    }
-
-    public static void Release(List<T> list)
-    {
-        list.Clear();
-        pool.Push(list);
-    }
-}
-
-// 使用
-List<Vector3> temp = ListPool<Vector3>.Get();
-// ... 临时计算 ...
-ListPool<Vector3>.Release(temp);  // 放回去，下回再用
-```
-
-### 3. 预加热策略
+### 2. 预加热策略
 
 ```csharp
 // 场景加载时预加热常用池，避免运行时首次 Get 的创建开销
@@ -340,7 +308,7 @@ public class PoolManager : MonoBehaviour
 }
 ```
 
-### 4. 固定容量 vs 动态扩容
+### 3. 固定容量 vs 动态扩容
 
 | | 固定容量 | 动态扩容 |
 |------|------|------|
