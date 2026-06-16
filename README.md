@@ -2,15 +2,6 @@
 
 游戏客户端开发学习笔记，使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 搭建，托管于 GitHub Pages。
 
-## 本地运行
-
-```bash
-# 安装依赖
-pip install mkdocs-material
-
-# 启动本地预览
-mkdocs serve
-```
 
 打开 https://cpz66l.github.io/knowledge-base/ 即可浏览。
 
