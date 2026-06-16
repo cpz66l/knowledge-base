@@ -44,17 +44,17 @@ public class Solution
         // 右指针逐位向右扩展
         for (int right = 0; right < s.Length; right++)
         {
-            // 当前字符与窗口内重复 → 收缩左边界直到重复消除
+            // 判断新窗口内有没有重复字符
             while (window.Contains(s[right]))
-            {
+            {// 不断收缩左边界直到窗口内的重复消除
                 window.Remove(s[left]);
-                left++;
+                left++;//收缩
             }
 
             // 窗口内已无重复，加入当前字符
             window.Add(s[right]);
 
-            // 此时 [left, right] 是无重复子串，更新最大长度
+            // 此时 [left, right]窗口内是无重复子串，更新最大长度
             maxLen = Math.Max(maxLen, right - left + 1);
         }
 
