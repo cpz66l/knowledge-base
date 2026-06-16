@@ -12,7 +12,7 @@ pip install mkdocs-material
 mkdocs serve
 ```
 
-打开 http://127.0.0.1:8000 即可浏览。
+打开 https://cpz66l.github.io/knowledge-base/ 即可浏览。
 
 ## 内容结构
 
