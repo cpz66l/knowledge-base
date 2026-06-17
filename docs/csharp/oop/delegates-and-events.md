@@ -493,4 +493,4 @@ public class B
 
 > 📎 标签：`委托` `事件` `delegate` `event` `Action` `Func` `UnityEvent` `解耦` `观察者模式`
 
-> 📖 通用事件总线实现见 [泛型 — 泛型事件总线](../generics.md)
+> 📖 通用事件总线实现见 [泛型 — 泛型事件总线](generics.md)
