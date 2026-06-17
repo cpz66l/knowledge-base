@@ -69,6 +69,94 @@ public class Solution
 | 空间 | O(k)，k 为字符集大小（ASCII 最多 128，扩展 ASCII 256） |
 ---
 
+给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
+
+方法一：双字典+滑动窗口
+public class Solution {
+    public IList<int> FindAnagrams(string s, string p) {
+        List<int> list = new List<int> ();
+        Dictionary<char,int> pMap =new Dictionary<char,int> ();
+        Dictionary<char,int> sMap =new Dictionary<char,int> ();
+        if(p.Length>s.Length) return list;
+
+        foreach(var i in p){
+            if(pMap.ContainsKey(i)) pMap[i]++;
+            else pMap[i] = 1;
+        }
+        int pLen = p.Length;
+
+        for(int right = 0;right<pLen;right++){
+            if(sMap.ContainsKey(s[right])) sMap[s[right]]++;
+            else sMap[s[right]] = 1;
+        }
+        if(DictionEqual(pMap,sMap)) list.Add(0);
+        
+        for(int right = pLen ;right <s.Length;right++){
+            //左边界扩展
+            if(sMap.ContainsKey(s[right])) sMap[s[right]]++;
+            else sMap[s[right]] = 1;
+            //右边界收缩
+            sMap[s[right-pLen]]--;
+            if(sMap[s[right-pLen]] == 0) sMap.Remove(s[right-pLen]);
+
+            if(DictionEqual(pMap,sMap)) list.Add(right-pLen+1);
+        }
+        return list;
+    }
+    public bool DictionEqual(Dictionary<char,int> a ,Dictionary<char,int> b){
+        if(a.Count != b.Count) return false;
+        foreach(var kv in a){
+            if(!b.TryGetValue(kv.Key ,out int val) || val != kv.Value){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+方法二：数组+滑动窗口
+
+方法适用于字符串由26个小写字母组成，将数组长度设为26，则字母字符的ACSLL码处理过可以用成下标索引，数组内部则是存储字母出现频次，这种方法远高于双字典空间与时间效率
+
+public class Solution {
+    public IList<int> FindAnagrams(string s, string p) {
+        List<int> list = new List<int>();
+        int[] pCount =new int[26];
+        int[] sCount =new int[26];
+        int pLen = p.Length;
+        int sLen = s.Length;
+        if(pLen > sLen) return list;
+
+        foreach(char c in p){
+            pCount[c-'a']++;
+        }
+        for(int right = 0; right <pLen ;right++){
+            sCount[s[right] - 'a']++;
+        }
+        if(intEqual(pCount ,sCount)) list.Add(0);
+
+        for(int right = pLen ;right<sLen;right++){
+            //右边扩展
+            sCount[s[right] - 'a']++;
+            //左边收缩
+            sCount[s[right-pLen] - 'a']--;
+
+            if(intEqual(pCount ,sCount)) list.Add(right-pLen+1);
+        }
+        return list;
+
+    }
+
+    public bool intEqual(int[] a ,int[] b){
+        for(int i =0;i<26 ;i++){
+            if(a[i] != b[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
 ## 核心技巧
 
 - 右指针扩展、左指针收缩
