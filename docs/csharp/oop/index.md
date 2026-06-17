@@ -12,7 +12,7 @@
 | [static 静态](static.md) | 静态类/字段/方法、单例模式、Unity 跨场景数据 |
 | [运算符重载](operator-overloading.md) | operator 关键字、隐式/显式转换、Unity 自定义类型运算 |
 | [泛型](generics.md) | 泛型类/方法、where 约束、协变逆变、Unity 对象池/单例 |
-| [委托与事件](delegates-and-events.md) | delegate/Action/Func、event 关键字、UnityEvent、事件总线、解耦模式 |
+| [委托与事件](delegates-and-events/index.md) | delegate/Action/Func、event 关键字、UnityEvent、事件总线、解耦模式 |
 
 ---
 

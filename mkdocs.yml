@@ -49,7 +49,7 @@ nav:
           - static 静态: csharp/oop/static.md
           - 运算符重载: csharp/oop/operator-overloading.md
           - 泛型: csharp/oop/generics.md
-      - 委托与事件: csharp/oop/delegates-and-events.md
+      - 委托与事件: csharp/oop/delegates-and-events/index.md
       - LeetCode算法:
           - csharp/leetcode/index.md
           - 哈希: csharp/leetcode/hash.md
