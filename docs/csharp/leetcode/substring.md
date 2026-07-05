@@ -86,8 +86,8 @@ public class Solution
 
             // 2. 查找有多少个前缀和等于 curSum - k
             //    这些前缀和对应的位置到当前位置之间，子数组和就是 k
-            int target = curSum - k;
-            if (map.ContainsKey(target))
+            int target = curSum - k;//核心
+            if (map.ContainsKey(target))//若存在则说明等式成立，说明有字串和为k
             {
                 count += map[target];
             }
