@@ -53,12 +53,10 @@ public class Solution
         {
             // 核心选择：接上前面的子数组 vs 另起炉灶
             // 如果 curMax 是负数，接上去只会拖后腿 → 不如从当前元素重新开始
-            curMax = Math.Max(nums[i], nums[i] + curMax);
-
+            curMax = Math.Max(nums[i], nums[i] + curMax);//核心：状态转移方程
             // 更新全局最大值
             maxSum = Math.Max(maxSum, curMax);
         }
-
         return maxSum;
     }
 }
