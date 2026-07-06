@@ -140,8 +140,30 @@ public class Solution
 | **核心技巧** | 动态规划，贪心选择 | 二分递归，跨越中点 |
 | **适用场景** | 面试/生产标准解法 | 面试追问、理解分治思想 |
 
-> **选择建议**：Kadane 算法是这题的**标准解法**，O(n) 时间 O(1) 空间已是最优。分治法虽然慢一些，但体现了"最大子数组"问题的分治本质，面试官可能会追问了解你的算法广度。
+> **选择建议**：Kadane 算法是这题的**标准解法**，O(n) 时间 O(1) 空间已是最优。分治法虽然慢一些，但体现了"最大子数组"问题的分治本质。
 
+
+以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。
+
+public class Solution {
+    public int[][] Merge(int[][] intervals) {
+        if(intervals.Length == 0) return Array.Empty<int[]>();
+        List<int[]> res = new List<int[]>();
+        Array.Sort(intervals, (a,b) => a[0].CompareTo(b[0]));
+        res.Add(intervals[0]);
+        for(int i=1;i<intervals.Length;i++){
+            int[] last = res[res.Count-1];
+            int[] current = intervals[i];
+            if(last[1] >= current[0]){
+                last[1] = Math.Max(last[1],current[1]);
+            }
+            else{
+                res.Add(current);
+            }
+        }
+        return res.ToArray();
+    }
+}
 ---
 
 ## 核心技巧
