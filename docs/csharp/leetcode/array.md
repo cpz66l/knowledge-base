@@ -351,27 +351,19 @@ answer = [24, 12, 8, 6]   与方法一结果一致
 ```
 
 ```csharp
-public class Solution
-{
-    public int[] ProductExceptSelf(int[] nums)
-    {
+public class Solution {
+    public int[] ProductExceptSelf(int[] nums) {
         int len = nums.Length;
         int[] answer = new int[len];
-
-        // 第一遍：从左到右，answer[i] = nums[0..i-1] 的前缀积（不含 nums[i]）
-        answer[0] = 1;  // 最左侧无元素，前缀积视为 1
-        for (int i = 1; i < len; i++)
-        {
-            answer[i] = answer[i - 1] * nums[i - 1];
+        int prefix = 1;
+        for(int i=0;i<len;i++){
+            answer[i] = prefix;
+            prefix *= nums[i];
         }
-
-        // 第二遍：从右到左，用 right 滚动累乘后缀积，乘进 answer[i]
-        // right 始终 = nums[i+1..len-1] 的后缀积（不含 nums[i]）
-        int right = 1;
-        for (int i = len - 1; i >= 0; i--)
-        {
-            answer[i] = answer[i] * right;  // 左前缀积 × 右后缀积
-            right = right * nums[i];        // 更新 right，为下一个（更左的）位置准备后缀积
+        int suffix = 1;
+        for(int i =len-1;i>=0;i--){
+            answer[i] *= suffix;
+            suffix *= nums[i];
         }
 
         return answer;
