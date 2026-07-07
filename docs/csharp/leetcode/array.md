@@ -355,15 +355,17 @@ public class Solution {
     public int[] ProductExceptSelf(int[] nums) {
         int len = nums.Length;
         int[] answer = new int[len];
+        // 第一遍：从左到右，prefix 始终 = nums[0..i-1] 的前缀积（不含 nums[i]）
         int prefix = 1;
         for(int i=0;i<len;i++){
-            answer[i] = prefix;
-            prefix *= nums[i];
+            answer[i] = prefix;   // 先存入当前位置的左侧前缀积
+            prefix *= nums[i];    // 再更新 prefix，为下一个（右侧）位置做准备
         }
+        // 第二遍：从右到左，suffix 始终 = nums[i+1..len-1] 的后缀积（不含 nums[i]）
         int suffix = 1;
         for(int i =len-1;i>=0;i--){
-            answer[i] *= suffix;
-            suffix *= nums[i];
+            answer[i] *= suffix;  // 左前缀积 × 右后缀积 = 最终结果
+            suffix *= nums[i];    // 更新 suffix，为下一个（更左的）位置做准备
         }
 
         return answer;
