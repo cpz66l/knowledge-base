@@ -21,6 +21,7 @@ theme:
   features:
     - navigation.top
     - navigation.tracking
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
