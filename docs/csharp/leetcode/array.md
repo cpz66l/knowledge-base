@@ -390,6 +390,31 @@ public class Solution {
 > **选择建议**：方法二是面试**标准最优解** —— 时间 O(n)、额外空间 O(1)，是题目进阶要求的标准答案。方法一更直观易懂，适合作为推导跳板。建议**先吃透方法一**理解前缀/后缀积的本质，**再过渡到方法二**掌握空间优化的复用技巧。
 
 ---
+给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
+ 
+
+public class Solution {
+    public void Rotate(int[] nums, int k) {
+        int len=nums.Length;
+        k %= len;
+
+        Reverse(nums,0,len-1);
+        Reverse(nums,0,k-1);
+        Reverse(nums,k,len-1);
+    }
+
+    public void Reverse(int[] nums,int l,int r)
+    {
+        while(l<r) {
+            int temp;
+            temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] =temp;
+            l++;
+            r--;
+        }
+    }
+}
 ## 核心技巧
 
 - 动态规划
