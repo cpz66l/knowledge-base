@@ -390,31 +390,80 @@ public class Solution {
 > **选择建议**：方法二是面试**标准最优解** —— 时间 O(n)、额外空间 O(1)，是题目进阶要求的标准答案。方法一更直观易懂，适合作为推导跳板。建议**先吃透方法一**理解前缀/后缀积的本质，**再过渡到方法二**掌握空间优化的复用技巧。
 
 ---
-给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
- 
+### 轮转数组 ⭐ 重点
 
-public class Solution {
-    public void Rotate(int[] nums, int k) {
-        int len=nums.Length;
-        k %= len;
+> [LeetCode 189. Rotate Array](https://leetcode.cn/problems/rotate-array/) - Medium
 
-        Reverse(nums,0,len-1);
-        Reverse(nums,0,k-1);
-        Reverse(nums,k,len-1);
+!!! warning "高频重点"
+    数组**原地操作**的经典题，"三次反转"技巧的代表。要求 O(1) 额外空间原地完成，面试高频。掌握后可迁移到"反转字符串中的单词"、"旋转链表"等同类题。
+
+给定一个整数数组 `nums`，将数组中的元素**向右轮转 `k` 个位置**，其中 `k` 是非负数。要求**原地**修改数组。
+
+**核心思路：**
+
+向右轮转 `k` 位，等价于把数组末尾的 `k` 个元素搬到开头，即结果 = `nums[n-k..n-1]` + `nums[0..n-k-1]`。这可以用**三次反转**原地完成：
+
+1. 反转**整个数组** -> `nums[n-1], ..., nums[0]`
+2. 反转**前 k 个** -> 把原本末尾的 k 个（现在在前 k 位且是逆序）翻回正序
+3. 反转**后 n-k 个** -> 把原本开头的 n-k 个翻回正序
+
+关键技巧：`k %= n` 先取模，因为轮转 `n` 次等于没转，且能防止 `k >= n` 时索引越界。
+
+```
+nums = [1, 2, 3, 4, 5, 6, 7], k = 3   (len = 7)
+
+k %= len  ->  k = 3
+
+步骤 1：反转整个数组 [0..6]
+  [1, 2, 3, 4, 5, 6, 7] -> [7, 6, 5, 4, 3, 2, 1]
+
+步骤 2：反转前 k=3 个 [0..2]
+  [7, 6, 5,| 4, 3, 2, 1] -> [5, 6, 7,| 4, 3, 2, 1]
+
+步骤 3：反转后 n-k=4 个 [3..6]
+  [5, 6, 7,| 4, 3, 2, 1] -> [5, 6, 7,| 1, 2, 3, 4]
+
+结果 = [5, 6, 7, 1, 2, 3, 4]   （末尾 3 个 [5,6,7] 搬到了开头）
+```
+
+```csharp
+public class Solution
+{
+    public void Rotate(int[] nums, int k)
+    {
+        int len = nums.Length;
+        k %= len;  // k 可能 >= n，取模避免重复轮转；也是防止后续索引越界的关键
+
+        // 三次反转：整体 -> 前 k 个 -> 后 n-k 个
+        Reverse(nums, 0, len - 1);  // 1. 反转整个数组
+        Reverse(nums, 0, k - 1);    // 2. 反转前 k 个元素
+        Reverse(nums, k, len - 1);  // 3. 反转剩余 n-k 个元素
     }
 
-    public void Reverse(int[] nums,int l,int r)
+    // 反转 nums[l..r] 区间，双指针向中间靠拢交换
+    public void Reverse(int[] nums, int l, int r)
     {
-        while(l<r) {
-            int temp;
-            temp = nums[l];
+        while (l < r)
+        {
+            int temp = nums[l];
             nums[l] = nums[r];
-            nums[r] =temp;
+            nums[r] = temp;
             l++;
             r--;
         }
     }
 }
+```
+
+| 复杂度 | |
+|--------|------|
+| 时间 | O(n)，三次反转各遍历一次，总计 O(n) |
+| 空间 | **O(1)**，原地修改，仅用几个临时变量 |
+
+!!! tip "为什么 k %= len 不能省"
+    若 `k >= n`，步骤 2 的 `Reverse(nums, 0, k - 1)` 会让右边界 `k-1` 超出数组长度，直接**索引越界崩溃**。`k %= len` 把 `k` 归约到 `[0, n)` 范围内，既是优化（避免无意义的整圈轮转），更是**正确性保障**。
+
+---
 ## 核心技巧
 
 - 动态规划
