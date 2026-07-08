@@ -8,11 +8,11 @@
 
 | 分类 | 文件 | 核心技巧 |
 |------|------|----------|
-| 哈希 | [hash.md](hash.md) | Dictionary/HashSet、查找优化 |
-| 双指针 | [two-pointers.md](two-pointers.md) | 快慢指针、左右指针、对撞 |
-| 滑动窗口 | [sliding-window.md](sliding-window.md) | 窗口伸缩、条件满足性判定 |
-| 子串 | [substring.md](substring.md) | 前缀和、KMP、子串问题套路 |
-| 数组 | [array.md](array.md) | 遍历、原地操作、前缀后缀 |
+| 哈希 | [hash/index.md](hash/index.md) | Dictionary/HashSet、查找优化 |
+| 双指针 | [two-pointers/index.md](two-pointers/index.md) | 快慢指针、左右指针、对撞 |
+| 滑动窗口 | [sliding-window/index.md](sliding-window/index.md) | 窗口伸缩、条件满足性判定 |
+| 子串 | [substring/index.md](substring/index.md) | 前缀和、KMP、子串问题套路 |
+| 数组 | [array/index.md](array/index.md) | 遍历、原地操作、前缀后缀 |
 | 矩阵 | [matrix.md](matrix.md) | 二维遍历、方向数组、旋转 |
 | 链表 | [linked-list.md](linked-list.md) | 反转、合并、环检测 |
 | 二叉树 | [binary-tree.md](binary-tree.md) | DFS/BFS、前中后序、层序 |
