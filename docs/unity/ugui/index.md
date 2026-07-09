@@ -19,8 +19,8 @@
 
 | 主题 | 要点 | 优先级 |
 |------|------|--------|
-| **Canvas** | 三种渲染模式(Overlay / Camera / World)、Canvas Scaler 缩放策略 | 🔴 必学 |
-| **RectTransform** | anchor（锚点）、pivot（轴心）、anchoredPosition、sizeDelta | 🔴 必学 |
+| **[Canvas](canvas.md)** | 三种渲染模式(Overlay / Camera / World)、Canvas Scaler 缩放策略 | 🔴 必学 |
+| **RectTransform** | [anchor（锚点）](anchor.md)、pivot（轴心）、anchoredPosition、sizeDelta | 🔴 必学 |
 | **事件系统** | EventSystem 组件、InputModule、GraphicRaycaster 射线检测 | 🟡 了解 |
 
 **练习**：创建一个 Canvas，切换三种渲染模式，感受同一 UI 在不同模式下的表现差异。
@@ -33,10 +33,10 @@
 
 | 控件 | 核心用途 | 关键属性 |
 |------|----------|----------|
-| **Text (TextMeshPro)** | 文字显示 | 字体、字号、富文本、SDF 渲染 |
-| **Image** | 图片显示、填充条 | ImageType(Sliced/Tiled/Filled)、Pixels Per Unit |
-| **Button** | 点击交互 | onClick 事件绑定、Transition(颜色/图片/动画) |
-| **Toggle** | 开关/复选框 | isOn、OnValueChanged、Toggle Group 互斥 |
+| **[Text (TextMeshPro)](text-tmp.md)** | 文字显示 | 字体、字号、富文本、SDF 渲染 |
+| **[Image](image.md)** | 图片显示、填充条 | ImageType(Sliced/Tiled/Filled)、Pixels Per Unit |
+| **[Button](button.md)** | 点击交互 | onClick 事件绑定、Transition(颜色/图片/动画) |
+| **[Toggle](toggle.md)** | 开关/复选框 | isOn、OnValueChanged、Toggle Group 互斥 |
 | **Slider** | 滑动条、进度条 | min/maxValue、OnValueChanged、方向设置 |
 | **Dropdown** | 下拉选择 | Options 列表、OnValueChanged |
 | **InputField** | 文本输入 | ContentType(标准/密码/数字)、OnValueChanged、OnEndEdit |

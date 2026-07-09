@@ -100,6 +100,12 @@ nav:
       - Editor 工具开发: unity/editor-tooling.md
       - UGUI:
           - unity/ugui/index.md
+          - Canvas: unity/ugui/canvas.md
+          - Text (TextMeshPro): unity/ugui/text-tmp.md
+          - Image: unity/ugui/image.md
+          - Button: unity/ugui/button.md
+          - Anchor 锚点: unity/ugui/anchor.md
+          - Toggle: unity/ugui/toggle.md
       - 动画系统:
           - unity/animation/index.md
   - 图形学:
