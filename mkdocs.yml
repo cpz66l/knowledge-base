@@ -74,7 +74,9 @@ nav:
               - 合并区间: csharp/leetcode/array/merge-intervals.md
               - 除自身以外数组的乘积: csharp/leetcode/array/product-of-array-except-self.md
               - 轮转数组: csharp/leetcode/array/rotate-array.md
-          - 矩阵: csharp/leetcode/matrix.md
+          - 矩阵:
+              - csharp/leetcode/matrix/index.md
+              - 矩阵置零: csharp/leetcode/matrix/set-matrix-zeroes.md
           - 链表: csharp/leetcode/linked-list.md
           - 二叉树: csharp/leetcode/binary-tree.md
           - 图论: csharp/leetcode/graph.md
