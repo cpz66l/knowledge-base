@@ -101,11 +101,16 @@ nav:
       - UGUI:
           - unity/ugui/index.md
           - Canvas: unity/ugui/canvas.md
-          - Text (TextMeshPro): unity/ugui/text-tmp.md
-          - Image: unity/ugui/image.md
-          - Button: unity/ugui/button.md
           - Anchor 锚点: unity/ugui/anchor.md
-          - Toggle: unity/ugui/toggle.md
+          - 核心控件:
+              - unity/ugui/controls/index.md
+              - Text (TextMeshPro): unity/ugui/controls/text-tmp.md
+              - Image: unity/ugui/controls/image.md
+              - Button: unity/ugui/controls/button.md
+              - Toggle: unity/ugui/controls/toggle.md
+              - Slider: unity/ugui/controls/slider.md
+              - Scrollbar: unity/ugui/controls/scrollbar.md
+              - Dropdown: unity/ugui/controls/dropdown.md
       - 动画系统:
           - unity/animation/index.md
   - 图形学:

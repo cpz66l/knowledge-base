@@ -33,12 +33,13 @@
 
 | 控件 | 核心用途 | 关键属性 |
 |------|----------|----------|
-| **[Text (TextMeshPro)](text-tmp.md)** | 文字显示 | 字体、字号、富文本、SDF 渲染 |
-| **[Image](image.md)** | 图片显示、填充条 | ImageType(Sliced/Tiled/Filled)、Pixels Per Unit |
-| **[Button](button.md)** | 点击交互 | onClick 事件绑定、Transition(颜色/图片/动画) |
-| **[Toggle](toggle.md)** | 开关/复选框 | isOn、OnValueChanged、Toggle Group 互斥 |
-| **Slider** | 滑动条、进度条 | min/maxValue、OnValueChanged、方向设置 |
-| **Dropdown** | 下拉选择 | Options 列表、OnValueChanged |
+| **[Text (TextMeshPro)](controls/text-tmp.md)** | 文字显示 | 字体、字号、富文本、SDF 渲染 |
+| **[Image](controls/image.md)** | 图片显示、填充条 | ImageType(Sliced/Tiled/Filled)、Pixels Per Unit |
+| **[Button](controls/button.md)** | 点击交互 | onClick 事件绑定、Transition(颜色/图片/动画) |
+| **[Toggle](controls/toggle.md)** | 开关/复选框 | isOn、OnValueChanged、Toggle Group 互斥 |
+| **[Slider](controls/slider.md)** | 滑动条、进度条 | min/maxValue、OnValueChanged、方向设置 |
+| **[Scrollbar](controls/scrollbar.md)** | 滚动条定位 | Value、Size、NumberOfSteps |
+| **[Dropdown](controls/dropdown.md)** | 下拉选择 | Options 列表、OnValueChanged |
 | **InputField** | 文本输入 | ContentType(标准/密码/数字)、OnValueChanged、OnEndEdit |
 | **ScrollView** | 滚动列表 | ScrollRect、Viewport、Content、滚动条 |
 | **Mask** | 裁剪遮罩 | 配合 Image 使用、性能注意事项 |
