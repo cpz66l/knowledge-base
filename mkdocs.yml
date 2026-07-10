@@ -77,6 +77,7 @@ nav:
           - 矩阵:
               - csharp/leetcode/matrix/index.md
               - 矩阵置零: csharp/leetcode/matrix/set-matrix-zeroes.md
+              - 螺旋矩阵: csharp/leetcode/matrix/spiral-matrix.md
           - 链表: csharp/leetcode/linked-list.md
           - 二叉树: csharp/leetcode/binary-tree.md
           - 图论: csharp/leetcode/graph.md
