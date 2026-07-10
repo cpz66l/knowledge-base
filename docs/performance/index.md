@@ -40,6 +40,7 @@
 | [内存管理](memory/index.md) | 对象池、堆分配分析、GC 抑制与调优 |
 | [渲染性能优化](rendering-performance.md) | Draw Call 合批、LOD、剔除、Shader 优化 |
 | [CPU 与代码优化](cpu-code-optimization.md) | Job System、Burst Compiler、热点定位与消除 |
+| [优化小 Tips](perf-tips.md) | 开发中的性能小知识合集：UI/GC/渲染/代码/物理分类清单 |
 
 ---
 

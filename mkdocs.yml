@@ -124,6 +124,7 @@ nav:
           - 内存管理与 GC 优化: performance/memory/memory-and-gc.md
       - 渲染性能优化: performance/rendering-performance.md
       - CPU 与代码优化: performance/cpu-code-optimization.md
+      - 小 Tips: performance/perf-tips.md
   - 网络编程:
       - networking/index.md
       - TCP/UDP 基础: networking/tcp-udp-basics.md
