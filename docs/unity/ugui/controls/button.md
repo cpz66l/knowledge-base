@@ -28,10 +28,10 @@ Button 是最常用的交互控件，本质上是一个可点击的容器（自�
 1. 选中 Button，Inspector 找到 `Button (Script)` -> `On Click ()`
 2. 点 `+` 新增一项
 3. 把含目标脚本的对象拖入 `Object` 槽
-4. 下拉选择要调用的方法（方法必须是 `public`，或字段标记 `[SerializeField]`）
+4. 下拉选择要调用的方法（必须是参数签名兼容的 `public` 实例方法）
 
 !!! note "为什么找不到方法"
-    Inspector 下拉只能选 `public` 方法。若想选私有方法，用 `[SerializeField]` 标记的私有方法。静态类/非 MonoBehaviour 对象的方法也可能选不到。
+    `[SerializeField]` 只能让私有字段参与序列化，不能让私有方法出现在事件下拉框中。需要调用私有逻辑时，可以提供一个 `public` 包装方法，或者在代码中使用 `onClick.AddListener` 绑定该方法。方法参数还必须与 Button 的 `UnityEvent` 签名兼容。
 
 ### 方式二：代码动态绑定
 

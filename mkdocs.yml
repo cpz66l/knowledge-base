@@ -112,6 +112,8 @@ nav:
               - Slider: unity/ugui/controls/slider.md
               - Scrollbar: unity/ugui/controls/scrollbar.md
               - Dropdown: unity/ugui/controls/dropdown.md
+          - 综合实战:
+              - 可滚动任务列表: unity/ugui/scrollable-task-list.md
       - 动画系统:
           - unity/animation/index.md
   - 图形学:
