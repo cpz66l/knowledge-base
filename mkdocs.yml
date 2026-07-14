@@ -80,7 +80,9 @@ nav:
               - 螺旋矩阵: csharp/leetcode/matrix/spiral-matrix.md
               - 旋转图像: csharp/leetcode/matrix/rotate-image.md
               - 搜索二维矩阵 II: csharp/leetcode/matrix/search-a-2d-matrix-ii.md
-          - 链表: csharp/leetcode/linked-list.md
+          - 链表:
+              - csharp/leetcode/linked-list/index.md
+              - 相交链表: csharp/leetcode/linked-list/intersection-of-two-linked-lists.md
           - 二叉树: csharp/leetcode/binary-tree.md
           - 图论: csharp/leetcode/graph.md
           - 回溯: csharp/leetcode/backtracking.md
