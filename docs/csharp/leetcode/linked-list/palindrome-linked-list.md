@@ -158,6 +158,11 @@ public class Solution
 
         // Step 4（可选但推荐）：还原链表——把后半段反转回去
         // 这道题不强制还原，但面试中这样做体现对数据完整性的考虑
+        //
+        // 📌 注意：firstHalfEnd.next 其实从未改变过
+        // ReverseList 只修改下游节点的 .next 链，不会动 firstHalfEnd 这个引用本身。
+        // 所以 ReverseList(secondHalfStart) 返回的结果，恰好就是 firstHalfEnd 一直指向的那个节点。
+        // 这个赋值在语义上是"冗余"的——但它清晰表达了"还原后重新接上"的意图，提高可读性。
         firstHalfEnd.next = ReverseList(secondHalfStart);
 
         return isPalindrome;
@@ -234,6 +239,13 @@ public class Solution
 
 !!! tip "比较阶段为什么以后半段长度为准？"
     后半段长度 = ⌊n/2⌋，前半段长度 = ⌈n/2⌉。后半段永远 ≤ 前半段，所以以后半段为迭代终止条件不会越界。
+
+!!! tip "firstHalfEnd.next 其实一直没变——为什么还写赋值？"
+    `ReverseList` 的参数是按值传递的引用副本，函数内部**没有权限改写 `firstHalfEnd.next` 这个字段本身**——它只能修改链路上各节点的 `.next` 指向。
+    
+    第一次反转后，`firstHalfEnd.next` 指着原来的头（反转后的尾）；第二次反转（还原）恰好把新头复原成旧头，所以返回值跟 `firstHalfEnd.next` 一直指向的节点是同一个。`firstHalfEnd.next = ReverseList(...)` 在逻辑上是冗余的。
+    
+    **保留这套写法的理由**：它直观表达了"把后半段接回去"的意图，对称且利于维护。如果未来换成拷贝节点而非原地修改的实现，这个赋值就是必需的。
 
 ---
 
