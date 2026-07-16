@@ -99,6 +99,20 @@ nav:
       - GC 与内存管理: csharp/gc-and-memory.md
       - async/await 异步: csharp/async-await.md
       - Unity C# 最佳实践: csharp/unity-csharp-practices.md
+  - C++:
+      - cpp/index.md
+      - 基础语法:
+          - cpp/basics/index.md
+      - 面向对象:
+          - cpp/oop/index.md
+      - 内存管理:
+          - cpp/memory/index.md
+      - STL 标准库:
+          - cpp/stl/index.md
+      - Modern C++:
+          - cpp/modern-cpp/index.md
+      - LeetCode算法:
+          - cpp/leetcode/index.md
   - Unity:
       - unity/index.md
       - 生命周期: unity/lifecycle.md

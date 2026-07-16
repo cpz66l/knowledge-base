@@ -11,6 +11,7 @@
 目前正在系统学习：
 
 - 💻 **C#**：GC 机制、面向对象编程、async/await、Unity C# 最佳实践、LeetCode 算法笔记
+- 🖥️ **C++**：基础语法、OOP/虚表、内存管理、STL、Modern C++、LeetCode 算法
 - 🎯 **Unity**：生命周期、ScriptableObject、Prefab、Addressables、Editor 工具
 - 🖼️ **图形学**：渲染管线、Shader 编程、PBR、光照模型、阴影技术
 - ⚡ **性能优化**：Profiler 深度使用、内存与 GC 优化、渲染性能、CPU/代码优化
@@ -25,6 +26,7 @@
 | 分类 | 内容 |
 |------|------|
 | [C#](csharp/index.md) | GC 内存、值类型与引用类型、async/await、Unity C# 实践、LeetCode |
+| [C++](cpp/index.md) | 基础语法、OOP/虚表、内存管理、STL、Modern C++、LeetCode |
 | [Unity](unity/index.md) | 生命周期、ScriptableObject、Prefab、Addressables、Editor |
 | [图形学](graphics/index.md) | 渲染管线、Shader、光照、PBR、阴影 |
 | [性能优化](performance/index.md) | Profiler、内存管理、渲染性能、CPU 优化 |
@@ -37,8 +39,8 @@
 ## 技术栈
 
 ```
-语言：    C#（主） · Lua · HLSL/ShaderLab · Python
-引擎：    Unity 6 · URP
+语言：    C#（主） · C++（进阶） · Lua · HLSL/ShaderLab · Python
+引擎：    Unity 6 · Unreal Engine 5（计划） · URP
 框架：    xLua · Netcode for GameObject
 工具：    Rider · Git · RenderDoc · Unity Profiler
 ```
