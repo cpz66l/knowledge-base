@@ -1,6 +1,6 @@
 # 🎮 GameDev 知识库
 
-> Unity 客户端开发学习笔记 —— C# · Unity · 图形学 · 性能优化 · 网络编程 · 热更新
+> Unity 客户端开发学习笔记 —— C# · C++ · Unity · 图形学 · 性能优化 · 网络编程 · 热更新
 
 ---
 
@@ -11,7 +11,7 @@
 目前正在系统学习：
 
 - 💻 **C#**：GC 机制、面向对象编程、async/await、Unity C# 最佳实践、LeetCode 算法笔记
-- 🖥️ **C++**：基础语法、OOP/虚表、内存管理、STL、Modern C++、LeetCode 算法
+- 🖥️ **C++**：C# 对照语法、OOP/对象模型、内存与 RAII、STL、Modern C++、模板、并发、CMake/调试、LeetCode
 - 🎯 **Unity**：生命周期、ScriptableObject、Prefab、Addressables、Editor 工具
 - 🖼️ **图形学**：渲染管线、Shader 编程、PBR、光照模型、阴影技术
 - ⚡ **性能优化**：Profiler 深度使用、内存与 GC 优化、渲染性能、CPU/代码优化
@@ -26,7 +26,7 @@
 | 分类 | 内容 |
 |------|------|
 | [C#](csharp/index.md) | GC 内存、值类型与引用类型、async/await、Unity C# 实践、LeetCode |
-| [C++](cpp/index.md) | 基础语法、OOP/虚表、内存管理、STL、Modern C++、LeetCode |
+| [C++](cpp/index.md) | 基础语法、对象模型、内存与 RAII、STL、模板、并发、构建调试、LeetCode |
 | [Unity](unity/index.md) | 生命周期、ScriptableObject、Prefab、Addressables、Editor |
 | [图形学](graphics/index.md) | 渲染管线、Shader、光照、PBR、阴影 |
 | [性能优化](performance/index.md) | Profiler、内存管理、渲染性能、CPU 优化 |

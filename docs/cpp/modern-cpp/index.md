@@ -28,17 +28,17 @@
 
 ```cpp
 std::string s1 = "hello";
-std::string s2 = std::move(s1);   // 移动而非拷贝，s1 变为空（valid but unspecified）
+std::string s2 = std::move(s1);   // 允许移动而非拷贝；s1 仍有效，但状态未指定
 
 // 移动构造函数：
 // 把源对象的资源"偷"过来，而非复制
 // 对 vector<String> 来说，push_back 时用移动可减少大量分配
 ```
 
-- `std::move`：将左值强制转为右值引用（告诉编译器 "这个值我不用了，搬走吧"）
+- `std::move`：只是将表达式转换为 xvalue，并不会自己搬运资源；最终是否移动由目标类型的移动构造/赋值决定
 - `std::forward`：完美转发（模板中保持参数的值类别）
 - 右值引用 `T&&`：绑定到临时对象或 `std::move` 的结果
-- **Rule of Five**：如果定义了析构函数、拷贝构造或拷贝赋值中的任一个，通常需要同时定义移动构造和移动赋值
+- **Rule of Zero**：优先让 RAII 成员管理资源；只有直接管理资源时才按 Rule of Five 成套设计拷贝与移动操作
 
 ### 2. Lambda 表达式（C++11）⭐⭐⭐⭐
 
@@ -62,7 +62,7 @@ constexpr auto square = [](int n) { return n * n; };
 ```
 
 !!! warning "注意引用捕获的生命周期"
-    跟 C# 闭包一样危险——如果 lambda 在外部变量销毁后才执行，引用捕获就是悬空引用。异步场景、回调场景慎用 `[&]`。
+    如果 lambda 在外部变量销毁后才执行，引用捕获就是悬空引用。异步场景、回调场景应明确捕获对象的所有权，避免无脑使用 `[&]`。
 
 ### 3. auto 类型推导（C++11）⭐⭐⭐⭐
 
@@ -122,7 +122,11 @@ if (auto result = divide(10, 2)) {
 // string_view — 不拥有字符串，零拷贝子串
 void print(std::string_view sv) { cout << sv; }
 print("hello");                    // 字面量，不分配
-print(s.substr(0, 5));             // 子串，不拷贝
+std::string s = "hello";
+print(std::string_view{s}.substr(0, 5)); // 视图本身不拷贝，也不延长 s 的生命周期
+
+// 错误示例：返回指向临时字符串的视图
+// std::string_view bad() { return std::string("temporary"); }
 ```
 
 ---

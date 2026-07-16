@@ -1,5 +1,5 @@
 site_name: GameDev 知识库
-site_description: Unity 客户端开发学习笔记 - C#、图形学、引擎原理、性能优化、网络编程、热更新与项目实践
+site_description: Unity 客户端开发学习笔记 - C#、C++、图形学、引擎原理、性能优化、网络编程、热更新与项目实践
 site_author: CPZ66L
 
 theme:
@@ -111,8 +111,15 @@ nav:
           - cpp/stl/index.md
       - Modern C++:
           - cpp/modern-cpp/index.md
+      - 模板与泛型:
+          - cpp/templates/index.md
+      - 并发与内存模型:
+          - cpp/concurrency/index.md
+      - 构建、链接与调试:
+          - cpp/toolchain/index.md
       - LeetCode算法:
           - cpp/leetcode/index.md
+          - C++ 刷题模板与易错点: cpp/leetcode/templates.md
   - Unity:
       - unity/index.md
       - 生命周期: unity/lifecycle.md

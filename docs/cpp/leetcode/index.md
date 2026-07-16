@@ -6,7 +6,7 @@
 
 ## 为什么用 C++ 刷题？
 
-- 大厂面试（腾讯、网易、米哈游）的算法题主流语言是 C++
+- 游戏客户端和引擎岗位常用 C++ 进行笔试或现场编码；具体语言以招聘方要求为准
 - 刷题过程熟悉 C++ 语法、STL 容器、迭代器 —— 一举两得
 - 与 [C# LeetCode](../../csharp/leetcode/index.md) 板块对照学习，理解两种语言的表达差异
 
@@ -17,7 +17,7 @@
 | 分类 | 核心技巧 | 状态 |
 |------|----------|------|
 | 哈希 | `unordered_map` / `unordered_set`、查找优化 | 📋 待开始 |
-| 双指针 | 快慢指针、左右对撞、`std::two_pointer` 思想 | 📋 待开始 |
+| 双指针 | 快慢指针、左右对撞、双指针思路 | 📋 待开始 |
 | 滑动窗口 | 窗口伸缩、`deque` 单调队列 | 📋 待开始 |
 | 子串 | 前缀和、KMP、子串问题套路 | 📋 待开始 |
 | 数组 | 遍历、原地操作、前缀后缀 | 📋 待开始 |
@@ -60,10 +60,12 @@
 | 优先队列 | `PriorityQueue<T,TP>` | `std::priority_queue<T>` |
 | 排序 | `Array.Sort()` | `std::sort()` |
 | 空引用 | `null` | `nullptr` |
-| 最大值 | `int.MaxValue` | `INT_MAX` / `std::numeric_limits<int>::max()` |
+| 最大值 | `int.MaxValue` | `INT_MAX`（需 `<climits>`）/ `std::numeric_limits<int>::max()` |
 
 ---
 
 > 💡 每道题记录：题目链接、核心思路、**C++ 代码**、时空复杂度分析。
+>
+> 先看 [C++ 刷题模板与易错点](templates.md)，再把 [C# LeetCode](../../csharp/leetcode/index.md) 中已完成的题目按同一分类迁移；这样能同时复习算法和语言差异。
 > 
 > 📎 标签：`C++` `LeetCode` `算法` `STL`
