@@ -1,153 +1,24 @@
 # STL 标准库
 
-> 容器、算法、迭代器 —— C++ 面试与开发的核心工具
+> 状态：待系统学习。刷题中接触到的容器先单独记录，之后再系统整理。
 
-!!! tip "C# → C++ 速查"
-    C# 有 LINQ + `List<T>` + `Dictionary<K,V>` 一条龙；C++ 的 STL 用迭代器串起容器和算法。核心转变：从"调用对象的方法"到"传迭代器给算法"。
+## 计划学习内容
 
----
+- vector、string、array
+- map、set、unordered_map、unordered_set
+- stack、queue、deque、priority_queue
+- 迭代器和范围访问
+- 标准算法与比较器
+- 容器选择、复杂度和迭代器失效
 
-## STL 六大组件
+## 最小产出
 
-```
-┌─────────────────────────────────────────────┐
-│  容器 Containers                            │
-│  vector / list / map / set / unordered_map  │
-├─────────────────────────────────────────────┤
-│  算法 Algorithms                            │
-│  sort / find / binary_search / for_each     │
-├─────────────────────────────────────────────┤
-│  迭代器 Iterators                           │
-│  begin() / end() / ++ / -- / *             │
-├─────────────────────────────────────────────┤
-│  适配器 Adapters                            │
-│  stack / queue / priority_queue             │
-├─────────────────────────────────────────────┤
-│  仿函数 Functors                            │
-│  less<T> / greater<T> / 自定义比较器        │
-├─────────────────────────────────────────────┤
-│  分配器 Allocators                          │
-│  std::allocator<T>（可自定义）               │
-└─────────────────────────────────────────────┘
-```
+- 用三种常用容器完成小练习
+- 记录一次容器选择理由
+- 记录一次迭代器或引用失效问题
 
----
+## 当前记录
 
-## 常用容器速查
-
-### 序列容器
-
-| 容器 | 底层结构 | 随机访问 | 头插入 | 尾插入 | 特点 |
-|------|----------|----------|--------|--------|------|
-| `vector<T>` | 动态数组 | O(1) | O(n) | O(1)* | 最常用，缓存友好 |
-| `deque<T>` | 分段数组 | O(1) | O(1) | O(1) | 双端队列 |
-| `list<T>` | 双向链表 | — | O(1) | O(1) | 除被删除元素外，其他迭代器通常保持有效 |
-
-\* `vector::push_back` 均摊 O(1)，扩容时 O(n)
-
-### 关联容器
-
-| 容器 | 底层 | 查找 | 插入 | 有序 | 重复 key |
-|------|------|------|------|------|----------|
-| `set<T>` | 红黑树 | O(log n) | O(log n) | ✅ | ❌ |
-| `map<K,V>` | 红黑树 | O(log n) | O(log n) | ✅ | ❌ |
-| `multiset<T>` | 红黑树 | O(log n) | O(log n) | ✅ | ✅ |
-| `multimap<K,V>` | 红黑树 | O(log n) | O(log n) | ✅ | ✅ |
-| `unordered_set<T>` | 哈希表 | 平均 O(1)，最坏 O(n) | 平均 O(1)，最坏 O(n) | ❌ | ❌ |
-| `unordered_map<K,V>` | 哈希表 | 平均 O(1)，最坏 O(n) | 平均 O(1)，最坏 O(n) | ❌ | ❌ |
-
-### 关键对比
-
-| 场景 | 选这个 | 别选那个 |
-|------|--------|----------|
-| 默认动态序列 | 优先考虑 `vector` | 不要因“中间插入 O(1)”就直接选 `list` |
-| 键值查找 | 不需要顺序时考虑 `unordered_map` | 需要有序遍历、稳定复杂度时不要硬用哈希表 |
-| 大量头尾操作 | `deque` | 不要用 `vector` 做频繁头插 |
-| 迭代器稳定性 | `list` | `vector`（扩容使所有迭代器失效） |
-
----
-
-## 常用算法速查
-
-```cpp
-#include <algorithm>
-
-// 排序
-std::sort(v.begin(), v.end());                              // 升序 O(n log n)
-std::sort(v.begin(), v.end(), std::greater<int>());         // 降序
-std::sort(v.begin(), v.end(), [](int a, int b) {           // 自定义比较
-    return abs(a) < abs(b);
-});
-
-// 查找
-auto it = std::find(v.begin(), v.end(), target);            // 线性查找
-bool b = std::binary_search(v.begin(), v.end(), target);    // 二分（必须有序）
-auto lo = std::lower_bound(v.begin(), v.end(), target);    // 第一个 >= target
-auto hi = std::upper_bound(v.begin(), v.end(), target);    // 第一个 > target
-
-// 遍历
-std::for_each(v.begin(), v.end(), [](int x) { cout << x; });
-
-// 变换
-std::transform(v.begin(), v.end(), result.begin(),
-               [](int x) { return x * 2; });
-
-// 计数
-int n = std::count(v.begin(), v.end(), target);
-int n2 = std::count_if(v.begin(), v.end(), [](int x) { return x > 10; });
-
-// 去重（需先排序）
-std::sort(v.begin(), v.end());
-auto last = std::unique(v.begin(), v.end());
-v.erase(last, v.end());
-```
-
----
-
-## C# → C++ 常用对照
-
-| 操作 | C# | C++ |
-|------|-----|-----|
-| 创建动态数组 | `new List<int>()` | `std::vector<int> v;` |
-| 添加元素 | `list.Add(x)` | `v.push_back(x)` 或 `v.emplace_back(args)` |
-| 获取大小 | `list.Count` | `v.size()` |
-| 判空 | `list.Count == 0` | `v.empty()` |
-| 尾部取/删 | `list[^1]` | `v.back()` / `v.pop_back()` |
-| 清空 | `list.Clear()` | `v.clear()` |
-| 找元素 | `list.IndexOf(x)` | `std::find(v.begin(), v.end(), x)` |
-| 排序 | `list.Sort()` | `std::sort(v.begin(), v.end())` |
-| 反转 | `list.Reverse()` | `std::reverse(v.begin(), v.end())` |
-| 截取 | `list.GetRange(i, n)` | `vector<T>(v.begin()+i, v.begin()+i+n)` |
-
-!!! tip "`push_back` vs `emplace_back`"
-    当你手里已有一个对象时，`push_back(obj)` 往往更清楚；当你希望用构造参数直接创建元素时，`emplace_back(args...)` 很合适。现代编译器和移动语义会消除许多额外成本，不要把“总是用 emplace”当作规则。
-
-## 迭代器失效：面试必查
-
-| 操作 | 常见失效规则 |
-|------|--------------|
-| `vector` 扩容 | 所有指针、引用、迭代器失效 |
-| `vector` 未扩容插入/删除 | 插入/删除位置及其后的迭代器通常失效 |
-| `deque` 插入/删除 | 规则较复杂，修改后不要假设旧迭代器仍有效 |
-| `list` 插入 | 现有迭代器保持有效 |
-| `list` 删除 | 只有指向被删除元素的迭代器失效 |
-| `unordered_map` rehash | 迭代器失效，但元素的引用/指针仍保持有效 |
-
-!!! warning "复杂度不是唯一标准"
-    容器选择还要考虑缓存局部性、内存开销、迭代器稳定性、顺序性和最坏复杂度。游戏运行时的热数据通常优先连续存储，但应以性能分析结果为依据。
-
----
-
-## 待填充内容
-
-> 📝 随学习进度逐步添加：
->
-> - 迭代器深入（`iterator_traits`、迭代器失效规则）
-> - 自定义比较器实战
-> - `std::string` 与 `std::string_view`
-> - `std::optional`、`std::variant`（C++17）
-> - 多线程容器与 `std::atomic`
-
----
-
-> 📎 标签：`C++` `STL` `容器` `算法` `迭代器`
+- 已接触：刷题中使用过的少量 STL
+- 系统掌握：未开始
+- 待补内容：待填写

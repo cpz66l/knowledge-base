@@ -40,7 +40,7 @@
 目前正在系统学习：
 
 - 💻 **C#**：GC 机制、面向对象编程、async/await、Unity C# 最佳实践、LeetCode 算法笔记
-- 🖥️ **C++**：C# 对照语法、OOP/对象模型、内存与 RAII、STL、Modern C++、模板、并发、CMake/调试、LeetCode
+- 🖥️ **C++**：当前学习基础语法与部分 LeetCode；OOP、内存、STL、Modern C++、模板、并发、CMake/调试均作为后续路线
 - 🎯 **Unity**：生命周期、ScriptableObject、Prefab、Addressables、Editor 工具
 - 🖼️ **图形学**：渲染管线、Shader 编程、PBR、光照模型、阴影技术
 - ⚡ **性能优化**：Profiler 深度使用、内存与 GC 优化、渲染性能、CPU/代码优化
