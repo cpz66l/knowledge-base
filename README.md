@@ -18,6 +18,14 @@
 | **热更新** | Lua 基础、xLua、资源热更新、完整热更流程 |
 | **项目实践** | 作品集总览 |
 
+## 使用方式
+
+- 从 `docs/roadmap/index.md` 查看当前学习路线与阶段产出
+- 从 C#、C++、Unity 等专题目录查询已有知识
+- 使用 `docs/checklists/` 判断知识是否已经完成练习和验证
+- 使用 `docs/reviews/` 记录每周与项目复盘
+- 尚未学习的主题只维护规划，不提前补写完整结论
+
 ## 部署
 
 Push 到 `main` 分支后，GitHub Actions 自动构建并部署到 GitHub Pages。

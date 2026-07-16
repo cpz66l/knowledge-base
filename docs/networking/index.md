@@ -4,6 +4,17 @@
 
 ---
 
+## 学习定位
+
+> 路线：专项能力，项目需求驱动
+> 前置：C# 基础、Unity 生命周期与基础异步概念
+> 路线入口：[专项能力路线](../roadmap/specializations.md)
+> 掌握检查：[专项能力清单](../checklists/specializations.md)
+
+学习时优先画消息流和状态流，再补实现细节；没有完成联机或消息实验的主题保持“待实践”。
+
+---
+
 ## 为什么需要理解网络编程
 
 多人游戏（联机）是游戏行业的主流趋势。即使是客户端开发，也需要理解：
@@ -35,3 +46,11 @@
 | [Unity Netcode for GameObject](unity-netcode.md) | NetworkManager、RPC、NetworkVariable |
 | [状态同步实战](state-sync.md) | 插值、预测、延迟补偿 |
 | [帧同步与锁步](lockstep.md) | 确定性模拟、Checksum校验、回放 |
+
+---
+
+## 最小闭环
+
+```text
+明确同步需求 → 画消息流 → 完成最小通信 → 模拟延迟/断线 → 记录取舍 → 回到项目
+```

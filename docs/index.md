@@ -4,6 +4,35 @@
 
 ---
 
+## 从这里开始
+
+知识库同时提供两种入口：
+
+- **按路线学习**：先进入[学习路线总览](roadmap/index.md)，查看当前阶段、学习顺序和阶段产出
+- **按专题查询**：直接进入下方 C#、C++、Unity、性能等专题目录
+
+!!! important "当前原则"
+    尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
+
+---
+
+## 学习闭环
+
+```text
+路线规划 → 学习文章 → 最小练习 → 项目应用 → 工具验证 → 复盘回写
+```
+
+| 当前入口 | 用途 |
+|----------|------|
+| [C# / Unity 主线](roadmap/csharp-unity.md) | 当前主要学习方向 |
+| [C++ 底层副线](roadmap/cpp.md) | 面试、底层与引擎开发基础 |
+| [专项能力路线](roadmap/specializations.md) | 性能、图形、网络、热更新 |
+| [项目实践路线](roadmap/projects.md) | 把知识应用到可运行项目 |
+| [学习检查清单](checklists/index.md) | 判断是否真正掌握 |
+| [复盘中心](reviews/index.md) | 沉淀问题、验证与下一步 |
+
+---
+
 ## 关于我
 
 游戏客户端开发学习者，专注于 **Unity / C#** 方向。
@@ -53,5 +82,6 @@
 
 - 附上关键代码片段，理论与实现结合
 - 持续更新，commit 历史就是我的学习轨迹
+- 以路线、练习、项目、验证和复盘形成学习闭环
 
 > 如果发现错误或想交流，欢迎提 [Issue](https://github.com/CPZ66L/knowledge-base/issues) 或在 [Discussions](https://github.com/CPZ66L/knowledge-base/discussions) 讨论。

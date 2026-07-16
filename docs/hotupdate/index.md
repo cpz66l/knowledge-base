@@ -4,6 +4,17 @@
 
 ---
 
+## 学习定位
+
+> 路线：专项能力，项目需要时进入
+> 前置：Unity 资源管理、基础 C# 与 Lua 语法
+> 路线入口：[专项能力路线](../roadmap/specializations.md)
+> 掌握检查：[专项能力清单](../checklists/specializations.md)
+
+未亲自验证版本、下载、校验、加载或失败处理前，只记录路线与实验计划，不提前标记“掌握完整热更流程”。
+
+---
+
 ## 为什么需要热更新
 
 App Store / 应用商店审核周期长，游戏更新频繁。热更新让你：
@@ -36,3 +47,11 @@ App Store / 应用商店审核周期长，游戏更新频繁。热更新让你�
 | [xLua 入门与配置](xlua-setup.md) | 安装、绑定、C# 和 Lua 双向调用 |
 | [资源热更新方案](asset-hotupdate.md) | AssetBundle、Addressables 与 Lua 结合 |
 | [完整热更流程实战](full-hotupdate-flow.md) | 版本管理、下载、校验、加载全流程 |
+
+---
+
+## 最小闭环
+
+```text
+明确更新边界 → 完成最小更新实验 → 验证失败流程 → 记录平台限制 → 应用到项目
+```

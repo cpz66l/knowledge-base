@@ -42,6 +42,12 @@ plugins:
 
 nav:
   - 首页: index.md
+  - 学习路线:
+      - 路线总览: roadmap/index.md
+      - C# / Unity 主线: roadmap/csharp-unity.md
+      - C++ 底层副线: roadmap/cpp.md
+      - 专项能力路线: roadmap/specializations.md
+      - 项目实践路线: roadmap/projects.md
   - C#:
       - csharp/index.md
       - 面向对象编程:
@@ -176,3 +182,13 @@ nav:
       - xLua 入门与配置: hotupdate/xlua-setup.md
       - 资源热更新方案: hotupdate/asset-hotupdate.md
       - 完整热更流程实战: hotupdate/full-hotupdate-flow.md
+  - 检查与复盘:
+      - 学习检查清单: checklists/index.md
+      - C# 工程能力: checklists/csharp-engineering.md
+      - Unity 项目能力: checklists/unity-project.md
+      - 专项能力: checklists/specializations.md
+      - 面试与表达: checklists/interview.md
+      - 复盘中心: reviews/index.md
+      - 每周复盘模板: reviews/weekly-review.md
+      - 项目复盘模板: reviews/project-review-template.md
+      - 知识文章模板: guides/note-template.md
