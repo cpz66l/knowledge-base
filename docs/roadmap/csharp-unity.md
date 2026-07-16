@@ -8,6 +8,8 @@
 
 ### 阶段 1：C# 语言基础
 
+阶段入口：[C# 语言与面向对象路线](../csharp/language/index.md)。
+
 推荐从现有内容开始：
 
 1. [面向对象编程](../csharp/oop/index.md)
@@ -24,7 +26,14 @@
 
 ### 阶段 2：Unity 核心能力
 
-推荐顺序：
+路线入口：
+
+1. [核心运行与数据](../unity/core/index.md)
+2. [UI 与动画](../unity/presentation/index.md)
+3. [资源与工具](../unity/resources-tools/index.md)
+4. [工程与交付](../unity/engineering/index.md)
+
+已有文章推荐顺序：
 
 1. [生命周期](../unity/lifecycle.md)
 2. [ScriptableObject](../unity/scriptable-object.md)
@@ -44,10 +53,12 @@
 
 以下内容已经进入规划，但当前占位内容不代表已经学会：
 
-1. [GC 与内存管理](../csharp/gc-and-memory.md)
-2. [async/await 异步](../csharp/async-await.md)
-3. [Unity C# 最佳实践](../csharp/unity-csharp-practices.md)
-4. 测试、日志、异常处理、程序集与模块化：待学习后新增
+1. [运行时与异步路线](../csharp/runtime/index.md)
+2. [C# 工程实践路线](../csharp/engineering/index.md)
+3. [GC 与内存管理](../csharp/gc-and-memory.md)
+4. [async/await 异步](../csharp/async-await.md)
+5. [Unity C# 最佳实践](../csharp/unity-csharp-practices.md)
+6. 测试、日志、异常处理、程序集与模块化：待学习后新增
 
 学习这些内容时，优先记录：
 
