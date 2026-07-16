@@ -26,6 +26,7 @@
 |----------|------|
 | [C# / Unity 主线](roadmap/csharp-unity.md) | 当前主要学习方向 |
 | [C++ 底层副线](roadmap/cpp.md) | 面试、底层与引擎开发基础 |
+| [计算机基础路线](roadmap/computer-science.md) | 算法、组成原理、操作系统、网络与图形数学规划 |
 | [专项能力路线](roadmap/specializations.md) | 性能、图形、网络、热更新 |
 | [项目实践路线](roadmap/projects.md) | 把知识应用到可运行项目 |
 | [学习检查清单](checklists/index.md) | 判断是否真正掌握 |
