@@ -38,14 +38,16 @@
 
 ---
 
-## 目录
+## 计划主题
 
-| 文章 | 内容 |
+以下主题需要实际通信或同步实验后再创建正式文章。
+
+| 主题 | 计划验证内容 |
 |------|------|
-| [TCP/UDP 基础](tcp-udp-basics.md) | 协议选择、分包、粘包、可靠传输 |
-| [Unity Netcode for GameObject](unity-netcode.md) | NetworkManager、RPC、NetworkVariable |
-| [状态同步实战](state-sync.md) | 插值、预测、延迟补偿 |
-| [帧同步与锁步](lockstep.md) | 确定性模拟、Checksum校验、回放 |
+| TCP/UDP 基础 | 协议选择、分包、粘包、可靠传输 |
+| Unity Netcode for GameObject | NetworkManager、RPC、NetworkVariable |
+| 状态同步实战 | 插值、预测、延迟补偿 |
+| 帧同步与锁步 | 确定性模拟、Checksum 校验、回放 |
 
 ---
 

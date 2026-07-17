@@ -15,15 +15,17 @@
 
 ---
 
-## 目录
+## 计划主题
 
-| 文章 | 内容 |
+以下主题尚未形成经过练习或验证的正式文章，完成最小实验后再加入导航。
+
+| 主题 | 计划验证内容 |
 |------|------|
-| [渲染管线](rendering-pipeline.md) | 应用阶段、几何阶段、光栅化、逐片元 |
-| [Shader 基础](shader-basics.md) | HLSL/ShaderLab 语法、顶点/片元着色器 |
-| [光照与着色](lighting-and-shading.md) | Lambert、Blinn-Phong、法线贴图 |
-| [PBR 理论](pbr-theory.md) | BRDF、金属度/粗糙度工作流、IBL |
-| [阴影技术](shadow-techniques.md) | Shadow Map、CSM、软阴影 |
+| 渲染管线 | 应用阶段、几何阶段、光栅化、逐片元 |
+| Shader 基础 | HLSL/ShaderLab 语法、顶点/片元着色器 |
+| 光照与着色 | Lambert、Blinn-Phong、法线贴图 |
+| PBR 理论 | BRDF、金属度/粗糙度工作流、IBL |
+| 阴影技术 | Shadow Map、CSM、软阴影 |
 
 ---
 

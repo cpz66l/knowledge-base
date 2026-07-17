@@ -1,3 +1,3 @@
-# Scriptable Object
+# ScriptableObject
 
-> 🚧 内容施工中，敬请期待。
+> 状态：规划中。完成配置数据实验后再加入正式导航。

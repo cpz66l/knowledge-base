@@ -15,14 +15,21 @@
 
 ---
 
-## 路线目录
+## 已有内容
 
-| 阶段 | 路线入口 | 学习出口 |
+| 专题 | 当前内容 | 学习出口 |
 |---|---|---|
-| 1. 核心运行与数据 | [核心运行与数据路线](core/index.md) | 生命周期、数据和对象关系记录 |
-| 2. UI 与动画 | [UI 与动画路线](presentation/index.md) | 可交互界面与表现 Demo |
-| 3. 资源与工具 | [资源与工具路线](resources-tools/index.md) | 资源实验或 Editor 工具 |
-| 4. 工程与交付 | [工程与交付路线](engineering/index.md) | 架构、测试、性能和 Build 证据 |
+| UI | [UGUI](ugui/index.md) | 可交互界面 Demo |
+| 动画 | [动画系统](animation/index.md) | 动画状态或表现流程 |
+
+## 计划主题
+
+以下内容仍处于规划阶段，完成最小实验后再建立正式文章：
+
+- 生命周期、初始化与销毁顺序
+- ScriptableObject、Prefab 与数据关系
+- Addressables 加载、释放和资源所有权
+- Editor 工具、测试、程序集与 Build 验证
 
 ---
 

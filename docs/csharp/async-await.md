@@ -1,6 +1,6 @@
 # async/await 与异步编程
 
-> 学习状态：待学习 / 待实践。此页只记录路线和实验目标，等真正学习后再补充自己的结论。
+> 状态：规划中。此页只记录路线和实验目标，等真正学习后再补充自己的结论。
 
 ---
 
@@ -27,7 +27,7 @@
 ## 相关入口
 
 - [C# / Unity 主线](../roadmap/csharp-unity.md)
-- [资源管理](../unity/addressables.md)
+- [Unity 专题](../unity/index.md)
 - [网络编程](../networking/index.md)
 - [C# 工程能力清单](../checklists/csharp-engineering.md)
 

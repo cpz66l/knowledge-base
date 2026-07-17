@@ -39,14 +39,16 @@ App Store / 应用商店审核周期长，游戏更新频繁。热更新让你�
 
 ---
 
-## 目录
+## 计划主题
 
-| 文章 | 内容 |
+以下主题需要完成版本、下载、校验或加载实验后再创建正式文章。
+
+| 主题 | 计划验证内容 |
 |------|------|
-| [Lua 语言基础](lua-basics.md) | 语法速成、Table、元表、协程 |
-| [xLua 入门与配置](xlua-setup.md) | 安装、绑定、C# 和 Lua 双向调用 |
-| [资源热更新方案](asset-hotupdate.md) | AssetBundle、Addressables 与 Lua 结合 |
-| [完整热更流程实战](full-hotupdate-flow.md) | 版本管理、下载、校验、加载全流程 |
+| Lua 语言基础 | 语法、Table、元表、协程 |
+| xLua 入门与配置 | 安装、绑定、C# 和 Lua 双向调用 |
+| 资源热更新方案 | AssetBundle、Addressables 与 Lua 结合 |
+| 完整热更流程实战 | 版本管理、下载、校验、加载全流程 |
 
 ---
 

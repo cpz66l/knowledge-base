@@ -9,7 +9,7 @@
 每条都是一个**具体可操作**的小优化点，按场景分类。不是系统教程（深度内容见各专题页），而是日常开发的检查清单。
 
 !!! warning "先测量再优化"
-    优化前先 Profiler 找瓶颈（见 [Profiler 深度使用](profiler-deep-dive.md)），别盲目套用。下面的小 tips 是瓶颈定位后的具体手段，不是无脑全开。
+    优化前先用 Profiler 找瓶颈（见[性能优化](index.md)的验证原则），别盲目套用。下面的小 tips 是瓶颈定位后的具体手段，不是无脑全开。
 
 ---
 
@@ -57,7 +57,7 @@
 | Update 里调 `GetComponent` | `Start` 里缓存成字段 |
 | 频繁用 `this.transform` | 缓存 `transform` 到字段 |
 | 运行时 `GameObject.Find` / `Transform.Find` | 启动时查找并缓存引用 |
-| 空的 `Update()` / `Start()` | 删掉，空方法仍被反射调用产生开销 |
+| 空的 `Update()` / `Start()` | 删除不用的消息方法，避免 Unity 每帧进行无意义的脚本消息调用 |
 | `Debug.Log` 在 Release 仍有开销 | 自定义日志方法加 `[Conditional("DEBUG")]`，Release 自动剔除调用 |
 | 低频逻辑放 Update 里轮询 | 用协程 `WaitForSeconds`，按需触发 |
 
@@ -75,7 +75,7 @@
 
 ## 一句话原则
 
-- **热路径零分配**：Update / 循环里不 `new`、不拼接字符串、不用 LINQ
+- **控制热路径分配**：先测量，再减少 Update / 循环中不必要的 `new`、字符串拼接和 LINQ 临时结果
 - **缓存一切频繁访问的引用**：`GetComponent`、`transform`、`Find` 结果
 - **先测量再优化**：Profiler 给方向，小 tips 是手段
 

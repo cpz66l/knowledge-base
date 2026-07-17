@@ -34,9 +34,9 @@ LeetCode 是持续练习支线，不替代 C# 工程能力学习。
 | 阶段 | 路线入口 | 学习出口 |
 |---|---|---|
 | 1. 语言与面向对象 | [语言与面向对象路线](language/index.md) | 纯 C# 小模块 |
-| 2. 算法练习 | [C# LeetCode](leetcode/index.md) | 题解、复杂度与错题复盘 |
-| 3. 运行时与异步 | [运行时与异步路线](runtime/index.md) | 内存或异步验证实验 |
-| 4. 工程实践 | [C# 工程实践路线](engineering/index.md) | 模块、测试、调试与 Build 记录 |
+| 持续支线 | [LeetCode 双语题解](leetcode/index.md) | C# / C++ 题解、复杂度与错题复盘 |
+| 2. 运行时与异步 | [运行时与异步路线](runtime/index.md) | 内存或异步验证实验 |
+| 3. 工程实践 | [C# 工程实践路线](engineering/index.md) | 模块、测试、调试与 Build 记录 |
 
 ---
 

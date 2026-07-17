@@ -2,8 +2,6 @@
 
 > [LeetCode 142. Linked List Cycle II](https://leetcode.cn/problems/linked-list-cycle-ii/) - Medium
 
-## 页面状态
-
 > 学习状态：已练习
 >
 > 练习日期：2026-07-17

@@ -1,6 +1,6 @@
 # 对象池
 
-> 复用而非销毁 — 用对象池消除 GC 尖峰
+> 复用而非反复创建 — 用对象池降低创建成本和 GC 压力
 
 ---
 
@@ -11,10 +11,10 @@
 创建 → 使用 → 销毁    取出 → 使用 → 归还
 创建 → 使用 → 销毁    取出 → 使用 → 归还
 创建 → 使用 → 销毁    取出 → 使用 → 归还
-  ↑ GC 尖峰              ↑ 零分配，零 GC
+  ↑ 创建/销毁成本         ↑ 稳态阶段减少重复分配
 ```
 
-池子 = 预先创建一批对象存起来，用完放回去而不是销毁。本质是**用空间（预占内存）换时间（消除 GC 卡顿）**。
+池子把暂时不用的对象保存起来，用完后归还，下次继续复用。本质是**用额外常驻内存换取更稳定的创建成本**。它可以降低分配和 GC 压力，但不保证整个业务流程“零分配”。
 
 ---
 
@@ -23,25 +23,24 @@
 ### GC 尖峰是怎么产生的
 
 ```csharp
-// ❌ 每一帧都在堆上分配 + 销毁 → GC 频繁触发
+// ❌ 频繁创建和销毁 GameObject，会产生原生侧与托管侧成本
 void Update()
 {
-    // Instantiate 在堆上分配内存
     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-    // 子弹飞出屏幕后 Destroy → 产生待回收垃圾
+    // Destroy 会销毁 Unity 对象；相关托管对象最终仍由 GC 处理
     Destroy(bullet, 3f);
 }
 ```
 
-当一帧内有大量 Instantiate/Destroy 时，堆内存快速碎片化，GC 被迫运行，造成**帧时间尖峰**（从 2ms 飙到 50ms+），玩家感知为画面卡顿。
+一帧内大量调用 `Instantiate` / `Destroy` 会增加对象创建、初始化、销毁和托管分配成本，并可能形成帧时间尖峰。具体瓶颈必须通过 Profiler 采样确认，不能只根据代码形式判断。
 
 ```csharp
-// ✅ 对象池方案：只在初始化时分配，运行时零分配
+// ✅ 对象池方案：复用已经创建的对象，降低重复创建成本
 private ObjectPool<GameObject> bulletPool;
 
 void Start()
 {
-    // 初始化时一次性创建 20 颗子弹
+    // 构造池本身不会创建 20 颗子弹
     bulletPool = new ObjectPool<GameObject>(
         createFunc: () => Instantiate(bulletPrefab),
         actionOnGet: (obj) => obj.SetActive(true),
@@ -57,7 +56,8 @@ void Update()
 {
     if (Input.GetMouseButtonDown(0))
     {
-        GameObject bullet = bulletPool.Get();       // 取出（零分配）
+        // 池为空时 Get 会调用 createFunc，仍然可能创建新对象
+        GameObject bullet = bulletPool.Get();
         bullet.transform.position = transform.position;
         StartCoroutine(ReturnAfterDelay(bullet, 3f));
     }
@@ -66,9 +66,12 @@ void Update()
 IEnumerator ReturnAfterDelay(GameObject obj, float delay)
 {
     yield return new WaitForSeconds(delay);
-    bulletPool.Release(obj);                        // 归还（零分配）
+    bulletPool.Release(obj);
 }
 ```
+
+!!! note "对象池不等于整段逻辑零分配"
+    `defaultCapacity` 只设置内部集合的初始容量，不会预创建对象。池为空时 `Get()` 会调用 `createFunc`；上例中的协程和 `new WaitForSeconds` 也可能产生额外分配。是否达到目标必须用 Profiler 验证。
 
 ### 哪些场景收益最大
 
@@ -107,7 +110,7 @@ IEnumerator ReturnAfterDelay(GameObject obj, float delay)
 |------|---------|----------|
 | `Get()` | 从池中取出一个可用对象，没有则创建新的 | 需要对象时 |
 | `Release(obj)` | 把对象放回池中，标记为空闲 | 对象不再需要时 |
-| `Clear()` | 清空池中所有对象，真正的 Destroy | 场景切换/不再需要池时 |
+| `Clear()` | 清理池中的空闲对象，不影响仍在使用的对象 | 场景切换/不再需要池时 |
 
 ### 容量策略
 
@@ -138,7 +141,7 @@ Unity 2021 引入了 `UnityEngine.Pool` 命名空间，对象池成为一等公�
 
 ### ObjectPool<T>
 
-最通用的池，T 可以是任何类型：
+最通用的池，`T` 必须是引用类型：
 
 ```csharp
 using UnityEngine.Pool;
@@ -150,14 +153,14 @@ ObjectPool<Bullet> bulletPool = new ObjectPool<Bullet>(
     actionOnRelease:  (b) => b.gameObject.SetActive(false),                     // 归还时隐藏
     actionOnDestroy:  (b) => Destroy(b.gameObject),                             // 超出容量时真销毁
     collectionCheck:  true,   // 开启重复归还检测（开发期建议开）
-    defaultCapacity:  10,     // 预分配容量
-    maxSize:          50      // 最大容量上限
+    defaultCapacity:  10,     // 内部集合初始容量，不会创建 10 个 Bullet
+    maxSize:          50      // 最多保留 50 个空闲对象
 );
 
 // 使用
 Bullet b = bulletPool.Get();    // 取出
 bulletPool.Release(b);          // 归还
-bulletPool.Clear();             // 清空（场景切换时）
+bulletPool.Clear();             // 清空池中的空闲对象；不会处理仍在使用的对象
 ```
 
 ### IObjectPool<T> 接口
@@ -166,54 +169,46 @@ bulletPool.Clear();             // 清空（场景切换时）
 // 接口注入 — 方便在类之间传递池而不暴露具体实现
 public class Gun
 {
-    // 不依赖具体池类型，方便测试时替换
     public IObjectPool<Bullet> BulletPool { get; set; }
 
-    public void Fire()
-    {
-        Bullet b = BulletPool.Get();
-        // ...
-    }
+    public Bullet RentBullet() => BulletPool.Get();
+
+    public void ReturnBullet(Bullet bullet) => BulletPool.Release(bullet);
 }
 ```
 
 ### PooledObject 模式（IDisposable）
 
-用 `using` 自动归还，不怕忘记调用 Release：
+`Get(out T)` 返回的 `PooledObject<T>` 适合生命周期完全包含在当前同步作用域中的临时对象：
 
 ```csharp
-// Get() 返回 PooledObject<T>，用 using 包裹
-public class BulletPoolWrapper
-{
-    private ObjectPool<Bullet> pool = ...;
+private readonly ObjectPool<List<Vector3>> pointsPool = new(
+    createFunc: () => new List<Vector3>(),
+    actionOnGet: points => points.Clear(),
+    actionOnRelease: points => points.Clear()
+);
 
-    public PooledObject<Bullet> Get(out Bullet bullet)
-    {
-        return pool.Get(out bullet);  // 返回 IDisposable 包装
-    }
-}
-
-// 使用 — using 结束时自动 Release
-var wrapper = new BulletPoolWrapper();
-using (wrapper.Get(out Bullet bullet))
+using (pointsPool.Get(out List<Vector3> points))
 {
-    bullet.transform.position = firePoint.position;
-    bullet.Fire();  // 子弹飞出...
-} // ← using 结束，自动调用 bulletPool.Release(bullet)
+    CollectVisiblePoints(points);
+    DrawPoints(points);
+} // using 结束时自动归还列表
 ```
+
+飞行中的子弹、播放中的特效等对象会在当前方法返回后继续工作，不能用短作用域 `using`；它们应在生命周期真正结束时由统一出口调用 `Release()`。
 
 ### GenericPool<T> / UnsafeGenericPool<T>
 
 如果 T 不需要特殊的创建/销毁逻辑，可以用更轻量的静态池：
 
 ```csharp
-// GenericPool — 需要 T 有默认构造函数
-List<Vector3> points = GenericPool<List<Vector3>>.Get();
+// ListPool 会在归还时清空列表
+List<Vector3> points = ListPool<Vector3>.Get();
 // ... 使用 ...
-GenericPool<List<Vector3>>.Release(points);
+ListPool<Vector3>.Release(points);
 
-// UnsafeGenericPool — 更快，但跳过 CollectionCheck
-// 只在 Release 完全由你控制时使用
+// GenericPool<T> 适合无需特殊重置逻辑、且有默认构造函数的引用类型
+// UnsafeGenericPool<T> 跳过重复归还检查，只在生命周期完全可控时使用
 ```
 
 ---
@@ -288,18 +283,18 @@ public class PoolManager : MonoBehaviour
 
     private void Awake()
     {
-        // 在场景开始时预创建，确保战斗中零分配
+        // 先创建池；defaultCapacity 只设置内部集合容量
         Bullet.Pool = new ObjectPool<Bullet>(
             createFunc: () => Instantiate(bulletPrefab).GetComponent<Bullet>(),
             actionOnGet: (b) => b.gameObject.SetActive(true),
             actionOnRelease: (b) => b.gameObject.SetActive(false),
             actionOnDestroy: (b) => Destroy(b.gameObject),
-            defaultCapacity: 30,     // 预创建 30 颗子弹
+            defaultCapacity: 30,
             maxSize: 80
         );
 
-        // 强制立即预创建 — 多出来的开销在加载画面消化掉
-        List<Bullet> preWarm = new List<Bullet>();
+        // 显式 Get/Release 才会真正预创建 30 颗子弹
+        List<Bullet> preWarm = new List<Bullet>(30);
         for (int i = 0; i < 30; i++)
             preWarm.Add(Bullet.Pool.Get());
         foreach (var b in preWarm)
@@ -351,10 +346,10 @@ Release() → 归还后又继续使用             ← Bug
 ### 容量调优
 
 ```
-1. 先不加 maxSize，跑几场战斗，用 Profiler 看峰值
-2. maxSize 设为峰值的 1.2~1.5 倍
-3. defaultCapacity 设为常见场景的并发数
-4. 后续用 Profiler 验证池内对象数是否稳定
+1. 先给 `maxSize` 留出足够空间，用 Profiler 和 `CountActive` / `CountInactive` 观察真实峰值
+2. 根据希望长期保留的空闲对象数量设置 `maxSize`，并为极端负载设计兜底
+3. `defaultCapacity` 只影响内部集合首次扩容，可接近常见空闲数量，但不能替代预加热
+4. 需要预加热时显式执行一组 `Get()` / `Release()`，并再次验证帧时间和常驻内存
 ```
 
 ### Trim 与自动缩容
@@ -499,7 +494,7 @@ activeBullets.Remove(b);
 bulletPool.Release(b);
 ```
 
-### 3. 只取不还（泄漏）
+### 3. 只取不还或过早归还
 
 ```csharp
 // ❌ 异常路径下忘记归还
@@ -510,17 +505,19 @@ if (target == null)
     return;
 }
 
-// ✅ using 模式：自动归还
-using (bulletPool.Get(out Bullet b))
+// ✅ 异步生命周期对象在真正结束时从统一出口归还
+Bullet b = bulletPool.Get();
+if (target == null)
 {
-    if (target == null)
-    {
-        b.Explode();
-        return;                     // early return 也会自动 Release
-    }
-    b.Fire(target);
-}  // ← 出了 using 块，自动归还
+    b.Explode();
+    bulletPool.Release(b);
+    return;
+}
+
+b.Fire(target, onFinished: () => bulletPool.Release(b));
 ```
+
+`onFinished`、碰撞、取消和场景切换必须汇入同一个回收出口，防止漏还或重复归还。`using` 只适合不会逃出当前同步作用域的临时对象。
 
 ### 4. 容量设置不当
 
@@ -529,9 +526,9 @@ using (bulletPool.Get(out Bullet b))
 maxSize: 10;
 // 实际 15 颗子弹同时在场 → 多出的 5 颗被销毁而不是回收
 
-// maxSize 太大 → 内存占用过高
+// maxSize 太大 → 峰值过后可能长期保留过多空闲对象
 maxSize: 1000;
-// 实际只要 20 颗 → 顶峰时 1000 颗子弹预留在内存里
+// 设置 maxSize 本身不会预创建对象，但已经创建并归还的对象最多可保留 1000 个
 ```
 
 ---
@@ -550,12 +547,13 @@ maxSize: 1000;
 
 ## 核心技巧
 
-- 对象池 = 空间换时间 — 用预分配内存换取零 GC 运行时
+- 对象池 = 空间换时间 — 用常驻对象降低重复创建和回收压力
 - Unity 2021+ 优先用 `UnityEngine.Pool.ObjectPool<T>`，别重复造轮子
 - `actionOnGet` 激活，`actionOnRelease` 重置 — 这是池的"开关"
 - 开启 `collectionCheck: true` 开发防 Bug，发布后视情况关掉
-- 预加热在场景加载时做，战斗中零分配
-- 场景切换时 `Clear()`，避免池对象跨场景残留
+- `defaultCapacity` 不会预创建对象；预加热需要显式 `Get()` / `Release()`
+- `Clear()` 只清理池中的空闲对象，仍在使用的对象必须单独追踪和回收
+- 对象池只优化对象生命周期的一部分，协程、集合扩容和业务代码仍可能分配
 - 归还前完整重置状态 — 这是最容易出 BUG 的地方
 
 ---

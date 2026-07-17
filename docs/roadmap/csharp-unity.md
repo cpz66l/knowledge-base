@@ -26,22 +26,14 @@
 
 ### 阶段 2：Unity 核心能力
 
-路线入口：
+专题入口：[Unity](../unity/index.md)。该页面只展示已经形成内容的文章，未完成主题保留为计划清单。
 
-1. [核心运行与数据](../unity/core/index.md)
-2. [UI 与动画](../unity/presentation/index.md)
-3. [资源与工具](../unity/resources-tools/index.md)
-4. [工程与交付](../unity/engineering/index.md)
+当前已有内容：
 
-已有文章推荐顺序：
+1. [UGUI](../unity/ugui/index.md)
+2. [动画系统](../unity/animation/index.md)
 
-1. [生命周期](../unity/lifecycle.md)
-2. [ScriptableObject](../unity/scriptable-object.md)
-3. [Prefab 系统](../unity/prefab-system.md)
-4. [UGUI](../unity/ugui/index.md)
-5. [动画系统](../unity/animation/index.md)
-6. [资源管理](../unity/addressables.md)
-7. [Editor 工具开发](../unity/editor-tooling.md)
+计划主题：生命周期、ScriptableObject、Prefab、Addressables 和 Editor 工具。完成最小实验后再建立正式文章。
 
 最小产出：
 
@@ -57,8 +49,7 @@
 2. [C# 工程实践路线](../csharp/engineering/index.md)
 3. [GC 与内存管理](../csharp/gc-and-memory.md)
 4. [async/await 异步](../csharp/async-await.md)
-5. [Unity C# 最佳实践](../csharp/unity-csharp-practices.md)
-6. 测试、日志、异常处理、程序集与模块化：待学习后新增
+5. 测试、日志、异常处理、程序集与模块化：待学习后新增
 
 学习这些内容时，优先记录：
 

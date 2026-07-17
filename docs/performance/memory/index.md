@@ -9,7 +9,7 @@
 | 文章 | 内容 |
 |------|------|
 | [对象池](object-pool.md) | UnityEngine.Pool、GameObject 池化、预加热策略、实战练习 |
-| [内存管理与 GC 优化](memory-and-gc.md) | 🚧 堆栈分配、GC 触发时机、增量 GC、泄漏排查 |
+| [C# GC 与内存管理](../../csharp/gc-and-memory.md) | 托管分配、Unity GC、Profiler 验证与后续实验路线 |
 
 ---
 

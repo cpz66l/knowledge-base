@@ -1,6 +1,6 @@
 # C# 工程实践路线
 
-> 当前状态：项目驱动学习。此页只建立工程能力目录，不提前补写“最佳实践”结论。
+> 状态：项目驱动学习。此页只建立工程能力目录，不提前补写“最佳实践”结论。
 
 ## 学习顺序
 
@@ -13,9 +13,9 @@
 
 ## 已有入口
 
-- [Unity C# 工程实践](../unity-csharp-practices.md)
 - [C# 工程能力清单](../../checklists/csharp-engineering.md)
-- [Unity 工程与交付路线](../../unity/engineering/index.md)
+- [Unity 专题](../../unity/index.md)
+- [Unity 项目能力清单](../../checklists/unity-project.md)
 - [项目复盘模板](../../reviews/project-review-template.md)
 
 ## 最小产出

@@ -1,6 +1,6 @@
 # GC 与内存管理
 
-> 学习状态：待学习 / 待实践。此页目前只维护学习规划，不提前补写尚未验证的结论。
+> 状态：规划中。此页目前只维护学习规划，不提前补写尚未验证的结论。
 
 ---
 
@@ -28,7 +28,7 @@
 
 - [C# / Unity 主线](../roadmap/csharp-unity.md)
 - [性能优化](../performance/index.md)
-- [内存管理与 GC 优化](../performance/memory/memory-and-gc.md)
+- [性能优化中的内存管理](../performance/memory/index.md)
 - [C# 工程能力清单](../checklists/csharp-engineering.md)
 
 ## 当前记录

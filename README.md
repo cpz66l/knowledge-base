@@ -9,7 +9,8 @@
 
 | 模块 | 内容 |
 |------|------|
-| **C#** | 面向对象编程、LeetCode 算法（哈希 / 双指针 / 滑动窗口 / DP / 二叉树等 17 类）、GC 与内存管理、async/await、Unity C# 最佳实践 |
+| **C#** | 面向对象编程、GC 与内存管理、async/await、工程实践 |
+| **LeetCode** | C# / C++ 双语题解，按哈希、双指针、滑动窗口、DP、二叉树等题型整理 |
 | **C++** | C# 对照语法、对象模型、内存与 RAII、STL、Modern C++、模板、并发、CMake/调试、LeetCode |
 | **Unity** | 生命周期、ScriptableObject、Prefab、Addressables 资源管理、Editor 工具、UGUI、动画系统 |
 | **图形学** | 渲染管线、Shader 基础、光照与着色、PBR 理论、阴影技术 |

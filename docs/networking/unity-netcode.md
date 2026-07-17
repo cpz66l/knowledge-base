@@ -1,3 +1,3 @@
 # Unity Netcode for GameObject
 
-> 🚧 内容施工中，敬请期待。
+> 状态：规划中。完成最小联机实验后再加入正式导航。

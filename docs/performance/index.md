@@ -19,7 +19,7 @@
 
 游戏客户端开发中，性能优化是区分普通开发者和高级开发者的关键技能：
 
-- **60 FPS 是底线**：任何一帧超过 16.67ms 就会掉帧
+- **先确定目标帧率**：60 FPS 对应约 16.67ms 的单帧预算；30、90 或 120 FPS 的预算不同
 - **移动端资源有限**：相比 PC，手机 CPU/GPU/内存都受限
 - **包体大小影响下载转化率**：每次包体增大都会损失用户
 
@@ -43,15 +43,15 @@
 
 ---
 
-## 目录
+## 已有内容与计划主题
 
-| 文章 | 内容 |
-|------|------|
-| [Unity Profiler 深度使用](profiler-deep-dive.md) | Profiler 面板解读、Deep Profile、自定义 Profiler |
-| [内存管理](memory/index.md) | 对象池、堆分配分析、GC 抑制与调优 |
-| [渲染性能优化](rendering-performance.md) | Draw Call 合批、LOD、剔除、Shader 优化 |
-| [CPU 与代码优化](cpu-code-optimization.md) | Job System、Burst Compiler、热点定位与消除 |
-| [优化小 Tips](perf-tips.md) | 开发中的性能小知识合集：UI/GC/渲染/代码/物理分类清单 |
+| 状态 | 主题 | 内容 |
+|------|------|------|
+| 已有 | [内存管理](memory/index.md) | 对象池与托管分配入口 |
+| 已有 | [优化小 Tips](perf-tips.md) | UI、GC、渲染、代码和物理检查项 |
+| 计划 | Unity Profiler | Profiler 面板、采样和对照实验 |
+| 计划 | 渲染性能 | Draw Call、LOD、剔除和 Shader 成本 |
+| 计划 | CPU 与代码 | 热点定位、Job System 和 Burst |
 
 ---
 

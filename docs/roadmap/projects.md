@@ -47,7 +47,7 @@
 6. 哪些地方仍不理解
 7. 下一次会如何改进
 
-项目完成后使用[项目复盘模板](../reviews/project-review-template.md)，并把可展示内容整理到[作品集总览](../projects/demo-reel.md)。
+项目完成后使用[项目复盘模板](../reviews/project-review-template.md)，达到可展示标准后再从[项目实践](../projects/index.md)建立正式项目页。
 
 ---
 
