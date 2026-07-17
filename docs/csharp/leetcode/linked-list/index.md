@@ -12,6 +12,7 @@
 | [反转链表](reverse-linked-list.md) | Easy | 递归、迭代双指针 |
 | [回文链表](palindrome-linked-list.md) | Easy | 数组双指针、快慢指针+反转 |
 | [环形链表](linked-list-cycle.md) | Easy | 哈希表、快慢指针判环 |
+| [环形链表 II](linked-list-cycle-ii.md) | Medium | 哈希集合、Floyd 找入环点、C# / C++ 对照 |
 
 ---
 

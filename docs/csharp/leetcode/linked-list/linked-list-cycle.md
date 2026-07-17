@@ -188,4 +188,9 @@ public bool HasCycle(ListNode head)
 
 ---
 
+## 相关内容
+
+- 进阶：[环形链表 II（LC 142）](linked-list-cycle-ii.md)
+- 专题：[链表](index.md)
+
 > 📎 标签：`链表` `快慢指针` `哈希集合` `判环`
