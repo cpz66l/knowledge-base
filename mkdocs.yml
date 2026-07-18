@@ -47,6 +47,7 @@ not_in_nav: |
   csharp/leetcode/matrix/rotate-image.md
   csharp/leetcode/matrix/search-a-2d-matrix-ii.md
   csharp/leetcode/linked-list/intersection-of-two-linked-lists.md
+  csharp/leetcode/linked-list/merge-two-sorted-lists.md
   csharp/leetcode/linked-list/reverse-linked-list.md
   csharp/leetcode/linked-list/palindrome-linked-list.md
   csharp/leetcode/linked-list/linked-list-cycle.md
