@@ -18,16 +18,13 @@
 - [Unity 项目能力清单](../../checklists/unity-project.md)
 - [项目复盘模板](../../reviews/project-review-template.md)
 
+## 已有实践证据
+
+- [Backpack Survivor：伤害管线与危险区](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)：接口边界、事件发布、伤害数据包、Trigger 缓存和防御式处理。
+
 ## 最小产出
 
 - 一张模块依赖图
 - 一个可脱离场景测试的纯 C# 模块
 - 一次 Build 环境验证
 - 一份真实工程问题复盘
-
-## 当前记录
-
-- 对应项目：待填写
-- 当前工程问题：待填写
-- 已完成证据：待填写
-- 下一步：待填写

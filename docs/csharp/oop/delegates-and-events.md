@@ -357,6 +357,24 @@ public class AchievementSystem : MonoBehaviour
 }
 ```
 
+### 6. 项目案例：Health 发布受伤与死亡事件
+
+[Backpack Survivor 的伤害管线](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)中，`Health` 只维护生命值并发布状态变化：
+
+```csharp
+public event Action<DamageInfo> OnDamaged;
+public event Action OnDeath;
+
+OnDamaged?.Invoke(info);
+
+if (currentHp <= 0f)
+{
+    OnDeath?.Invoke();
+}
+```
+
+这让血条、受击表现、掉落和任务系统不必由 `Health` 直接持有引用。当前项目只验证了发布者一侧，真实订阅和 `+=` / `-=` 生命周期将在敌人系统接入后继续验证。
+
 ---
 
 ## 委托 vs 事件 vs 接口 vs UnityEvent

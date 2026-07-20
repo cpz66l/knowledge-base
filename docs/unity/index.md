@@ -21,6 +21,7 @@
 |---|---|---|
 | UI | [UGUI](ugui/index.md) | 可交互界面 Demo |
 | 动画 | [动画系统](animation/index.md) | 动画状态或表现流程 |
+| 战斗与物理 | [伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md) | Trigger、组件缓存和战斗契约实践 |
 
 ## 计划主题
 

@@ -16,7 +16,9 @@
 
 ## 当前记录
 
-目前还没有达到可展示标准的作品集页面。完成第一个可运行 Demo，并留下目标、技术选择和验证结果后再创建正式项目页。
+| 项目 | 当前阶段 | 已有记录 |
+|---|---|---|
+| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.1 战斗核心原型 | [伤害管线与危险区](backpack-survivor/damage-pipeline-and-hazard-zone.md) |
 
 ---
 

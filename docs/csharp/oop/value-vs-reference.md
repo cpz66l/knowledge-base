@@ -8,9 +8,9 @@
 
 | | 值类型 (Value Type) | 引用类型 (Reference Type) |
 |------|------|------|
-| **存在哪** | 栈 (stack) | 堆 (heap) |
+| **存储方式** | 数据通常内联存放在变量、字段或数组元素中；具体位置取决于上下文和运行时 | 变量保存对象引用，对象通常位于托管堆 |
 | **赋值时** | 复制整个数据 | 复制引用（指针） |
-| **传递时** | 传副本 | 传引用 |
+| **默认传参** | 传递值的副本 | 传递“引用值”的副本；仍然是按值传参 |
 | **常见类型** | `int`, `float`, `bool`, `struct`, `enum` | `class`, `string`, `array`, `delegate` |
 | **Unity 例子** | `Vector3`, `Quaternion`, `Color` | `GameObject`, `Transform`, `MonoBehaviour` |
 
@@ -37,12 +37,19 @@ transform.position = pos;   // 把整个 struct 赋值回去
 ## struct vs class 的选择
 
 ```csharp
-// struct —— 适合小而频繁使用的数据
-public struct DamageInfo
+// struct —— 适合以数据为主、具有值语义的数据包
+public readonly struct DamageInfo
 {
-    public float amount;
-    public DamageType type;
-    public Vector3 hitPoint;
+    public float Damage { get; }
+    public GameObject Attacker { get; }
+    public Vector3 HitPoint { get; }
+
+    public DamageInfo(float damage, GameObject attacker, Vector3 hitPoint)
+    {
+        Damage = damage;
+        Attacker = attacker;
+        HitPoint = hitPoint;
+    }
 }
 
 // class —— 适合有行为、需要继承的对象
@@ -53,11 +60,12 @@ public class Enemy
 }
 ```
 
-**Unity 中什么时候用 struct：**
+**Unity 中什么时候考虑 struct：**
 
-- 数据容器，大小 < 16 字节
+- 类型表达一个完整的数据值，而不是具有身份和共享生命周期的对象
+- 数据规模较小，复制成本可以接受；不存在适用于所有项目的固定 16 字节分界线
 - 不需要继承
-- 频繁创建和销毁（不会产生 GC 压力）
+- 希望数据直接存储在字段或数组中；仍需注意装箱、闭包和接口调用可能产生分配
 - 例子：`AttackData`、`MovementInput`、`FrameSnapshot`
 
 **什么时候用 class：**
@@ -65,6 +73,8 @@ public class Enemy
 - 需要继承 `MonoBehaviour` / `ScriptableObject`
 - 数据较大或需要引用语义
 - 例子：角色类、武器类、技能类
+
+项目应用：[Backpack Survivor 的 DamageInfo](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)使用 struct 传递伤害上下文。`readonly struct` 能阻止字段被重新赋值，但其中的 `GameObject` 仍然是指向可变对象的引用，因此不是深层不可变。
 
 ---
 
@@ -82,9 +92,11 @@ int hp2 = (int)obj;   // ❌ 拆箱：object → 值类型
 // ❌ string.Format 会导致装箱
 Debug.Log(string.Format("HP: {0}", currentHp));
 
-// ✅ 用字符串插值避免
+// 字符串插值通常更易读，但日志字符串仍可能产生分配
 Debug.Log($"HP: {currentHp}");
 ```
+
+不同 Unity / .NET 版本对插值字符串的实现不同，不应仅凭语法判断是否装箱或分配；热路径日志需要关闭、采样或用 Profiler 验证。
 
 ---
 

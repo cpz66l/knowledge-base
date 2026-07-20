@@ -46,6 +46,7 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：伤害管线与危险区](projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
 - [LC 142 环形链表 II：C# / C++ 对照](csharp/leetcode/linked-list/linked-list-cycle-ii.md)
 - [2026 年第 29 周学习复盘](reviews/2026/2026-W29.md)
 - [C++ 刷题语言笔记](cpp/leetcode/index.md)

@@ -30,7 +30,7 @@
 
 ## 实践证据
 
-> 项目链接：待填写
-> 架构图：待填写
-> 性能记录：待填写
-> 下一项改进：待填写
+- 项目：[Backpack Survivor](../projects/backpack-survivor/index.md)
+- 当前证据：[伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)，已记录接口、事件、Trigger 缓存和基础运行观察。
+- 尚缺证据：Profiler 数据、目标平台 Build、多 Collider、低帧率和销毁对象测试。
+- 下一项改进：敌人系统接入 `IDamageable`，首次验证 `OnDeath` 的订阅与取消订阅。
