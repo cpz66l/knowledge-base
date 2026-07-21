@@ -357,7 +357,7 @@ public class AchievementSystem : MonoBehaviour
 }
 ```
 
-### 6. 项目案例：Health 发布受伤与死亡事件
+### 6. 项目案例：Health 发布事件，EnemyAI 订阅死亡
 
 [Backpack Survivor 的伤害管线](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)中，`Health` 只维护生命值并发布状态变化：
 
@@ -373,7 +373,11 @@ if (currentHp <= 0f)
 }
 ```
 
-这让血条、受击表现、掉落和任务系统不必由 `Health` 直接持有引用。当前项目只验证了发布者一侧，真实订阅和 `+=` / `-=` 生命周期将在敌人系统接入后继续验证。
+这让血条、受击表现、掉落和任务系统不必由 `Health` 直接持有引用。
+
+[敌人追击、近战与死亡流程](../../projects/backpack-survivor/enemy-ai-and-melee.md)随后加入了实际订阅者：`EnemyAI` 订阅自身 `Health.OnDeath`，死亡时退订并销毁对象。对于“一次创建、死亡后销毁”的对象，这形成了最小闭环。
+
+第 3 课把死亡改成 `SetActive(false)` 后也验证了一个更重要的边界：如果只在 `Start` 订阅、在 `Die` 退订，那么对象再次启用时 `Start` 不会重跑，死亡处理不会恢复。对象池场景应让订阅生命周期与激活期匹配，例如在 `OnEnable` / `OnDisable` 中成对处理，或建立明确的一次性订阅与实例销毁协议；同时还要重置 `Health` 状态。详见[目标注册表、自动武器与投射物](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)和[Unity 生命周期](../../unity/lifecycle.md)。
 
 ---
 

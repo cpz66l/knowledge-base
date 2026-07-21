@@ -69,6 +69,8 @@
 |------|------|
 | 物理碰撞对过多 | Layer Collision Matrix 关闭不必要的碰撞对（如 UI 层 vs 玩家层）|
 | 大量 Rigidbody | 减少物理对象数量，能 `isKinematic` 就别动态 |
+| 高速投射物只检查离散位置，可能跨过薄 Collider | 检测旧位置到新位置的路径；项目案例见[自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md) |
+| 高频使用会返回新结果数组的物理查询 | 在 Profiler 证明分配是问题后，复用 NonAlloc 缓冲区；同时处理缓冲区满载、LayerMask 和 Trigger 规则 |
 | 频繁播放音效卡顿 | 音频剪辑勾选 `Preload Audio Data`，预加载 |
 
 ---

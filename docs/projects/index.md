@@ -18,7 +18,7 @@
 
 | 项目 | 当前阶段 | 已有记录 |
 |---|---|---|
-| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.1 战斗核心原型 | [伤害管线与危险区](backpack-survivor/damage-pipeline-and-hazard-zone.md) |
+| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.1 战斗核心原型 | [伤害管线](backpack-survivor/damage-pipeline-and-hazard-zone.md) · [敌人 AI](backpack-survivor/enemy-ai-and-melee.md) · [自动武器](backpack-survivor/target-registry-and-auto-weapon.md) |
 
 ---
 

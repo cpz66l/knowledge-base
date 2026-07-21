@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 为 Unity 项目安排一个可完成的最小工程任务，逐步把学习重点转回项目实践。
+- 继续推进 Backpack Survivor V0.1：接入主动武器，并修复敌人复用与自动索敌的生命周期边界。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,10 +46,10 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：目标注册表、自动武器与投射物](projects/backpack-survivor/target-registry-and-auto-weapon.md)
+- [Backpack Survivor：敌人追击、近战与死亡流程](projects/backpack-survivor/enemy-ai-and-melee.md)
+- [Unity 生命周期：初始化、启用与禁用](unity/lifecycle.md)
 - [Backpack Survivor：伤害管线与危险区](projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
-- [LC 142 环形链表 II：C# / C++ 对照](csharp/leetcode/linked-list/linked-list-cycle-ii.md)
-- [2026 年第 29 周学习复盘](reviews/2026/2026-W29.md)
-- [C++ 刷题语言笔记](cpp/leetcode/index.md)
 
 ---
 

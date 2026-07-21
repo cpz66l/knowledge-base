@@ -19,15 +19,17 @@
 
 | 专题 | 当前内容 | 学习出口 |
 |---|---|---|
+| 核心生命周期 | [初始化、启用与禁用](lifecycle.md) | 能说明一次性初始化与每次复用的区别 |
 | UI | [UGUI](ugui/index.md) | 可交互界面 Demo |
 | 动画 | [动画系统](animation/index.md) | 动画状态或表现流程 |
 | 战斗与物理 | [伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md) | Trigger、组件缓存和战斗契约实践 |
+| 战斗与物理 | [敌人 AI](../projects/backpack-survivor/enemy-ai-and-melee.md) · [自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md) | 状态分支、注册表、LateUpdate 与扫掠检测实践 |
 
 ## 计划主题
 
 以下内容仍处于规划阶段，完成最小实验后再建立正式文章：
 
-- 生命周期、初始化与销毁顺序
+- 生命周期完整调用顺序矩阵与对象池回归实验
 - ScriptableObject、Prefab 与数据关系
 - Addressables 加载、释放和资源所有权
 - Editor 工具、测试、程序集与 Build 验证

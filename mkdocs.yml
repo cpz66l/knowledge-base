@@ -6,7 +6,6 @@ site_author: CPZ66L
 # 完成最小学习记录后，从此列表移除并加入导航。
 draft_docs: |
   unity/addressables.md
-  unity/lifecycle.md
   unity/scriptable-object.md
   unity/prefab-system.md
   unity/editor-tooling.md
@@ -159,6 +158,7 @@ nav:
       - 综合技巧: csharp/leetcode/techniques.md
   - Unity:
       - unity/index.md
+      - 生命周期: unity/lifecycle.md
       - UGUI:
           - unity/ugui/index.md
           - Canvas: unity/ugui/canvas.md
@@ -190,6 +190,8 @@ nav:
       - Backpack Survivor:
           - 项目总览: projects/backpack-survivor/index.md
           - 第 1 课：伤害管线与危险区: projects/backpack-survivor/damage-pipeline-and-hazard-zone.md
+          - 第 2 课：敌人追击、近战与死亡: projects/backpack-survivor/enemy-ai-and-melee.md
+          - 第 3 课：目标注册表与自动武器: projects/backpack-survivor/target-registry-and-auto-weapon.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

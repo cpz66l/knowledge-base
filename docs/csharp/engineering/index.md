@@ -21,6 +21,8 @@
 ## 已有实践证据
 
 - [Backpack Survivor：伤害管线与危险区](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)：接口边界、事件发布、伤害数据包、Trigger 缓存和防御式处理。
+- [Backpack Survivor：敌人追击、近战与死亡流程](../../projects/backpack-survivor/enemy-ai-and-melee.md)：组件依赖、条件状态分支、跨对象查找缓存和一次性死亡事件闭环。
+- [Backpack Survivor：目标注册表、自动武器与投射物](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)：静态注册表、生命周期对称、热路径缓冲区和灰盒实现的演进边界。
 
 ## 最小产出
 
