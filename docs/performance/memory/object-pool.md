@@ -535,7 +535,7 @@ maxSize: 1000;
 
 把死亡流程从 `Destroy(gameObject)` 改成 `SetActive(false)` 只是让对象进入休眠，并不等于已经完成对象池。再次取出前还必须恢复运行时状态和外部关系。
 
-[Backpack Survivor 的敌人](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)暴露了一个典型问题：敌人在 `Start` 中订阅死亡事件，在 `Die` 中退订并停用；但 `Start` 每个实例只执行一次，重新启用后不会再次订阅。与此同时，生命值、死亡标记、攻击计时和目标引用也不会自动重置。
+[Backpack Survivor 第 3 课](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)暴露了一个典型问题：敌人在 `Start` 中订阅死亡事件，在 `Die` 中退订并停用；但 `Start` 每个实例只执行一次，重新启用后不会再次订阅。第 5 课已经在[刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)中把订阅迁移到 `OnEnable` / `OnDisable`，并使用池化钩子重置生命值与攻击计时。
 
 ```text
 归还时

@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 继续推进 Backpack Survivor V0.1：接入主动武器，并修复敌人复用与自动索敌的生命周期边界。
+- 完成 Backpack Survivor V0.2 前置整理，然后推进掉落、拾取与背包纯数据网格。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,10 +46,10 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor V0.1 阶段复盘](reviews/2026/backpack-survivor-v0.1-review.md)
+- [Backpack Survivor：刷怪器与对象池](projects/backpack-survivor/spawner-and-object-pooling.md)
+- [Backpack Survivor：主动武器与 WeaponBase 提炼](projects/backpack-survivor/active-weapons-and-weapon-base.md)
 - [Backpack Survivor：目标注册表、自动武器与投射物](projects/backpack-survivor/target-registry-and-auto-weapon.md)
-- [Backpack Survivor：敌人追击、近战与死亡流程](projects/backpack-survivor/enemy-ai-and-melee.md)
-- [Unity 生命周期：初始化、启用与禁用](unity/lifecycle.md)
-- [Backpack Survivor：伤害管线与危险区](projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
 
 ---
 

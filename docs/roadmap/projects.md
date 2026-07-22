@@ -54,11 +54,15 @@
 ## 当前项目
 
 - [Backpack Survivor（背包幸存者）](../projects/backpack-survivor/index.md)
-- 当前阶段：V0.1 战斗核心原型
+- 已完成阶段：V0.1 战斗核心原型
 - 已记录：[第 1 课：伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
 - 已记录：[第 2 课：敌人追击、近战与死亡流程](../projects/backpack-survivor/enemy-ai-and-melee.md)
 - 已记录：[第 3 课：目标注册表、自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md)
-- 下一步：主动武器接入；随后修复对象复用、静态注册表与物理查询边界
+- 已记录：[第 4 课：主动武器与 WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)
+- 已记录：[第 5 课：刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)
+- 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
+- 当前阶段：V0.2 前置工程整理
+- 下一步：工程 hygiene 与 asmdef 评估，然后进入掉落、拾取和背包数据系统
 
 ---
 

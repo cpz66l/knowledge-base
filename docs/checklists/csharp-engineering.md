@@ -10,7 +10,7 @@
 - [ ] 能根据需求选择 class、struct、interface 和组合
 - [ ] 能使用泛型减少重复代码，同时避免过度抽象
 - [ ] 能说明委托、事件、接口和直接调用的取舍
-- [ ] 能识别静态全局状态带来的生命周期和测试问题
+- [x] 能识别静态全局状态带来的生命周期和测试问题
 
 对应入口：[C# 面向对象](../csharp/oop/index.md)。
 
@@ -18,7 +18,7 @@
 
 - [ ] 能通过 Profiler 找到一处托管分配
 - [ ] 能识别装箱、闭包、字符串和集合扩容产生的成本
-- [ ] 能说明对象池的适用范围和容量策略
+- [x] 能说明对象池的适用范围和容量策略
 - [ ] 能定位静态引用或事件订阅造成的对象残留
 - [ ] 能记录一次优化前后的数据，而不只凭感觉判断
 
@@ -44,6 +44,10 @@
 
 ## 实践证据
 
-> 项目或 Demo：待填写
-> 验证方式：待填写
-> 仍未理解的问题：待填写
+> 项目或 Demo：[Backpack Survivor V0.1](../projects/backpack-survivor/index.md)
+>
+> 验证方式：课程运行记录；用户转述 Kimi 已检查代码与 Unity 场景；知识库完成静态复核和站点构建。
+>
+> 已有证据：[WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
+>
+> 仍未理解或缺少证据：Profiler 前后数据、asmdef、静态注册表跨场景清理、池所有权和目标平台 Build。

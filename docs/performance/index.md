@@ -49,6 +49,7 @@
 |------|------|------|
 | 已有 | [内存管理](memory/index.md) | 对象池与托管分配入口 |
 | 已有 | [优化小 Tips](perf-tips.md) | UI、GC、渲染、代码和物理检查项 |
+| 项目实践 | [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md) | 预热、弹性扩容和池化生命周期；Profiler 数据仍待补充 |
 | 计划 | Unity Profiler | Profiler 面板、采样和对照实验 |
 | 计划 | 渲染性能 | Draw Call、LOD、剔除和 Shader 成本 |
 | 计划 | CPU 与代码 | 热点定位、Job System 和 Burst |

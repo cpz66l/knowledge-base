@@ -192,6 +192,8 @@ nav:
           - 第 1 课：伤害管线与危险区: projects/backpack-survivor/damage-pipeline-and-hazard-zone.md
           - 第 2 课：敌人追击、近战与死亡: projects/backpack-survivor/enemy-ai-and-melee.md
           - 第 3 课：目标注册表与自动武器: projects/backpack-survivor/target-registry-and-auto-weapon.md
+          - 第 4 课：主动武器与 WeaponBase: projects/backpack-survivor/active-weapons-and-weapon-base.md
+          - 第 5 课：刷怪器与对象池: projects/backpack-survivor/spawner-and-object-pooling.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

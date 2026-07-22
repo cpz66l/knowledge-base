@@ -14,6 +14,11 @@
 | [泛型](generics.md) | 泛型类/方法、where 约束、协变逆变、Unity 对象池/单例 |
 | [委托与事件](delegates-and-events.md) | delegate/Action/Func、event 关键字、UnityEvent、事件总线、解耦模式 |
 
+## 项目应用
+
+- [主动武器与 WeaponBase 提炼](../../projects/backpack-survivor/active-weapons-and-weapon-base.md)：第二个真实武器出现后，用抽象基类承载共同发射逻辑。
+- [刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)：用 `IPoolable` 接口隔离对象池与敌人、投射物的具体复位逻辑。
+
 ---
 
 > 💡 这一节聚焦 C# 的类型系统和面向对象设计，与 Unity 引擎层面的使用区分开。

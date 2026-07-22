@@ -377,7 +377,7 @@ if (currentHp <= 0f)
 
 [敌人追击、近战与死亡流程](../../projects/backpack-survivor/enemy-ai-and-melee.md)随后加入了实际订阅者：`EnemyAI` 订阅自身 `Health.OnDeath`，死亡时退订并销毁对象。对于“一次创建、死亡后销毁”的对象，这形成了最小闭环。
 
-第 3 课把死亡改成 `SetActive(false)` 后也验证了一个更重要的边界：如果只在 `Start` 订阅、在 `Die` 退订，那么对象再次启用时 `Start` 不会重跑，死亡处理不会恢复。对象池场景应让订阅生命周期与激活期匹配，例如在 `OnEnable` / `OnDisable` 中成对处理，或建立明确的一次性订阅与实例销毁协议；同时还要重置 `Health` 状态。详见[目标注册表、自动武器与投射物](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)和[Unity 生命周期](../../unity/lifecycle.md)。
+第 3 课把死亡改成 `SetActive(false)` 后验证了一个更重要的边界：如果只在 `Start` 订阅、在 `Die` 退订，那么对象再次启用时 `Start` 不会重跑，死亡处理不会恢复。第 5 课已将死亡订阅迁移到 `OnEnable` / `OnDisable`，并在池化取出时重置 `Health`，让订阅生命周期与激活期匹配。详见[目标注册表、自动武器与投射物](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)、[刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)和[Unity 生命周期](../../unity/lifecycle.md)。
 
 ---
 

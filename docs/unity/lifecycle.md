@@ -106,7 +106,7 @@ private void LateUpdate()
   └─ 清理协程、特效与外部引用
 ```
 
-项目当前暴露了一个典型边界：敌人在 `Start` 中订阅死亡事件，在死亡时退订并 `SetActive(false)`。再次启用时 `Start` 不会重跑，死亡处理不会自动恢复；生命值的死亡状态也仍需重置。只把 `Destroy` 改成 `SetActive(false)` 还不等于完成对象池。
+项目第 3 课暴露过一个典型边界：敌人在 `Start` 中订阅死亡事件，在死亡时退订并 `SetActive(false)`。再次启用时 `Start` 不会重跑，死亡处理不会自动恢复；生命值的死亡状态也仍需重置。第 5 课已把订阅/退订迁移到 `OnEnable` / `OnDisable`，并在对象取出时调用 `ResetToFull()`、清零计时器。这个演进记录在[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)中。
 
 ## 常见错误
 
@@ -150,12 +150,13 @@ private void OnDisable()
 - 切场景、退出 Play Mode，并分别测试开启和关闭 Domain Reload。
 - 两个脚本同时修改同一 Transform 时的 `Update` / `LateUpdate` 顺序。
 
-目前 Backpack Survivor 已提供 `Awake` 缓存、`OnEnable` / `OnDisable` 注册和 `LateUpdate` 瞄准的实践记录，但尚未完成上述独立调用顺序矩阵，因此边界仍标记为待验证。
+目前 Backpack Survivor 已提供 `Awake` 缓存、`OnEnable` / `OnDisable` 注册与事件订阅、`LateUpdate` 瞄准和对象复用的实践记录；用户转述 Kimi 已检查代码与 Unity 场景，但尚未提供上述独立调用顺序矩阵，因此更广泛的边界仍标记为待验证。
 
 ## 相关内容
 
 - [敌人追击、近战与死亡流程](../projects/backpack-survivor/enemy-ai-and-melee.md)
 - [目标注册表、自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md)
+- [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)
 - [委托与事件](../csharp/oop/delegates-and-events.md)
 - [对象池](../performance/memory/object-pool.md)
 

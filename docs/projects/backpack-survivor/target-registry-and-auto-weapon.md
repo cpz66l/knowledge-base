@@ -2,7 +2,7 @@
 
 > 项目：[Backpack Survivor](index.md)
 >
-> 状态：原始课程记录称已在 Unity 场景运行；本次仅完成笔记与代码片段的静态复核
+> 状态：用户转述 Kimi 已检查代码与 Unity 场景；本环境未重新运行 Unity
 >
 > 日期：2026-07-21
 >
@@ -25,12 +25,12 @@
 | `TargetRegistry` | 保存已登记的 `IDamageable`，按阵营、射程和距离查询最近目标 |
 | `AutoWeapon` | 每帧索敌，在 `LateUpdate` 中转动枪口，满足冷却与角度条件后开火 |
 | `Projectile` | 沿本帧位移做 `SphereCastNonAlloc`，过滤发射者与 Trigger，再把命中交给伤害管线 |
-| `EnemyAI` | 启用时登记、禁用时注销，死亡时暂时改为 `SetActive(false)` |
+| `EnemyAI` | 启用时登记/订阅、禁用时注销/退订，死亡后由第 5 课对象池回收 |
 | `PlayerController` | 只旋转身体表现节点，让身体与枪械可以分别控制朝向 |
 
 原始记录描述的运行结果是：玩家静止时武器会瞄准最近敌人并自动开火，子弹命中后扣血，敌人死亡后武器切换到下一个目标；同时修复了 Trigger 挡子弹、枪口尚未对准就发射和敌人阵营漏配等问题。
 
-此次 Inbox 没有包含上述完整脚本、Prefab、场景或 Profiler 记录，因此这些属于用户的项目实践证据。本次可以复核设计与代码片段，但不能重新证明 Unity 物理行为或“零分配”。
+用户补充说明 Kimi 已检查代码与 Unity 场景，因此本页把运行结果记录为外部检查证据。当前知识库没有完整工程与 Profiler 记录，可以复核设计和代码片段，但不能自行证明 Unity 物理行为或“零分配”。
 
 ## 系统流程
 
@@ -46,9 +46,9 @@ Projectile
 IDamageable.TakeDamage
   ↓
 Health.OnDeath
-  ↓ SetActive(false)
+  ↓ ObjectPool.Return
 Enemy OnDisable
-  ↓ Unregister(Health)
+  ↓ Unregister(Health) + 取消死亡订阅
 ```
 
 ## 关键设计理解
@@ -132,11 +132,11 @@ projectile.Initialize(...);
 
 这条路线不依赖 Prefab，适合快速验证弹道。需要注意：`AddComponent<Projectile>()` 会先触发该组件的 `Awake`，之后才执行 `Initialize`，因此 `Awake` 不能依赖初始化参数已经就绪。
 
-它仍然是每发创建新对象，不是对象池方案。进入频繁射击和性能验证阶段后，应与 Prefab、对象池、视觉资源和复位协议一起重新设计。
+这是第 3 课的灰盒路径，当时仍然每发创建新对象。第 5 课已经把投射物改成 Prefab + 对象池；自动武器和第 4 课主动武器都应通过同一发射入口取得池化投射物，详见[主动武器与 WeaponBase 提炼](active-weapons-and-weapon-base.md)和[刷怪器与对象池](spawner-and-object-pooling.md)。
 
-## 静态检查发现的边界
+## 后续演进与仍需验证的边界
 
-### 1. 当前敌人还不能安全复用
+### 1. 第 5 课已补齐敌人复用闭环
 
 第 2 课在 `Start` 中订阅死亡事件，并在 `Die` 中取消订阅；第 3 课把死亡改成 `SetActive(false)`：
 
@@ -148,12 +148,14 @@ private void Die()
 }
 ```
 
-再次激活时 `Start` 不会重跑，因此 `Die` 不会重新订阅。与此同时，`Health` 的当前生命值和死亡标记也需要重置。真正进入敌人对象池前，至少要建立以下协议：
+这段第 3 课代码会在再次激活时丢失死亡订阅。第 5 课已经完成以下修复：
 
-- 每次取出时重置生命值、死亡状态、攻击计时与目标引用；
-- 在匹配的生命周期中恢复事件订阅；
-- 死亡后由池的拥有者回收，而不是只停用对象；
-- 防止重复回收和外部继续持有已归还对象。
+- 在 `OnEnable` / `OnDisable` 中成对订阅和退订；
+- 通过 `IPoolable.OnGetFromPool` 重置生命值和攻击计时；
+- 死亡后调用池的 `Return`；
+- 使用空闲集合防止重复归还。
+
+项目仍需验证目标引用、协程、动画、特效、跨池归还和场景清理是否全部复位。
 
 ### 2. 接口引用与静态列表可能残留失效目标
 
@@ -218,12 +220,14 @@ if (currentTarget == null)
 - 使用 Profiler 的 GC Alloc 列确认查询热路径是否真的没有每帧分配。
 - 对比逐帧索敌、5–10 Hz 降频索敌与锁定当前目标的成本和手感。
 
-本次只完成文档构建与静态复核，未获得完整源码、Unity 场景或 Profiler 数据，以上测试仍待项目中执行。
+用户转述 Kimi 已检查代码与 Unity 场景；本知识库没有在当前环境重复运行，也没有 Profiler 数据，因此性能和极端边界测试仍待保留证据。
 
 ## 相关内容
 
 - [敌人追击、近战与死亡流程](enemy-ai-and-melee.md)
 - [伤害管线与危险区](damage-pipeline-and-hazard-zone.md)
+- [主动武器与 WeaponBase 提炼](active-weapons-and-weapon-base.md)
+- [刷怪器与对象池](spawner-and-object-pooling.md)
 - [Unity 生命周期](../../unity/lifecycle.md)
 - [对象池](../../performance/memory/object-pool.md)
 - [优化小 Tips](../../performance/perf-tips.md)

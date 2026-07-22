@@ -24,6 +24,8 @@
 | 动画 | [动画系统](animation/index.md) | 动画状态或表现流程 |
 | 战斗与物理 | [伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md) | Trigger、组件缓存和战斗契约实践 |
 | 战斗与物理 | [敌人 AI](../projects/backpack-survivor/enemy-ai-and-melee.md) · [自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md) | 状态分支、注册表、LateUpdate 与扫掠检测实践 |
+| 输入与武器 | [主动武器与 WeaponBase](../projects/backpack-survivor/active-weapons-and-weapon-base.md) | Input System 状态位、瞄准与重复后抽象 |
+| 生成与复用 | [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md) | Prefab、OnEnable/OnDisable、预热和池化复位 |
 
 ## 计划主题
 
