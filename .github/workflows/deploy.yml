@@ -21,10 +21,13 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install mkdocs-material
+        run: pip install -r requirements.txt
+
+      - name: Check LeetCode stats
+        run: python scripts/check_leetcode_stats.py
 
       - name: Build site
-        run: mkdocs build
+        run: mkdocs build --strict
 
       - uses: actions/upload-pages-artifact@v4
         with:

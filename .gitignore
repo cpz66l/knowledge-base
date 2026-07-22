@@ -6,6 +6,10 @@ __pycache__/
 # MkDocs
 site/
 
+# Local scratch files and generated previews
+/tmp/
+/.tmp*/
+
 # 本地知识收件箱与原始资料归档
 /inbox/*
 !/inbox/.gitkeep
