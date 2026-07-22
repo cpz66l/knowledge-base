@@ -51,6 +51,7 @@ not_in_nav: |
   csharp/leetcode/linked-list/palindrome-linked-list.md
   csharp/leetcode/linked-list/linked-list-cycle.md
   csharp/leetcode/linked-list/linked-list-cycle-ii.md
+  csharp/leetcode/linked-list/add-two-numbers.md
 
 theme:
   name: material

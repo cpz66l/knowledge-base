@@ -16,6 +16,25 @@ tail = tail->next;   // 只移动局部指针变量
 - 给 `tail` 重新赋值只改变局部变量指向，不会撤销已经建立的连接。
 - 临时哨兵优先写成 `ListNode dummy(-1)`；如果使用 `new`，必须明确释放责任。
 
+## 构造新链表：哨兵与尾指针
+
+在 [LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)中已经使用：
+
+```cpp
+ListNode dummy(0);
+ListNode* tail = &dummy;
+
+tail->next = new ListNode(value);
+tail = tail->next;
+
+return dummy.next;
+```
+
+- `dummy` 只是临时入口，放在栈上，不属于返回链表。
+- `tail->next` 创建并连接真正的结果节点，`tail = tail->next` 再移动尾指针。
+- 返回 `dummy.next` 后，结果节点仍在堆上；普通 C++ 工程中应由调用方或拥有者负责释放整条结果链表。
+- C# 中同样使用 `new ListNode(value)`，但节点由 GC 管理；算法一致，所有权模型不同。
+
 ## 计划整理内容
 
 - 常用头文件和命名空间
@@ -35,6 +54,6 @@ tail = tail->next;   // 只移动局部指针变量
 
 ## 当前状态
 
-- 已使用模板：链表哨兵节点与尾指针拼接
-- 已验证题目：[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)
+- 已使用模板：链表哨兵节点、尾指针拼接与新结果链表构造
+- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)
 - 待整理问题：其他容器和算法模板等待实际练习后补充

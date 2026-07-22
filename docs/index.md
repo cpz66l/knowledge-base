@@ -46,10 +46,10 @@
 
 ## 最近沉淀
 
+- [LC 2 两数相加：C# / C++ 对照](csharp/leetcode/linked-list/add-two-numbers.md)
 - [Backpack Survivor V0.1 阶段复盘](reviews/2026/backpack-survivor-v0.1-review.md)
 - [Backpack Survivor：刷怪器与对象池](projects/backpack-survivor/spawner-and-object-pooling.md)
 - [Backpack Survivor：主动武器与 WeaponBase 提炼](projects/backpack-survivor/active-weapons-and-weapon-base.md)
-- [Backpack Survivor：目标注册表、自动武器与投射物](projects/backpack-survivor/target-registry-and-auto-weapon.md)
 
 ---
 
