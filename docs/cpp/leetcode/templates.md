@@ -35,6 +35,54 @@ return dummy.next;
 - 返回 `dummy.next` 后，结果节点仍在堆上；普通 C++ 工程中应由调用方或拥有者负责释放整条结果链表。
 - C# 中同样使用 `new ListNode(value)`，但节点由 GC 管理；算法一致，所有权模型不同。
 
+## 删除链表节点：先找前驱
+
+在 [LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)中已经使用：
+
+```cpp
+ListNode dummy(0, head);
+ListNode* fast = head;
+ListNode* slow = &dummy;
+
+for (int i = 0; i < n; i++)
+{
+    fast = fast->next;
+}
+
+while (fast != nullptr)
+{
+    fast = fast->next;
+    slow = slow->next;
+}
+
+slow->next = slow->next->next;
+return dummy.next;
+```
+
+- 删除节点时真正需要修改的是前驱节点的 `next`。
+- 哨兵节点让删除头节点和删除中间节点使用同一段逻辑。
+- 临时哨兵用栈对象即可；如果写成 `new ListNode(0, head)`，必须手动 `delete`。
+
+## std::stack 最小用法
+
+在 [LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)中已经对照：
+
+```cpp
+#include <stack>
+
+std::stack<ListNode*> stack;
+stack.push(node);      // 入栈
+stack.pop();           // 出栈，无返回值
+ListNode* top = stack.top();
+
+bool isEmpty = stack.empty();
+size_t count = stack.size();
+```
+
+- C++ 查看栈顶是 `top()`；C# 是 `Peek()`。
+- C++ 判空优先用 `empty()`；C# 常写 `stack.Count == 0`。
+- C++ `pop()` 不返回元素，需要先 `top()` 再 `pop()`。
+
 ## 计划整理内容
 
 - 常用头文件和命名空间
@@ -54,6 +102,6 @@ return dummy.next;
 
 ## 当前状态
 
-- 已使用模板：链表哨兵节点、尾指针拼接与新结果链表构造
-- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)
+- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、`std::stack`
+- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)
 - 待整理问题：其他容器和算法模板等待实际练习后补充

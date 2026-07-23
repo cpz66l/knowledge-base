@@ -46,10 +46,10 @@
 
 ## 最近沉淀
 
+- [LC 19 删除链表的倒数第 N 个结点：C# / C++ 对照](csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)
 - [Backpack Survivor：掉落系统与保底机制](projects/backpack-survivor/loot-drop-and-pity.md)
 - [LC 2 两数相加：C# / C++ 对照](csharp/leetcode/linked-list/add-two-numbers.md)
 - [Backpack Survivor V0.1 阶段复盘](reviews/2026/backpack-survivor-v0.1-review.md)
-- [Backpack Survivor：刷怪器与对象池](projects/backpack-survivor/spawner-and-object-pooling.md)
 
 ---
 

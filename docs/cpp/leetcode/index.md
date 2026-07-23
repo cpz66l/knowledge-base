@@ -13,7 +13,7 @@
 | 顺序 | 分类 | 状态 |
 |---|---|---|
 | 1 | 数组、哈希、双指针、滑动窗口 | 部分练习 |
-| 2 | 链表、栈、队列、二叉树 | 已开始：LC 2、LC 21、LC 142 |
+| 2 | 链表、栈、队列、二叉树 | 已开始：LC 2、LC 19、LC 21、LC 142 |
 | 3 | 二分、堆、贪心、回溯 | 待学习 |
 | 4 | 图论、动态规划、多维动态规划 | 待学习 |
 | 5 | 综合技巧与错题复盘 | 持续进行 |
@@ -22,10 +22,10 @@
 
 ## 当前记录
 
-- 已形成双语对照：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 142 环形链表 II](../../csharp/leetcode/linked-list/linked-list-cycle-ii.md)
-- 当前双语对照数量：3
-- 已练习题型：链表、哨兵节点、逐位加法与进位、递归、哈希集合、快慢指针
-- 本次语言复盘：两种语言可以复用同一进位算法；C++ 临时哨兵优先放在栈上，结果节点的所有权随返回链表交给调用方
+- 已形成双语对照：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 142 环形链表 II](../../csharp/leetcode/linked-list/linked-list-cycle-ii.md)
+- 当前双语对照数量：4
+- 已练习题型：链表、哨兵节点、逐位加法与进位、递归、哈希集合、快慢指针、栈
+- 本次语言复盘：C++ 的 `std::stack` 使用 `push` / `pop` / `top`，C# 的 `Stack<T>` 使用 `Push` / `Pop` / `Peek`；临时哨兵节点优先放在栈上，避免手动管理堆上哨兵生命周期
 - 下一道题：待填写
 
 持续沉淀入口：[C++ 刷题模板与易错点](templates.md)。

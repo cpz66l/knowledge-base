@@ -52,6 +52,7 @@ not_in_nav: |
   csharp/leetcode/linked-list/linked-list-cycle.md
   csharp/leetcode/linked-list/linked-list-cycle-ii.md
   csharp/leetcode/linked-list/add-two-numbers.md
+  csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md
 
 theme:
   name: material
