@@ -60,9 +60,10 @@
 - 已记录：[第 3 课：目标注册表、自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md)
 - 已记录：[第 4 课：主动武器与 WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)
 - 已记录：[第 5 课：刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)
+- 已记录：[第 7 课：掉落系统与保底机制](../projects/backpack-survivor/loot-drop-and-pity.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 前置工程整理
-- 下一步：工程 hygiene 与 asmdef 评估，然后进入掉落、拾取和背包数据系统
+- 当前阶段：V0.2 掉落系统已记录
+- 下一步：拾取与磁吸；第 6 课工程 hygiene 与 asmdef 资料收到后再补入库
 
 ---
 

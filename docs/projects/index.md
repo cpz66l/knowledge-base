@@ -18,7 +18,7 @@
 
 | 项目 | 当前阶段 | 已有记录 |
 |---|---|---|
-| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.1 已完成，准备 V0.2 | [伤害管线](backpack-survivor/damage-pipeline-and-hazard-zone.md) · [敌人 AI](backpack-survivor/enemy-ai-and-melee.md) · [自动武器](backpack-survivor/target-registry-and-auto-weapon.md) · [主动武器](backpack-survivor/active-weapons-and-weapon-base.md) · [刷怪与对象池](backpack-survivor/spawner-and-object-pooling.md) |
+| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.2 掉落系统已记录 | [伤害管线](backpack-survivor/damage-pipeline-and-hazard-zone.md) · [敌人 AI](backpack-survivor/enemy-ai-and-melee.md) · [自动武器](backpack-survivor/target-registry-and-auto-weapon.md) · [主动武器](backpack-survivor/active-weapons-and-weapon-base.md) · [刷怪与对象池](backpack-survivor/spawner-and-object-pooling.md) · [掉落系统](backpack-survivor/loot-drop-and-pity.md) |
 
 ---
 

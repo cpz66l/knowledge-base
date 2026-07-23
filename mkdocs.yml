@@ -195,6 +195,7 @@ nav:
           - 第 3 课：目标注册表与自动武器: projects/backpack-survivor/target-registry-and-auto-weapon.md
           - 第 4 课：主动武器与 WeaponBase: projects/backpack-survivor/active-weapons-and-weapon-base.md
           - 第 5 课：刷怪器与对象池: projects/backpack-survivor/spawner-and-object-pooling.md
+          - 第 7 课：掉落系统与保底机制: projects/backpack-survivor/loot-drop-and-pity.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:
