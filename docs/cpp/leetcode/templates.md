@@ -63,6 +63,33 @@ return dummy.next;
 - 哨兵节点让删除头节点和删除中间节点使用同一段逻辑。
 - 临时哨兵用栈对象即可；如果写成 `new ListNode(0, head)`，必须手动 `delete`。
 
+## 成对交换链表节点：先保存再重连
+
+在 [LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)中已经使用：
+
+```cpp
+ListNode dummy(0, head);
+ListNode* prev = &dummy;
+
+while (prev->next != nullptr && prev->next->next != nullptr)
+{
+    ListNode* first = prev->next;
+    ListNode* second = prev->next->next;
+
+    first->next = second->next;
+    second->next = first;
+    prev->next = second;
+    prev = first;
+}
+
+return dummy.next;
+```
+
+- 交换节点不能只改 `val`，需要修改节点之间的 `next` 连接。
+- 先保存 `first` 和 `second`，再改 `first->next`，否则容易丢失当前组第二个节点。
+- 交换后 `first` 变成当前组尾节点，下一轮的前驱应移动到 `first`。
+- 临时哨兵放在栈上即可；如果用 `new` 创建哨兵，空链表提前返回时也要避免泄漏。
+
 ## std::stack 最小用法
 
 在 [LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)中已经对照：
@@ -102,6 +129,6 @@ size_t count = stack.size();
 
 ## 当前状态
 
-- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、`std::stack`
-- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)
+- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、`std::stack`
+- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)
 - 待整理问题：其他容器和算法模板等待实际练习后补充
