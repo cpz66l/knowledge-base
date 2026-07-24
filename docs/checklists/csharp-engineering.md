@@ -36,18 +36,18 @@
 
 ## 工程质量
 
-- [ ] 代码按职责拆分，不把所有逻辑放进 MonoBehaviour
-- [ ] 使用命名空间和程序集边界控制依赖
-- [ ] 核心逻辑能够脱离场景进行测试
+- [x] 代码按职责拆分，不把所有逻辑放进 MonoBehaviour
+- [x] 使用命名空间和程序集边界控制依赖
+- [x] 核心逻辑能够脱离场景进行测试
 - [ ] 日志包含足够上下文，并区分普通信息和错误
 - [ ] 对异常、空引用和失败流程有明确策略
 
 ## 实践证据
 
-> 项目或 Demo：[Backpack Survivor V0.1](../projects/backpack-survivor/index.md)
+> 项目或 Demo：[Backpack Survivor](../projects/backpack-survivor/index.md)
 >
-> 验证方式：课程运行记录；用户转述 Kimi 已检查代码与 Unity 场景；知识库完成静态复核和站点构建。
+> 验证方式：课程运行记录；用户转述 Kimi 已检查代码与 Unity 场景；知识库完成静态复核、纯 C# 数据层最小运行测试和站点构建。
 >
-> 已有证据：[WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
+> 已有证据：[WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[背包纯数据网格](../projects/backpack-survivor/inventory-data-grid.md)、[V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
 >
-> 仍未理解或缺少证据：Profiler 前后数据、asmdef、静态注册表跨场景清理、池所有权和目标平台 Build。
+> 仍未理解或缺少证据：Profiler 前后数据、实际 `.asmdef` / `.meta` 资产复核、静态注册表跨场景清理、池所有权和目标平台 Build。

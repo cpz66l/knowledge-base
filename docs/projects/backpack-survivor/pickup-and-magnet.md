@@ -212,6 +212,7 @@ public void StateReset()
 ## 相关内容
 
 - [掉落系统与保底机制](loot-drop-and-pity.md)
+- [背包纯数据网格](inventory-data-grid.md)
 - [刷怪器与对象池](spawner-and-object-pooling.md)
 - [Unity 生命周期](../../unity/lifecycle.md)
 - [委托与事件](../../csharp/oop/delegates-and-events.md)

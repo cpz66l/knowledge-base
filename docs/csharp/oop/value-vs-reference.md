@@ -76,6 +76,8 @@ public class Enemy
 
 项目应用：[Backpack Survivor 的 DamageInfo](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)使用 struct 传递伤害上下文。`readonly struct` 能阻止字段被重新赋值，但其中的 `GameObject` 仍然是指向可变对象的引用，因此不是深层不可变。
 
+[Backpack Survivor 的背包纯数据网格](../../projects/backpack-survivor/inventory-data-grid.md)使用 `class Item` 表达具有身份的物品实例。两个 `new Item("gun", 1, 2)` 可以代表同一种物品的两份实例；默认引用相等能让 `InventoryGrid.Contains(item)` 拦住“同一个实例占两块地”，同时允许“同 Id 的两把枪共存”。如果未来重写 `Equals` / `GetHashCode` 改成按 `Id` 比较，`HashSet<Item>` 和 `Dictionary<Item, ...>` 的语义也会一起改变，必须重新审视背包规则。
+
 ---
 
 ## 装箱 (Boxing) — 性能杀手
