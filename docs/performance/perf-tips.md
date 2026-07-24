@@ -60,6 +60,7 @@
 | 空的 `Update()` / `Start()` | 删除不用的消息方法，避免 Unity 每帧进行无意义的脚本消息调用 |
 | `Debug.Log` 在 Release 仍有开销 | 自定义日志方法加 `[Conditional("DEBUG")]`，Release 自动剔除调用 |
 | 低频逻辑放 Update 里轮询 | 用协程 `WaitForSeconds`，按需触发 |
+| 大量距离判断每帧开方 | 比较 `sqrMagnitude` 和半径平方；项目案例见[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md) |
 
 ---
 
@@ -79,6 +80,7 @@
 
 - **控制热路径分配**：先测量，再减少 Update / 循环中不必要的 `new`、字符串拼接和 LINQ 临时结果
 - **缓存一切频繁访问的引用**：`GetComponent`、`transform`、`Find` 结果
+- **距离比较先避开开方**：只需要判断是否进入半径时，用平方距离比较
 - **先测量再优化**：Profiler 给方向，小 tips 是手段
 
 ---

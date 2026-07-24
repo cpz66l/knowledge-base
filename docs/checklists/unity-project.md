@@ -31,8 +31,8 @@
 ## 实践证据
 
 - 项目：[Backpack Survivor](../projects/backpack-survivor/index.md)
-- 当前证据：[伤害管线](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)、[敌人 AI](../projects/backpack-survivor/enemy-ai-and-melee.md)、[自动武器](../projects/backpack-survivor/target-registry-and-auto-weapon.md)、[主动武器](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)和[掉落系统](../projects/backpack-survivor/loot-drop-and-pity.md)，已形成 V0.1 战斗闭环并开始 V0.2 掉落系统。
+- 当前证据：[伤害管线](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)、[敌人 AI](../projects/backpack-survivor/enemy-ai-and-melee.md)、[自动武器](../projects/backpack-survivor/target-registry-and-auto-weapon.md)、[主动武器](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统](../projects/backpack-survivor/loot-drop-and-pity.md)和[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)，已形成 V0.1 战斗闭环并开始 V0.2 掉落与拾取系统。
 - 生命周期证据：[Unity 生命周期](../unity/lifecycle.md)与第 5 课记录了 `Awake` / `Start`、`OnEnable` / `OnDisable`、池化取出/归还和事件订阅修复；用户转述 Kimi 已检查代码与 Unity 场景。
 - 复盘证据：[Backpack Survivor V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
-- 尚缺证据：Profiler 前后数据、目标平台 Build、多 Collider、低帧率、缓冲区满载、切场景静态状态、跨池归还、完整调用顺序矩阵和掉落概率/保底单元测试。
-- 下一项改进：补齐工程 hygiene 与 asmdef 资料，为拾取、磁吸和背包纯数据系统建立可脱离场景测试的模块。
+- 尚缺证据：Profiler 前后数据、目标平台 Build、多 Collider、低帧率、缓冲区满载、切场景静态状态、跨池归还、完整调用顺序矩阵、掉落概率/保底单元测试和批量拾取副作用测试。
+- 下一项改进：补齐工程 hygiene 与 asmdef 资料，为背包纯数据系统建立可脱离场景测试的模块。
