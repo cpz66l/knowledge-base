@@ -1,6 +1,6 @@
 # Backpack Survivor（背包幸存者）
 
-> 状态：V0.2 背包纯数据网格已记录，继续推进背包 UI
+> 状态：V0.2 背包 UI 与拖拽已记录，继续推进掉落分层与容器搜刮
 >
 > 首次记录：2026-07-20
 >
@@ -28,6 +28,7 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 `LootManager` 将敌人死亡、对象池取出和掉落物表现串成一条链路。
 - 用 `PickUpMagnet` 和 `DropItem.OnCollected` 将掉落物推进到拾取与临时收货口。
 - 用 `BS.Inventory` 纯 C# 程序集和 `InventoryGrid` 建立背包占格数据内核。
+- 用 `InventorySystem` 与 UGUI 将拾取自动入包、网格显示、拖拽预览和非法回滚串成闭环。
 
 ## 实践记录
 
@@ -41,6 +42,7 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 7 课 | [掉落系统与保底机制](loot-drop-and-pity.md) | 已记录；静态检查发现零权重表空引用边界待修正 |
 | 第 8 课 | [拾取与磁吸](pickup-and-magnet.md) | 已记录；静态事件退订、Unity 假 null 和批量拾取副作用待验证 |
 | 第 9 课 | [背包纯数据网格](inventory-data-grid.md) | 已记录；纯 C# 数据层已完成本环境编译与最小运行测试，asmdef 资产配置待 Unity 工程复核 |
+| 第 10 课 | [背包 UI 与拖拽](inventory-ui-and-drag.md) | 已记录；课程记录描述已实现自动入包、拖拽预览和非法回弹，本环境完成静态审阅 |
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
@@ -53,11 +55,12 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 7 课课程记录描述了掉落系统、权重随机、保底计数和掉落物超时回收。本环境完成静态审阅，未运行 Unity 场景；其中零权重表、掉落 Prefab 是否接入对象池、`FindAnyObjectByType` 成本和材质实例化仍待项目验证。
 - 第 8 课课程记录描述了拾取磁吸、`DropItem.OnCollected` 静态事件和临时 `PickupLogger`。本环境完成静态审阅，未运行 Unity 场景；静态事件生命周期、Unity 假 null、批量拾取副作用和 Profiler 数据仍待验证。
 - 第 9 课课程记录描述了 `BS.Inventory` 纯数据程序集、`Item`、`InventoryGrid` 和 Debug.Log 验证剧本。本环境用 .NET SDK 对整理后的纯 C# 数据层完成编译与最小运行测试；未检查实际 `.asmdef`、`.meta` 或 Unity 工程资产。
+- 第 10 课课程记录描述了背包 UI、拖拽、红绿预览、非法回弹和拾取自动入包。本环境完成静态审阅和文档构建，未运行 Unity Editor、Play Mode 或检查 Prefab / Canvas 层级。
 
 ## 下一步
 
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 第 10～11 课推进背包 UI 和合并升级。
+- 第 11～13 课推进掉落分层、容器搜刮、合并升级和邻接联动。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
-- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还和批量拾取测试。
-- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询与 GC Alloc。
+- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取和拖拽中断测试。
+- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘和 GC Alloc。

@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：背包纯数据网格已记录，下一步进入背包 UI。
+- 推进 Backpack Survivor V0.2：背包 UI 与拖拽已记录，下一步进入掉落分层和容器搜刮。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,6 +46,7 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：背包 UI 与拖拽](projects/backpack-survivor/inventory-ui-and-drag.md)
 - [Backpack Survivor：背包纯数据网格](projects/backpack-survivor/inventory-data-grid.md)
 - [Backpack Survivor：拾取与磁吸](projects/backpack-survivor/pickup-and-magnet.md)
 - [LC 19 删除链表的倒数第 N 个结点：C# / C++ 对照](csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)

@@ -20,6 +20,7 @@
 | 纯装饰的 Image / Text 每帧参与射线检测 | 取消勾选 `Raycast Target`（详见 [Image](../unity/ugui/controls/image.md)）|
 | Draw Call 过多 | 同图集 Sprite 合批，用 Sprite Atlas 打包图集 |
 | 改一个 UI 属性触发整个 Canvas 重建 | 静态 UI 与频繁更新的动态 UI 拆到不同 Canvas（嵌套 Canvas 隔离重建范围）|
+| 小规模背包 UI 需要同步数据 | 先用事件驱动全量重绘，量级上去再做脏标记和视图复用；项目案例见[背包 UI 与拖拽](../projects/backpack-survivor/inventory-ui-and-drag.md) |
 | 矩形裁剪用 `Mask`（带 stencil）会打断合批 | 矩形区域改用 `RectMask2D` |
 | Legacy Text 渲染差、重建多 | 换 TextMeshPro（SDF 渲染，详见 [TextMeshPro](../unity/ugui/controls/text-tmp.md)）|
 

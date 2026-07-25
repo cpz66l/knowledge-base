@@ -82,6 +82,7 @@ ScrollView
 | 实战 | 使用组件 | 学习目标 |
 |------|----------|----------|
 | **[可滚动任务列表](scrollable-task-list.md)** | ScrollRect、RectMask2D、VerticalLayoutGroup、GridLayoutGroup、ContentSizeFitter | 掌握滚动、裁剪、自动排列和动态生成列表项 |
+| **[Backpack Survivor：背包 UI 与拖拽](../../projects/backpack-survivor/inventory-ui-and-drag.md)** | Canvas、RectTransform、GridLayoutGroup、EventSystem、PointerEventData | 掌握数据驱动 UI、拖拽坐标换算、合法性预览和回滚 |
 
 ---
 

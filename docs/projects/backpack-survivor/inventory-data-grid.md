@@ -33,7 +33,7 @@
       → InventoryGrid.OnChanged → UI 重绘
 ```
 
-本页记录数据层的规则和边界；UI 拖拽、占格预览和合并升级留到第 10～11 课。
+本页记录数据层的规则和边界；第 10 课已经在[背包 UI 与拖拽](inventory-ui-and-drag.md)中把它接入 UGUI 显示和拖拽交互，合并升级继续留到后续课程。
 
 ## 程序集隔离
 
@@ -319,7 +319,7 @@ InventoryGrid.OnChanged → UI 重绘
 ## 相关内容
 
 - 前置：[拾取与磁吸](pickup-and-magnet.md)
-- 后续：[项目总览](index.md)
+- 后续：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - 工程：[C# 工程实践路线](../../csharp/engineering/index.md)

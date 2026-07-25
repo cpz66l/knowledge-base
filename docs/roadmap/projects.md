@@ -63,9 +63,10 @@
 - 已记录：[第 7 课：掉落系统与保底机制](../projects/backpack-survivor/loot-drop-and-pity.md)
 - 已记录：[第 8 课：拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)
 - 已记录：[第 9 课：背包纯数据网格](../projects/backpack-survivor/inventory-data-grid.md)
+- 已记录：[第 10 课：背包 UI 与拖拽](../projects/backpack-survivor/inventory-ui-and-drag.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 背包纯数据网格已记录
-- 下一步：背包 UI；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 背包 UI 与拖拽已记录
+- 下一步：掉落分层、容器搜刮、合并升级；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

@@ -200,6 +200,7 @@ nav:
           - 第 7 课：掉落系统与保底机制: projects/backpack-survivor/loot-drop-and-pity.md
           - 第 8 课：拾取与磁吸: projects/backpack-survivor/pickup-and-magnet.md
           - 第 9 课：背包纯数据网格: projects/backpack-survivor/inventory-data-grid.md
+          - 第 10 课：背包 UI 与拖拽: projects/backpack-survivor/inventory-ui-and-drag.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

@@ -18,7 +18,7 @@
 
 | 项目 | 当前阶段 | 已有记录 |
 |---|---|---|
-| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.2 背包纯数据网格已记录 | [伤害管线](backpack-survivor/damage-pipeline-and-hazard-zone.md) · [敌人 AI](backpack-survivor/enemy-ai-and-melee.md) · [自动武器](backpack-survivor/target-registry-and-auto-weapon.md) · [主动武器](backpack-survivor/active-weapons-and-weapon-base.md) · [刷怪与对象池](backpack-survivor/spawner-and-object-pooling.md) · [掉落系统](backpack-survivor/loot-drop-and-pity.md) · [拾取与磁吸](backpack-survivor/pickup-and-magnet.md) · [背包网格](backpack-survivor/inventory-data-grid.md) |
+| [Backpack Survivor（背包幸存者）](backpack-survivor/index.md) | V0.2 背包 UI 与拖拽已记录 | [伤害管线](backpack-survivor/damage-pipeline-and-hazard-zone.md) · [敌人 AI](backpack-survivor/enemy-ai-and-melee.md) · [自动武器](backpack-survivor/target-registry-and-auto-weapon.md) · [主动武器](backpack-survivor/active-weapons-and-weapon-base.md) · [刷怪与对象池](backpack-survivor/spawner-and-object-pooling.md) · [掉落系统](backpack-survivor/loot-drop-and-pity.md) · [拾取与磁吸](backpack-survivor/pickup-and-magnet.md) · [背包网格](backpack-survivor/inventory-data-grid.md) · [背包 UI](backpack-survivor/inventory-ui-and-drag.md) |
 
 ---
 
