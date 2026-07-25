@@ -322,13 +322,14 @@ public bool TryGetAnchor(Item item, out int x, out int y)
 | 第 10 课实现了拾取自动入包、背包网格显示、拖拽、红绿预览和非法回弹 | B | 来自用户放入 Inbox 的课程记录 |
 | 项目已将 `DropItem.OnCollected` 接入 `InventorySystem` 并由 `InventoryGrid.OnChanged` 驱动 UI 重绘 | B | 来自原始课程记录中的代码与链路说明 |
 | UI 分层、pivot、PointerEventData 和回滚流程是本课关键设计 | B | 原始记录提供踩坑、修复过程和课程实现说明 |
-| `OnChanged` 退订、拖拽取消和多面板查找仍需继续验证 | C/D | 根据代码片段静态审阅发现，未收到完整工程或运行日志 |
+| `OnChanged` 退订、拖拽取消和多面板查找仍需继续验证 | C | 根据代码片段静态审阅发现，未收到完整工程或运行日志 |
 | 第 10 课已由当前环境在 Unity Editor / Play Mode 中运行通过 | D | 本次未收到完整 Unity 工程、场景、Prefab 或 `.meta`，未运行 Unity |
 
 ## 相关内容
 
 - 前置：[背包纯数据网格](inventory-data-grid.md)
 - 前置：[拾取与磁吸](pickup-and-magnet.md)
+- 后续：[掉落分层与交互拾取](loot-layering-and-interaction.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - 性能：[优化小 Tips](../../performance/perf-tips.md)

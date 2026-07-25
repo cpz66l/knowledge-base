@@ -106,7 +106,7 @@ private void LateUpdate()
   └─ 清理协程、特效与外部引用
 ```
 
-项目第 3 课暴露过一个典型边界：敌人在 `Start` 中订阅死亡事件，在死亡时退订并 `SetActive(false)`。再次启用时 `Start` 不会重跑，死亡处理不会自动恢复；生命值的死亡状态也仍需重置。第 5 课已把订阅/退订迁移到 `OnEnable` / `OnDisable`，并在对象取出时调用 `ResetToFull()`、清零计时器。第 7 课的掉落物继续复用同一套池化语义：`OnGetFromPool` 清零生存计时，超时后从统一出口归还池子。第 8 课进一步要求磁吸状态机和速度在每次取出时归零，并要求静态拾取事件的订阅者用 `OnEnable` / `OnDisable` 成对管理订阅。这个演进记录在[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统与保底机制](../projects/backpack-survivor/loot-drop-and-pity.md)和[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)中。
+项目第 3 课暴露过一个典型边界：敌人在 `Start` 中订阅死亡事件，在死亡时退订并 `SetActive(false)`。再次启用时 `Start` 不会重跑，死亡处理不会自动恢复；生命值的死亡状态也仍需重置。第 5 课已把订阅/退订迁移到 `OnEnable` / `OnDisable`，并在对象取出时调用 `ResetToFull()`、清零计时器。第 7 课的掉落物继续复用同一套池化语义：`OnGetFromPool` 清零生存计时，超时后从统一出口归还池子。第 8 课进一步要求磁吸状态机和速度在每次取出时归零，并要求静态拾取事件的订阅者用 `OnEnable` / `OnDisable` 成对管理订阅。第 11 课再次暴露 `XpOrb` 未重置磁吸状态和生存计时造成的复用问题，因此“新增运行期字段后立刻检查 `OnGetFromPool`”已经成为项目机械流程。这个演进记录在[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统与保底机制](../projects/backpack-survivor/loot-drop-and-pity.md)、[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)和[掉落分层与交互拾取](../projects/backpack-survivor/loot-layering-and-interaction.md)中。
 
 ## 常见错误
 
@@ -159,6 +159,7 @@ private void OnDisable()
 - [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)
 - [掉落系统与保底机制](../projects/backpack-survivor/loot-drop-and-pity.md)
 - [拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)
+- [掉落分层与交互拾取](../projects/backpack-survivor/loot-layering-and-interaction.md)
 - [委托与事件](../csharp/oop/delegates-and-events.md)
 - [对象池](../performance/memory/object-pool.md)
 

@@ -48,6 +48,8 @@ Recycle() 回池
 
 本页将这条链路记录为用户项目实践。当前知识库环境没有完整 Unity 工程、Prefab、`.meta`、场景、输入数据或 Profiler 记录，因此只声明完成静态审阅与文档构建验证，不声称本次亲自在 Unity 中运行通过。
 
+后续第 11 课已经把拾取方式拆成两路：经验球继续复用磁吸自动拾取，装备从磁吸中移出，改为 `IInteractable` + E 键交互拾取，详见[掉落分层与交互拾取](loot-layering-and-interaction.md)。
+
 ## 状态机拆分
 
 磁吸逻辑独立为 `PickUpMagnet`，而不是继续塞进 `DropItem`。这样 `DropItem` 负责“我是谁、如何被收取、如何回池”，`PickUpMagnet` 负责“我何时飞向玩家、如何飞过去”。
@@ -214,6 +216,7 @@ public void StateReset()
 - [掉落系统与保底机制](loot-drop-and-pity.md)
 - [背包纯数据网格](inventory-data-grid.md)
 - [背包 UI 与拖拽](inventory-ui-and-drag.md)
+- [掉落分层与交互拾取](loot-layering-and-interaction.md)
 - [刷怪器与对象池](spawner-and-object-pooling.md)
 - [Unity 生命周期](../../unity/lifecycle.md)
 - [委托与事件](../../csharp/oop/delegates-and-events.md)

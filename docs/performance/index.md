@@ -49,7 +49,7 @@
 |------|------|------|
 | 已有 | [内存管理](memory/index.md) | 对象池与托管分配入口 |
 | 已有 | [优化小 Tips](perf-tips.md) | UI、GC、渲染、代码和物理检查项 |
-| 项目实践 | [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统](../projects/backpack-survivor/loot-drop-and-pity.md)、[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md) | 预热、弹性扩容、掉落物复用、平方距离判断和池化生命周期；Profiler 数据仍待补充 |
+| 项目实践 | [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统](../projects/backpack-survivor/loot-drop-and-pity.md)、[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)、[掉落分层与交互拾取](../projects/backpack-survivor/loot-layering-and-interaction.md) | 预热、弹性扩容、掉落物复用、平方距离判断、NonAlloc 局部探测和池化生命周期；Profiler 数据仍待补充 |
 | 计划 | Unity Profiler | Profiler 面板、采样和对照实验 |
 | 计划 | 渲染性能 | Draw Call、LOD、剔除和 Shader 成本 |
 | 计划 | CPU 与代码 | 热点定位、Job System 和 Burst |
