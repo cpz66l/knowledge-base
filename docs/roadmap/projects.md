@@ -65,9 +65,11 @@
 - 已记录：[第 9 课：背包纯数据网格](../projects/backpack-survivor/inventory-data-grid.md)
 - 已记录：[第 10 课：背包 UI 与拖拽](../projects/backpack-survivor/inventory-ui-and-drag.md)
 - 已记录：[第 11 课：掉落分层与交互拾取](../projects/backpack-survivor/loot-layering-and-interaction.md)
+- 已记录：[第 12 课：容器搜刮与宝箱系统](../projects/backpack-survivor/container-looting-and-chests.md)
+- 已记录：[第 13 课：背包交互补丁](../projects/backpack-survivor/inventory-interaction-patches.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 掉落分层与交互拾取已记录
-- 下一步：容器搜刮、合并升级；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 宝箱搜刮与背包交互补丁已记录
+- 下一步：合并升级与邻接联动；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

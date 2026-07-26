@@ -310,6 +310,8 @@ if (nearest != previousTarget)
 
 ## 已知挂账：拾取失败吞物品
 
+> 后续演进：第 13 课已把 `IInteractable.Interact()` 改为返回 `bool`，通过请求-确认和兜底吐回修复吞物品风险，详见[背包交互补丁](inventory-interaction-patches.md)。本节保留第 11 课当时暴露的设计债。
+
 原始记录明确暴露了一个重要设计债：
 
 ```text
@@ -388,6 +390,8 @@ R 键旋转可以缓解大件装备放不下的问题，但不能替代收货口
 - 前置：[掉落系统与保底机制](loot-drop-and-pity.md)
 - 前置：[拾取与磁吸](pickup-and-magnet.md)
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
+- 后续：[容器搜刮与宝箱系统](container-looting-and-chests.md)
+- 后续：[背包交互补丁](inventory-interaction-patches.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：掉落分层与交互拾取已记录，下一步进入容器搜刮。
+- 推进 Backpack Survivor V0.2：宝箱搜刮与背包交互补丁已记录，下一步进入合并升级。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,12 +46,13 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：背包交互补丁](projects/backpack-survivor/inventory-interaction-patches.md)
+- [Backpack Survivor：容器搜刮与宝箱系统](projects/backpack-survivor/container-looting-and-chests.md)
 - [Backpack Survivor：掉落分层与交互拾取](projects/backpack-survivor/loot-layering-and-interaction.md)
 - [Backpack Survivor：背包 UI 与拖拽](projects/backpack-survivor/inventory-ui-and-drag.md)
 - [Backpack Survivor：背包纯数据网格](projects/backpack-survivor/inventory-data-grid.md)
 - [Backpack Survivor：拾取与磁吸](projects/backpack-survivor/pickup-and-magnet.md)
 - [LC 19 删除链表的倒数第 N 个结点：C# / C++ 对照](csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)
-- [Backpack Survivor：掉落系统与保底机制](projects/backpack-survivor/loot-drop-and-pity.md)
 - [LC 2 两数相加：C# / C++ 对照](csharp/leetcode/linked-list/add-two-numbers.md)
 
 ---
