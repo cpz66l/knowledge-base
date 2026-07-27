@@ -204,6 +204,7 @@ nav:
           - 第 11 课：掉落分层与交互拾取: projects/backpack-survivor/loot-layering-and-interaction.md
           - 第 12 课：容器搜刮与宝箱系统: projects/backpack-survivor/container-looting-and-chests.md
           - 第 13 课：背包交互补丁: projects/backpack-survivor/inventory-interaction-patches.md
+          - 第 14 课：合并升级与邻接联动: projects/backpack-survivor/merge-upgrade-and-adjacency.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

@@ -26,6 +26,7 @@
 - [Backpack Survivor：主动武器与 WeaponBase 提炼](../../projects/backpack-survivor/active-weapons-and-weapon-base.md)：真实重复之后的继承提炼、输入状态位和重构边界。
 - [Backpack Survivor：刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)：接口化池化契约、状态复位、防重复归还和初始化顺序。
 - [Backpack Survivor：背包纯数据网格](../../projects/backpack-survivor/inventory-data-grid.md)：纯 C# 数据层、asmdef 隔离、二维数组占格、事件驱动 UI 投影和冗余状态取舍。
+- [Backpack Survivor：合并升级与邻接联动](../../projects/backpack-survivor/merge-upgrade-and-adjacency.md)：查询/命令分离、规则表驱动、候选效果与最终结算边界。
 - [Backpack Survivor V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)：交付范围、设计主线、技术债务和下一阶段计划。
 
 ## 最小产出

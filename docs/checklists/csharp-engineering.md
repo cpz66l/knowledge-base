@@ -48,6 +48,6 @@
 >
 > 验证方式：课程运行记录；用户转述 Kimi 已检查代码与 Unity 场景；知识库完成静态复核、纯 C# 数据层最小运行测试和站点构建。
 >
-> 已有证据：[WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[背包纯数据网格](../projects/backpack-survivor/inventory-data-grid.md)、[V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
+> 已有证据：[WeaponBase 提炼](../projects/backpack-survivor/active-weapons-and-weapon-base.md)、[刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[背包纯数据网格](../projects/backpack-survivor/inventory-data-grid.md)、[合并升级与邻接联动](../projects/backpack-survivor/merge-upgrade-and-adjacency.md)、[V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
 >
 > 仍未理解或缺少证据：Profiler 前后数据、实际 `.asmdef` / `.meta` 资产复核、静态注册表跨场景清理、池所有权和目标平台 Build。

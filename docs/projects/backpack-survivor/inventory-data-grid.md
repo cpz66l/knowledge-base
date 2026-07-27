@@ -33,7 +33,7 @@
       → InventoryGrid.OnChanged → UI 重绘
 ```
 
-本页记录数据层的规则和边界；第 10 课已经在[背包 UI 与拖拽](inventory-ui-and-drag.md)中把它接入 UGUI 显示和拖拽交互，合并升级继续留到后续课程。
+本页记录数据层的规则和边界；第 10 课已经在[背包 UI 与拖拽](inventory-ui-and-drag.md)中把它接入 UGUI 显示和拖拽交互，第 14 课进一步在[合并升级与邻接联动](merge-upgrade-and-adjacency.md)中加入同名同级合并、标签、接口边和邻接扫描。
 
 ## 程序集隔离
 
@@ -155,7 +155,7 @@ public bool Place(int x, int y, Item item)
 }
 ```
 
-这里的 `Contains(item)` 是“物理不可能原则”：同一个物品实例不能同时占两块地。但两个 `new Item("gun", 1, 2)` 是两个实例，可以共存；这给第 11 课“同 Id、同等级、非同一实例”的合并规则留下空间。
+这里的 `Contains(item)` 是“物理不可能原则”：同一个物品实例不能同时占两块地。但两个 `new Item("gun", 1, 2)` 是两个实例，可以共存；这给第 14 课“同 Id、同等级、非同一实例”的合并规则留下空间。
 
 ## 移除与查询
 
@@ -320,6 +320,7 @@ InventoryGrid.OnChanged → UI 重绘
 
 - 前置：[拾取与磁吸](pickup-and-magnet.md)
 - 后续：[背包 UI 与拖拽](inventory-ui-and-drag.md)
+- 后续：[合并升级与邻接联动](merge-upgrade-and-adjacency.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - 工程：[C# 工程实践路线](../../csharp/engineering/index.md)
