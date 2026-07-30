@@ -27,6 +27,11 @@
 - [Backpack Survivor：刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)：接口化池化契约、状态复位、防重复归还和初始化顺序。
 - [Backpack Survivor：背包纯数据网格](../../projects/backpack-survivor/inventory-data-grid.md)：纯 C# 数据层、asmdef 隔离、二维数组占格、事件驱动 UI 投影和冗余状态取舍。
 - [Backpack Survivor：合并升级与邻接联动](../../projects/backpack-survivor/merge-upgrade-and-adjacency.md)：查询/命令分离、规则表驱动、候选效果与最终结算边界。
+- [Backpack Survivor：背包武器激活](../../projects/backpack-survivor/backpack-weapon-activation.md)：全量重算与配置表映射、实例身份标记、事件驱动 UI 的延迟重绘补偿。
+- [Backpack Survivor：单局框架与基础 HUD](../../projects/backpack-survivor/run-session-and-basic-hud.md)：状态主人、纯 C# 计时器、事件快照、暂停恢复和胜负入口。
+- [Backpack Survivor：经验成长与三选一](../../projects/backpack-survivor/level-progression-and-choice.md)：纯 C# 等级状态、奖励数据边界、升级选择状态和运行时倍率消费。
+- [Backpack Survivor：波次导演与 15 分钟节奏](../../projects/backpack-survivor/wave-director-and-run-pacing.md)：时间事实源、执行器/导演拆分、阶段门闸和高频日志清理。
+- [Backpack Survivor：战斗反馈快包](../../projects/backpack-survivor/combat-feedback-pack.md)：表现层消费伤害事件、场景 Provider、短音效入口和反馈分支独立降级。
 - [Backpack Survivor V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)：交付范围、设计主线、技术债务和下一阶段计划。
 
 ## 最小产出

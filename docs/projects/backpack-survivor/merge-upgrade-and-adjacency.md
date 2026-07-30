@@ -282,7 +282,9 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 | `CreateItemFromLootEntry` 特判手枪标签和接口 | 物品定义分散，新增装备要改代码 | 做 `ItemDefinition`，由掉落条目引用定义 |
 | `InventoryUIController` 内部维护规则表 | 表现层拥有玩法规则 | 做 `RuleDefinition` 或静态规则配置，由规则层提供 |
 | `GetWorldConnectableSides()` 暂不处理旋转 | 接口方向与玩家视觉旋转可能不一致 | 明确接口是否随旋转变化，并在该方法统一转换 |
-| `ScanAdjacency` 结果直接用于 UI 激活边 | 候选效果和真实生效效果暂时混用 | 第 16 课加入结算器后，UI 改用 resolved effects |
+| `ScanAdjacency` 结果直接用于 UI 激活边 | 候选效果和真实生效效果暂时混用 | 后续加入结算器后，UI 改用 resolved effects |
+
+> 后续演进：第 15 课已将背包内武器物品映射到场景自动武器实体，并用实例级激活角标显示哪一件物品正在驱动战斗，详见[背包武器激活](backpack-weapon-activation.md)。DualWield 仍停留在候选邻接效果，尚未进入战斗结算。
 
 临时代码最大的问题不是“不够漂亮”，而是忘记它只是临时的。本页把退出路线写清楚，避免硬编码悄悄变成永久架构。
 
@@ -338,16 +340,17 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 |---|---|---|
 | 第 14 课实现了同名同级合并、等级显示、标签、接口边、邻接规则和接口点 UI | B | 来自用户放入 Inbox 的课程记录 |
 | `CanMerge` / `TryMerge` 分离用于统一预览与执行规则 | B | 原始记录明确描述了实现与设计理由 |
-| `ScanAdjacency` 只返回候选效果，不裁决最终玩法生效 | B | 原始记录明确将结算器挂到账后续课程 |
+| `ScanAdjacency` 只返回候选效果，不裁决最终玩法生效 | B | 原始记录明确将结算器挂到后续课程 |
 | bitmask 适合当前上下左右接口集合 | C | 本环境基于固定小集合、频繁判断和代码片段静态审阅 |
 | 第 14 课已由当前环境在 Unity Editor / Play Mode 中运行通过 | D | 本次未收到完整 Unity 工程、场景、Prefab、ItemView 引用、字体资源或 `.meta`，未运行 Unity |
-| DualWield 已完成战斗系统生效 | D | 原始记录明确把真实结算和战斗兑现留到第 16 课 |
+| DualWield 已完成战斗系统生效 | D | 原始记录明确把真实结算和战斗兑现留到后续课程 |
 
 ## 相关内容
 
 - 前置：[背包纯数据网格](inventory-data-grid.md)
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - 前置：[背包交互补丁](inventory-interaction-patches.md)
+- 后续：[背包武器激活](backpack-weapon-activation.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

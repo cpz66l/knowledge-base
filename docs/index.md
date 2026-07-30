@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：合并升级与邻接联动已记录，下一步进入背包武器激活。
+- 推进 Backpack Survivor V0.2：战斗反馈快包已记录，下一步进入胜负结算与重开闭环。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,12 +46,15 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：战斗反馈快包](projects/backpack-survivor/combat-feedback-pack.md)
+- [Backpack Survivor：波次导演与 15 分钟节奏](projects/backpack-survivor/wave-director-and-run-pacing.md)
+- [Backpack Survivor：经验成长与三选一](projects/backpack-survivor/level-progression-and-choice.md)
+- [Backpack Survivor：单局框架与基础 HUD](projects/backpack-survivor/run-session-and-basic-hud.md)
+- [Backpack Survivor：背包武器激活](projects/backpack-survivor/backpack-weapon-activation.md)
 - [Backpack Survivor：合并升级与邻接联动](projects/backpack-survivor/merge-upgrade-and-adjacency.md)
 - [Backpack Survivor：背包交互补丁](projects/backpack-survivor/inventory-interaction-patches.md)
 - [Backpack Survivor：容器搜刮与宝箱系统](projects/backpack-survivor/container-looting-and-chests.md)
 - [Backpack Survivor：掉落分层与交互拾取](projects/backpack-survivor/loot-layering-and-interaction.md)
-- [Backpack Survivor：背包 UI 与拖拽](projects/backpack-survivor/inventory-ui-and-drag.md)
-- [Backpack Survivor：背包纯数据网格](projects/backpack-survivor/inventory-data-grid.md)
 - [LC 19 删除链表的倒数第 N 个结点：C# / C++ 对照](csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)
 - [LC 2 两数相加：C# / C++ 对照](csharp/leetcode/linked-list/add-two-numbers.md)
 

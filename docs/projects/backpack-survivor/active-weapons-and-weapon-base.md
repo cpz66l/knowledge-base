@@ -82,7 +82,7 @@ public abstract class WeaponBase : MonoBehaviour
 }
 ```
 
-`abstract` 禁止直接把没有完整触发逻辑的基类挂到场景对象上；`protected` 让子类读取配置，同时保留 Inspector 配置能力。进入第 5 课的池化版本后，`Fire` 的公共职责仍然保留，但“创建新 GameObject”应替换为投射物池的 `Get`，否则主动武器会绕过池化。
+`abstract` 禁止直接把没有完整触发逻辑的基类挂到场景对象上；`protected` 让子类读取配置，同时保留 Inspector 配置能力。进入第 5 课的池化版本后，`Fire` 的公共职责仍然保留，但“创建新 GameObject”应替换为投射物池的 `Get`，否则主动武器会绕过池化。后续第 17 课又让 `WeaponBase` 在发射前读取 `PlayerRunStats.DamageMultiplier`，让升级奖励通过同一条发射入口影响主动/自动武器，详见[经验成长与三选一](level-progression-and-choice.md)。
 
 ## 主动武器的输入状态
 
@@ -190,6 +190,8 @@ private void Update()
 
 - [目标注册表、自动武器与投射物](target-registry-and-auto-weapon.md)
 - [刷怪器与对象池](spawner-and-object-pooling.md)
+- [背包武器激活](backpack-weapon-activation.md)
+- [战斗反馈快包](combat-feedback-pack.md)
 - [Unity 生命周期](../../unity/lifecycle.md)
 - [委托与事件](../../csharp/oop/delegates-and-events.md)
 - [对象池专题](../../performance/memory/object-pool.md)

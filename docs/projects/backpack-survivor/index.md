@@ -1,6 +1,6 @@
 # Backpack Survivor（背包幸存者）
 
-> 状态：V0.2 合并升级与邻接联动已记录，准备进入背包武器激活
+> 状态：V0.2 战斗反馈快包已记录，准备进入胜负结算与重开闭环
 >
 > 首次记录：2026-07-20
 >
@@ -33,6 +33,11 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 `LootChest`、`ChestSpawner`、`MapBounds` 和散落协程把交互拾取扩展到宝箱搜刮。
 - 用丢弃、R 键旋转和请求-确认拾取修复背包交互债务，为合并升级做准备。
 - 用同名同级合并、物品标签、方向接口和邻接扫描建立背包构筑规则雏形。
+- 用背包位置优先级和 `BackpackWeaponActivator` 将背包武器物品映射到玩家身边自动武器实体。
+- 用 `GameSession`、`RunTimer`、`GameState` 和 `RunHudView` 建立单局时间、胜负、暂停、经验显示和基础 HUD。
+- 用 `LevelProgress`、`LevelUpChoiceView` 和 `PlayerRunStats` 把经验成长、升级暂停、三选一选择和本局倍率消费接成闭环。
+- 用 `WaveDirector`、`WaveStage` 和波次 HUD 建立 15 分钟压力曲线，并让刷怪参数按本局时间调度。
+- 用 `DamageFlashView`、`DamageNumberView`、`SfxPlayer` 和 `CameraShakePlayer` 把命中、受伤、升级、开箱等战斗事实翻译成闪色、数字、音效和震屏反馈。
 
 ## 实践记录
 
@@ -51,6 +56,11 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 12 课 | [容器搜刮与宝箱系统](container-looting-and-chests.md) | 已记录；课程记录描述已实现宝箱交互、击杀生成、地图边界和散落协程，本环境完成静态审阅 |
 | 第 13 课 | [背包交互补丁](inventory-interaction-patches.md) | 已记录；课程记录描述已修复提示框射线、丢弃、R 键旋转和请求-确认拾取，本环境完成静态审阅 |
 | 第 14 课 | [合并升级与邻接联动](merge-upgrade-and-adjacency.md) | 已记录；课程记录描述已实现同名同级合并、标签、接口边、邻接扫描和接口点 UI，本环境完成静态审阅 |
+| 第 15 课 | [背包武器激活](backpack-weapon-activation.md) | 已记录；课程记录描述已实现背包武器实体激活、左上优先级、激活角标和拖拽延迟重绘，本环境完成静态审阅 |
+| 第 16 课 | [单局框架与基础 HUD](run-session-and-basic-hud.md) | 已记录；课程记录描述已实现单局状态、倒计时、经验显示、暂停恢复和胜负入口，本环境完成静态审阅 |
+| 第 17 课 | [经验成长与三选一](level-progression-and-choice.md) | 已记录；课程记录描述已实现等级成长、升级选择、运行时倍率和消费侧接入，本环境完成静态审阅 |
+| 第 18 课 | [波次导演与 15 分钟节奏](wave-director-and-run-pacing.md) | 已记录；课程记录描述已实现波次导演、阶段表、刷怪参数调度和波次 HUD，本环境完成静态审阅 |
+| 第 19 课 | [战斗反馈快包](combat-feedback-pack.md) | 已记录；课程记录描述已实现受击闪色、池化伤害数字、短音效入口、玩家受伤反馈和 Cinemachine 震屏，本环境完成静态审阅 |
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
@@ -68,12 +78,17 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 12 课课程记录描述了宝箱 `IInteractable` 复用、击杀触发生成、地图边界、拒绝采样和掉落散落协程。本环境完成静态审阅和文档构建，未运行 Unity Editor、Play Mode 或检查 Prefab / 场景 / Layer 配置。
 - 第 13 课课程记录描述了提示框射线阻挡修复、面板外丢弃、R 键旋转、`Interact()` 请求-确认和背包满反馈。本环境完成静态审阅和文档构建，未运行 Unity Editor、Play Mode 或检查 Canvas / Input Actions / 场景引用。
 - 第 14 课课程记录描述了同名同级合并、`ItemTag`、`ConnectableSides`、邻接规则表、候选效果扫描和接口点 UI。本环境完成静态审阅和文档构建，未运行 Unity Editor、Play Mode 或检查 ItemView Prefab / 字体资源 / `.meta`。
+- 第 15 课课程记录描述了 `BackpackWeaponActivator`、`WeaponSlot`、`GetUniqueItems` 左上优先级、激活实例标记、拖拽延迟重绘和覆盖层自适应。本环境完成静态审阅和文档构建，未运行 Unity Editor、Play Mode 或检查 `01-Run.unity` / ItemView Prefab / 字体资源 / `.meta`。
+- 第 16 课课程记录描述了 `GameState`、`RunTimer`、`GameSession`、`RunHudView`、暂停恢复、经验显示和基础 HUD。本环境只读复核了项目工作区相关脚本与 `.meta` 存在，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证场景接线。
+- 第 17 课课程记录描述了 `LevelProgress`、`LevelUpOption`、`LevelUpOptionGenerator`、`LevelUpChoiceView`、`PlayerRunStats`、升级选择暂停和倍率消费。本环境只读复核了项目工作区相关脚本、`.meta`、`GameInput.inputactions` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或实际点击升级面板。
+- 第 18 课课程记录描述了 `WaveDirector`、`WaveStage`、`EnemySpawner.ApplyWaveSettings()`、`OnWaveStageChanged`、波次 HUD 和 `TargetRegistry` 日志清理。本环境只读复核了项目工作区相关脚本、`.meta` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实刷怪节奏。
+- 第 19 课课程记录描述了 `DamageFlashView`、`DamageNumberView`、`DamageNumberSpawner`、`DamageNumberPoolProvider`、`SfxPlayer`、`PlayerHitFeedbackView` 和 `CameraShakePlayer`。本环境只读复核了项目工作区相关脚本、`.meta`、`Enemy.prefab`、`DamageNumber.prefab`、`manifest.json` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实闪色、数字、音效、震屏和资源接线。
 
 ## 下一步
 
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 第 15 课推进背包武器激活系统。
-- 第 16 课补邻接效果结算器并兑现 DualWield 战斗表现。
+- 第 20 课推进胜负结算与重开闭环。
+- 邻接效果结算器、DualWield 战斗兑现、基础芯片多邻接、物品/规则配置数据化和真实冷却遮罩继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
-- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、丢弃回捡、合并升级和邻接扫描测试。
-- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、经验球吸附、宝箱生成、散落协程、邻接扫描和 GC Alloc。
+- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、丢弃回捡、合并升级、邻接扫描、背包武器激活、暂停恢复、胜负入口、升级选择、倍率消费、波次切换、胜负后刷怪停止、刷怪压力、战斗反馈资源接线、伤害数字位置、音效播放和震屏强度测试。
+- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、经验球吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、HUD 刷新、升级面板、波次 HUD、刷怪压力、伤害数字池、闪色材质访问、音效播放、Cinemachine 震屏和 GC Alloc。

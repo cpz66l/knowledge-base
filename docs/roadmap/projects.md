@@ -68,9 +68,14 @@
 - 已记录：[第 12 课：容器搜刮与宝箱系统](../projects/backpack-survivor/container-looting-and-chests.md)
 - 已记录：[第 13 课：背包交互补丁](../projects/backpack-survivor/inventory-interaction-patches.md)
 - 已记录：[第 14 课：合并升级与邻接联动](../projects/backpack-survivor/merge-upgrade-and-adjacency.md)
+- 已记录：[第 15 课：背包武器激活](../projects/backpack-survivor/backpack-weapon-activation.md)
+- 已记录：[第 16 课：单局框架与基础 HUD](../projects/backpack-survivor/run-session-and-basic-hud.md)
+- 已记录：[第 17 课：经验成长与三选一](../projects/backpack-survivor/level-progression-and-choice.md)
+- 已记录：[第 18 课：波次导演与 15 分钟节奏](../projects/backpack-survivor/wave-director-and-run-pacing.md)
+- 已记录：[第 19 课：战斗反馈快包](../projects/backpack-survivor/combat-feedback-pack.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 合并升级与邻接联动已记录
-- 下一步：背包武器激活、邻接效果结算器与 DualWield 兑现；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 战斗反馈快包已记录
+- 下一步：胜负结算与重开闭环、构筑最小兑现；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

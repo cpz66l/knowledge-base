@@ -23,6 +23,7 @@
 | 小规模背包 UI 需要同步数据 | 先用事件驱动全量重绘，量级上去再做脏标记和视图复用；项目案例见[背包 UI 与拖拽](../projects/backpack-survivor/inventory-ui-and-drag.md) |
 | 矩形裁剪用 `Mask`（带 stencil）会打断合批 | 矩形区域改用 `RectMask2D` |
 | Legacy Text 渲染差、重建多 | 换 TextMeshPro（SDF 渲染，详见 [TextMeshPro](../unity/ugui/controls/text-tmp.md)）|
+| 高频伤害数字是世界空间 UI | 使用 World Space Canvas + 对象池，取出时重置文本、透明度和朝向；项目案例见[战斗反馈快包](../projects/backpack-survivor/combat-feedback-pack.md) |
 
 ---
 
@@ -35,6 +36,7 @@
 | Update 里用 LINQ（Where / Select）| LINQ 产生中间集合 + 可能装箱，热路径别用 |
 | 值类型被当 `object` 用（`List<object>`、enum 做 key 等）| 警惕装箱，详见 [装箱 - 性能杀手](../csharp/oop/value-vs-reference.md) |
 | `foreach` 遍历 `List<T>` | 现代 Unity 已优化；不确定时热路径用 `for` 更稳 |
+| 命中反馈每次 `Instantiate` / `Destroy` | 伤害数字、命中特效这类短生命周期表现对象优先池化，并用 Profiler 验证扩容和 GC Alloc |
 
 ---
 
@@ -62,6 +64,7 @@
 | `Debug.Log` 在 Release 仍有开销 | 自定义日志方法加 `[Conditional("DEBUG")]`，Release 自动剔除调用 |
 | 低频逻辑放 Update 里轮询 | 用协程 `WaitForSeconds`，按需触发 |
 | 大量距离判断每帧开方 | 比较 `sqrMagnitude` 和半径平方；项目案例见[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md) |
+| 高频路径留临时 `Debug.Log` | 清掉注册、注销、刷怪等热路径测试日志，或做成显式调试开关；项目案例见[波次导演与 15 分钟节奏](../projects/backpack-survivor/wave-director-and-run-pacing.md) |
 
 ---
 
@@ -73,7 +76,7 @@
 | 大量 Rigidbody | 减少物理对象数量，能 `isKinematic` 就别动态 |
 | 高速投射物只检查离散位置，可能跨过薄 Collider | 检测旧位置到新位置的路径；项目案例见[自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md) |
 | 高频使用会返回新结果数组的物理查询 | 在 Profiler 证明分配是问题后，复用 NonAlloc 缓冲区；同时处理缓冲区满载、LayerMask 和 Trigger 规则 |
-| 频繁播放音效卡顿 | 音频剪辑勾选 `Preload Audio Data`，预加载 |
+| 频繁播放音效卡顿 | 音频剪辑勾选 `Preload Audio Data`，预加载；集中入口如 `SfxPlayer` 还要检查 `AudioSource` 和 Clip 是否实际接线 |
 
 ---
 

@@ -85,6 +85,11 @@ ScrollView
 | **[Backpack Survivor：背包 UI 与拖拽](../../projects/backpack-survivor/inventory-ui-and-drag.md)** | Canvas、RectTransform、GridLayoutGroup、EventSystem、PointerEventData | 掌握数据驱动 UI、拖拽坐标换算、合法性预览和回滚 |
 | **[Backpack Survivor：背包交互补丁](../../projects/backpack-survivor/inventory-interaction-patches.md)** | CanvasGroup、GraphicRaycaster、RectTransformUtility、PointerEventData | 掌握纯展示 UI 不挡射线、面板外丢弃判定和交互失败反馈 |
 | **[Backpack Survivor：合并升级与邻接联动](../../projects/backpack-survivor/merge-upgrade-and-adjacency.md)** | ItemView、Image 接口点、全量重绘投影 | 掌握把规则扫描结果投影成接口点显隐与激活状态 |
+| **[Backpack Survivor：背包武器激活](../../projects/backpack-survivor/backpack-weapon-activation.md)** | ItemView 覆盖层、激活角标、延迟重绘 | 掌握拖拽期间保护 ghost、结束后补偿重绘和覆盖层自适应 |
+| **[Backpack Survivor：单局框架与基础 HUD](../../projects/backpack-survivor/run-session-and-basic-hud.md)** | TextMeshProUGUI、状态文本、事件刷新 | 掌握 HUD 订阅事件、拉取初始快照和显示局内状态 |
+| **[Backpack Survivor：经验成长与三选一](../../projects/backpack-survivor/level-progression-and-choice.md)** | Button、TextMeshProUGUI、面板显隐、事件回传 | 掌握升级选择 UI 只展示选项并把玩家选择交回规则层 |
+| **[Backpack Survivor：波次导演与 15 分钟节奏](../../projects/backpack-survivor/wave-director-and-run-pacing.md)** | TextMeshProUGUI、事件刷新、颜色反馈 | 掌握 HUD 只显示导演广播的阶段名和颜色，不自己判断波次规则 |
+| **[Backpack Survivor：战斗反馈快包](../../projects/backpack-survivor/combat-feedback-pack.md)** | World Space Canvas、TextMeshProUGUI、CanvasGroup、Billboard | 掌握世界空间伤害数字、上浮渐隐和对象池复用下的状态重置 |
 
 ---
 

@@ -166,6 +166,8 @@ spawnTimer -= spawnInterval;
 
 角度必须转换为弧度，`Mathf.Sin` / `Mathf.Cos` 不接受角度值。半径直接在内外半径之间均匀抽样，会让靠近内圈的位置更密；如果目标是“环带面积均匀”，应对半径平方做均匀抽样后再开平方。当前项目只需要环带感时，简单方案可以接受，但不要把它误写成面积均匀分布。
 
+> 后续演进：第 18 课没有把“第几分钟该多难”塞进 `EnemySpawner`，而是新增 `WaveDirector` 读取 `GameSession.Elapsed`，只在阶段变化时调用 `EnemySpawner.ApplyWaveSettings()`。这样刷怪器继续做执行器，15 分钟压力曲线由导演调度，详见[波次导演与 15 分钟节奏](wave-director-and-run-pacing.md)。
+
 ## 关键设计理解
 
 ### 预热与弹性扩容
@@ -217,6 +219,8 @@ spawnTimer -= spawnInterval;
 
 - [主动武器与 WeaponBase 提炼](active-weapons-and-weapon-base.md)
 - [目标注册表、自动武器与投射物](target-registry-and-auto-weapon.md)
+- [波次导演与 15 分钟节奏](wave-director-and-run-pacing.md)
+- [战斗反馈快包](combat-feedback-pack.md)
 - [Unity 生命周期](../../unity/lifecycle.md)
 - [对象池专题](../../performance/memory/object-pool.md)
 - [优化小 Tips](../../performance/perf-tips.md)

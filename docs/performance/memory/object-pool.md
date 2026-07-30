@@ -535,7 +535,7 @@ maxSize: 1000;
 
 把死亡流程从 `Destroy(gameObject)` 改成 `SetActive(false)` 只是让对象进入休眠，并不等于已经完成对象池。再次取出前还必须恢复运行时状态和外部关系。
 
-[Backpack Survivor 第 3 课](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)暴露了一个典型问题：敌人在 `Start` 中订阅死亡事件，在 `Die` 中退订并停用；但 `Start` 每个实例只执行一次，重新启用后不会再次订阅。第 5 课已经在[刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)中把订阅迁移到 `OnEnable` / `OnDisable`，并使用池化钩子重置生命值与攻击计时。第 8 课要求掉落物磁吸状态机和速度在取出时归零；第 11 课又通过 `XpOrb` 复用问题验证了同一条规则。第 12 课把[容器搜刮与宝箱系统](../../projects/backpack-survivor/container-looting-and-chests.md)接入对象池后，继续要求宝箱的开启状态、碰撞器、颜色、残骸计时和 `ActiveCount` 成对恢复；散落协程中关闭的碰撞器也必须在取出时复位。第 13 课的[背包交互补丁](../../projects/backpack-survivor/inventory-interaction-patches.md)进一步说明：池化对象被交互系统缓存时，生产者需要幂等守卫，消费者需要在成功交互后及时清缓存。
+[Backpack Survivor 第 3 课](../../projects/backpack-survivor/target-registry-and-auto-weapon.md)暴露了一个典型问题：敌人在 `Start` 中订阅死亡事件，在 `Die` 中退订并停用；但 `Start` 每个实例只执行一次，重新启用后不会再次订阅。第 5 课已经在[刷怪器与对象池](../../projects/backpack-survivor/spawner-and-object-pooling.md)中把订阅迁移到 `OnEnable` / `OnDisable`，并使用池化钩子重置生命值与攻击计时。第 8 课要求掉落物磁吸状态机和速度在取出时归零；第 11 课又通过 `XpOrb` 复用问题验证了同一条规则。第 12 课把[容器搜刮与宝箱系统](../../projects/backpack-survivor/container-looting-and-chests.md)接入对象池后，继续要求宝箱的开启状态、碰撞器、颜色、残骸计时和 `ActiveCount` 成对恢复；散落协程中关闭的碰撞器也必须在取出时复位。第 13 课的[背包交互补丁](../../projects/backpack-survivor/inventory-interaction-patches.md)进一步说明：池化对象被交互系统缓存时，生产者需要幂等守卫，消费者需要在成功交互后及时清缓存。第 19 课的[战斗反馈快包](../../projects/backpack-survivor/combat-feedback-pack.md)把同一规则推进到表现层：伤害数字取出时要重置文本、透明度、朝向和旧协程，播放结束后由 `DamageNumberView` 自己归还池。
 
 ```text
 归还时
