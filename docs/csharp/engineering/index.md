@@ -33,6 +33,7 @@
 - [Backpack Survivor：波次导演与 15 分钟节奏](../../projects/backpack-survivor/wave-director-and-run-pacing.md)：时间事实源、执行器/导演拆分、阶段门闸和高频日志清理。
 - [Backpack Survivor：战斗反馈快包](../../projects/backpack-survivor/combat-feedback-pack.md)：表现层消费伤害事件、场景 Provider、短音效入口和反馈分支独立降级。
 - [Backpack Survivor：胜负结算与重开闭环](../../projects/backpack-survivor/run-result-and-restart-loop.md)：终局结果快照、统一结束入口、结算 UI 投影和场景重载风险边界。
+- [Backpack Survivor：构筑最小兑现](../../projects/backpack-survivor/build-payoff-dual-wield.md)：候选效果/有效效果分层、规则事实源上移、按效果类型处理互斥和 UI/战斗共用真实结果。
 - [Backpack Survivor V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)：交付范围、设计主线、技术债务和下一阶段计划。
 
 ## 最小产出

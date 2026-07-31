@@ -1,6 +1,6 @@
 # Backpack Survivor（背包幸存者）
 
-> 状态：V0.2 胜负结算与重开闭环已记录，准备进入构筑最小兑现
+> 状态：V0.2 构筑最小兑现已记录，准备进入内容面扩展
 >
 > 首次记录：2026-07-20
 >
@@ -39,6 +39,7 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 `WaveDirector`、`WaveStage` 和波次 HUD 建立 15 分钟压力曲线，并让刷怪参数按本局时间调度。
 - 用 `DamageFlashView`、`DamageNumberView`、`SfxPlayer` 和 `CameraShakePlayer` 把命中、受伤、升级、开箱等战斗事实翻译成闪色、数字、音效和震屏反馈。
 - 用 `RunResult`、`GameSession.EndRun()` 和 `ResultView` 把胜利/失败、结果快照、结算面板、重开/退出和环形 XP HUD 接成单局收尾闭环。
+- 用 `AdjacencyRuleBook`、`AdjacencyEffectResolver` 和 `BackpackWeaponActivator` 让 `DualWield` 从候选邻接效果变成真实战斗收益，并让 UI 显示真实有效效果。
 
 ## 实践记录
 
@@ -63,6 +64,7 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 18 课 | [波次导演与 15 分钟节奏](wave-director-and-run-pacing.md) | 已记录；课程记录描述已实现波次导演、阶段表、刷怪参数调度和波次 HUD，本环境完成静态审阅 |
 | 第 19 课 | [战斗反馈快包](combat-feedback-pack.md) | 已记录；课程记录描述已实现受击闪色、池化伤害数字、短音效入口、玩家受伤反馈和 Cinemachine 震屏，本环境完成静态审阅 |
 | 第 20 课 | [胜负结算与重开闭环](run-result-and-restart-loop.md) | 已记录；课程记录描述已实现终局结果快照、结算面板、重开/退出按钮、击杀统计、环形 XP HUD 和血条 Slider 显示化修复，本环境完成静态审阅 |
+| 第 21 课 | [构筑最小兑现](build-payoff-dual-wield.md) | 已记录；课程记录描述已实现邻接规则事实源、有效效果解析器、双持防三持、双持额外激活和 UI 真实有效效果投影，本环境完成静态审阅 |
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
@@ -86,12 +88,13 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 18 课课程记录描述了 `WaveDirector`、`WaveStage`、`EnemySpawner.ApplyWaveSettings()`、`OnWaveStageChanged`、波次 HUD 和 `TargetRegistry` 日志清理。本环境只读复核了项目工作区相关脚本、`.meta` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实刷怪节奏。
 - 第 19 课课程记录描述了 `DamageFlashView`、`DamageNumberView`、`DamageNumberSpawner`、`DamageNumberPoolProvider`、`SfxPlayer`、`PlayerHitFeedbackView` 和 `CameraShakePlayer`。本环境只读复核了项目工作区相关脚本、`.meta`、`Enemy.prefab`、`DamageNumber.prefab`、`manifest.json` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实闪色、数字、音效、震屏和资源接线。
 - 第 20 课课程记录描述了 `RunResult`、`GameSession.EndRun()`、`OnRunEnded`、`ResultView`、击杀统计、重开/退出按钮、环形 XP HUD 和血条 Slider 显示化修复。本环境只读复核了项目工作区相关脚本、`.meta` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实结算、按钮、场景重载或 Build 行为。当前还发现 `EditorBuildSettings.asset` 指向 `Run1.unity`，而实际检查到的场景文件是 `01-Run.unity`，重开路径需在 Unity 中复核。
+- 第 21 课课程记录描述了 `AdjacencyRuleBook`、`AdjacencyEffectResolver`、`BackpackWeaponActivator.TryActivateItem()`、`ActivateDualWieldWeapons()` 和 `InventoryUIController` 改用真实有效效果投影。本环境只读复核了项目工作区相关脚本、`.meta`、`BS.Inventory.asmdef` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实双持、三持防护、UI 高亮和战斗收益。
 
 ## 下一步
 
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 第 21 课推进构筑最小兑现，优先让 DualWield 对战斗收益产生可见影响。
-- 邻接效果结算器、基础芯片多邻接、物品/规则配置数据化和真实冷却遮罩继续挂账。
+- 第 22 课推进内容面扩展，优先补 3 类可演示装备、2～3 种稀有度差异和 1～2 个基础邻接芯片。
+- 基础芯片多邻接、物品/规则配置数据化和真实冷却遮罩继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
 - 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、丢弃回捡、合并升级、邻接扫描、背包武器激活、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、胜负后刷怪停止、刷怪压力、战斗反馈资源接线、伤害数字位置、音效播放、震屏强度、结算面板显示、ResultView 订阅位置、Restart 场景重载、Build Settings 场景路径、QuitButton Build 行为、XP 圆环和 HUD Slider Navigation 测试。
 - 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、经验球吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、HUD 刷新、升级面板、波次 HUD、结算面板、刷怪压力、伤害数字池、闪色材质访问、音效播放、Cinemachine 震屏和 GC Alloc。

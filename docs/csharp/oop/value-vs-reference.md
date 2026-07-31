@@ -76,7 +76,7 @@ public class Enemy
 
 项目应用：[Backpack Survivor 的 DamageInfo](../../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)使用 struct 传递伤害上下文。`readonly struct` 能阻止字段被重新赋值，但其中的 `GameObject` 仍然是指向可变对象的引用，因此不是深层不可变。
 
-[Backpack Survivor 的背包纯数据网格](../../projects/backpack-survivor/inventory-data-grid.md)使用 `class Item` 表达具有身份的物品实例。两个 `new Item("gun", 1, 2)` 可以代表同一种物品的两份实例；默认引用相等能让 `InventoryGrid.Contains(item)` 拦住“同一个实例占两块地”，同时允许“同 Id 的两把枪共存”。第 14 课的[合并升级与邻接联动](../../projects/backpack-survivor/merge-upgrade-and-adjacency.md)继续依赖这个语义：合并规则要求同 `Id`、同 `Level`，但必须是不同实例；多格物品扫描邻接时也用引用相等跳过自己。如果未来重写 `Equals` / `GetHashCode` 改成按 `Id` 比较，`HashSet<Item>`、`Dictionary<Item, ...>`、合并和邻接去重的语义都必须重新审视。
+[Backpack Survivor 的背包纯数据网格](../../projects/backpack-survivor/inventory-data-grid.md)使用 `class Item` 表达具有身份的物品实例。两个 `new Item("gun", 1, 2)` 可以代表同一种物品的两份实例；默认引用相等能让 `InventoryGrid.Contains(item)` 拦住“同一个实例占两块地”，同时允许“同 Id 的两把枪共存”。第 14 课的[合并升级与邻接联动](../../projects/backpack-survivor/merge-upgrade-and-adjacency.md)继续依赖这个语义：合并规则要求同 `Id`、同 `Level`，但必须是不同实例；多格物品扫描邻接时也用引用相等跳过自己。第 21 课的[构筑最小兑现](../../projects/backpack-survivor/build-payoff-dual-wield.md)也依赖 `HashSet<Item>` 的实例身份来防止同一把手枪参与两组 `DualWield`。如果未来重写 `Equals` / `GetHashCode` 改成按 `Id` 比较，`HashSet<Item>`、`Dictionary<Item, ...>`、合并、邻接去重和有效效果解析的语义都必须重新审视。
 
 ---
 

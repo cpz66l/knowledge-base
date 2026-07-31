@@ -74,9 +74,10 @@
 - 已记录：[第 18 课：波次导演与 15 分钟节奏](../projects/backpack-survivor/wave-director-and-run-pacing.md)
 - 已记录：[第 19 课：战斗反馈快包](../projects/backpack-survivor/combat-feedback-pack.md)
 - 已记录：[第 20 课：胜负结算与重开闭环](../projects/backpack-survivor/run-result-and-restart-loop.md)
+- 已记录：[第 21 课：构筑最小兑现](../projects/backpack-survivor/build-payoff-dual-wield.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 胜负结算与重开闭环已记录
-- 下一步：构筑最小兑现、DualWield 战斗收益和内容面扩展；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 构筑最小兑现已记录
+- 下一步：内容面扩展、基础邻接芯片和装备稀有度差异；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

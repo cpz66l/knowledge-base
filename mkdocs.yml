@@ -211,6 +211,7 @@ nav:
           - 第 18 课：波次导演与 15 分钟节奏: projects/backpack-survivor/wave-director-and-run-pacing.md
           - 第 19 课：战斗反馈快包: projects/backpack-survivor/combat-feedback-pack.md
           - 第 20 课：胜负结算与重开闭环: projects/backpack-survivor/run-result-and-restart-loop.md
+          - 第 21 课：构筑最小兑现: projects/backpack-survivor/build-payoff-dual-wield.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

@@ -284,7 +284,7 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 | `GetWorldConnectableSides()` 暂不处理旋转 | 接口方向与玩家视觉旋转可能不一致 | 明确接口是否随旋转变化，并在该方法统一转换 |
 | `ScanAdjacency` 结果直接用于 UI 激活边 | 候选效果和真实生效效果暂时混用 | 后续加入结算器后，UI 改用 resolved effects |
 
-> 后续演进：第 15 课已将背包内武器物品映射到场景自动武器实体，并用实例级激活角标显示哪一件物品正在驱动战斗，详见[背包武器激活](backpack-weapon-activation.md)。DualWield 仍停留在候选邻接效果，尚未进入战斗结算。
+> 后续演进：第 15 课已将背包内武器物品映射到场景自动武器实体，并用实例级激活角标显示哪一件物品正在驱动战斗，详见[背包武器激活](backpack-weapon-activation.md)。第 21 课已把 DualWield 从候选邻接推进到真实战斗收益，详见[构筑最小兑现](build-payoff-dual-wield.md)。
 
 临时代码最大的问题不是“不够漂亮”，而是忘记它只是临时的。本页把退出路线写清楚，避免硬编码悄悄变成永久架构。
 
@@ -343,7 +343,7 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 | `ScanAdjacency` 只返回候选效果，不裁决最终玩法生效 | B | 原始记录明确将结算器挂到后续课程 |
 | bitmask 适合当前上下左右接口集合 | C | 本环境基于固定小集合、频繁判断和代码片段静态审阅 |
 | 第 14 课已由当前环境在 Unity Editor / Play Mode 中运行通过 | D | 本次未收到完整 Unity 工程、场景、Prefab、ItemView 引用、字体资源或 `.meta`，未运行 Unity |
-| DualWield 已完成战斗系统生效 | D | 原始记录明确把真实结算和战斗兑现留到后续课程 |
+| 第 14 课阶段 DualWield 已完成战斗系统生效 | D | 原始记录明确把真实结算和战斗兑现留到后续课程；后续第 21 课已另页记录 |
 
 ## 相关内容
 
@@ -351,6 +351,7 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - 前置：[背包交互补丁](inventory-interaction-patches.md)
 - 后续：[背包武器激活](backpack-weapon-activation.md)
+- 后续：[构筑最小兑现](build-payoff-dual-wield.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

@@ -274,7 +274,7 @@ public bool TryGetAnchor(Item item, out int x, out int y)
 
 ## 当前静态审阅发现
 
-> 后续演进：第 13 课已补入提示框射线阻挡修复、面板外丢弃、R 键旋转和请求-确认拾取，详见[背包交互补丁](inventory-interaction-patches.md)；第 14 课进一步加入合并预览、等级显示和接口点表现，详见[合并升级与邻接联动](merge-upgrade-and-adjacency.md)；第 15 课补入激活角标、覆盖层自适应和拖拽延迟重绘，详见[背包武器激活](backpack-weapon-activation.md)。本页仍保留第 10 课当时的历史边界。
+> 后续演进：第 13 课已补入提示框射线阻挡修复、面板外丢弃、R 键旋转和请求-确认拾取，详见[背包交互补丁](inventory-interaction-patches.md)；第 14 课进一步加入合并预览、等级显示和接口点表现，详见[合并升级与邻接联动](merge-upgrade-and-adjacency.md)；第 15 课补入激活角标、覆盖层自适应和拖拽延迟重绘，详见[背包武器激活](backpack-weapon-activation.md)；第 21 课让接口点高亮改为投影真实有效效果，详见[构筑最小兑现](build-payoff-dual-wield.md)。本页仍保留第 10 课当时的历史边界。
 
 - `InventoryUIController.Start()` 订阅了 `grid.OnChanged`，原始片段未展示退订。如果 UI 控制器可能被销毁而 `InventorySystem.Grid` 仍存活，应在 `OnDestroy` 或 `OnDisable` 中退订。
 - 拖拽被打断时需要兜底取消流程。原始思考题已经指出，面板关闭、暂停或失焦可能导致 `EndDrag` 不触发，此时物品已从数据层移除，需要统一 `CancelDrag()` 回滚。
@@ -335,6 +335,7 @@ public bool TryGetAnchor(Item item, out int x, out int y)
 - 后续：[背包交互补丁](inventory-interaction-patches.md)
 - 后续：[合并升级与邻接联动](merge-upgrade-and-adjacency.md)
 - 后续：[背包武器激活](backpack-weapon-activation.md)
+- 后续：[构筑最小兑现](build-payoff-dual-wield.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - 性能：[优化小 Tips](../../performance/perf-tips.md)
