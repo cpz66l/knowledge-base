@@ -327,10 +327,10 @@ LootChest.Interact()
 - 前置：[单局框架与基础 HUD](run-session-and-basic-hud.md)
 - 前置：[刷怪器与对象池](spawner-and-object-pooling.md)
 - 系统：[伤害管线与危险区](damage-pipeline-and-hazard-zone.md)
+- 后续：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - 性能：[优化小 Tips](../../performance/perf-tips.md)
 
 > 📎 标签：`Unity` `战斗反馈` `伤害数字` `音效` `Cinemachine` `对象池` `事件驱动表现` `项目实践`
-

@@ -90,6 +90,7 @@ ScrollView
 | **[Backpack Survivor：经验成长与三选一](../../projects/backpack-survivor/level-progression-and-choice.md)** | Button、TextMeshProUGUI、面板显隐、事件回传 | 掌握升级选择 UI 只展示选项并把玩家选择交回规则层 |
 | **[Backpack Survivor：波次导演与 15 分钟节奏](../../projects/backpack-survivor/wave-director-and-run-pacing.md)** | TextMeshProUGUI、事件刷新、颜色反馈 | 掌握 HUD 只显示导演广播的阶段名和颜色，不自己判断波次规则 |
 | **[Backpack Survivor：战斗反馈快包](../../projects/backpack-survivor/combat-feedback-pack.md)** | World Space Canvas、TextMeshProUGUI、CanvasGroup、Billboard | 掌握世界空间伤害数字、上浮渐隐和对象池复用下的状态重置 |
+| **[Backpack Survivor：胜负结算与重开闭环](../../projects/backpack-survivor/run-result-and-restart-loop.md)** | ResultPanel、Button、TextMeshProUGUI、Image.fillAmount、Slider Navigation | 掌握结算面板事件投影、环形进度显示和 HUD 控件显示化 |
 
 ---
 

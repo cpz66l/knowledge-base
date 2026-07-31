@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：战斗反馈快包已记录，下一步进入胜负结算与重开闭环。
+- 推进 Backpack Survivor V0.2：胜负结算与重开闭环已记录，下一步进入构筑最小兑现。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,6 +46,7 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：胜负结算与重开闭环](projects/backpack-survivor/run-result-and-restart-loop.md)
 - [Backpack Survivor：战斗反馈快包](projects/backpack-survivor/combat-feedback-pack.md)
 - [Backpack Survivor：波次导演与 15 分钟节奏](projects/backpack-survivor/wave-director-and-run-pacing.md)
 - [Backpack Survivor：经验成长与三选一](projects/backpack-survivor/level-progression-and-choice.md)

@@ -24,6 +24,7 @@
 | 矩形裁剪用 `Mask`（带 stencil）会打断合批 | 矩形区域改用 `RectMask2D` |
 | Legacy Text 渲染差、重建多 | 换 TextMeshPro（SDF 渲染，详见 [TextMeshPro](../unity/ugui/controls/text-tmp.md)）|
 | 高频伤害数字是世界空间 UI | 使用 World Space Canvas + 对象池，取出时重置文本、透明度和朝向；项目案例见[战斗反馈快包](../projects/backpack-survivor/combat-feedback-pack.md) |
+| 纯 HUD Slider 抢键盘输入 | 关闭 `Interactable`，Navigation 设为 None；项目案例见[胜负结算与重开闭环](../projects/backpack-survivor/run-result-and-restart-loop.md) |
 
 ---
 

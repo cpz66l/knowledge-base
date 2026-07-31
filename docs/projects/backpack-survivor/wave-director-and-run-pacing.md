@@ -276,6 +276,7 @@ Esc 暂停 / 升级三选一
 - 前置：[单局框架与基础 HUD](run-session-and-basic-hud.md)
 - 前置：[刷怪器与对象池](spawner-and-object-pooling.md)
 - 后续：[战斗反馈快包](combat-feedback-pack.md)
+- 后续：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - 性能：[优化小 Tips](../../performance/perf-tips.md)

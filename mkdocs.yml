@@ -210,6 +210,7 @@ nav:
           - 第 17 课：经验成长与三选一: projects/backpack-survivor/level-progression-and-choice.md
           - 第 18 课：波次导演与 15 分钟节奏: projects/backpack-survivor/wave-director-and-run-pacing.md
           - 第 19 课：战斗反馈快包: projects/backpack-survivor/combat-feedback-pack.md
+          - 第 20 课：胜负结算与重开闭环: projects/backpack-survivor/run-result-and-restart-loop.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:
