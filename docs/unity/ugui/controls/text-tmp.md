@@ -80,9 +80,15 @@ public class TMPDemo : MonoBehaviour
 
 ---
 
+## 项目中的应用
+
+[Backpack Survivor 第 22 课](../../../projects/backpack-survivor/content-expansion-fire-rate-boost.md)把中文方块问题从字体资产链上修掉：导入项目内 `SourceHanSansCN-Normal.ttf`，生成 `SourceHanSansCN-Normal SDF`，再同步 `TMP Settings.asset` 默认字体、fallback、场景文本和 prefab 文本引用。这里的经验是，中文显示问题不要只改单个 Text；要确认源 TTF、SDF、材质、fallback 和 Build 清空动态数据设置都可随项目复现。
+
+---
+
 ## 常见坑
 
-- **中文显示方块/缺失**：默认 TMP 字体不含中文，需用 `Window -> TextMeshPro -> Font Asset Creator` 生成含中文字符的动态字体资源，或导入中文字体
+- **中文显示方块/缺失**：默认 TMP 字体不含中文，需用 `Window -> TextMeshPro -> Font Asset Creator` 生成含中文字符的动态字体资源，或导入中文字体；项目中还要检查 `TMP Settings.asset` 默认字体、fallback、prefab/scene 字体材质引用和 Build 动态数据设置
 - **粉色方块**：忘导入 TMP Essentials（见上文）
 - **字号模糊**：旧版 Text 缩放易糊，换 TMP 即解决
 

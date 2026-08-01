@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：构筑最小兑现已记录，下一步进入内容面扩展。
+- 推进 Backpack Survivor V0.2：精英宝箱与终局压力强化已记录，下一步进入数值调参台与首轮平衡。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,6 +46,8 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：精英宝箱与终局压力强化](projects/backpack-survivor/elite-chests-endgame-pressure.md)
+- [Backpack Survivor：内容面铺开](projects/backpack-survivor/content-expansion-fire-rate-boost.md)
 - [Backpack Survivor：构筑最小兑现](projects/backpack-survivor/build-payoff-dual-wield.md)
 - [Backpack Survivor：胜负结算与重开闭环](projects/backpack-survivor/run-result-and-restart-loop.md)
 - [Backpack Survivor：战斗反馈快包](projects/backpack-survivor/combat-feedback-pack.md)

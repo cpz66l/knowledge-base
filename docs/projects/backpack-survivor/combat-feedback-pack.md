@@ -78,7 +78,7 @@ private void OnDisable()
 - 回收时停止未结束协程；
 - 回收时恢复原色，避免带着上一轮受击颜色复活。
 
-当前实现通过 `renderer.material.color` 改色。它适合 Demo 阶段快速验证，但大量敌人高频受击时，后续应结合 Profiler 观察材质实例化、内存和渲染成本；如果成为瓶颈，再考虑 `MaterialPropertyBlock` 等方案。
+当前实现通过 `renderer.material.color` 改色。它适合 Demo 阶段快速验证，但大量敌人高频受击时，后续应结合 Profiler 观察材质实例化、内存和渲染成本；如果成为瓶颈，再考虑 `MaterialPropertyBlock` 等方案。第 23 课针对 GLB 模型改为临时 `flashMaterial` 替换并在 `OnDisable()` 恢复原 `sharedMaterials`，重点解决 Shader 颜色属性不可靠和池化残留问题。
 
 ## 伤害数字池
 
@@ -328,6 +328,7 @@ LootChest.Interact()
 - 前置：[刷怪器与对象池](spawner-and-object-pooling.md)
 - 系统：[伤害管线与危险区](damage-pipeline-and-hazard-zone.md)
 - 后续：[胜负结算与重开闭环](run-result-and-restart-loop.md)
+- 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)

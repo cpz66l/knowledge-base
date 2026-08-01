@@ -75,9 +75,11 @@
 - 已记录：[第 19 课：战斗反馈快包](../projects/backpack-survivor/combat-feedback-pack.md)
 - 已记录：[第 20 课：胜负结算与重开闭环](../projects/backpack-survivor/run-result-and-restart-loop.md)
 - 已记录：[第 21 课：构筑最小兑现](../projects/backpack-survivor/build-payoff-dual-wield.md)
+- 已记录：[第 22 课：内容面铺开](../projects/backpack-survivor/content-expansion-fire-rate-boost.md)
+- 已记录：[第 23 课：精英宝箱与终局压力强化](../projects/backpack-survivor/elite-chests-endgame-pressure.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 构筑最小兑现已记录
-- 下一步：内容面扩展、基础邻接芯片和装备稀有度差异；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 精英宝箱与终局压力强化已记录
+- 下一步：第 24 课数值调参台与首轮平衡；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

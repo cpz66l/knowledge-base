@@ -212,6 +212,8 @@ nav:
           - 第 19 课：战斗反馈快包: projects/backpack-survivor/combat-feedback-pack.md
           - 第 20 课：胜负结算与重开闭环: projects/backpack-survivor/run-result-and-restart-loop.md
           - 第 21 课：构筑最小兑现: projects/backpack-survivor/build-payoff-dual-wield.md
+          - 第 22 课：内容面铺开: projects/backpack-survivor/content-expansion-fire-rate-boost.md
+          - 第 23 课：精英宝箱与终局压力强化: projects/backpack-survivor/elite-chests-endgame-pressure.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

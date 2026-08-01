@@ -96,7 +96,7 @@ public class LootChest : MonoBehaviour, IInteractable, IPoolable
 }
 ```
 
-这里的关键不是代码量，而是职责切分：`OnGetFromPool` 负责恢复中性出厂状态，`Initialize` 负责灌入本轮等级配置。两层都存在，宝箱才能既复用同一个池，又表现出不同等级。
+这里的关键不是代码量，而是职责切分：`OnGetFromPool` 负责恢复中性出厂状态，`Initialize` 负责灌入本轮等级配置。两层都存在，宝箱才能既复用同一个池，又表现出不同等级。第 23 课在此基础上继续把宝箱等级选择接入波次配置，让不同阶段拥有不同品质权重。
 
 ## 生成器与拒绝采样
 
@@ -308,6 +308,7 @@ private void Interact()
 - 前置：[刷怪器与对象池](spawner-and-object-pooling.md)
 - 后续：[背包交互补丁](inventory-interaction-patches.md)
 - 后续：[战斗反馈快包](combat-feedback-pack.md)
+- 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

@@ -43,7 +43,7 @@ DropItem 超时 Return 到对象池
 
 本页将这条链路记录为用户项目实践。当前知识库环境没有完整 Unity 工程、Prefab、`.meta`、场景和 Profiler 数据，因此只声明完成了静态审阅和文档构建验证，不声称本次亲自在 Unity 中运行通过。
 
-后续第 11 课已经把本页的单层掉落表演进为“两级掉落表 + 品类分流”，并修正了“经验球不进入装备保底计数”的边界，详见[掉落分层与交互拾取](loot-layering-and-interaction.md)。
+后续第 11 课已经把本页的单层掉落表演进为“两级掉落表 + 品类分流”，并修正了“经验球不进入装备保底计数”的边界，详见[掉落分层与交互拾取](loot-layering-and-interaction.md)。第 22 课继续把 `LootEntry` 扩展为背包物品源头数据，新增标签、接口方向、结算价值和效果强度，详见[内容面铺开](content-expansion-fire-rate-boost.md)。
 
 ## 分层设计
 
@@ -312,6 +312,7 @@ pool.Return(gameObject)
 
 - [刷怪器与对象池](spawner-and-object-pooling.md)
 - [掉落分层与交互拾取](loot-layering-and-interaction.md)
+- [内容面铺开](content-expansion-fire-rate-boost.md)
 - [敌人追击、近战与死亡流程](enemy-ai-and-melee.md)
 - [Unity 生命周期](../../unity/lifecycle.md)
 - [对象池专题](../../performance/memory/object-pool.md)
