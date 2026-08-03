@@ -21,7 +21,7 @@
 
 | 模块 | 当前职责 |
 |---|---|
-| `RunResult` | 普通 C# 结果快照，记录 `FinalState / Elapsed / Level / TotalXp / KillCount` |
+| `RunResult` | 普通 C# 结果快照，记录 `FinalState / Elapsed / Level / TotalXp / KillCount`；第 25 课继续追加 `BackpackValue` |
 | `GameSession.EndRun()` | 统一 Victory / Defeat 终局路径，切状态、暂停时间、生成结果并广播 |
 | `GameSession.OnRunEnded` | 向表现层发布本局结算快照 |
 | `EnemyAI.OnEnemyDied` | 敌人死亡的静态广播入口，供 `GameSession` 统计本局击杀数 |
@@ -47,7 +47,7 @@ public class RunResult
 }
 ```
 
-这个边界很关键：结算面板显示的是“结束那一刻”的结果，而不是 UI 打开时再去追问 `GameSession`、经验系统、敌人系统或 HUD。后续要加本局金币、伤害统计、最高波次，也应先写入结果快照，再由表现层读取。
+这个边界很关键：结算面板显示的是“结束那一刻”的结果，而不是 UI 打开时再去追问 `GameSession`、经验系统、敌人系统或 HUD。第 25 课已经沿用这个规则补入 `BackpackValue`；后续如果要加本局金币、伤害统计、最高波次，也应先写入结果快照，再由表现层读取。
 
 ## GameSession.EndRun
 
@@ -275,6 +275,8 @@ RunTimer.Tick(Time.deltaTime)
 - 前置：[单局框架与基础 HUD](run-session-and-basic-hud.md)
 - 系统：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 后续：[构筑最小兑现](build-payoff-dual-wield.md)
+- 后续：[金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md)
+- 后续：[背包价值与物品价值显示](backpack-value-and-item-value-display.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

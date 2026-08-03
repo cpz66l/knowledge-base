@@ -1,6 +1,6 @@
 # Backpack Survivor（背包幸存者）
 
-> 状态：V0.2 精英宝箱与终局压力强化已记录，准备进入数值调参台与首轮平衡
+> 状态：V0.2 合并升级收益兑现已记录，准备进入第 27 课数值调参台与首轮平衡
 >
 > 首次记录：2026-07-20
 >
@@ -42,6 +42,9 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 `AdjacencyRuleBook`、`AdjacencyEffectResolver` 和 `BackpackWeaponActivator` 让 `DualWield` 从候选邻接效果变成真实战斗收益，并让 UI 显示真实有效效果。
 - 用 `LootEntry` 源头字段、长期物品池、三类自动武器、`FireRateBoost` 和 TMP 字体资产链，把 Demo 从最小构筑兑现推进到内容面铺开。
 - 用普通/精英敌人分池、WaveStage 奖励参数、宝箱品质曲线和 GLB 闪白材质替换，把 Demo 推进到终局压力强化。
+- 用 `GoldOrb`、`GameSession.TotalGold` 和 `RunHudView.goldText` 把金币掉落、散落飞行、磁吸拾取、局内统计和 HUD 显示接成闭环。
+- 用 Item.ScoreValue、InventoryGrid.GetTotalScoreValue()、InventoryUIController.totalValueText 和 RunResult.BackpackValue 把单件价值、背包总价值和结算页价值快照接成闭环。
+- 用 BaseScoreValue / BaseEffectValue、等级推导当前收益、ItemTooltipView 和可调攻速上限，把合并升级从视觉等级推进到价值、效果和战斗收益兑现。
 
 ## 实践记录
 
@@ -69,6 +72,9 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 21 课 | [构筑最小兑现](build-payoff-dual-wield.md) | 已记录；课程记录描述已实现邻接规则事实源、有效效果解析器、双持防三持、双持额外激活和 UI 真实有效效果投影，本环境完成静态审阅 |
 | 第 22 课 | [内容面铺开](content-expansion-fire-rate-boost.md) | 已记录；课程记录描述已实现 `LootEntry` 源头字段、长期物品池、三类自动武器、`FireRateBoost` 和 TMP 中文字体修复，本环境完成静态审阅 |
 | 第 23 课 | [精英宝箱与终局压力强化](elite-chests-endgame-pressure.md) | 已记录；课程记录描述已实现普通/精英分池、宝箱品质曲线、终局压力强化和 GLB 闪白修复，本环境完成静态审阅 |
+| 第 24 课 | [金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md) | 已记录；课程记录描述已实现金币掉落、`GoldOrb`、散落飞行、局内金币统计和 HUD 显示，本环境完成静态审阅 |
+| 第 25 课 | [背包价值与物品价值显示](backpack-value-and-item-value-display.md) | 已记录；课程记录描述已实现单件物品价值、背包总价值、唯一物品去重和结算页背包价值快照，本环境完成静态审阅 |
+| 第 26 课 | [合并升级收益兑现](merge-upgrade-reward-payoff.md) | 已记录；课程记录描述已实现合并升级后的价值 / 效果收益、FireRateBoost 升级收益、物品 Tooltip 和伤害数字显示修正，本环境完成静态审阅 |
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
@@ -95,12 +101,15 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 21 课课程记录描述了 `AdjacencyRuleBook`、`AdjacencyEffectResolver`、`BackpackWeaponActivator.TryActivateItem()`、`ActivateDualWieldWeapons()` 和 `InventoryUIController` 改用真实有效效果投影。本环境只读复核了项目工作区相关脚本、`.meta`、`BS.Inventory.asmdef` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode 或验证真实双持、三持防护、UI 高亮和战斗收益。
 - 第 22 课课程记录描述了 `LootEntry` 扩展为背包物品源头数据、`Item` 保存价值与效果数值、入包/丢弃往返保真、长期掉落表、三类自动武器、`FireRateBoost` 聚合封顶和 TMP 中文字体修复。本环境只读复核了外部 Unity 工程相关脚本、`.meta`、掉落表资产、`01-Run.unity` 武器槽位、TMP Settings、字体 SDF、DamageNumber 与 ItemView 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
 - 第 23 课课程记录描述了普通/精英敌人分池、`WaveStage` 同时下发敌人和宝箱参数、15 分钟终局压力曲线、宝箱品质权重曲线和 GLB 受击闪白修复。本环境只读复核了外部 Unity 工程相关脚本、`.meta`、敌人 Prefab、掉落资产和 `01-Run.unity` 阶段配置，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 24 课课程记录描述了金币掉落、`GoldOrb`、金币散落飞出、局内金币统计和 HUD 显示。本环境只读复核了外部 Unity 工程相关脚本、`GoldDrop.asset`、`GoldOrb.prefab`、`.meta` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 25 课课程记录描述了单件物品价值、背包总价值、唯一物品去重和结算页背包价值快照。本环境只读复核了外部 Unity 工程相关脚本、ItemView.prefab、.meta 和  1-Run.unity 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 26 课课程记录描述了合并升级后的价值 / 效果收益、FireRateBoost 升级收益、物品 Tooltip 和伤害数字显示修正。本环境只读复核了外部 Unity 工程相关脚本、ItemTooltipView.cs、.meta 和  1-Run.unity 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
 
 ## 下一步
 
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 第 24 课推进数值调参台与首轮平衡，把精英率、宝箱品质、掉落经济和终局压力从“已配置”推进到“可重复调参与可比较样本”。
-- 背包总价值结算、基础芯片更多邻接、物品/规则配置进一步数据化和真实冷却遮罩继续挂账。
+- 第 27 课推进数值调参台与首轮平衡，重点处理弹夹 / FireRateBoost 基础值、等级倍率、攻速上限、敌人血量成长和伤害显示格式。
+- 基础芯片更多邻接、物品/规则配置进一步数据化、最终评分模型、金币结算字段、Tooltip 生效收益区分和真实冷却遮罩继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
-- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、丢弃回捡、合并升级、邻接扫描、背包武器激活、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、胜负后刷怪停止、终局刷怪压力、GLB 闪白视觉、结算面板显示、ResultView 订阅位置、Restart 场景重载、Build Settings 场景路径、QuitButton Build 行为、XP 圆环和 HUD Slider Navigation 测试。
-- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、经验球吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、HUD 刷新、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。
+- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、金币掉落/飞行/磁吸/HUD、金币重开清零、丢弃回捡、ItemView / TotalValueText 射线、唯一物品总价值、拖拽/合并后的总价值刷新、`BackpackValue` 结算快照、合并升级收益、Tooltip 显示/隐藏/射线、FireRateBoost 升级收益、伤害数字格式、邻接扫描、背包武器激活、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、胜负后刷怪停止、终局刷怪压力、GLB 闪白视觉、结算面板显示、ResultView 订阅位置、Restart 场景重载、Build Settings 场景路径、QuitButton Build 行为、XP 圆环和 HUD Slider Navigation 测试。
+- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、经验球吸附、金币吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、HUD 刷新、Tooltip、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。

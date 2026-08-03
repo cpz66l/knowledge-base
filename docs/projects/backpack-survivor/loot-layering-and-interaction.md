@@ -40,7 +40,7 @@
 ```text
 经验球：必掉，但面额走子表
 装备：独立概率掉落，掉了再按装备子表权重抽
-金币：后续挂账
+金币：第 24 课补成 GoldOrb、局内金币统计和 HUD 显示
 ```
 
 因此新增频道结构：
@@ -152,7 +152,7 @@ public void TrySpawnDrop(Vector3 position, LootTableData bundle)
         }
         else if (entry.category == DropCategory.Gold)
         {
-            // 挂账：后续金币落地或直接进账
+            // 第 24 课已补为 GoldOrb 对象池生成、散落飞行和局内金币记账
         }
     }
 }
@@ -392,6 +392,7 @@ R 键旋转可以缓解大件装备放不下的问题，但不能替代收货口
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - 后续：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 后续：[背包交互补丁](inventory-interaction-patches.md)
+- 后续：[金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

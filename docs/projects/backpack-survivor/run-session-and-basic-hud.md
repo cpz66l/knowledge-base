@@ -267,6 +267,8 @@ private void Start()
 
 只订阅事件会遇到初始化时序问题：如果 `GameSession.StartRun()` 先广播，HUD 后订阅，就会漏掉初始值。只拉快照也不够，因为后续变化还要持续更新。因此这里采用“事件负责变化，快照负责初始值”。
 
+后续第 24 课把同一结构扩展到局内金币：`GameSession.OnGoldChanged` 负责变化广播，`RunHudView.Start()` 主动读取 `TotalGold`，避免 HUD 初始金币漏刷。
+
 ## 单局链路
 
 ### 开局
@@ -377,6 +379,7 @@ XpOrb.Collect()
 - 后续：[波次导演与 15 分钟节奏](wave-director-and-run-pacing.md)
 - 后续：[战斗反馈快包](combat-feedback-pack.md)
 - 后续：[胜负结算与重开闭环](run-result-and-restart-loop.md)
+- 后续：[金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

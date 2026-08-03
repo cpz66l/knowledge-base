@@ -123,7 +123,7 @@ LootEntry entry = new LootEntry
 
 本环境只读抽样看到 `CommonEquipDrops`、`UncommonEquipDrops`、`RareEquipDrops`、`EpicEquipDrops`、`LegendaryBonusDrops` 中已经出现 `itemTag`、`connectableSides`、`scoreValue` 与部分 `effectValue` 字段。这个结论属于静态资产复核，不能替代 Unity 中的真实掉落、拾取和宝箱节奏验证。
 
-普通怪掉落目前仍可能带有测试倾向。第 23 课已经把这个方向落到普通/精英掉落职责拆分、宝箱品质曲线和终局压力强化中：普通怪回到经验为主，精英和宝箱承担高价值装备入口。
+普通怪掉落目前仍可能带有测试倾向。第 23 课已经把这个方向落到普通/精英掉落职责拆分、宝箱品质曲线和终局压力强化中：普通怪回到经验为主，精英和宝箱承担高价值装备入口。第 25 课继续把这里的 `scoreValue` 投影到 ItemView、背包总价值和结算快照。
 
 ## FireRateBoost 规则
 
@@ -349,6 +349,8 @@ LootTableData.LootEntry
 - 前置：[掉落分层与交互拾取](loot-layering-and-interaction.md)
 - 前置：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
+- 后续：[背包价值与物品价值显示](backpack-value-and-item-value-display.md)
+- 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - UGUI：[Text (TextMeshPro)](../../unity/ugui/controls/text-tmp.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

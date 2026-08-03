@@ -72,7 +72,7 @@ Random.value            // float，范围 0.0~1.0
 
 ## 敌人和奖励职责
 
-第 23 课新增 `NormalEnemy.prefab` 与 `EliteEnemy.prefab`，并让它们挂不同掉落表。静态资产抽样显示：
+第 23 课新增 `NormalEnemy.prefab` 与 `EliteEnemy.prefab`，并让它们挂不同掉落表。第 24 课在这个奖励分层之后补上金币子表、`GoldOrb` 掉落表现和局内经济 HUD，让经验、装备和金币三条反馈更清晰。静态资产抽样显示：
 
 | Prefab | 静态可见差异 |
 |---|---|
@@ -371,6 +371,7 @@ Health.TakeDamage()
 - 前置：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 前置：[战斗反馈快包](combat-feedback-pack.md)
 - 前置：[掉落分层与交互拾取](loot-layering-and-interaction.md)
+- 后续：[金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

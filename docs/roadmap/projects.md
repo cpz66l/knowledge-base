@@ -77,9 +77,12 @@
 - 已记录：[第 21 课：构筑最小兑现](../projects/backpack-survivor/build-payoff-dual-wield.md)
 - 已记录：[第 22 课：内容面铺开](../projects/backpack-survivor/content-expansion-fire-rate-boost.md)
 - 已记录：[第 23 课：精英宝箱与终局压力强化](../projects/backpack-survivor/elite-chests-endgame-pressure.md)
+- 已记录：[第 24 课：金币掉落与局内经济 HUD](../projects/backpack-survivor/gold-drops-and-economy-hud.md)
+- 已记录：[第 25 课：背包价值与物品价值显示](../projects/backpack-survivor/backpack-value-and-item-value-display.md)
+- 已记录：[第 26 课：合并升级收益兑现](../projects/backpack-survivor/merge-upgrade-reward-payoff.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 精英宝箱与终局压力强化已记录
-- 下一步：第 24 课数值调参台与首轮平衡；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 合并升级收益兑现已记录
+- 下一步：第 27 课数值调参台与首轮平衡；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

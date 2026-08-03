@@ -34,6 +34,9 @@
 - [Backpack Survivor：战斗反馈快包](../../projects/backpack-survivor/combat-feedback-pack.md)：表现层消费伤害事件、场景 Provider、短音效入口和反馈分支独立降级。
 - [Backpack Survivor：胜负结算与重开闭环](../../projects/backpack-survivor/run-result-and-restart-loop.md)：终局结果快照、统一结束入口、结算 UI 投影和场景重载风险边界。
 - [Backpack Survivor：构筑最小兑现](../../projects/backpack-survivor/build-payoff-dual-wield.md)：候选效果/有效效果分层、规则事实源上移、按效果类型处理互斥和 UI/战斗共用真实结果。
+- [Backpack Survivor：金币掉落与局内经济 HUD](../../projects/backpack-survivor/gold-drops-and-economy-hud.md)：静态掉落事件进入 `GameSession`，再用 `OnGoldChanged` 把局内金币快照投影到 HUD，并记录序列化字段改名风险。
+- [Backpack Survivor：背包价值与物品价值显示](../../projects/backpack-survivor/backpack-value-and-item-value-display.md)：数据层价值查询、唯一物品去重、RunResult.BackpackValue 终局快照和 UI 纯投影边界。
+- [Backpack Survivor：合并升级收益兑现](../../projects/backpack-survivor/merge-upgrade-reward-payoff.md)：基础值 / 当前值拆分、合并命令与收益公式分离、运行时值不污染配置、Tooltip 投影和伤害显示语义修正。
 - [Backpack Survivor V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)：交付范围、设计主线、技术债务和下一阶段计划。
 
 ## 最小产出

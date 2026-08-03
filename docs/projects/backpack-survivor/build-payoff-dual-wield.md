@@ -340,6 +340,7 @@ itemView.SetConnectors(visibleSides, activeSides);
 - 前置：[目标注册表、自动武器与投射物](target-registry-and-auto-weapon.md)
 - 前置：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - 后续：[内容面铺开](content-expansion-fire-rate-boost.md)
+- 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
