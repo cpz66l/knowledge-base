@@ -1,42 +1,83 @@
-# 🎮 GameDev 知识库
+# GameDev 知识库
 
-游戏客户端开发学习笔记，使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 搭建，托管于 GitHub Pages。
+这是一个面向 **Unity 游戏客户端开发实习** 的个人知识库，使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 搭建，并通过 GitHub Pages 发布。
 
+在线访问：<https://cpz66l.github.io/knowledge-base/>
 
-打开 https://cpz66l.github.io/knowledge-base/ 即可浏览。
+## 知识库定位
+
+这个仓库不是资料搬运，也不是为了把目录填满而提前写结论。它用于沉淀我在准备游戏客户端开发方向时，经过学习、练习、项目验证或复盘后的内容。
+
+当前主线是：
+
+- 用 C# / Unity 做出可运行、可复盘、可展示的项目。
+- 用 C++ 和计算机基础补齐客户端岗位的底层能力。
+- 用 LeetCode 双语题解训练算法表达和 C# / C++ 对照能力。
+- 用项目日志、Bug 记录、Review 和检查清单，把“学过”推进到“能解释、能实现、能验证”。
 
 ## 内容结构
 
 | 模块 | 内容 |
-|------|------|
-| **C#** | 面向对象编程、GC 与内存管理、async/await、工程实践 |
-| **LeetCode** | C# / C++ 双语题解，按哈希、双指针、滑动窗口、DP、二叉树等题型整理 |
-| **C++** | C# 对照语法、对象模型、内存与 RAII、STL、Modern C++、模板、并发、CMake/调试、LeetCode |
-| **Unity** | 生命周期、ScriptableObject、Prefab、Addressables 资源管理、Editor 工具、UGUI、动画系统 |
-| **图形学** | 渲染管线、Shader 基础、光照与着色、PBR 理论、阴影技术 |
-| **性能优化** | Profiler 深度使用、内存管理（对象池 / GC 优化）、渲染性能、CPU 与代码优化 |
-| **网络编程** | TCP/UDP 基础、Unity Netcode、状态同步、帧同步与锁步 |
-| **热更新** | Lua 基础、xLua、资源热更新、完整热更流程 |
-| **项目实践** | 作品集总览 |
+| --- | --- |
+| [学习路线](docs/roadmap/index.md) | C# / Unity 主线、C++ 副线、计算机基础、专项能力和项目路线 |
+| [C#](docs/csharp/index.md) | 面向对象、泛型、委托事件、GC 与内存、async/await、工程实践 |
+| [C++](docs/cpp/index.md) | 基础语法、OOP、内存管理、STL、Modern C++、工具链和刷题路线 |
+| [LeetCode 双语题解](docs/csharp/leetcode/index.md) | 使用 C# / C++ 对照整理常见题型、模板和易错点 |
+| [Unity](docs/unity/index.md) | 生命周期、UGUI、Prefab、ScriptableObject、资源管理、动画和编辑器工具 |
+| [图形学](docs/graphics/index.md) | 渲染管线、Shader、光照着色、PBR、阴影等专题路线 |
+| [性能优化](docs/performance/index.md) | Profiler、GC、对象池、渲染性能、CPU 与代码优化 |
+| [网络编程](docs/networking/index.md) | TCP/UDP、Unity Netcode、状态同步、帧同步与锁步 |
+| [热更新](docs/hotupdate/index.md) | Lua、xLua、资源热更新和完整热更流程 |
+| [项目实践](docs/projects/index.md) | Backpack Survivor 项目日志、技术拆解和复盘 |
+| [检查与复盘](docs/checklists/index.md) | 面试、Unity 项目、C# 工程能力、每周复盘和项目复盘模板 |
+
+## 当前重点
+
+截至 2026-08-04，知识库共有约 154 篇 Markdown 笔记，当前优先级如下：
+
+- **项目主线**：持续推进 [Backpack Survivor](docs/projects/backpack-survivor/index.md)，把 Unity、C#、UGUI、对象池、掉落、背包、波次、数值和复盘串成一个可展示 Demo。
+- **算法训练**：继续维护 [LeetCode 双语题解](docs/csharp/leetcode/index.md)，重点补齐链表、树、图、动态规划、堆和常见面试题型。
+- **语言基础**：补齐 C++ 基础语法、STL、内存模型和 C# 工程能力，为后续实习面试和更底层的客户端开发打基础。
+- **专项储备**：图形学、性能、网络和热更新先保留路线与最小笔记，等项目或面试需要时再深入补全。
 
 ## 使用方式
 
-- 从 `docs/roadmap/index.md` 查看当前学习路线与阶段产出
-- 从 C#、C++、Unity 等专题目录查询已有知识
-- 使用 `docs/checklists/` 判断知识是否已经完成练习和验证
-- 使用 `docs/reviews/` 记录每周与项目复盘
-- 尚未学习的主题只维护规划，不提前补写完整结论
-- 更换维护模型或智能体时，先阅读 `AGENTS.md` 与 `HANDOFF.md`，按照统一的证据分层和交接流程接手
+- 看整体路线：从 [学习路线总览](docs/roadmap/index.md) 开始。
+- 查具体知识：进入左侧专题目录，或使用站点搜索。
+- 看项目沉淀：进入 [项目实践](docs/projects/index.md)，重点查看 Backpack Survivor 系列。
+- 判断是否掌握：使用 [学习检查清单](docs/checklists/index.md)。
+- 写新笔记：参考 [知识文章模板](docs/guides/note-template.md)。
+- 做阶段复盘：使用 [复盘中心](docs/reviews/index.md)。
 
-## 知识收件箱
+## 本地运行
 
-把随手笔记、Unity 脚本、截图、PDF、链接文件或脚本目录直接放入 `inbox/`，不需要提前分类或重命名。需要整理时告诉智能体“整理 inbox 中尚未处理的内容”即可。
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
 
-智能体会按照 `AGENTS.md` 中的规则自动识别主题、检查重复内容、更新 `docs/`、提炼可复用示例并把原资料移动到本地的 `archive/`。`inbox/` 和 `archive/` 默认不会提交到 Git，避免误提交大文件或私人资料。
+构建静态站点：
 
-## 部署
+```bash
+mkdocs build
+```
 
-Push 到 `main` 分支后，GitHub Actions 自动构建并部署到 GitHub Pages。
+推送到 `main` 后，GitHub Actions 会自动构建并部署到 GitHub Pages。
+
+## 收件箱工作流
+
+临时资料、截图、PDF、链接、脚本或待整理内容可以先放入 `inbox/`。整理时再按照 `AGENTS.md` 和 `HANDOFF.md` 的规则归档到对应专题。
+
+- `docs/`：正式知识库内容，会进入 Git。
+- `inbox/`：本地收件箱，默认不提交。
+- `archive/`：本地原始资料归档，默认不提交。
+
+## 维护原则
+
+- 不提前把未学习内容写成完整结论。
+- 每篇笔记尽量包含问题背景、关键概念、最小示例、验证方式和踩坑记录。
+- 项目经验优先写“现象 -> 排查 -> 根因 -> 修复 -> 沉淀规则”。
+- 面试表达优先来自真实项目、真实 Bug 和真实练习，而不是空泛背诵。
 
 ## License
 

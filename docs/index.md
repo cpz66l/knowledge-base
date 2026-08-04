@@ -1,46 +1,68 @@
-# 🎮 GameDev 知识库
+# GameDev 知识库
 
-> Unity 客户端开发学习笔记 —— C# · C++ · Unity · 图形学 · 性能优化 · 网络编程 · 热更新
+> 面向 Unity 游戏客户端开发实习的个人学习与项目复盘系统。
+>
+> 主线是 C# / Unity，副线是 C++、算法、计算机基础、图形学、性能、网络与热更新。
+
+---
+
+## 现在看什么
+
+| 入口 | 适合场景 |
+| --- | --- |
+| [学习路线总览](roadmap/index.md) | 不确定下一步学什么，先看路线和阶段目标 |
+| [Backpack Survivor 项目实践](projects/backpack-survivor/index.md) | 查看当前主推 Unity 项目的系统拆解、Bug 记录和复盘 |
+| [LeetCode 双语题解](csharp/leetcode/index.md) | 用 C# / C++ 对照训练算法和面试表达 |
+| [Unity 专题](unity/index.md) | 查生命周期、UGUI、资源、Prefab、ScriptableObject 等 Unity 基础 |
+| [C# 专题](csharp/index.md) | 查面向对象、泛型、委托事件、GC、异步和工程实践 |
+| [C++ 专题](cpp/index.md) | 补齐 C++ 基础、STL、内存管理和工具链 |
+| [检查与复盘](checklists/index.md) | 判断是否真的掌握，并把学习结果回写成复盘 |
+
+!!! important "维护原则"
+    尚未学习或尚未验证的内容只保留路线、问题和待办，不提前写成“已掌握”的完整结论。知识库更看重真实练习、项目应用和复盘证据。
 
 ---
 
 ## 当前重点
 
-根据最近一次复盘，当前只保留三个明确重点：
+截至 2026-08-04，当前只保留三条高优先级主线：
 
-- 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
-- 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：数值调参台与首轮平衡已记录，下一步进入新手目标提示与局内可读性。
-
-!!! important "当前原则"
-    尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
-
----
-
-## 使用入口
-
-- **决定下一步**：进入[学习路线总览](roadmap/index.md)。
-- **查询具体知识**：使用左侧专题导航或右上角搜索。
-- **判断是否掌握**：进入[学习检查清单](checklists/index.md)。
-- **整理学习结果**：进入[复盘中心](reviews/index.md)。
+- **项目主线**：推进 Backpack Survivor Demo。当前已记录到数值调参、首轮平衡、宝箱距离提示和 15 分钟试玩验证，下一步进入新手目标提示与局内可读性。
+- **算法主线**：继续维护 C# / C++ 双语 LeetCode 题解，优先补链表、树、图、动态规划、堆和常见面试题型。
+- **基础主线**：补 C++ 基础语法、指针引用、STL、操作系统、网络和图形学的面试可解释版本。
 
 ---
 
 ## 学习闭环
 
 ```text
-路线规划 → 学习文章 → 最小练习 → 项目应用 → 工具验证 → 复盘回写
+路线规划
+  -> 学习笔记
+  -> 最小练习
+  -> 项目应用
+  -> 工具或运行验证
+  -> Bug / Review / 周复盘
+  -> 回写知识文章
 ```
 
-| 当前入口 | 用途 |
-|----------|------|
-| [C# / Unity 主线](roadmap/csharp-unity.md) | 当前主要学习方向 |
-| [C++ 底层副线](roadmap/cpp.md) | 面试、底层与引擎开发基础 |
-| [计算机基础路线](roadmap/computer-science.md) | 算法、组成原理、操作系统、网络与图形数学规划 |
-| [专项能力路线](roadmap/specializations.md) | 性能、图形、网络、热更新 |
-| [项目实践路线](roadmap/projects.md) | 把知识应用到可运行项目 |
-| [学习检查清单](checklists/index.md) | 判断是否真正掌握 |
-| [复盘中心](reviews/index.md) | 沉淀问题、验证与下一步 |
+一个知识点至少要经过“能解释、能实现、能验证、能复盘”中的三个环节，才从“看过”升级为“可用于面试表达”。
+
+---
+
+## 内容地图
+
+| 模块 | 重点内容 | 当前作用 |
+| --- | --- | --- |
+| [C#](csharp/index.md) | OOP、泛型、委托事件、GC、异步、工程实践 | Unity 客户端主语言能力 |
+| [C++](cpp/index.md) | 基础语法、STL、内存、Modern C++、工具链 | 面试和底层能力补齐 |
+| [Unity](unity/index.md) | 生命周期、UGUI、Prefab、资源、动画、编辑器工具 | 客户端工程基础 |
+| [项目实践](projects/index.md) | Backpack Survivor 系列开发日志 | 把知识转成可运行 Demo |
+| [性能优化](performance/index.md) | Profiler、GC、对象池、渲染和 CPU 优化 | 项目稳定性和面试深度 |
+| [图形学](graphics/index.md) | 渲染管线、Shader、光照、PBR、阴影 | 客户端长期竞争力 |
+| [网络编程](networking/index.md) | TCP/UDP、状态同步、帧同步、锁步 | 游戏客户端专项储备 |
+| [热更新](hotupdate/index.md) | Lua、xLua、资源热更和完整流程 | 商业项目常见能力储备 |
+| [检查清单](checklists/index.md) | C#、Unity、专项、面试检查表 | 防止“看过但不会用” |
+| [复盘中心](reviews/index.md) | 周复盘、项目复盘、文章模板 | 沉淀问题和下一步 |
 
 ---
 
@@ -51,29 +73,21 @@
 - [Backpack Survivor：背包价值与物品价值显示](projects/backpack-survivor/backpack-value-and-item-value-display.md)
 - [Backpack Survivor：金币掉落与局内经济 HUD](projects/backpack-survivor/gold-drops-and-economy-hud.md)
 - [Backpack Survivor：精英宝箱与终局压力强化](projects/backpack-survivor/elite-chests-endgame-pressure.md)
-- [Backpack Survivor：内容面铺开](projects/backpack-survivor/content-expansion-fire-rate-boost.md)
 - [Backpack Survivor：构筑最小兑现](projects/backpack-survivor/build-payoff-dual-wield.md)
 - [Backpack Survivor：胜负结算与重开闭环](projects/backpack-survivor/run-result-and-restart-loop.md)
-- [Backpack Survivor：战斗反馈快包](projects/backpack-survivor/combat-feedback-pack.md)
-- [Backpack Survivor：波次导演与 15 分钟节奏](projects/backpack-survivor/wave-director-and-run-pacing.md)
-- [Backpack Survivor：经验成长与三选一](projects/backpack-survivor/level-progression-and-choice.md)
-- [Backpack Survivor：单局框架与基础 HUD](projects/backpack-survivor/run-session-and-basic-hud.md)
-- [Backpack Survivor：背包武器激活](projects/backpack-survivor/backpack-weapon-activation.md)
-- [Backpack Survivor：合并升级与邻接联动](projects/backpack-survivor/merge-upgrade-and-adjacency.md)
-- [Backpack Survivor：背包交互补丁](projects/backpack-survivor/inventory-interaction-patches.md)
-- [Backpack Survivor：容器搜刮与宝箱系统](projects/backpack-survivor/container-looting-and-chests.md)
-- [Backpack Survivor：掉落分层与交互拾取](projects/backpack-survivor/loot-layering-and-interaction.md)
 - [LC 19 删除链表的倒数第 N 个结点：C# / C++ 对照](csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)
 - [LC 2 两数相加：C# / C++ 对照](csharp/leetcode/linked-list/add-two-numbers.md)
 
 ---
 
-## 关于这个知识库
+## 求职展示口径
 
-这是一个面向 Unity 客户端开发的个人知识库，目标是保存经过理解、练习或验证的**消化输出**。
+这个知识库希望展示的不只是“看过很多资料”，而是：
 
-- 附上关键代码片段，理论与实现结合
-- 持续更新，commit 历史就是我的学习轨迹
-- 以路线、练习、项目、验证和复盘形成学习闭环
+- 能把学习路线拆成阶段目标，并持续推进。
+- 能把项目问题整理成可复用的技术复盘。
+- 能在 Unity 项目中验证 C#、UGUI、对象池、配置、数值、反馈和工程边界。
+- 能用 C# / C++ 对照解释算法和语言差异。
+- 能把面试表达建立在真实代码、真实 Bug 和真实项目决策上。
 
-> 如果发现错误或想交流，欢迎提 [Issue](https://github.com/CPZ66L/knowledge-base/issues) 或在 [Discussions](https://github.com/CPZ66L/knowledge-base/discussions) 讨论。
+> 如果发现错误或想交流，可以在 GitHub 仓库中提交 Issue 或 Discussion。
