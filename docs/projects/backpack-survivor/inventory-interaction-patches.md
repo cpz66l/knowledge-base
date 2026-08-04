@@ -148,7 +148,7 @@ public class Item
 }
 ```
 
-这个方案的价值在于保住第 9、10 课建立的只读契约：网格判定、UI 尺寸和红绿预览继续读取 `Width` / `Height`，不需要知道旋转的存储细节。
+这个方案的价值在于保住第 9、10 课建立的只读契约：网格判定、UI 尺寸和红绿预览继续读取 `Width` / `Height`，不需要知道旋转的存储细节。第 28 课进一步把 `bool Rotated` 升级为四状态 `RotationState`，让旋转也能正确影响邻接接口方向。
 
 拖拽中的旋转链路：
 
@@ -355,6 +355,7 @@ private void HandleCollected(LootEntry entry)
 - 前置：[掉落分层与交互拾取](loot-layering-and-interaction.md)
 - 前置：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 后续：[合并升级与邻接联动](merge-upgrade-and-adjacency.md)
+- 后续：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
 - Unity：[UGUI 总览](../../unity/ugui/index.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

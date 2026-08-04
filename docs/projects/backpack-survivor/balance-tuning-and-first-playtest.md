@@ -6,7 +6,7 @@
 >
 > 对应项目：[Backpack Survivor](index.md)
 >
-> 下一步：第 28 课新手目标提示与局内可读性
+> 下一步：[第 28 课旋转邻接方向修正](rotation-adjacency-direction-fix.md)
 >
 > 日期：2026-08-04
 >
@@ -267,7 +267,7 @@ WeaponBase.damage × PlayerRunStats.DamageMultiplier
 - 前置：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
 - 前置：[战斗反馈快包](combat-feedback-pack.md)
 - 前置：[容器搜刮与宝箱系统](container-looting-and-chests.md)
-- 后续：第 28 课新手目标提示与局内可读性
+- 后续：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)
 
