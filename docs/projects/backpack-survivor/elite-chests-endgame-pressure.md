@@ -145,7 +145,7 @@ ChestSpawner：按当前参数计数、选点、抽品质、生成宝箱
 | 600s | 上压力 | 0.3 | 25 | 20% | 30 | 4 |
 | 780s | 终局 | 0.1 | 35 | 30% | 35 | 5 |
 
-前期宝箱频率更友好，帮助玩家构筑成型；中后期奖励间隔变长，敌人密度和精英比例上升，用压力检验背包构筑是否站得住。
+前期宝箱频率更友好，帮助玩家构筑成型；中后期奖励间隔变长，敌人密度和精英比例上升，用压力检验背包构筑是否站得住。第 27 课在这条曲线上加入普通 / 精英敌人直接血量，并用首轮 15 分钟试玩验证终局压力是否能追上玩家构筑。
 
 当前选择“终局精英潮”而不是立刻做 Boss，是 Demo 冲刺期的成本判断。Boss 需要技能、读招、演出、奖励和失败反馈；精英潮复用已有敌人池、波次、掉落和 HUD，更容易在短时间内形成可见体验闭环。
 
@@ -372,6 +372,7 @@ Health.TakeDamage()
 - 前置：[战斗反馈快包](combat-feedback-pack.md)
 - 前置：[掉落分层与交互拾取](loot-layering-and-interaction.md)
 - 后续：[金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md)
+- 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

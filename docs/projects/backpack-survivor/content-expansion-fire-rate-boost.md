@@ -196,7 +196,7 @@ PlayerRunStats.FireRateMultiplier = 升级系统给的本局成长
 backpackFireRateMultiplier = 背包邻接给的构筑收益
 ```
 
-封顶 `1.75x` 是 Demo 体验护栏。允许玩家明显变强，但不让一两个高值芯片把射速推到视觉不可读或平衡失控。
+封顶 `1.75x` 是 Demo 体验护栏。允许玩家明显变强，但不让一两个高值芯片把射速推到视觉不可读或平衡失控。第 27 课根据合并升级后的实测风险继续回调：弹夹基础值收为 10% / 15% / 20%，等级倍率改为 1.0x / 1.5x / 2.0x，最终背包攻速上限调整到 2.0x。
 
 ## 三类自动武器
 
@@ -351,6 +351,7 @@ LootTableData.LootEntry
 - 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
 - 后续：[背包价值与物品价值显示](backpack-value-and-item-value-display.md)
 - 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
+- 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - UGUI：[Text (TextMeshPro)](../../unity/ugui/controls/text-tmp.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

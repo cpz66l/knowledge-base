@@ -141,7 +141,7 @@ fireRateMultiplier = Mathf.Min(fireRateMultiplier, maxBackpackFireRateMultiplier
 autoWeapon.SetBackpackFireRateMultiplier(fireRateMultiplier);
 ```
 
-这是为第 27 课平衡做准备。升级后的弹夹可能很快撞上攻速上限，如果上限藏在代码里，调手感会变成反复改代码；暴露到 Inspector 后，Demo 阶段可以先快速找范围。
+这是为第 27 课平衡做准备。升级后的弹夹可能很快撞上攻速上限，如果上限藏在代码里，调手感会变成反复改代码；暴露到 Inspector 后，Demo 阶段可以先快速找范围。第 27 课已经在这里继续收口：弹夹基础值调整为 10% / 15% / 20%，`EffectValue` 改用 Lv.1 1.0x、Lv.2 1.5x、Lv.3 2.0x 的等级倍率表，攻速上限回调到 2.0x。
 
 ## Tooltip 信息分层
 
@@ -213,7 +213,7 @@ damageText.text = Mathf.FloorToInt(damage).ToString();
 方案 B：继续浮点伤害，UI 显示一位小数或按统一规则格式化
 ```
 
-本课先保留最低要求：战斗 UI 不要向上承诺规则没有真正给出的伤害。
+本课先保留最低要求：战斗 UI 不要向上承诺规则没有真正给出的伤害。第 27 课最终选择方案 A：在 `WeaponBase` 源头把伤害取整，子弹、扣血和伤害数字共用同一份整数伤害语义。
 
 ## 周期链路
 
@@ -351,7 +351,7 @@ Lv.2 Item
 - 前置：[背包价值与物品价值显示](backpack-value-and-item-value-display.md)
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - 系统：[战斗反馈快包](combat-feedback-pack.md)
-- 后续：第 27 课数值调参台与首轮平衡
+- 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - UGUI：[Text (TextMeshPro)](../../unity/ugui/controls/text-tmp.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

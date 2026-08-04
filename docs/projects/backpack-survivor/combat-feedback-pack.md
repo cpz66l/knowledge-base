@@ -161,6 +161,8 @@ private IEnumerator PlayRoutine()
 - `OnGetFromPool()` 停止旧协程、重置 `alpha`、清空文本并面向相机；
 - `OnReturnPool()` 停止旧协程并置空 `playRoutine`。
 
+第 27 课继续收紧伤害数字语义：显示层不再自己解释浮点伤害，而是复述 `WeaponBase` 源头取整后的真实伤害。
+
 ## SfxPlayer
 
 `SfxPlayer` 把短音效统一收口：
@@ -330,6 +332,7 @@ LootChest.Interact()
 - 后续：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
 - 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
+- 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)

@@ -44,6 +44,8 @@
   -> DropItem 散落到地面
 ```
 
+第 27 课在这套宝箱生命周期上新增最近未开启宝箱查询：宝箱出池加入 `unopenedChests`，打开或回池时移出，HUD 只显示仍能被玩家打开的目标距离。
+
 `LootChest` 的运行期状态需要围绕“未开箱可交互、已开箱不可重复交互、残骸稍后回收”来设计：
 
 ```csharp
@@ -309,6 +311,7 @@ private void Interact()
 - 后续：[背包交互补丁](inventory-interaction-patches.md)
 - 后续：[战斗反馈快包](combat-feedback-pack.md)
 - 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
+- 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - 性能：[对象池](../../performance/memory/object-pool.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

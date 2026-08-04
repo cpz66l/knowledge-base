@@ -10,7 +10,7 @@
 
 - 每天使用 C# 与 C++ 各完成一遍 LeetCode，并整理到[双语题解](csharp/leetcode/index.md)。
 - 继续补齐 C++ 基础语法、指针、引用和常用 STL。
-- 推进 Backpack Survivor V0.2：合并升级收益兑现已记录，下一步进入数值调参台与首轮平衡。
+- 推进 Backpack Survivor V0.2：数值调参台与首轮平衡已记录，下一步进入新手目标提示与局内可读性。
 
 !!! important "当前原则"
     尚未学习的内容只保留路线与待办，不提前写成完整结论。已有文章全部保留，后续通过练习、项目和复盘逐步补充自己的理解。
@@ -46,6 +46,7 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：数值调参台与首轮平衡](projects/backpack-survivor/balance-tuning-and-first-playtest.md)
 - [Backpack Survivor：合并升级收益兑现](projects/backpack-survivor/merge-upgrade-reward-payoff.md)
 - [Backpack Survivor：背包价值与物品价值显示](projects/backpack-survivor/backpack-value-and-item-value-display.md)
 - [Backpack Survivor：金币掉落与局内经济 HUD](projects/backpack-survivor/gold-drops-and-economy-hud.md)

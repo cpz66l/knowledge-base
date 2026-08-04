@@ -210,7 +210,7 @@ Esc 暂停 / 升级三选一
   -> 末段冲刺
 ```
 
-这个阶段系统比直接上 Boss 更适合当前项目阶段：它低成本、可配置、能验证成长系统，也能为后续精英潮、Boss 前压迫、宝箱节奏和结算面板提供时间轴入口。第 23 课在这条时间轴上继续扩展，把 `WaveStage` 从只调敌人压力推进到同时下发精英概率、宝箱节奏和宝箱品质权重。
+这个阶段系统比直接上 Boss 更适合当前项目阶段：它低成本、可配置、能验证成长系统，也能为后续精英潮、Boss 前压迫、宝箱节奏和结算面板提供时间轴入口。第 23 课在这条时间轴上继续扩展，把 `WaveStage` 从只调敌人压力推进到同时下发精英概率、宝箱节奏和宝箱品质权重。第 27 课继续把 `WaveStage` 扩展到普通 / 精英直接血量，让波次不只调密度，也能调 TTK。
 
 ## 高频日志清理
 
@@ -278,6 +278,7 @@ Esc 暂停 / 升级三选一
 - 后续：[战斗反馈快包](combat-feedback-pack.md)
 - 后续：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - 后续：[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
+- 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - Unity：[Unity 生命周期](../../unity/lifecycle.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - 性能：[优化小 Tips](../../performance/perf-tips.md)
