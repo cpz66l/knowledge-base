@@ -284,7 +284,7 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 | `GetWorldConnectableSides()` 暂不处理旋转 | 接口方向与玩家视觉旋转可能不一致 | 明确接口是否随旋转变化，并在该方法统一转换 |
 | `ScanAdjacency` 结果直接用于 UI 激活边 | 候选效果和真实生效效果暂时混用 | 后续加入结算器后，UI 改用 resolved effects |
 
-> 后续演进：第 15 课已将背包内武器物品映射到场景自动武器实体，并用实例级激活角标显示哪一件物品正在驱动战斗，详见[背包武器激活](backpack-weapon-activation.md)。第 21 课已把 DualWield 从候选邻接推进到真实战斗收益，详见[构筑最小兑现](build-payoff-dual-wield.md)。第 22 课继续把物品标签、方向、价值和效果强度上移到 `LootEntry`，并接入可堆叠 `FireRateBoost`，详见[内容面铺开](content-expansion-fire-rate-boost.md)。第 26 课进一步让合并等级兑现为当前价值和效果收益，详见[合并升级收益兑现](merge-upgrade-reward-payoff.md)。第 28 课修正旋转后的本地 / 世界接口方向和正反向匹配，详见[旋转邻接方向修正](rotation-adjacency-direction-fix.md)。
+> 后续演进：第 15 课已将背包内武器物品映射到场景自动武器实体，并用实例级激活角标显示哪一件物品正在驱动战斗，详见[背包武器激活](backpack-weapon-activation.md)。第 21 课已把 DualWield 从候选邻接推进到真实战斗收益，详见[构筑最小兑现](build-payoff-dual-wield.md)。第 22 课继续把物品标签、方向、价值和效果强度上移到 `LootEntry`，并接入可堆叠 `FireRateBoost`，详见[内容面铺开](content-expansion-fire-rate-boost.md)。第 26 课进一步让合并等级兑现为当前价值和效果收益，详见[合并升级收益兑现](merge-upgrade-reward-payoff.md)。第 28 课修正旋转后的本地 / 世界接口方向和正反向匹配，详见[旋转邻接方向修正](rotation-adjacency-direction-fix.md)。第 29 课继续让合并等级影响武器实例倍率，并补上合并后 `OnChanged` 语义刷新，详见[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)。
 
 临时代码最大的问题不是“不够漂亮”，而是忘记它只是临时的。本页把退出路线写清楚，避免硬编码悄悄变成永久架构。
 
@@ -355,6 +355,7 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 - 后续：[内容面铺开](content-expansion-fire-rate-boost.md)
 - 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - 后续：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
+- 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

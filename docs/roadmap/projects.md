@@ -82,9 +82,10 @@
 - 已记录：[第 26 课：合并升级收益兑现](../projects/backpack-survivor/merge-upgrade-reward-payoff.md)
 - 已记录：[第 27 课：数值调参台与首轮平衡](../projects/backpack-survivor/balance-tuning-and-first-playtest.md)
 - 已记录：[第 28 课：旋转邻接方向修正](../projects/backpack-survivor/rotation-adjacency-direction-fix.md)
+- 已记录：[第 29 课：武器稀有度与等级差异](../projects/backpack-survivor/weapon-rarity-and-level-scaling.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2 旋转邻接方向修正已记录
-- 下一步：第 29 课武器稀有度与等级差异；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2 武器稀有度与等级差异已记录
+- 下一步：第 30 课攻击芯片效果实装；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

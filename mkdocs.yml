@@ -219,6 +219,7 @@ nav:
           - 第 26 课：合并升级收益兑现: projects/backpack-survivor/merge-upgrade-reward-payoff.md
           - 第 27 课：数值调参台与首轮平衡: projects/backpack-survivor/balance-tuning-and-first-playtest.md
           - 第 28 课：旋转邻接方向修正: projects/backpack-survivor/rotation-adjacency-direction-fix.md
+          - 第 29 课：武器稀有度与等级差异: projects/backpack-survivor/weapon-rarity-and-level-scaling.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

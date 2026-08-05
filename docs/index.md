@@ -25,9 +25,9 @@
 
 ## 当前重点
 
-截至 2026-08-04，当前只保留三条高优先级主线：
+截至 2026-08-05，当前只保留三条高优先级主线：
 
-- **项目主线**：推进 Backpack Survivor Demo。当前已记录到旋转邻接方向修正，下一步进入武器稀有度与等级差异。
+- **项目主线**：推进 Backpack Survivor Demo。当前已记录到武器稀有度与等级差异，下一步进入攻击芯片效果实装。
 - **算法主线**：继续维护 C# / C++ 双语 LeetCode 题解，优先补链表、树、图、动态规划、堆和常见面试题型。
 - **基础主线**：补 C++ 基础语法、指针引用、STL、操作系统、网络和图形学的面试可解释版本。
 
@@ -68,6 +68,7 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：武器稀有度与等级差异](projects/backpack-survivor/weapon-rarity-and-level-scaling.md)
 - [Backpack Survivor：旋转邻接方向修正](projects/backpack-survivor/rotation-adjacency-direction-fix.md)
 - [Backpack Survivor：数值调参台与首轮平衡](projects/backpack-survivor/balance-tuning-and-first-playtest.md)
 - [Backpack Survivor：合并升级收益兑现](projects/backpack-survivor/merge-upgrade-reward-payoff.md)

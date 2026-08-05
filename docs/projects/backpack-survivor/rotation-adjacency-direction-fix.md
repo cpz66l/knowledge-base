@@ -6,7 +6,7 @@
 >
 > 对应项目：[Backpack Survivor](index.md)
 >
-> 下一步：第 29 课武器稀有度与等级差异
+> 下一步：[第 29 课武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 >
 > 日期：2026-08-04
 >
@@ -252,7 +252,7 @@ connectableSides 写 LocalConnectableSides
 | `InventoryUIController.cs` 中可见拖拽旋转后刷新尺寸、红绿判定、接口点和覆盖层 | C | 本环境只读查看外部 Unity 工程脚本 |
 | `InventorySystem.cs` 中可见丢弃写回 `BaseWidth / BaseHeight / LocalConnectableSides` | C | 本环境只读查看外部 Unity 工程脚本 |
 | 相关脚本 `.meta` 文件存在，静态脚本扫描未发现旧 `Rotated` 残留或 `UnityEditor` 误引入 | C | 本环境只读扫描外部 Unity 工程脚本和 `.meta` |
-| 当前环境已运行 Unity Editor / Play Mode、Profiler 或 Player Build | D | 未启动 Unity，未亲自复测真实画面、交互、性能或 Build |
+| 当前环境未运行 Unity Editor / Play Mode、Profiler 或 Player Build | D | 未启动 Unity，未亲自复测真实画面、交互、性能或 Build |
 
 ### 待补验证
 
@@ -277,7 +277,7 @@ connectableSides 写 LocalConnectableSides
 - 前置：[构筑最小兑现](build-payoff-dual-wield.md)
 - 前置：[内容面铺开](content-expansion-fire-rate-boost.md)
 - 前置：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
-- 后续：第 29 课武器稀有度与等级差异
+- 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)
 

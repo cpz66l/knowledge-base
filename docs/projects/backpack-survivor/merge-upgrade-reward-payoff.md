@@ -79,6 +79,8 @@ public bool TryMerge(Item source, Item target)
 }
 ```
 
+第 29 课补上了这里的事件语义债务：如果拖拽开始时 `source` 已经离开网格，`Remove(source)` 不会再触发 `OnChanged`，但 `target.Level` 已改变并会影响价值、Tooltip、芯片效果和武器倍率，因此合并成功后需要补发语义性刷新，详见[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)。
+
 合并只处理“谁留下、谁消耗、等级是否提升”。它不直接写价值，也不直接写效果。等级变化后：
 
 ```text
@@ -352,6 +354,7 @@ Lv.2 Item
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - 系统：[战斗反馈快包](combat-feedback-pack.md)
 - 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
+- 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - UGUI：[Text (TextMeshPro)](../../unity/ugui/controls/text-tmp.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

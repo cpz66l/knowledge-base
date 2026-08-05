@@ -32,6 +32,8 @@
 
 第 15 课把第 14 课的“构筑候选”推进到更直观的一步：背包里有哪把武器，会影响场景里哪把自动武器可用。本课先完成 Demo 能看懂的激活闭环，DualWield 在后续[构筑最小兑现](build-payoff-dual-wield.md)中进入真实战斗结算；真实冷却遮罩仍后移。第 16 课随后在[单局框架与基础 HUD](run-session-and-basic-hud.md)中补上本局时间、胜负、暂停和基础 HUD。
 
+第 29 课进一步沿用这个激活入口：`TryActivateItem()` 不只负责开启具体 `AutoWeapon`，还会按背包中的具体 `Item.Rarity / Item.Level` 注入武器伤害倍率，详见[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)。
+
 ## Demo 收口闸
 
 课程开头继续执行运行时代码卫生门闸：
@@ -306,6 +308,7 @@ Item 实例
 - 前置：[目标注册表、自动武器与投射物](target-registry-and-auto-weapon.md)
 - 后续：[单局框架与基础 HUD](run-session-and-basic-hud.md)
 - 后续：[构筑最小兑现](build-payoff-dual-wield.md)
+- 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

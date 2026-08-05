@@ -240,7 +240,7 @@ WeaponBase.damage × PlayerRunStats.DamageMultiplier
 | `WeaponBase.Fire()` 中池化和无池路径使用同一 `finalDamage` | C | 本环境只读查看 `WeaponBase.cs` |
 | `WaveStage` 与 `EnemySpawner.ApplyWaveSettings()` 已包含普通 / 精英血量参数 | C | 本环境只读查看 `WaveDirector.cs` 与 `EnemySpawner.cs` |
 | `LootChest.TryGetNearestUnopened()`、`ChestDistanceView` 和 `ChestDistanceText.m_RaycastTarget: 0` 静态可见 | C | 本环境只读查看脚本、`.meta` 与 `01-Run.unity` YAML |
-| 当前环境已运行 Unity Editor / Play Mode、Profiler 或 Player Build | D | 未启动 Unity，未亲自复测真实画面、手感、性能或 Build |
+| 当前环境未运行 Unity Editor / Play Mode、Profiler 或 Player Build | D | 未启动 Unity，未亲自复测真实画面、手感、性能或 Build |
 
 ### 待补验证
 
@@ -268,6 +268,7 @@ WeaponBase.damage × PlayerRunStats.DamageMultiplier
 - 前置：[战斗反馈快包](combat-feedback-pack.md)
 - 前置：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 后续：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
+- 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)
 

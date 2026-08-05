@@ -198,6 +198,8 @@ backpackFireRateMultiplier = 背包邻接给的构筑收益
 
 封顶 `1.75x` 是 Demo 体验护栏。允许玩家明显变强，但不让一两个高值芯片把射速推到视觉不可读或平衡失控。第 27 课根据合并升级后的实测风险继续回调：弹夹基础值收为 10% / 15% / 20%，等级倍率改为 1.0x / 1.5x / 2.0x，最终背包攻速上限调整到 2.0x。
 
+第 29 课继续把“类型”和“强度”拆开：芯片仍通过 `EffectValue` 表达可堆叠效果，武器稀有度 / 等级则通过 `WeaponItemStatResolver` 翻译成独立伤害倍率，避免把武器品质也塞进芯片字段，详见[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)。
+
 ## 三类自动武器
 
 场景 `BackpackWeaponActivator.weaponSlots` 在静态 YAML 中可见当前顺序为：
@@ -352,6 +354,7 @@ LootTableData.LootEntry
 - 后续：[背包价值与物品价值显示](backpack-value-and-item-value-display.md)
 - 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
+- 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - UGUI：[Text (TextMeshPro)](../../unity/ugui/controls/text-tmp.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)
