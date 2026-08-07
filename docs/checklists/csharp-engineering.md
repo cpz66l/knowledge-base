@@ -52,6 +52,12 @@
 >
 > 新增证据：[武器稀有度与等级差异](../projects/backpack-survivor/weapon-rarity-and-level-scaling.md)记录了 Resolver 翻译层、战斗 / Tooltip 共用倍率事实源、`WeaponBase` 乘区组合和 `InventoryGrid.TryMerge()` 语义性事件刷新。
 >
+> 新增证据：[攻击芯片效果实装](../projects/backpack-survivor/attack-damage-chip-effect.md)记录了按 `EffectId` 扩展邻接效果、按真实激活武器过滤、按 `AutoWeapon` 聚合倍率和刷新前重置运行时状态。
+>
+> 新增证据：[物品图标与背包可读性](../projects/backpack-survivor/item-icons-and-backpack-readability.md)记录了表现资源留在 Presentation 层、纯数据层不依赖 `Sprite`、UI 装饰层关闭射线和布局由运行时物品尺寸推导。
+>
 > 仍未理解或缺少证据：Profiler 前后数据、目标平台 Build、实际 `.asmdef` / `.meta` 资产复核、静态注册表跨场景清理、`GoldOrb.OnCollected` 静态事件生命周期、金币池化/磁吸状态复位、`InventoryGrid.GetTotalScoreValue()` 纯 C# 回归测试、`RunResult.BackpackValue` 终局快照实测、ItemView / TotalValueText 射线确认、ItemTooltipView 接线、合并升级当前值回归、FireRateBoost 升级收益实测、伤害数字格式确认、升级多选队列、波次阶段切换/阶段门卫实测、精英/普通池概率采样、宝箱权重统计、GLB 闪白池化恢复观察、战斗反馈资源接线、热路径日志清理复核、胜利/失败后的刷怪停止、池所有权、结算统计准确性、Build Settings 场景路径、DualWield Play Mode 结果、FireRateBoost Play Mode 结果、基础芯片数值平衡、伤害源头取整回归、`SetMaxHpAndReset` 池化生命周期、`LootChest.unopenedChests` 静态列表清理、`ChestDistanceView` null/player 行为、波次血量样本、`GetWorldSides()` 四方向映射、`TryFindFreeArea()` 失败回滚、正反向规则匹配和旋转态丢弃策略。
 >
 > 第 29 课仍缺：`WeaponItemStatResolver` 默认值 / 缺配置回归、武器乘区公式回归、`TryMerge` 补发 `OnChanged` 回归、Tooltip 与战斗共用倍率事实源的自动化保护。
+>
+> 第 30 / 31 课仍缺：`ActivateDamageBoost()` 真实激活武器过滤回归、多芯片叠加封顶回归、刷新重置回归、`ItemIconResolver` 缺配置兜底回归、装饰性 `Image.raycastTarget` 审查和 `ItemView` 金色接边 alpha 差异确认。

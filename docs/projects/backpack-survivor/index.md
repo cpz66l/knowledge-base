@@ -1,6 +1,6 @@
 # Backpack Survivor（背包幸存者）
 
-> 状态：V0.2 武器稀有度与等级差异已记录，准备进入第 30 课攻击芯片效果实装
+> 状态：V0.2 物品图标与背包可读性已记录，准备进入第 32 课新手目标提示与局内可读性
 >
 > 首次记录：2026-07-20
 >
@@ -48,6 +48,8 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 FireRateBoost 基础值、等级倍率、2.0x 攻速上限、伤害源头取整、波次敌人血量和宝箱距离 HUD，把 15 分钟 Demo 推进到首轮平衡验证。
 - 用 `RotationState`、本地方向 / 世界方向转换、正反向邻接匹配和拖拽 ghost 刷新，把旋转从宽高表现推进到真实邻接规则语义。
 - 用 `WeaponItemStatResolver`、武器实例伤害倍率、Tooltip 规则复用和 `InventoryGrid.TryMerge()` 语义刷新，把武器稀有度 / 等级差异兑现到真实伤害和 UI 解释。
+- 用 `DamageBoost`、攻击芯片乘区和真实激活武器过滤，把 `AttackDamageChip` 从 Tooltip 数值推进到实际伤害收益。
+- 用 `ItemIconResolver`、透明物品图标、等级星星和邻接接边，把背包格子从开发期文字显示推进到更可读的 Demo 表现。
 
 ## 实践记录
 
@@ -81,6 +83,8 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 27 课 | [数值调参台与首轮平衡](balance-tuning-and-first-playtest.md) | 已记录；课程记录描述已实现 FireRateBoost 回调、伤害源头取整、波次敌人血量、宝箱距离 HUD 和首轮 15 分钟试玩，本环境完成静态审阅 |
 | 第 28 课 | [旋转邻接方向修正](rotation-adjacency-direction-fix.md) | 已记录；课程记录描述已实现四状态旋转、本地 / 世界接口转换、正反向邻接匹配、拖拽中接口刷新和丢弃原始朝向还原，本环境完成静态审阅 |
 | 第 29 课 | [武器稀有度与等级差异](weapon-rarity-and-level-scaling.md) | 已记录；课程记录描述已实现武器稀有度 / 等级伤害差异、Tooltip 可读性和合并后即时刷新，本环境完成静态审阅 |
+| 第 30 课 | [攻击芯片效果实装](attack-damage-chip-effect.md) | 已记录；课程记录描述已实现 DamageBoost、攻击芯片伤害乘区、真实激活武器过滤和 Tooltip 文案区分，本环境完成静态审阅 |
+| 第 31 课 | [物品图标与背包可读性](item-icons-and-backpack-readability.md) | 已记录；课程记录描述已实现图标解析、透明图标、等级星星、邻接接边和矩形适配，本环境完成静态审阅 |
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
@@ -113,12 +117,14 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 27 课课程记录描述了 FireRateBoost 基础值回调、等级倍率表、2.0x 攻速上限、伤害源头取整、波次敌人血量、宝箱距离 HUD 和首轮 15 分钟试玩。本环境只读复核了外部 Unity 工程相关脚本、掉落表资产、`ChestDistanceView.cs`、`.meta` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
 - 第 28 课课程记录描述了四状态 `RotationState`、本地方向到世界方向转换、正反向邻接匹配、拖拽 ghost 接口刷新和丢弃原始朝向还原；用户记录已通过 Unity 内测。本环境只读复核了外部 Unity 工程相关脚本与 `.meta`，并完成静态审阅和文档构建；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
 - 第 29 课课程记录描述了武器稀有度 / 等级伤害差异、玩家升级倍率与武器倍率乘区、Tooltip 可读性和合并后即时刷新。本环境只读复核了外部 Unity 工程中的 `WeaponItemStatResolver.cs`、`WeaponBase.cs`、`BackpackWeaponActivator.cs`、`InventoryGrid.cs`、`ItemTooltipView.cs`、`.meta` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 30 课课程记录描述了 `AttackDamageChip` 真实参与战斗、DamageBoost 与 FireRateBoost 分乘区、旧倍率重置和 Tooltip 文案区分；用户记录已通过实测。本环境只读复核了外部 Unity 工程中的 `AdjacencyEffectId.cs`、`AdjacencyRuleBook.cs`、`AdjacencyEffectResolver.cs`、`WeaponBase.cs`、`BackpackWeaponActivator.cs`、`ItemTooltipView.cs` 和 `01-Run.unity` 中的关键 YAML 引用，并完成静态审阅；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 31 课课程记录描述了物品图标、透明 PNG、等级星星、邻接接边、矩形适配和拖拽 / 旋转 / Tooltip 兼容；用户记录称 `dotnet build` 通过。本环境只读复核了外部 Unity 工程中的 `ItemIconResolver.cs`、`InventoryUIController.cs`、`ItemView.cs`、`ItemView.prefab`、`01-Run.unity`、图标 PNG / `.meta` 和图标 manifest；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。当前静态检查仍看到 `ItemView.cs` 金色接边 `alpha = 8f`，与课程记录“alpha 控制在 0～1”存在差异，后续需确认。
 
 ## 下一步
 
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 第 30 课推进攻击芯片效果实装，重点把 `AttackDamageChip` 从标签和 Tooltip 展示推进到真实伤害收益。
+- 第 32 课推进新手目标提示与局内可读性，重点用轻量提示告诉玩家当前该做什么、哪里有收益，以及背包构筑为什么值得尝试。
 - 基础芯片更多邻接、物品/规则配置进一步数据化、最终评分模型、金币结算字段、Tooltip 生效收益区分和真实冷却遮罩继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
-- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、金币掉落/飞行/磁吸/HUD、金币重开清零、丢弃回捡、ItemView / TotalValueText / ChestDistanceText 射线、唯一物品总价值、拖拽/合并后的总价值刷新、`BackpackValue` 结算快照、合并升级收益、Tooltip 显示/隐藏/射线、FireRateBoost 升级收益、2.0x 攻速封顶、伤害源头取整与显示一致性、波次血量与 TTK 样本、宝箱距离目标引导、15 分钟重复试玩样本、旋转接口方向映射、正反向邻接匹配、拖拽 ghost 接口刷新、丢弃旋转态取舍、邻接扫描、背包武器激活、武器稀有度 / 等级伤害样本、DualWield 第二把武器倍率、Legendary 武器配置、`WeaponItemStatResolver` 回归、`TryMerge` 语义事件、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、胜负后刷怪停止、终局刷怪压力、GLB 闪白视觉、结算面板显示、ResultView 订阅位置、Restart 场景重载、Build Settings 场景路径、QuitButton Build 行为、XP 圆环和 HUD Slider Navigation 测试。
-- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、经验球吸附、金币吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、武器倍率刷新、HUD 刷新、Tooltip、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。
+- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、金币掉落/飞行/磁吸/HUD、金币重开清零、丢弃回捡、ItemView / TotalValueText / ChestDistanceText 射线、唯一物品总价值、拖拽/合并后的总价值刷新、`BackpackValue` 结算快照、合并升级收益、Tooltip 显示/隐藏/射线、FireRateBoost 升级收益、DamageBoost 叠加与封顶、攻击芯片移除回落、2.0x 攻速封顶、伤害源头取整与显示一致性、波次血量与 TTK 样本、宝箱距离目标引导、15 分钟重复试玩样本、旋转接口方向映射、正反向邻接匹配、拖拽 ghost 接口刷新、丢弃旋转态取舍、邻接扫描、背包武器激活、武器稀有度 / 等级伤害样本、DualWield 第二把武器倍率、Legendary 武器配置、`WeaponItemStatResolver` 回归、`TryMerge` 语义事件、图标 Sprite 显示、透明图标射线、星星 / 接边布局、金色接边 alpha、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、胜负后刷怪停止、终局刷怪压力、GLB 闪白视觉、结算面板显示、ResultView 订阅位置、Restart 场景重载、Build Settings 场景路径、QuitButton Build 行为、XP 圆环和 HUD Slider Navigation 测试。
+- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、图标 / 接边布局、经验球吸附、金币吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、武器倍率刷新、攻击芯片倍率刷新、HUD 刷新、Tooltip、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。

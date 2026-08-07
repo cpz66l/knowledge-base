@@ -89,6 +89,7 @@ public class ImageDemo : MonoBehaviour
 - 可缩放面板/按钮背景 -> Sprite 设 Border + Image Type = Sliced
 - 血条/冷却 -> Image Type = Filled + 代码控制 fillAmount
 - 装饰图关闭 Raycast Target 省性能
+- 背包图标这类装饰层同时需要 `Preserve Aspect` 和关闭 `Raycast Target`，透明区域不会自动避开 UI 射线；项目例子见[物品图标与背包可读性](../../../projects/backpack-survivor/item-icons-and-backpack-readability.md)
 
 ---
 

@@ -93,6 +93,7 @@ ScrollView
 | **[Backpack Survivor：胜负结算与重开闭环](../../projects/backpack-survivor/run-result-and-restart-loop.md)** | ResultPanel、Button、TextMeshProUGUI、Image.fillAmount、Slider Navigation | 掌握结算面板事件投影、环形进度显示和 HUD 控件显示化 |
 | **[Backpack Survivor：构筑最小兑现](../../projects/backpack-survivor/build-payoff-dual-wield.md)** | ItemView 接口点、激活角标、validEffects 投影 | 掌握 UI 显示真实有效效果，避免候选效果和战斗收益错位 |
 | **[Backpack Survivor：内容面铺开](../../projects/backpack-survivor/content-expansion-fire-rate-boost.md)** | TextMeshProUGUI、TMP Font Asset、fallback、prefab/scene 字体引用 | 掌握中文字体资产链修复，避免只在单个 Text 上临时换字体 |
+| **[Backpack Survivor：物品图标与背包可读性](../../projects/backpack-survivor/item-icons-and-backpack-readability.md)** | Image 图标、透明 PNG、等级星星、邻接接边、Raycast Target | 掌握图标化背包格子的层级、射线边界和矩形适配 |
 
 ---
 

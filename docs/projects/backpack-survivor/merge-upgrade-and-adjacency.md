@@ -356,6 +356,7 @@ private ConnectableSides GetActiveSides(Item item, List<AdjacencyEffect> effects
 - 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - 后续：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
 - 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
+- 后续：[攻击芯片效果实装](attack-damage-chip-effect.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

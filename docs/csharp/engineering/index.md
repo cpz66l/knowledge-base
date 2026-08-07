@@ -40,6 +40,8 @@
 - [Backpack Survivor：数值调参台与首轮平衡](../../projects/backpack-survivor/balance-tuning-and-first-playtest.md)：规则层 / 表现层伤害语义对齐、直接波次血量注入、静态宝箱列表查询边界和高杠杆数值旋钮。
 - [Backpack Survivor：旋转邻接方向修正](../../projects/backpack-survivor/rotation-adjacency-direction-fix.md)：四状态旋转、本地 / 世界方向转换、规则字段成对匹配、失败回滚和运行时效果投影边界。
 - [Backpack Survivor：武器稀有度与等级差异](../../projects/backpack-survivor/weapon-rarity-and-level-scaling.md)：Resolver 翻译层、运行时 `Item` 到战斗倍率的事实源、战斗 / Tooltip 共用规则和语义性 `OnChanged` 刷新。
+- [Backpack Survivor：攻击芯片效果实装](../../projects/backpack-survivor/attack-damage-chip-effect.md)：按效果类型扩展规则链、按真实激活武器过滤收益、按武器实例聚合倍率和刷新前重置运行时状态。
+- [Backpack Survivor：物品图标与背包可读性](../../projects/backpack-survivor/item-icons-and-backpack-readability.md)：表现资源与纯数据层隔离、UI 装饰层射线边界、运行时尺寸驱动布局和配置缺失兜底。
 - [Backpack Survivor V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)：交付范围、设计主线、技术债务和下一阶段计划。
 
 ## 最小产出

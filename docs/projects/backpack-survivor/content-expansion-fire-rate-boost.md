@@ -355,6 +355,7 @@ LootTableData.LootEntry
 - 后续：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - 后续：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
 - 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
+- 后续：[攻击芯片效果实装](attack-damage-chip-effect.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - UGUI：[Text (TextMeshPro)](../../unity/ugui/controls/text-tmp.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)

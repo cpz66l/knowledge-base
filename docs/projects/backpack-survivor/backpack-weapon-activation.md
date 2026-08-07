@@ -309,6 +309,7 @@ Item 实例
 - 后续：[单局框架与基础 HUD](run-session-and-basic-hud.md)
 - 后续：[构筑最小兑现](build-payoff-dual-wield.md)
 - 后续：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)
+- 后续：[攻击芯片效果实装](attack-damage-chip-effect.md)
 - C#：[值类型 vs 引用类型](../../csharp/oop/value-vs-reference.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)

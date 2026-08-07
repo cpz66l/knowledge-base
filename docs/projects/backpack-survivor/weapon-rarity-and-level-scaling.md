@@ -6,7 +6,7 @@
 >
 > 对应项目：[Backpack Survivor](index.md)
 >
-> 下一步：第 30 课攻击芯片效果实装
+> 下一步：[第 30 课攻击芯片效果实装](attack-damage-chip-effect.md)
 >
 > 日期：2026-08-05
 >
@@ -263,7 +263,7 @@ Pistol / Rifle / Shotgun：显示 Resolver 计算出的伤害提升
 - 前置：[内容面铺开](content-expansion-fire-rate-boost.md)
 - 前置：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - 前置：[数值调参台与首轮平衡](balance-tuning-and-first-playtest.md)
-- 后续：第 30 课攻击芯片效果实装
+- 后续：[攻击芯片效果实装](attack-damage-chip-effect.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
 - 检查清单：[Unity 项目能力](../../checklists/unity-project.md)
 
