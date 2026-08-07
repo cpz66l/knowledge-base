@@ -2,13 +2,15 @@
 
 > [LeetCode 21. Merge Two Sorted Lists](https://leetcode.cn/problems/merge-two-sorted-lists/) - Easy
 >
-> 学习状态：已练习
+> 学习状态：已完成
 >
 > 练习日期：2026-07-18
 >
 > 本次实现：C# / C++，迭代与递归
 >
-> 验证状态：代码已完成静态检查；原始记录未附 LeetCode 提交结果，判题状态待确认
+> 验证状态：待确认
+>
+> 验证证据：代码已完成静态检查；原始记录未附 LeetCode 提交结果。
 
 ## 学习目标
 

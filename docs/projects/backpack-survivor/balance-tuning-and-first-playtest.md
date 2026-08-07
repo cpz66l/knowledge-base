@@ -1,6 +1,8 @@
 # 数值调参台与首轮平衡
 
-> 学习状态：已应用，待复测
+> 学习状态：项目中使用
+>
+> 验证状态：待验证。用户记录包含首轮试玩，本次未重复运行 Unity。
 >
 > 前置知识：[合并升级收益兑现](merge-upgrade-reward-payoff.md)、[波次导演与 15 分钟节奏](wave-director-and-run-pacing.md)、[精英宝箱与终局压力强化](elite-chests-endgame-pressure.md)
 >

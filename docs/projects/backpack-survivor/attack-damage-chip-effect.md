@@ -1,6 +1,8 @@
 # 攻击芯片效果实装
 
-> 学习状态：已应用，待复测
+> 学习状态：项目中使用
+>
+> 验证状态：待验证。用户记录已实测，本次未重复运行 Unity。
 >
 > 前置知识：[武器稀有度与等级差异](weapon-rarity-and-level-scaling.md)、[内容面铺开](content-expansion-fire-rate-boost.md)、[构筑最小兑现](build-payoff-dual-wield.md)
 >

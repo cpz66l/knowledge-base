@@ -1,6 +1,8 @@
 # 武器稀有度与等级差异
 
-> 学习状态：已应用，待复测
+> 学习状态：项目中使用
+>
+> 验证状态：待验证。用户记录称已实测，本次未重复运行 Unity。
 >
 > 前置知识：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)、[背包武器激活](backpack-weapon-activation.md)、[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 >

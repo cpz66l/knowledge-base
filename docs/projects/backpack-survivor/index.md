@@ -1,6 +1,8 @@
 # Backpack Survivor（背包幸存者）
 
-> 状态：V0.2 物品图标与背包可读性已记录，准备进入第 32 课新手目标提示与局内可读性
+> 状态：项目中使用
+>
+> 当前进度：V0.2 已记录至第 31 课，准备进入第 32 课新手目标提示与局内可读性
 >
 > 首次记录：2026-07-20
 >
@@ -55,36 +57,36 @@ V0.2 已开始扩展掉落与背包构筑：
 
 | 课次 | 内容 | 状态 |
 |---|---|---|
-| 第 1 课 | [伤害管线与危险区](damage-pipeline-and-hazard-zone.md) | 已实现，待补充 Unity 版本与更完整边界测试 |
-| 第 2 课 | [敌人追击、近战与死亡流程](enemy-ai-and-melee.md) | 已应用；Kimi 外部检查代码与 Unity 场景 |
-| 第 3 课 | [目标注册表、自动武器与投射物](target-registry-and-auto-weapon.md) | 已应用；池化边界在第 5 课继续修复 |
-| 第 4 课 | [主动武器与 WeaponBase 提炼](active-weapons-and-weapon-base.md) | 已应用；主动/自动武器共用投射物管线 |
-| 第 5 课 | [刷怪器与对象池](spawner-and-object-pooling.md) | 已应用；敌人与投射物完成池化复用 |
-| 第 7 课 | [掉落系统与保底机制](loot-drop-and-pity.md) | 已记录；静态检查发现零权重表空引用边界待修正 |
-| 第 8 课 | [拾取与磁吸](pickup-and-magnet.md) | 已记录；静态事件退订、Unity 假 null 和批量拾取副作用待验证 |
-| 第 9 课 | [背包纯数据网格](inventory-data-grid.md) | 已记录；纯 C# 数据层已完成本环境编译与最小运行测试，asmdef 资产配置待 Unity 工程复核 |
-| 第 10 课 | [背包 UI 与拖拽](inventory-ui-and-drag.md) | 已记录；课程记录描述已实现自动入包、拖拽预览和非法回弹，本环境完成静态审阅 |
-| 第 11 课 | [掉落分层与交互拾取](loot-layering-and-interaction.md) | 已记录；课程记录描述已实现两级掉落、经验球自动拾取和装备交互拾取，本环境完成静态审阅 |
-| 第 12 课 | [容器搜刮与宝箱系统](container-looting-and-chests.md) | 已记录；课程记录描述已实现宝箱交互、击杀生成、地图边界和散落协程，本环境完成静态审阅 |
-| 第 13 课 | [背包交互补丁](inventory-interaction-patches.md) | 已记录；课程记录描述已修复提示框射线、丢弃、R 键旋转和请求-确认拾取，本环境完成静态审阅 |
-| 第 14 课 | [合并升级与邻接联动](merge-upgrade-and-adjacency.md) | 已记录；课程记录描述已实现同名同级合并、标签、接口边、邻接扫描和接口点 UI，本环境完成静态审阅 |
-| 第 15 课 | [背包武器激活](backpack-weapon-activation.md) | 已记录；课程记录描述已实现背包武器实体激活、左上优先级、激活角标和拖拽延迟重绘，本环境完成静态审阅 |
-| 第 16 课 | [单局框架与基础 HUD](run-session-and-basic-hud.md) | 已记录；课程记录描述已实现单局状态、倒计时、经验显示、暂停恢复和胜负入口，本环境完成静态审阅 |
-| 第 17 课 | [经验成长与三选一](level-progression-and-choice.md) | 已记录；课程记录描述已实现等级成长、升级选择、运行时倍率和消费侧接入，本环境完成静态审阅 |
-| 第 18 课 | [波次导演与 15 分钟节奏](wave-director-and-run-pacing.md) | 已记录；课程记录描述已实现波次导演、阶段表、刷怪参数调度和波次 HUD，本环境完成静态审阅 |
-| 第 19 课 | [战斗反馈快包](combat-feedback-pack.md) | 已记录；课程记录描述已实现受击闪色、池化伤害数字、短音效入口、玩家受伤反馈和 Cinemachine 震屏，本环境完成静态审阅 |
-| 第 20 课 | [胜负结算与重开闭环](run-result-and-restart-loop.md) | 已记录；课程记录描述已实现终局结果快照、结算面板、重开/退出按钮、击杀统计、环形 XP HUD 和血条 Slider 显示化修复，本环境完成静态审阅 |
-| 第 21 课 | [构筑最小兑现](build-payoff-dual-wield.md) | 已记录；课程记录描述已实现邻接规则事实源、有效效果解析器、双持防三持、双持额外激活和 UI 真实有效效果投影，本环境完成静态审阅 |
-| 第 22 课 | [内容面铺开](content-expansion-fire-rate-boost.md) | 已记录；课程记录描述已实现 `LootEntry` 源头字段、长期物品池、三类自动武器、`FireRateBoost` 和 TMP 中文字体修复，本环境完成静态审阅 |
-| 第 23 课 | [精英宝箱与终局压力强化](elite-chests-endgame-pressure.md) | 已记录；课程记录描述已实现普通/精英分池、宝箱品质曲线、终局压力强化和 GLB 闪白修复，本环境完成静态审阅 |
-| 第 24 课 | [金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md) | 已记录；课程记录描述已实现金币掉落、`GoldOrb`、散落飞行、局内金币统计和 HUD 显示，本环境完成静态审阅 |
-| 第 25 课 | [背包价值与物品价值显示](backpack-value-and-item-value-display.md) | 已记录；课程记录描述已实现单件物品价值、背包总价值、唯一物品去重和结算页背包价值快照，本环境完成静态审阅 |
-| 第 26 课 | [合并升级收益兑现](merge-upgrade-reward-payoff.md) | 已记录；课程记录描述已实现合并升级后的价值 / 效果收益、FireRateBoost 升级收益、物品 Tooltip 和伤害数字显示修正，本环境完成静态审阅 |
-| 第 27 课 | [数值调参台与首轮平衡](balance-tuning-and-first-playtest.md) | 已记录；课程记录描述已实现 FireRateBoost 回调、伤害源头取整、波次敌人血量、宝箱距离 HUD 和首轮 15 分钟试玩，本环境完成静态审阅 |
-| 第 28 课 | [旋转邻接方向修正](rotation-adjacency-direction-fix.md) | 已记录；课程记录描述已实现四状态旋转、本地 / 世界接口转换、正反向邻接匹配、拖拽中接口刷新和丢弃原始朝向还原，本环境完成静态审阅 |
-| 第 29 课 | [武器稀有度与等级差异](weapon-rarity-and-level-scaling.md) | 已记录；课程记录描述已实现武器稀有度 / 等级伤害差异、Tooltip 可读性和合并后即时刷新，本环境完成静态审阅 |
-| 第 30 课 | [攻击芯片效果实装](attack-damage-chip-effect.md) | 已记录；课程记录描述已实现 DamageBoost、攻击芯片伤害乘区、真实激活武器过滤和 Tooltip 文案区分，本环境完成静态审阅 |
-| 第 31 课 | [物品图标与背包可读性](item-icons-and-backpack-readability.md) | 已记录；课程记录描述已实现图标解析、透明图标、等级星星、邻接接边和矩形适配，本环境完成静态审阅 |
+| 第 1 课 | [伤害管线与危险区](damage-pipeline-and-hazard-zone.md) | 项目中使用；Unity 版本与更完整边界测试待补充 |
+| 第 2 课 | [敌人追击、近战与死亡流程](enemy-ai-and-melee.md) | 项目中使用；Kimi 外部检查代码与 Unity 场景 |
+| 第 3 课 | [目标注册表、自动武器与投射物](target-registry-and-auto-weapon.md) | 项目中使用；池化边界在第 5 课继续修复 |
+| 第 4 课 | [主动武器与 WeaponBase 提炼](active-weapons-and-weapon-base.md) | 项目中使用；主动/自动武器共用投射物管线 |
+| 第 5 课 | [刷怪器与对象池](spawner-and-object-pooling.md) | 项目中使用；敌人与投射物完成池化复用 |
+| 第 7 课 | [掉落系统与保底机制](loot-drop-and-pity.md) | 项目中使用；静态检查发现零权重表空引用边界待修正 |
+| 第 8 课 | [拾取与磁吸](pickup-and-magnet.md) | 项目中使用；静态事件退订、Unity 假 null 和批量拾取副作用待验证 |
+| 第 9 课 | [背包纯数据网格](inventory-data-grid.md) | 项目中使用；纯 C# 数据层已完成本环境编译与最小运行测试，asmdef 资产配置待 Unity 工程复核 |
+| 第 10 课 | [背包 UI 与拖拽](inventory-ui-and-drag.md) | 项目中使用；课程记录描述已实现自动入包、拖拽预览和非法回弹，本环境完成静态审阅 |
+| 第 11 课 | [掉落分层与交互拾取](loot-layering-and-interaction.md) | 项目中使用；课程记录描述已实现两级掉落、经验球自动拾取和装备交互拾取，本环境完成静态审阅 |
+| 第 12 课 | [容器搜刮与宝箱系统](container-looting-and-chests.md) | 项目中使用；课程记录描述已实现宝箱交互、击杀生成、地图边界和散落协程，本环境完成静态审阅 |
+| 第 13 课 | [背包交互补丁](inventory-interaction-patches.md) | 项目中使用；课程记录描述已修复提示框射线、丢弃、R 键旋转和请求-确认拾取，本环境完成静态审阅 |
+| 第 14 课 | [合并升级与邻接联动](merge-upgrade-and-adjacency.md) | 项目中使用；课程记录描述已实现同名同级合并、标签、接口边、邻接扫描和接口点 UI，本环境完成静态审阅 |
+| 第 15 课 | [背包武器激活](backpack-weapon-activation.md) | 项目中使用；课程记录描述已实现背包武器实体激活、左上优先级、激活角标和拖拽延迟重绘，本环境完成静态审阅 |
+| 第 16 课 | [单局框架与基础 HUD](run-session-and-basic-hud.md) | 项目中使用；课程记录描述已实现单局状态、倒计时、经验显示、暂停恢复和胜负入口，本环境完成静态审阅 |
+| 第 17 课 | [经验成长与三选一](level-progression-and-choice.md) | 项目中使用；课程记录描述已实现等级成长、升级选择、运行时倍率和消费侧接入，本环境完成静态审阅 |
+| 第 18 课 | [波次导演与 15 分钟节奏](wave-director-and-run-pacing.md) | 项目中使用；课程记录描述已实现波次导演、阶段表、刷怪参数调度和波次 HUD，本环境完成静态审阅 |
+| 第 19 课 | [战斗反馈快包](combat-feedback-pack.md) | 项目中使用；课程记录描述已实现受击闪色、池化伤害数字、短音效入口、玩家受伤反馈和 Cinemachine 震屏，本环境完成静态审阅 |
+| 第 20 课 | [胜负结算与重开闭环](run-result-and-restart-loop.md) | 项目中使用；课程记录描述已实现终局结果快照、结算面板、重开/退出按钮、击杀统计、环形 XP HUD 和血条 Slider 显示化修复，本环境完成静态审阅 |
+| 第 21 课 | [构筑最小兑现](build-payoff-dual-wield.md) | 项目中使用；课程记录描述已实现邻接规则事实源、有效效果解析器、双持防三持、双持额外激活和 UI 真实有效效果投影，本环境完成静态审阅 |
+| 第 22 课 | [内容面铺开](content-expansion-fire-rate-boost.md) | 项目中使用；课程记录描述已实现 `LootEntry` 源头字段、长期物品池、三类自动武器、`FireRateBoost` 和 TMP 中文字体修复，本环境完成静态审阅 |
+| 第 23 课 | [精英宝箱与终局压力强化](elite-chests-endgame-pressure.md) | 项目中使用；课程记录描述已实现普通/精英分池、宝箱品质曲线、终局压力强化和 GLB 闪白修复，本环境完成静态审阅 |
+| 第 24 课 | [金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md) | 项目中使用；课程记录描述已实现金币掉落、`GoldOrb`、散落飞行、局内金币统计和 HUD 显示，本环境完成静态审阅 |
+| 第 25 课 | [背包价值与物品价值显示](backpack-value-and-item-value-display.md) | 项目中使用；课程记录描述已实现单件物品价值、背包总价值、唯一物品去重和结算页背包价值快照，本环境完成静态审阅 |
+| 第 26 课 | [合并升级收益兑现](merge-upgrade-reward-payoff.md) | 项目中使用；课程记录描述已实现合并升级后的价值 / 效果收益、FireRateBoost 升级收益、物品 Tooltip 和伤害数字显示修正，本环境完成静态审阅 |
+| 第 27 课 | [数值调参台与首轮平衡](balance-tuning-and-first-playtest.md) | 项目中使用；课程记录描述已实现 FireRateBoost 回调、伤害源头取整、波次敌人血量、宝箱距离 HUD 和首轮 15 分钟试玩，本环境完成静态审阅 |
+| 第 28 课 | [旋转邻接方向修正](rotation-adjacency-direction-fix.md) | 项目中使用；课程记录描述已实现四状态旋转、本地 / 世界接口转换、正反向邻接匹配、拖拽中接口刷新和丢弃原始朝向还原，本环境完成静态审阅 |
+| 第 29 课 | [武器稀有度与等级差异](weapon-rarity-and-level-scaling.md) | 项目中使用；课程记录描述已实现武器稀有度 / 等级伤害差异、Tooltip 可读性和合并后即时刷新，本环境完成静态审阅 |
+| 第 30 课 | [攻击芯片效果实装](attack-damage-chip-effect.md) | 项目中使用；课程记录描述已实现 DamageBoost、攻击芯片伤害乘区、真实激活武器过滤和 Tooltip 文案区分，本环境完成静态审阅 |
+| 第 31 课 | [物品图标与背包可读性](item-icons-and-backpack-readability.md) | 项目中使用；课程记录描述已实现图标解析、透明图标、等级星星、邻接接边和矩形适配，本环境完成静态审阅 |
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 

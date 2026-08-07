@@ -2,13 +2,15 @@
 
 > [LeetCode 2. Add Two Numbers](https://leetcode.cn/problems/add-two-numbers/) - Medium
 >
-> 学习状态：已练习
+> 学习状态：已完成
 >
 > 练习日期：2026-07-22
 >
 > 本次实现：C# / C++，逐位模拟加法
 >
-> 验证状态：C# 已编译并通过 5 组运行测试；C++ 已完成静态逻辑检查；原始记录未附 LeetCode Accepted 结果
+> 验证状态：待确认
+>
+> 验证证据：C# 已编译并通过 5 组运行测试；C++ 已完成静态逻辑检查；原始记录未附 LeetCode Accepted 结果。
 
 ## 学习目标
 

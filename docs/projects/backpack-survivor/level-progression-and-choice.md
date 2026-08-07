@@ -2,7 +2,9 @@
 
 > 项目：[Backpack Survivor](index.md)
 >
-> 状态：用户课程记录描述已实现 `LevelProgress`、三选一奖励、升级暂停、`PlayerRunStats` 和倍率消费；本环境完成静态审阅、项目文件只读复核与文档验证，未运行 Unity Editor / Play Mode
+> 状态：项目中使用
+>
+> 验证状态：待验证。用户课程记录描述已实现 `LevelProgress`、三选一奖励、升级暂停、`PlayerRunStats` 和倍率消费；本环境完成静态审阅、项目文件只读复核与文档验证，未运行 Unity Editor / Play Mode。
 >
 > 日期：2026-07-30
 >

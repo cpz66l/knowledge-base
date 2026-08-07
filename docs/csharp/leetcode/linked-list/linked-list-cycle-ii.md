@@ -2,13 +2,15 @@
 
 > [LeetCode 142. Linked List Cycle II](https://leetcode.cn/problems/linked-list-cycle-ii/) - Medium
 
-> 学习状态：已练习
+> 学习状态：已完成
 >
 > 练习日期：2026-07-17
 >
 > 本次实现：C# 快慢指针；C++ 哈希集合与快慢指针
 >
-> 验证状态：代码已完成静态检查；原始记录未附 LeetCode 提交结果，判题状态待确认
+> 验证状态：待确认
+>
+> 验证证据：代码已完成静态检查；原始记录未附 LeetCode 提交结果。
 
 ## 学习目标
 

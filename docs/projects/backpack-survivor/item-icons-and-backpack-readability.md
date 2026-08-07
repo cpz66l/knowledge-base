@@ -1,6 +1,8 @@
 # 物品图标与背包可读性
 
-> 学习状态：已应用，待复测
+> 学习状态：项目中使用
+>
+> 验证状态：待验证。用户记录称构建通过，本次未重复运行 Unity，且 alpha 差异仍待确认。
 >
 > 前置知识：[攻击芯片效果实装](attack-damage-chip-effect.md)、[背包 UI 与拖拽](inventory-ui-and-drag.md)、[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
 >

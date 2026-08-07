@@ -2,7 +2,9 @@
 
 > 项目：[Backpack Survivor](index.md)
 >
-> 状态：用户课程记录描述已实现 `LootEntry` 源头数据扩展、长期物品池、三类自动武器、`FireRateBoost` 战斗收益和 TMP 中文字体修复；本环境完成静态审阅、项目文件只读复核与文档验证，未运行 Unity Editor / Play Mode
+> 状态：项目中使用
+>
+> 验证状态：待验证。用户课程记录描述已实现 `LootEntry` 源头数据扩展、长期物品池、三类自动武器、`FireRateBoost` 战斗收益和 TMP 中文字体修复；本环境完成静态审阅、项目文件只读复核与文档验证，未运行 Unity Editor / Play Mode。
 >
 > 日期：2026-08-01
 >

@@ -1,6 +1,8 @@
 # 旋转邻接方向修正
 
-> 学习状态：已应用，待复测
+> 学习状态：项目中使用
+>
+> 验证状态：待验证。用户记录称已通过 Unity 内测，本次未重复运行 Unity。
 >
 > 前置知识：[背包交互补丁](inventory-interaction-patches.md)、[合并升级与邻接联动](merge-upgrade-and-adjacency.md)、[构筑最小兑现](build-payoff-dual-wield.md)
 >

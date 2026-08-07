@@ -2,13 +2,15 @@
 
 > [LeetCode 24. Swap Nodes in Pairs](https://leetcode.cn/problems/swap-nodes-in-pairs/) - Medium
 >
-> 学习状态：已练习
+> 学习状态：已完成
 >
 > 练习日期：2026-07-24
 >
 > 本次实现：C# / C++，递归与迭代
 >
-> 验证状态：C# 已编译并通过 6 组运行测试；C++ 已完成静态逻辑检查；原始记录未附 LeetCode Accepted 结果
+> 验证状态：待确认
+>
+> 验证证据：C# 已编译并通过 6 组运行测试；C++ 已完成静态逻辑检查；原始记录未附 LeetCode Accepted 结果。
 
 ## 学习目标
 
