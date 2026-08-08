@@ -103,6 +103,12 @@ nav:
       - 计算机基础路线: roadmap/computer-science.md
       - 专项能力路线: roadmap/specializations.md
       - 项目实践路线: roadmap/projects.md
+  - 学习跟踪:
+      - 跟踪入口: learning/index.md
+      - 学习进度: learning/progress.md
+      - 周学习记录:
+          - 周记录索引: learning/weekly/index.md
+          - 2026-W33: learning/weekly/2026-W33.md
   - C#:
       - csharp/index.md
       - 1. 语言与面向对象:

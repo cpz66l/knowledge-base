@@ -11,6 +11,7 @@
 | 入口 | 适合场景 |
 | --- | --- |
 | [学习路线总览](roadmap/index.md) | 不确定下一步学什么，先看路线和阶段目标 |
+| [学习跟踪](learning/index.md) | 每周生成学习计划、记录证据并更新学习进度 |
 | [Backpack Survivor 项目实践](projects/backpack-survivor/index.md) | 查看当前主推 Unity 项目的系统拆解、Bug 记录和复盘 |
 | [LeetCode 双语题解](csharp/leetcode/index.md) | 用 C# / C++ 对照训练算法和面试表达 |
 | [Unity 专题](unity/index.md) | 查生命周期、UGUI、资源、Prefab、ScriptableObject 等 Unity 基础 |
