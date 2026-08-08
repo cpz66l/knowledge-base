@@ -97,6 +97,7 @@ nav:
   - 首页: index.md
   - 学习路线:
       - 路线总览: roadmap/index.md
+      - 游戏客户端学习路线总纲要: roadmap/game-client-learning-roadmap.md
       - C# / Unity 主线: roadmap/csharp-unity.md
       - C++ 底层副线: roadmap/cpp.md
       - 计算机基础路线: roadmap/computer-science.md
