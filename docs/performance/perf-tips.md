@@ -51,6 +51,7 @@
 | 被遮挡的物体仍被渲染 | 开 Occlusion Culling 遮挡剔除 |
 | 移动端用未压缩纹理 | 用 ASTC 纹理压缩格式 |
 | 多余的 Camera | 关闭不用的 Camera，每个都有渲染开销 |
+| Build 中运行时默认材质表现异常 | 不依赖 `CreatePrimitive` 默认材质；为运行时视觉对象准备显式材质资产，并用 `MaterialPropertyBlock` 写实例颜色，项目案例见[Profiler 快扫与低风险优化](../projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md) |
 
 ---
 
@@ -66,6 +67,7 @@
 | 低频逻辑放 Update 里轮询 | 用协程 `WaitForSeconds`，按需触发 |
 | 大量距离判断每帧开方 | 比较 `sqrMagnitude` 和半径平方；项目案例见[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md) |
 | 高频路径留临时 `Debug.Log` | 清掉注册、注销、刷怪等热路径测试日志，或做成显式调试开关；项目案例见[波次导演与 15 分钟节奏](../projects/backpack-survivor/wave-director-and-run-pacing.md) |
+| Profiler 中 `EditorLoop` 或 Live Display 占大头 | 不直接按游戏逻辑热点处理；先区分 Editor/Profiler 开销、资源上传和 `PlayerLoop`，再用 Player Build 或 Development Build 验证，项目案例见[Profiler 快扫与低风险优化](../projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md) |
 
 ---
 
@@ -87,6 +89,7 @@
 - **缓存一切频繁访问的引用**：`GetComponent`、`transform`、`Find` 结果
 - **距离比较先避开开方**：只需要判断是否进入半径时，用平方距离比较
 - **先测量再优化**：Profiler 给方向，小 tips 是手段
+- **Build 体验参与裁决**：Editor 录制中的尖刺不等于目标平台卡顿；可重复的 Player 数据优先级更高
 
 ---
 

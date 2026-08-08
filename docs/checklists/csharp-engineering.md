@@ -60,7 +60,13 @@
 >
 > 新增证据：[场景氛围与演示包装](../projects/backpack-survivor/scene-atmosphere-and-demo-polish.md)记录了 `Item -> LootEntry -> Item` 等级保真、static 本局状态 Reset、池化飞行协程归零和拖拽期间 UI 开关门闸。
 >
-> 仍未理解或缺少证据：Profiler 前后数据、目标平台 Build、实际 `.asmdef` / `.meta` 资产复核、静态注册表清理的 Play Mode 复测、`GoldOrb.OnCollected` 静态事件生命周期、金币池化/磁吸状态复位、`InventoryGrid.GetTotalScoreValue()` 纯 C# 回归测试、`RunResult.BackpackValue` 终局快照实测、ItemView / TotalValueText 射线确认、ItemTooltipView 接线、合并升级当前值回归、FireRateBoost 升级收益实测、伤害数字格式确认、升级多选队列、波次阶段切换/阶段门卫实测、精英/普通池概率采样、宝箱权重统计、GLB 闪白池化恢复观察、战斗反馈资源接线、热路径日志清理复核、胜利/失败后的刷怪停止、池所有权、结算统计准确性、Player Build 场景流、DualWield Play Mode 结果、FireRateBoost Play Mode 结果、基础芯片数值平衡、伤害源头取整回归、`SetMaxHpAndReset` 池化生命周期、`LootChest.unopenedChests` 清理的 Play Mode 复测、`ChestDistanceView` null/player 行为、波次血量样本、`GetWorldSides()` 四方向映射、`TryFindFreeArea()` 失败回滚、正反向规则匹配和旋转态丢弃策略。
+> 新增证据：[完整 15 分钟通关验收](../projects/backpack-survivor/full-run-acceptance.md)记录了按高度取鼠标平面交点、主动武器枪口高度瞄准和角色身体高度朝向的输入语义拆分。
+>
+> 新增证据：[Profiler 快扫与低风险优化](../projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md)记录了显式运行时视觉材质、`MaterialPropertyBlock` 实例颜色、Profiler 归因和 Build 颜色异常修复。
+>
+> 新增证据：[Build 与演示包](../projects/backpack-survivor/build-and-demo-package.md)记录了 Build Profile、Player Settings、UI Input Module 与 PlayerInput actions 职责拆分，以及用户正式包独立验收。
+>
+> 仍未理解或缺少证据：系统化 Profiler 前后数据、目标平台关键性能预算、当前环境亲自运行 Player Build、实际 `.asmdef` / Prefab / Canvas / Layer 全量资产复核、静态注册表清理的 Play Mode 复测、`GoldOrb.OnCollected` 静态事件生命周期、金币池化/磁吸状态复位、`InventoryGrid.GetTotalScoreValue()` 纯 C# 回归测试、`RunResult.BackpackValue` 终局快照实测、ItemView / TotalValueText 射线确认、ItemTooltipView 接线、合并升级当前值回归、FireRateBoost 升级收益实测、伤害数字格式确认、升级多选队列、波次阶段切换/阶段门卫实测、精英/普通池概率采样、宝箱权重统计、GLB 闪白池化恢复观察、战斗反馈资源接线、热路径日志清理复核、胜利/失败后的刷怪停止、池所有权、结算统计准确性、DualWield Play Mode 结果、FireRateBoost Play Mode 结果、基础芯片数值平衡、伤害源头取整回归、`SetMaxHpAndReset` 池化生命周期、`LootChest.unopenedChests` 清理的 Play Mode 复测、`ChestDistanceView` null/player 行为、波次血量样本、`GetWorldSides()` 四方向映射、`TryFindFreeArea()` 失败回滚、正反向规则匹配和旋转态丢弃策略。
 >
 > 第 29 课仍缺：`WeaponItemStatResolver` 默认值 / 缺配置回归、武器乘区公式回归、`TryMerge` 补发 `OnChanged` 回归、Tooltip 与战斗共用倍率事实源的自动化保护。
 >

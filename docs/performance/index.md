@@ -49,7 +49,7 @@
 |------|------|------|
 | 已有 | [内存管理](memory/index.md) | 对象池与托管分配入口 |
 | 已有 | [优化小 Tips](perf-tips.md) | UI、GC、渲染、代码和物理检查项 |
-| 项目实践 | [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统](../projects/backpack-survivor/loot-drop-and-pity.md)、[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)、[掉落分层与交互拾取](../projects/backpack-survivor/loot-layering-and-interaction.md) | 预热、弹性扩容、掉落物复用、平方距离判断、NonAlloc 局部探测和池化生命周期；Profiler 数据仍待补充 |
+| 项目实践 | [刷怪器与对象池](../projects/backpack-survivor/spawner-and-object-pooling.md)、[掉落系统](../projects/backpack-survivor/loot-drop-and-pity.md)、[拾取与磁吸](../projects/backpack-survivor/pickup-and-magnet.md)、[掉落分层与交互拾取](../projects/backpack-survivor/loot-layering-and-interaction.md)、[Profiler 快扫与低风险优化](../projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md)、[性能优化记录](../projects/backpack-survivor/performance-optimization-log.md) | 预热、弹性扩容、掉落物复用、平方距离判断、NonAlloc 局部探测、池化生命周期、EditorLoop/资源上传尖刺归因和 Build 试玩裁决；系统化优化前后对照仍待补充 |
 | 计划 | Unity Profiler | Profiler 面板、采样和对照实验 |
 | 计划 | 渲染性能 | Draw Call、LOD、剔除和 Shader 成本 |
 | 计划 | CPU 与代码 | 热点定位、Job System 和 Burst |

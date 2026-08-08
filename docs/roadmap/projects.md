@@ -87,9 +87,14 @@
 - 项目中使用：[第 31 课：物品图标与背包可读性](../projects/backpack-survivor/item-icons-and-backpack-readability.md)
 - 项目中使用：[第 32 课：主菜单与场景流](../projects/backpack-survivor/main-menu-and-scene-flow.md)
 - 项目中使用：[第 33 课：场景氛围与演示包装](../projects/backpack-survivor/scene-atmosphere-and-demo-polish.md)
+- 项目中使用：[第 34 课：完整 15 分钟通关验收](../projects/backpack-survivor/full-run-acceptance.md)
+- 项目中使用：[第 35 课：Profiler 快扫与低风险优化](../projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md)
+- 项目中使用：[第 36 课：Build 与演示包](../projects/backpack-survivor/build-and-demo-package.md)
+- 项目记录：[Bug 记录簿](../projects/backpack-survivor/bug-log.md)
+- 项目记录：[性能优化记录](../projects/backpack-survivor/performance-optimization-log.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2，项目中使用，已记录至第 33 课
-- 下一步：第 34 课完整 15 分钟通关验收；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2，项目中使用，已记录至第 36 课，正式 Windows 演示包已由用户验收
+- 下一步：第 37 课作品材料整理；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

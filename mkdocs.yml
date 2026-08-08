@@ -224,6 +224,11 @@ nav:
           - 第 31 课：物品图标与背包可读性: projects/backpack-survivor/item-icons-and-backpack-readability.md
           - 第 32 课：主菜单与场景流: projects/backpack-survivor/main-menu-and-scene-flow.md
           - 第 33 课：场景氛围与演示包装: projects/backpack-survivor/scene-atmosphere-and-demo-polish.md
+          - 第 34 课：完整 15 分钟通关验收: projects/backpack-survivor/full-run-acceptance.md
+          - 第 35 课：Profiler 快扫与低风险优化: projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md
+          - 第 36 课：Build 与演示包: projects/backpack-survivor/build-and-demo-package.md
+          - Bug 记录簿: projects/backpack-survivor/bug-log.md
+          - 性能优化记录: projects/backpack-survivor/performance-optimization-log.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

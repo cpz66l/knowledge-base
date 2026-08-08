@@ -2,7 +2,7 @@
 
 > 状态：项目中使用
 >
-> 当前进度：V0.2 已记录至第 33 课，下一步进入第 34 课完整 15 分钟通关验收
+> 当前进度：V0.2 已记录至第 36 课，正式 Windows 演示包已由用户验收，下一步进入第 37 课作品材料整理
 >
 > 首次记录：2026-07-20
 >
@@ -54,6 +54,9 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 `ItemIconResolver`、透明物品图标、等级星星和邻接接边，把背包格子从开发期文字显示推进到更可读的 Demo 表现。
 - 用 `MainMenuController`、`EditorBuildSettings.asset` 和 `ResultView` 返回主菜单逻辑，把项目从直接进入测试场推进到主菜单、Run、结算、回流的 Demo 启动闭环。
 - 用 Tab 背包开关、装备散落飞行、`LootEntry.level` 等级保真、`TargetRegistry.Clear()` / `LootChest.ResetRuntimeState()` 和 URP Lit 地面材质，把 Demo 的演示包装和重开稳定性继续收口。
+- 用玩法说明面板、外部试玩反馈和主动瞄准高度平面修正，把 V0.2 从功能验收推进到完整 15 分钟试玩验收。
+- 用 Profiler 快扫证据包、Build 试玩反馈、显式运行时视觉材质和 `MaterialPropertyBlock`，把性能疑点与 Build 颜色异常分开处理。
+- 用 Windows Build Profile、Player Settings、场景顺序、输入资产引用和独立 exe 验收，把项目推进到 V0.2 正式演示包。
 
 ## 实践记录
 
@@ -91,6 +94,11 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 31 课 | [物品图标与背包可读性](item-icons-and-backpack-readability.md) | 项目中使用；课程记录描述已实现图标解析、透明图标、等级星星、邻接接边和矩形适配，本环境完成静态审阅 |
 | 第 32 课 | [主菜单与场景流](main-menu-and-scene-flow.md) | 项目中使用；课程记录描述已实现主菜单、制作者声明、Build Settings 场景顺序和结算返回主菜单，本环境完成静态审阅 |
 | 第 33 课 | [场景氛围与演示包装](scene-atmosphere-and-demo-polish.md) | 项目中使用；课程记录描述已实现演示包装、Tab 背包、装备散落、等级保真、静态状态重置和 Lit 地面材质，本环境完成静态审阅 |
+| 第 34 课 | [完整 15 分钟通关验收](full-run-acceptance.md) | 项目中使用；用户记录完整链路验收和外部试玩理解门槛，本环境静态复核玩法说明入口与主动瞄准高度平面修正 |
+| 第 35 课 | [Profiler 快扫与低风险优化](profiler-sweep-and-low-risk-optimization.md) | 项目中使用；用户记录 Build 后期无明显卡顿和 BUG-025 修复，本环境静态复核 Profiler 证据包、显式材质与 MPB 链路 |
+| 第 36 课 | [Build 与演示包](build-and-demo-package.md) | 项目中使用；用户记录正式 Windows exe 独立验收通过，本环境静态复核 Build Profile、Player Settings、场景顺序、输入资产和 Build 输出 |
+
+项目级记录：[Bug 记录簿](bug-log.md)、[性能优化记录](performance-optimization-log.md)。
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
@@ -99,7 +107,7 @@ V0.2 已开始扩展掉落与背包构筑：
 - 原始学习记录描述了实际运行结果：玩家进入危险区持续掉血，离开后停止，死亡后不再受伤。
 - 本知识库环境使用 .NET SDK 和最小 Unity API 桩完成了脚本编译，并通过 `Health` 扣血/死亡守卫、危险区进入/tick/退出的逻辑冒烟测试；但没有真实 Unity 物理场景、Prefab 或运行截图，因此不能代替 Unity 场景复测。
 - 第 2～5 课课程记录描述了敌人追击、双武器、自动索敌、扫掠命中、刷怪和对象池的场景运行结果。
-- 用户补充说明 Kimi 已检查代码与 Unity 场景；知识库将其记录为外部检查证据。本环境仍没有完整 Unity 工程与 Profiler 数据，因此不声称亲自复现了运行或性能结果。
+- 用户补充说明 Kimi 已检查代码与 Unity 场景；知识库将其记录为外部检查证据。后续整理中，本环境对外部 Unity 工程做过多轮静态复核，但仍不声称亲自复现了 Unity Play Mode、Profiler 或 Player Build 运行结果。
 - 第 7 课课程记录描述了掉落系统、权重随机、保底计数和掉落物超时回收。本环境完成静态审阅，未运行 Unity 场景；其中零权重表、掉落 Prefab 是否接入对象池、`FindAnyObjectByType` 成本和材质实例化仍待项目验证。
 - 第 8 课课程记录描述了拾取磁吸、`DropItem.OnCollected` 静态事件和临时 `PickupLogger`。本环境完成静态审阅，未运行 Unity 场景；静态事件生命周期、Unity 假 null、批量拾取副作用和 Profiler 数据仍待验证。
 - 第 9 课课程记录描述了 `BS.Inventory` 纯数据程序集、`Item`、`InventoryGrid` 和 Debug.Log 验证剧本。本环境用 .NET SDK 对整理后的纯 C# 数据层完成编译与最小运行测试；未检查实际 `.asmdef`、`.meta` 或 Unity 工程资产。
@@ -127,12 +135,15 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 31 课课程记录描述了物品图标、透明 PNG、等级星星、邻接接边、矩形适配和拖拽 / 旋转 / Tooltip 兼容；用户记录称 `dotnet build` 通过。本环境只读复核了外部 Unity 工程中的 `ItemIconResolver.cs`、`InventoryUIController.cs`、`ItemView.cs`、`ItemView.prefab`、`01-Run.unity`、图标 PNG / `.meta` 和图标 manifest；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。当前静态检查仍看到 `ItemView.cs` 金色接边 `alpha = 8f`，与课程记录“alpha 控制在 0～1”存在差异，后续需确认。
 - 第 32 课课程记录描述了 MainMenu 场景、`MainMenuController`、制作者声明、CanvasScaler 适配、Build Settings 顺序和 `ResultView` 返回主菜单；用户记录称已通过实测与代码验收。本环境只读复核了外部 Unity 工程中的 `MainMenuController.cs`、`ResultView.cs`、`EditorBuildSettings.asset`、`MainMenu.unity`、主菜单图片资源和 `.meta`；未运行 Unity Editor / Play Mode 或 Player Build。
 - 第 33 课课程记录描述了装备散落、Tab 背包开关、丢弃回捡等级保真、重开静态状态清理和 Lit 地面 / 阴影链路；用户记录称已通过实测与代码验收。本环境只读复核了外部 Unity 工程中的 `LootManager.cs`、`DropItem.cs`、`InventoryUIController.cs`、`GameInput.inputactions`、`LootEntry`、`Item.cs`、`InventorySystem.cs`、`TargetRegistry.cs`、`LootChest.cs`、`GameSession.cs`、`M_Ground_Quarantine_Lit.mat`、`.meta` 和 `01-Run.unity` 关键 YAML 引用；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 34 课课程记录描述了完整 15 分钟试玩验收、外部试玩反馈、主菜单玩法说明和主动射击高度平面修正；用户记录称已通过代码巡检和基础构建验证。本环境只读复核了外部 Unity 工程中的 `MainMenuController.cs`、`InputReader.cs`、`ActiveWeapon.cs`、`PlayerController.cs`、`MainMenu.unity` 和 `01-Run.unity` 关键 YAML 引用；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
+- 第 35 课课程记录描述了 Profiler 快扫、Build 后期无明显卡顿、BUG-025 颜色异常修复和大体积 Profiler 捕获忽略策略；用户记录称 Build 实测约 `6000` 分无明显卡顿。本环境只读复核了外部项目 `Docs/ProfilerEvidence/README.md`、Profiler 轻量截图存在性、`.gitignore`、`Projectile.cs`、`DropItem.cs`、运行时视觉材质 Prefab 引用和脚本危险 using / 日志扫描；未运行 Unity Profiler 或 Player Build。
+- 第 36 课课程记录描述了正式 Windows 演示包输出、Build Profile、Player Settings、UI Input Module 引用修复、日志清理和独立 exe 验收；用户记录称正式包独立运行验收通过。本环境只读复核了外部 Unity 工程 Windows Build Profile、`ProjectSettings.asset`、`EditorBuildSettings.asset`、MainMenu / Run 场景输入资产引用、Build 目录和 zip 文件存在性，以及 `Assets/BackpackSurvivor` `.meta` 配对情况；未运行 exe。
 
 ## 下一步
 
+- 第 37 课进入作品材料整理，优先准备 README、操作说明、截图 / 视频、已知问题和面试讲解口径。
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 第 34 课进入完整 15 分钟通关验收，按玩家视角记录死亡时间、武器组合、宝箱数量、背包价值、等级、击杀数和演示阻断点；暂不再开新系统。
 - 基础芯片更多邻接、物品/规则配置进一步数据化、最终评分模型、金币结算字段、Tooltip 生效收益区分和真实冷却遮罩继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
-- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、金币掉落/飞行/磁吸/HUD、金币重开清零、丢弃回捡、ItemView / TotalValueText / ChestDistanceText 射线、唯一物品总价值、拖拽/合并后的总价值刷新、`BackpackValue` 结算快照、合并升级收益、Tooltip 显示/隐藏/射线、FireRateBoost 升级收益、DamageBoost 叠加与封顶、攻击芯片移除回落、2.0x 攻速封顶、伤害源头取整与显示一致性、波次血量与 TTK 样本、宝箱距离目标引导、15 分钟重复试玩样本、旋转接口方向映射、正反向邻接匹配、拖拽 ghost 接口刷新、丢弃旋转态取舍、邻接扫描、背包武器激活、武器稀有度 / 等级伤害样本、DualWield 第二把武器倍率、Legendary 武器配置、`WeaponItemStatResolver` 回归、`TryMerge` 语义事件、图标 Sprite 显示、透明图标射线、星星 / 接边布局、金色接边 alpha、主菜单 / Run / 结算回流 Player Build、Tab 背包、等级保真、静态状态重置、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、胜负后刷怪停止、终局刷怪压力、GLB 闪白视觉、结算面板显示、ResultView 订阅位置、Restart 场景重载、QuitButton Build 行为、XP 圆环和 HUD Slider Navigation 测试。
-- 使用 Profiler 验证预热量、扩容次数、索敌、物理查询、UI 重绘、图标 / 接边布局、经验球吸附、金币吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、武器倍率刷新、攻击芯片倍率刷新、HUD 刷新、Tooltip、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。
+- 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、金币掉落/飞行/磁吸/HUD、金币重开清零、ItemView / TotalValueText / ChestDistanceText 射线、合并升级收益、Tooltip、FireRateBoost / DamageBoost 样本、波次血量与 TTK、旋转邻接、图标 Sprite 显示、金色接边 alpha、15 分钟重复试玩样本、Build 目标平台回归和作品材料复核。
+- 使用 Profiler 做系统化前后对照：预热量、扩容次数、索敌、物理查询、UI 重绘、图标 / 接边布局、经验球 / 金币吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、Tooltip、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。

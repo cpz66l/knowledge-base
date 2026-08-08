@@ -188,6 +188,8 @@ Match: 0.5
 - 前置：[物品图标与背包可读性](item-icons-and-backpack-readability.md)
 - 前置：[胜负结算与重开闭环](run-result-and-restart-loop.md)
 - 后续：[场景氛围与演示包装](scene-atmosphere-and-demo-polish.md)
+- 后续：[完整 15 分钟通关验收](full-run-acceptance.md)
+- 后续：[Build 与演示包](build-and-demo-package.md)
 - UGUI：[Canvas](../../unity/ugui/canvas.md)
 - UGUI：[Button](../../unity/ugui/controls/button.md)
 - UGUI：[Scrollbar](../../unity/ugui/controls/scrollbar.md)

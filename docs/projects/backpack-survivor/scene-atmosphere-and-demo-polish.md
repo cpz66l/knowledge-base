@@ -8,7 +8,7 @@
 >
 > 对应项目：[Backpack Survivor](index.md)
 >
-> 下一步：第 34 课完整 15 分钟通关验收
+> 下一步：[完整 15 分钟通关验收](full-run-acceptance.md)
 >
 > 日期：2026-08-08
 >
@@ -237,6 +237,7 @@ Receive Shadows: 1
 - 前置：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 前置：[合并升级收益兑现](merge-upgrade-reward-payoff.md)
 - 前置：[物品图标与背包可读性](item-icons-and-backpack-readability.md)
+- 后续：[完整 15 分钟通关验收](full-run-acceptance.md)
 - UGUI：[Canvas](../../unity/ugui/canvas.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)
