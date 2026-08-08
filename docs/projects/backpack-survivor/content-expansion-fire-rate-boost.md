@@ -326,7 +326,7 @@ LootTableData.LootEntry
 - `BS.Inventory.asmdef` 仍保持纯 C# 数据层边界，邻接规则和 resolver 不依赖 UnityEngine。
 - 不在运行时代码里按物品 `id` 继续堆标签、价值和效果强度映射。
 - `BackpackWeaponActivator.weaponSlots` 中至少有 `Pistol / Rifle / Shotgun / Pistol` 对应的场景对象。
-- 当前仍需在 Unity 中复核 Inspector 槽位、Prefab、字体覆盖、Play Mode 射速变化、真实掉落和 Build Settings 场景路径。
+- 当前仍需在 Unity 中复核 Inspector 槽位、Prefab、字体覆盖、Play Mode 射速变化、真实掉落和 Player Build 场景流；第 32 课后 Build Settings 路径已静态确认改为 MainMenu / `01-Run`。
 
 ## 当前证据分层
 
@@ -343,7 +343,7 @@ LootTableData.LootEntry
 | 掉落表资产已出现多稀有度装备、`scoreValue` 与部分 `effectValue` 配置 | C | 本环境只读抽样检查 EquipDrops 与 ChestDropLoot 资产 |
 | `SourceHanSansCN-Normal` 字体、SDF、TMP Settings、DamageNumber、ItemView 和场景引用静态可见 | C | 本环境只读检查字体 `.meta`、SDF、TMP Settings、Prefab 与场景 YAML |
 | 本环境已经在 Unity Editor / Play Mode 中验证掉落、FireRateBoost 射速变化、TMP 中文和 Player Build | D | 未启动 Unity，未运行 Play Mode、Profiler 或 Player Build |
-| `EditorBuildSettings.asset` 的场景路径已经修正为当前检查的 `01-Run.unity` | D | 静态检查仍看到 Build Settings 指向 `Assets/BackpackSurvivor/Scenes/Run/Run1.unity` |
+| `EditorBuildSettings.asset` 的场景路径已经修正为 MainMenu / `01-Run.unity` | C | 第 32 课后，本环境静态检查已确认 Build Settings 不再指向旧 `Run1.unity`；Player Build 仍待实测 |
 
 ## 相关内容
 

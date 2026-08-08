@@ -4,7 +4,7 @@
 >
 > 状态：项目中使用
 >
-> 验证状态：待验证。用户课程记录描述已实现 `RunResult`、`GameSession.EndRun()`、`ResultView`、重开/退出按钮、环形经验 HUD 和血条 Slider 显示化修复；本环境完成静态审阅、项目文件只读复核与文档验证，未运行 Unity Editor / Play Mode。
+> 验证状态：待验证。用户课程记录描述已实现 `RunResult`、`GameSession.EndRun()`、`ResultView`、重开/退出按钮、环形经验 HUD 和血条 Slider 显示化修复；第 32 课已把退出改为返回主菜单，第 33 课后重开显式加载 `01-Run`；本环境完成静态审阅、项目文件只读复核与文档验证，未运行 Unity Editor / Play Mode。
 >
 > 日期：2026-07-31
 >
@@ -28,7 +28,7 @@
 | `GameSession.OnRunEnded` | 向表现层发布本局结算快照 |
 | `EnemyAI.OnEnemyDied` | 敌人死亡的静态广播入口，供 `GameSession` 统计本局击杀数 |
 | `ResultView` | 订阅 `OnRunEnded`，显示结算面板、标题颜色、统计文本和按钮行为 |
-| `RestartButton` / `QuitButton` | 重开前恢复 `Time.timeScale = 1f` 并重载当前场景；退出按钮调用 `Application.Quit()` |
+| `RestartButton` / `QuitButton` | 重开前恢复 `Time.timeScale = 1f` 并加载 Run 场景；第 32 课后退出按钮改为返回 MainMenu |
 | `RunHudView.xpLoop` | 用 `Image.fillAmount` 显示当前等级内 XP 进度 |
 | `HpSlider` | 关闭 `Interactable` 与 Navigation，让血条只作为 HUD 显示器 |
 
@@ -120,9 +120,9 @@ private void HandleRestartClicked()
 
 场景重载是 Demo 阶段很实用的清场方案：敌人池、投射物池、掉落物、背包、升级暂停、HUD、静态事件和临时运行态很多，手写 `ResetAll()` 很容易漏。等主菜单、关卡选择或无缝再开局需求稳定后，再决定是否拆成更细的重置流程。
 
-本次只读复核发现一个必须保留的待验证点：Unity 项目中实际检查到的运行场景文件是 `Assets/BackpackSurvivor/Scenes/Run/01-Run.unity`，但 `EditorBuildSettings.asset` 指向 `Assets/BackpackSurvivor/Scenes/Run/Run1.unity`。因此当前只能说明按钮代码会按“当前场景 buildIndex”重载，不能声明 Build Settings 下的重开路径已经验证通过。
+第 32 课已经补齐主菜单和 Build Settings：`MainMenu.unity` 是第 0 个场景，`01-Run.unity` 是第 1 个场景，旧 `Run1.unity` 路径在当前只读检查中已经不再出现。第 33 课后，当前 `ResultView` 也改为显式 `SceneManager.LoadScene("01-Run")` 重开，减少 Build Index 顺序变化带来的歧义。
 
-`QuitButton` 当前调用 `Application.Quit()`。它在 Editor 中通常不会真的退出，需要在目标 Build 中验证。
+`QuitButton` 在第 20 课语义是退出程序；第 32 课后在结算页语义改成“返回主菜单”，真正退出程序只保留在主菜单中。主菜单里的 `Application.Quit()` 仍需要在目标 Build 中验证。
 
 ## 环形经验 HUD
 
@@ -238,7 +238,7 @@ RunTimer.Tick(Time.deltaTime)
 - `ResultView` 挂在常驻 Canvas / HUDRoot，不挂在默认隐藏的 ResultPanel 上。
 - `ResultPanel` 默认隐藏，结算时由 `ResultView` 显示。
 - `RestartButton` 点击后先恢复 `Time.timeScale`，再加载正确的 Run 场景。
-- `QuitButton` 在目标 Build 中可以退出游戏。
+- `QuitButton` 在结算页返回 MainMenu；主菜单退出按钮在目标 Build 中可以退出游戏。
 - 胜利/失败标题颜色 alpha 为 1。
 
 ### HUD
@@ -266,8 +266,9 @@ RunTimer.Tick(Time.deltaTime)
 | `ResultView` 代码中可见订阅 `OnRunEnded`、显示面板、填充标题/统计、重开前恢复 `Time.timeScale` 并调用 `SceneManager.LoadScene(buildIndex)` | C | 本环境只读查看脚本，未点击按钮 |
 | `01-Run.unity` 中可见 `ResultView` 挂在激活的 `Canvas` 上、引用默认隐藏的 `ResultPanel`，并引用 Restart / Quit 按钮 | C | 本环境只读检查场景 YAML 和脚本 GUID |
 | `RunHudView` 代码中可见 `xpLoop.fillAmount`，场景中可见 `HpSlider` 为不可交互 | C | 本环境只读查看脚本和场景 YAML |
-| 重开按钮在目标 Build 中一定加载正确场景 | D | 当前 `EditorBuildSettings.asset` 指向 `Run1.unity`，而实际检查到的场景文件是 `01-Run.unity`，需要 Unity 中复核 |
-| 当前环境已在 Unity Editor / Play Mode 中验证结算、重开、退出和 HUD 行为 | D | 未启动 Unity，未运行 Play Mode，未验证真实按钮、场景重载或 Build 行为 |
+| 当前外部工程中 Build Settings 已修正为 MainMenu / `01-Run`，`ResultView` 重开也显式加载 `"01-Run"` | C | 第 32 / 33 课后，本环境只读查看 `EditorBuildSettings.asset` 与 `ResultView.cs` |
+| 重开和返回主菜单在目标 Player Build 中一定可用 | D | 当前环境未打包或点击按钮，仍需 Unity / Player Build 复核 |
+| Unity Editor / Play Mode 结算、重开、退出和 HUD 行为验证 | D | 当前环境未启动 Unity，未运行 Play Mode，未验证真实按钮、场景重载或 Build 行为 |
 
 ## 相关内容
 
@@ -277,6 +278,8 @@ RunTimer.Tick(Time.deltaTime)
 - 前置：[单局框架与基础 HUD](run-session-and-basic-hud.md)
 - 系统：[容器搜刮与宝箱系统](container-looting-and-chests.md)
 - 后续：[构筑最小兑现](build-payoff-dual-wield.md)
+- 后续：[主菜单与场景流](main-menu-and-scene-flow.md)
+- 后续：[场景氛围与演示包装](scene-atmosphere-and-demo-polish.md)
 - 后续：[金币掉落与局内经济 HUD](gold-drops-and-economy-hud.md)
 - 后续：[背包价值与物品价值显示](backpack-value-and-item-value-display.md)
 - C#：[委托与事件](../../csharp/oop/delegates-and-events.md)

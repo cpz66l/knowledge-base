@@ -222,6 +222,8 @@ nav:
           - 第 29 课：武器稀有度与等级差异: projects/backpack-survivor/weapon-rarity-and-level-scaling.md
           - 第 30 课：攻击芯片效果实装: projects/backpack-survivor/attack-damage-chip-effect.md
           - 第 31 课：物品图标与背包可读性: projects/backpack-survivor/item-icons-and-backpack-readability.md
+          - 第 32 课：主菜单与场景流: projects/backpack-survivor/main-menu-and-scene-flow.md
+          - 第 33 课：场景氛围与演示包装: projects/backpack-survivor/scene-atmosphere-and-demo-polish.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

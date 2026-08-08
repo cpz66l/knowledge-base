@@ -25,9 +25,9 @@
 
 ## 当前重点
 
-截至 2026-08-07，当前只保留三条高优先级主线：
+截至 2026-08-08，当前只保留三条高优先级主线：
 
-- **项目主线**：推进 Backpack Survivor Demo。当前已记录到物品图标与背包可读性，下一步进入新手目标提示与局内可读性。
+- **项目主线**：推进 Backpack Survivor Demo。当前已记录到场景氛围与演示包装，下一步进入完整 15 分钟通关验收。
 - **算法主线**：继续维护 C# / C++ 双语 LeetCode 题解，优先补链表、树、图、动态规划、堆和常见面试题型。
 - **基础主线**：补 C++ 基础语法、指针引用、STL、操作系统、网络和图形学的面试可解释版本。
 
@@ -68,6 +68,8 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：场景氛围与演示包装](projects/backpack-survivor/scene-atmosphere-and-demo-polish.md)
+- [Backpack Survivor：主菜单与场景流](projects/backpack-survivor/main-menu-and-scene-flow.md)
 - [Backpack Survivor：物品图标与背包可读性](projects/backpack-survivor/item-icons-and-backpack-readability.md)
 - [Backpack Survivor：攻击芯片效果实装](projects/backpack-survivor/attack-damage-chip-effect.md)
 - [Backpack Survivor：武器稀有度与等级差异](projects/backpack-survivor/weapon-rarity-and-level-scaling.md)

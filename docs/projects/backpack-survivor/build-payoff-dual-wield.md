@@ -331,7 +331,7 @@ itemView.SetConnectors(visibleSides, activeSides);
 | `InventoryUIController` 可见扫描候选后解析 `validEffects`，并用 `validEffects` 计算金色接口 | C | 本环境只读查看脚本 |
 | `BS.Inventory.asmdef` 设置 `noEngineReferences: true`，且当前 Inventory 脚本扫描未发现 `UnityEngine` 引用 | C | 本环境只读检查 asmdef 与脚本文本 |
 | `01-Run.unity` 中 `BackpackWeaponActivator.activeWeaponLimit` 为 `1`，并可见两个 `Tag: 1` 的 Pistol 武器槽 | C | 本环境只读检查场景 YAML |
-| 当前环境已在 Unity Editor / Play Mode 中验证双持、三持防护、UI 高亮和战斗收益 | D | 未启动 Unity，未运行 Play Mode |
+| Unity Editor / Play Mode 双持、三持防护、UI 高亮和战斗收益验证 | D | 当前环境未启动 Unity，未运行 Play Mode |
 | 所有新增装备掉落、槽位、Prefab 和数据资产已经完整接线 | D | 外部 Unity 工作区存在装备掉落表等未提交修改，本次只按第 21 课主题做只读静态复核，未逐项验证数据资产 |
 
 ## 相关内容

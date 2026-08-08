@@ -85,9 +85,11 @@
 - 项目中使用：[第 29 课：武器稀有度与等级差异](../projects/backpack-survivor/weapon-rarity-and-level-scaling.md)
 - 项目中使用：[第 30 课：攻击芯片效果实装](../projects/backpack-survivor/attack-damage-chip-effect.md)
 - 项目中使用：[第 31 课：物品图标与背包可读性](../projects/backpack-survivor/item-icons-and-backpack-readability.md)
+- 项目中使用：[第 32 课：主菜单与场景流](../projects/backpack-survivor/main-menu-and-scene-flow.md)
+- 项目中使用：[第 33 课：场景氛围与演示包装](../projects/backpack-survivor/scene-atmosphere-and-demo-polish.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2，项目中使用，已记录至第 31 课
-- 下一步：第 32 课新手目标提示与局内可读性；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.2，项目中使用，已记录至第 33 课
+- 下一步：第 34 课完整 15 分钟通关验收；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

@@ -8,7 +8,7 @@
 >
 > 对应项目：[Backpack Survivor](index.md)
 >
-> 下一步：第 32 课新手目标提示与局内可读性
+> 下一步：[主菜单与场景流](main-menu-and-scene-flow.md)
 >
 > 日期：2026-08-06
 >
@@ -218,6 +218,7 @@ Tooltip：详细价值和效果
 - 前置：[背包 UI 与拖拽](inventory-ui-and-drag.md)
 - 前置：[旋转邻接方向修正](rotation-adjacency-direction-fix.md)
 - 前置：[构筑最小兑现](build-payoff-dual-wield.md)
+- 后续：[主菜单与场景流](main-menu-and-scene-flow.md)
 - UGUI：[Image](../../unity/ugui/controls/image.md)
 - UGUI：[UGUI 总览](../../unity/ugui/index.md)
 - C#：[C# 工程实践路线](../../csharp/engineering/index.md)

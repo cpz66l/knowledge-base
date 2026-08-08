@@ -364,7 +364,7 @@ Health.TakeDamage()
 | `NormalEnemy.prefab` 与 `EliteEnemy.prefab` 存在；静态抽样可见精英缩放更大，并挂不同敌人掉落表 | C | 本环境只读检查 Prefab 与 `.meta` |
 | 普通敌人与精英敌人在 Unity Play Mode 中按目标比例生成，宝箱品质概率符合曲线 | D | 未运行 Unity，未采样统计 |
 | GLB 模型闪白在 Editor 和 Player Build 中已经视觉确认 | D | 未运行 Unity 或 Player Build |
-| `EditorBuildSettings.asset` 的场景路径已经修正为当前检查的 `01-Run.unity` | D | 静态检查仍看到 Build Settings 指向 `Assets/BackpackSurvivor/Scenes/Run/Run1.unity` |
+| `EditorBuildSettings.asset` 的场景路径已经修正为 MainMenu / `01-Run.unity` | C | 第 32 课后，本环境静态检查已确认 Build Settings 不再指向旧 `Run1.unity`；Player Build 仍待实测 |
 
 ## 相关内容
 

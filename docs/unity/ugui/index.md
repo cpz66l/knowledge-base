@@ -94,6 +94,8 @@ ScrollView
 | **[Backpack Survivor：构筑最小兑现](../../projects/backpack-survivor/build-payoff-dual-wield.md)** | ItemView 接口点、激活角标、validEffects 投影 | 掌握 UI 显示真实有效效果，避免候选效果和战斗收益错位 |
 | **[Backpack Survivor：内容面铺开](../../projects/backpack-survivor/content-expansion-fire-rate-boost.md)** | TextMeshProUGUI、TMP Font Asset、fallback、prefab/scene 字体引用 | 掌握中文字体资产链修复，避免只在单个 Text 上临时换字体 |
 | **[Backpack Survivor：物品图标与背包可读性](../../projects/backpack-survivor/item-icons-and-backpack-readability.md)** | Image 图标、透明 PNG、等级星星、邻接接边、Raycast Target | 掌握图标化背包格子的层级、射线边界和矩形适配 |
+| **[Backpack Survivor：主菜单与场景流](../../projects/backpack-survivor/main-menu-and-scene-flow.md)** | Button、CanvasScaler、ScrollRect、Scrollbar | 掌握主菜单入口、声明面板、分辨率适配和场景按钮行为 |
+| **[Backpack Survivor：场景氛围与演示包装](../../projects/backpack-survivor/scene-atmosphere-and-demo-polish.md)** | CanvasGroup、Input System、Tooltip 显隐 | 掌握背包面板显隐时同步透明度、交互和射线阻挡 |
 
 ---
 

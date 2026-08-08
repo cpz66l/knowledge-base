@@ -323,7 +323,7 @@ LootChest.Interact()
 | `manifest.json` 中 Cinemachine 版本为 `3.1.7`，场景中可见 `CM_PlayerCamera` 挂有 `CinemachineCamera`、`CinemachineFollow`、`CameraShakePlayer` 和 `CinemachineBasicMultiChannelPerlin` | C | 本环境只读检查包清单和场景 YAML |
 | `SfxPlayer` 入口已经接到 `WeaponBase`、`DamageNumberSpawner`、`GameSession`、`LootChest` 和 `PlayerHitFeedbackView` | C | 本环境只读查看脚本 |
 | 本课音效资源已在场景中完整接线并能播放 | D | `01-Run.unity` 中 `SfxPlayer` 的 `AudioSource` 与 Clip 字段显示为空，本环境未运行 Unity 复核 |
-| 当前环境已在 Unity Editor / Play Mode 中验证战斗反馈效果 | D | 未启动 Unity，未运行 Play Mode，未观察真实闪色、数字、音效或震屏 |
+| Unity Editor / Play Mode 战斗反馈效果验证 | D | 当前环境未启动 Unity，未运行 Play Mode，未观察真实闪色、数字、音效或震屏 |
 
 ## 相关内容
 

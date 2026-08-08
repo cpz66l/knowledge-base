@@ -42,6 +42,8 @@
 - [Backpack Survivor：武器稀有度与等级差异](../../projects/backpack-survivor/weapon-rarity-and-level-scaling.md)：Resolver 翻译层、运行时 `Item` 到战斗倍率的事实源、战斗 / Tooltip 共用规则和语义性 `OnChanged` 刷新。
 - [Backpack Survivor：攻击芯片效果实装](../../projects/backpack-survivor/attack-damage-chip-effect.md)：按效果类型扩展规则链、按真实激活武器过滤收益、按武器实例聚合倍率和刷新前重置运行时状态。
 - [Backpack Survivor：物品图标与背包可读性](../../projects/backpack-survivor/item-icons-and-backpack-readability.md)：表现资源与纯数据层隔离、UI 装饰层射线边界、运行时尺寸驱动布局和配置缺失兜底。
+- [Backpack Survivor：主菜单与场景流](../../projects/backpack-survivor/main-menu-and-scene-flow.md)：场景流入口、按钮事件镜像订阅、`Time.timeScale` 恢复、Build Settings 静态配置复核和返回主菜单语义演进。
+- [Backpack Survivor：场景氛围与演示包装](../../projects/backpack-survivor/scene-atmosphere-and-demo-polish.md)：运行时等级往返保真、static 本局状态显式 Reset、池化对象飞行协程归零和 UI 开关临时态保护。
 - [Backpack Survivor V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)：交付范围、设计主线、技术债务和下一阶段计划。
 
 ## 最小产出
