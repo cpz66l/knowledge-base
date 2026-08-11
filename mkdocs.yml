@@ -17,7 +17,6 @@ draft_docs: |
   performance/profiler-deep-dive.md
   performance/rendering-performance.md
   performance/cpu-code-optimization.md
-  networking/tcp-udp-basics.md
   networking/unity-netcode.md
   networking/state-sync.md
   networking/lockstep.md
@@ -156,7 +155,7 @@ nav:
       - 数组: csharp/leetcode/array/index.md
       - 矩阵: csharp/leetcode/matrix/index.md
       - 链表: csharp/leetcode/linked-list/index.md
-      - 二叉树: csharp/leetcode/binary-tree.md
+      - 二叉树: csharp/leetcode/binary-tree/index.md
       - 图论: csharp/leetcode/graph.md
       - 回溯: csharp/leetcode/backtracking.md
       - 二分查找: csharp/leetcode/binary-search.md
@@ -195,6 +194,8 @@ nav:
       - 小 Tips: performance/perf-tips.md
   - 网络编程:
       - networking/index.md
+      - 计算机网络基础概念: networking/network-foundations.md
+      - TCP/UDP 基础: networking/tcp-udp-basics.md
   - 项目实践:
       - projects/index.md
       - Backpack Survivor:

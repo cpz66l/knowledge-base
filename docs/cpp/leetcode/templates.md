@@ -90,6 +90,58 @@ return dummy.next;
 - 交换后 `first` 变成当前组尾节点，下一轮的前驱应移动到 `first`。
 - 临时哨兵放在栈上即可；如果用 `new` 创建哨兵，空链表提前返回时也要避免泄漏。
 
+## 随机指针链表深拷贝：旧节点映射到新节点
+
+在 [LC 138 复制带随机指针的链表](../../csharp/leetcode/linked-list/copy-list-with-random-pointer.md)中已经使用：
+
+```cpp
+std::unordered_map<Node*, Node*> cachedNode;
+
+Node* copied = new Node(head->val);
+cachedNode[head] = copied;
+copied->next = copyRandomList(head->next);
+copied->random = copyRandomList(head->random);
+```
+
+- `unordered_map<Node*, Node*>` 可以把旧节点地址映射到新节点地址。
+- 必须先写入缓存再递归处理 `next` 和 `random`，否则随机指针回指时可能重复创建节点。
+- 原地穿插写法中，复制节点临时放在旧节点后面，所以旧节点 `node` 对应的新节点是 `node->next`。
+- 设置随机指针时应写 `copied->random = node->random ? node->random->next : nullptr`，不能直接指向 `node->random`。
+
+## 链表归并排序：半开区间切分
+
+在 [LC 148 排序链表](../../csharp/leetcode/linked-list/sort-list.md)中已经使用：
+
+```cpp
+ListNode* sortList(ListNode* head, ListNode* tail)
+{
+    if (head == tail)
+    {
+        return nullptr;
+    }
+
+    if (head->next == tail)
+    {
+        head->next = nullptr;
+        return head;
+    }
+
+    ListNode* slow = head;
+    ListNode* fast = head;
+    while (fast != tail && fast->next != tail)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    return merge(sortList(head, slow), sortList(slow, tail));
+}
+```
+
+- `[head, tail)` 半开区间能避免额外扫描前驱节点来断链。
+- 单节点区间要执行 `head->next = nullptr`，让递归返回的子链表真正独立。
+- 每次找最小节点再递归排序是 O(n²)，链表排序优先考虑归并。
+
 ## std::stack 最小用法
 
 在 [LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)中已经对照：
@@ -110,6 +162,29 @@ size_t count = stack.size();
 - C++ 判空优先用 `empty()`；C# 常写 `stack.Count == 0`。
 - C++ `pop()` 不返回元素，需要先 `top()` 再 `pop()`。
 
+## 二叉树 DFS：递归结果用引用承接
+
+在 [LC 94 二叉树的中序遍历](../../csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md)中已经使用：
+
+```cpp
+void inorder(TreeNode* root, std::vector<int>& result)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+
+    inorder(root->left, result);
+    result.push_back(root->val);
+    inorder(root->right, result);
+}
+```
+
+- 递归辅助函数如果写成 `std::vector<int> result`，会复制一份结果数组，外层不会收到修改。
+- 中序遍历是左 -> 中 -> 右；前序是中 -> 左 -> 右；后序是左 -> 右 -> 中。
+- 显式栈写法中，先一路向左压栈，弹出访问后再转向右子树。
+- 前序迭代要先压右节点再压左节点；后序可先求中 -> 右 -> 左，再整体反转。
+
 ## 计划整理内容
 
 - 常用头文件和命名空间
@@ -129,6 +204,6 @@ size_t count = stack.size();
 
 ## 当前状态
 
-- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、`std::stack`
-- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)
+- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、随机指针深拷贝、链表归并排序、二叉树 DFS、`std::stack`
+- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)、[LC 94 二叉树的中序遍历](../../csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md)、[LC 138 复制带随机指针的链表](../../csharp/leetcode/linked-list/copy-list-with-random-pointer.md)、[LC 148 排序链表](../../csharp/leetcode/linked-list/sort-list.md)
 - 待整理问题：其他容器和算法模板等待实际练习后补充
