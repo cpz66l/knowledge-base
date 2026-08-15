@@ -185,12 +185,105 @@ void inorder(TreeNode* root, std::vector<int>& result)
 - 显式栈写法中，先一路向左压栈，弹出访问后再转向右子树。
 - 前序迭代要先压右节点再压左节点；后序可先求中 -> 右 -> 左，再整体反转。
 
+## 二叉树最大深度：DFS 返回高度 / BFS 固定层大小
+
+在 [LC 104 二叉树的最大深度](../../csharp/leetcode/binary-tree/maximum-depth-of-binary-tree.md)中已经使用：
+
+```cpp
+int maxDepth(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return 0;
+    }
+
+    return std::max(maxDepth(root->left), maxDepth(root->right)) + 1;
+}
+```
+
+- 递归函数返回“当前子树高度”，空树高度为 0。
+- 非空节点的高度是左右子树较大值再加当前节点这一层。
+- 如果题目要求按层处理，则 BFS 需要先保存当前层节点数：
+
+```cpp
+std::queue<TreeNode*> queue;
+queue.push(root);
+int depth = 0;
+
+while (!queue.empty())
+{
+    int levelSize = static_cast<int>(queue.size());
+    while (levelSize > 0)
+    {
+        TreeNode* node = queue.front();
+        queue.pop();
+        if (node->left != nullptr) queue.push(node->left);
+        if (node->right != nullptr) queue.push(node->right);
+        levelSize--;
+    }
+    depth++;
+}
+```
+
+- `queue.size()` 必须在处理本层前固定下来；循环中新增的是下一层节点，不能混入当前层计数。
+- DFS 辅助空间取决于树高 `h`；BFS 辅助空间取决于最大层宽 `w`。
+
+## 二叉树翻转：先保存再交换
+
+在 [LC 226 翻转二叉树](../../csharp/leetcode/binary-tree/invert-binary-tree.md)中已经使用：
+
+```cpp
+TreeNode* invertTree(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return nullptr;
+    }
+
+    TreeNode* left = invertTree(root->left);
+    root->left = invertTree(root->right);
+    root->right = left;
+    return root;
+}
+```
+
+- 空节点先返回，避免访问空指针。
+- 如果先覆盖 `root->left`，必须提前保存原左子树或翻转后的左子树。
+- 翻转二叉树会修改树结构；判断对称二叉树只比较镜像关系，不应该修改节点连接。
+
+## 对称二叉树：镜像位置成对比较
+
+在 [LC 101 对称二叉树](../../csharp/leetcode/binary-tree/symmetric-tree.md)中已经使用：
+
+```cpp
+bool isMirror(TreeNode* left, TreeNode* right)
+{
+    if (left == nullptr && right == nullptr)
+    {
+        return true;
+    }
+
+    if (left == nullptr || right == nullptr)
+    {
+        return false;
+    }
+
+    return left->val == right->val
+        && isMirror(left->left, right->right)
+        && isMirror(left->right, right->left);
+}
+```
+
+- 镜像比较不是同向比较：左子树的左侧要对右子树的右侧。
+- 队列写法中，入队也要保持成对顺序：`left->left/right->right`，再 `left->right/right->left`。
+- 两个节点都为空时表示这一对镜像位置通过；只有一个为空时才失败。
+
 ## 计划整理内容
 
 - 常用头文件和命名空间
 - vector、string、unordered_map、queue、stack、priority_queue
 - 排序、比较器和二分
-- DFS、BFS 和回溯
+- 回溯
 - 引用传参、返回值和生命周期
 - 溢出、下标、迭代器失效和空容器
 
@@ -204,6 +297,6 @@ void inorder(TreeNode* root, std::vector<int>& result)
 
 ## 当前状态
 
-- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、随机指针深拷贝、链表归并排序、二叉树 DFS、`std::stack`
-- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)、[LC 94 二叉树的中序遍历](../../csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md)、[LC 138 复制带随机指针的链表](../../csharp/leetcode/linked-list/copy-list-with-random-pointer.md)、[LC 148 排序链表](../../csharp/leetcode/linked-list/sort-list.md)
+- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、随机指针深拷贝、链表归并排序、二叉树 DFS、二叉树 BFS 层序、`std::stack`、`std::queue`
+- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)、[LC 94 二叉树的中序遍历](../../csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md)、[LC 101 对称二叉树](../../csharp/leetcode/binary-tree/symmetric-tree.md)、[LC 104 二叉树的最大深度](../../csharp/leetcode/binary-tree/maximum-depth-of-binary-tree.md)、[LC 138 复制带随机指针的链表](../../csharp/leetcode/linked-list/copy-list-with-random-pointer.md)、[LC 148 排序链表](../../csharp/leetcode/linked-list/sort-list.md)、[LC 226 翻转二叉树](../../csharp/leetcode/binary-tree/invert-binary-tree.md)
 - 待整理问题：其他容器和算法模板等待实际练习后补充

@@ -102,6 +102,8 @@ V0.2 已开始扩展掉落与背包构筑：
 
 阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
 
+面试表达：[面试复盘第 01 阶段](../../reviews/2026/backpack-survivor-interview-stage-01.md)。
+
 ## 当前验证证据
 
 - 原始学习记录描述了实际运行结果：玩家进入危险区持续掉血，离开后停止，死亡后不再受伤。

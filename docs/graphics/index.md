@@ -22,7 +22,7 @@
 | 主题 | 计划验证内容 |
 |------|------|
 | 渲染管线 | 应用阶段、几何阶段、光栅化、逐片元 |
-| Shader 基础 | HLSL/ShaderLab 语法、顶点/片元着色器 |
+| Shader 基础 | HLSL/ShaderLab 语法、顶点/片元着色器；首轮先做 UV 流动、受击闪白或简单溶解中的一个可观察小实验 |
 | 光照与着色 | Lambert、Blinn-Phong、法线贴图 |
 | PBR 理论 | BRDF、金属度/粗糙度工作流、IBL |
 | 阴影技术 | Shadow Map、CSM、软阴影 |

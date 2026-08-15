@@ -47,12 +47,15 @@
 | 主题 | 证据边界 |
 |---|---|
 | [计算机网络基础概念](network-foundations.md) | 用户学习笔记；已整理网络/互联网、交换方式、性能指标和五层模型，尚未完成抓包或通信实验 |
+| [IP 与路由基础](ip-routing-basics.md) | 用户学习笔记；已整理网络层服务、IPv4/CIDR、ARP、NAT、IPv6、RIP/OSPF/BGP，尚未完成抓包、路由配置或子网计算验证 |
+| [TCP/UDP 基础](tcp-udp-basics.md) | 用户学习笔记与学习规划；已建立 TCP/UDP、HTTP/HTTPS、Socket 和游戏同步的面试学习范围，尚未完成抓包、Socket 或联机实验 |
 
 ## 后续计划主题
 
 | 主题 | 计划验证内容 |
 |------|------|
-| TCP/UDP 基础 | 协议选择、分包、粘包、可靠传输 |
+| HTTP/HTTPS 基础 | 请求/响应结构、常见状态码、HTTPS 加密大意 |
+| Socket 最小实验 | TCP 或 UDP 客户端/服务端收发 |
 | Unity Netcode for GameObject | NetworkManager、RPC、NetworkVariable |
 | 状态同步实战 | 插值、预测、延迟补偿 |
 | 帧同步与锁步 | 确定性模拟、Checksum 校验、回放 |

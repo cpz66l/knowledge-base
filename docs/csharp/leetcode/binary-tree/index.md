@@ -9,6 +9,9 @@
 | 题目 | 难度 | 核心技巧 |
 |---|---|---|
 | [二叉树的中序遍历](binary-tree-inorder-traversal.md) | Easy | 递归、显式栈、前/中/后序遍历迁移 |
+| [对称二叉树](symmetric-tree.md) | Easy | 镜像递归、成对队列比较 |
+| [二叉树的最大深度](maximum-depth-of-binary-tree.md) | Easy | DFS 递归高度、BFS 层序计数 |
+| [翻转二叉树](invert-binary-tree.md) | Easy | 递归交换左右子树、镜像思维 |
 
 ---
 
@@ -23,4 +26,3 @@
 ---
 
 > 标签：`二叉树` `DFS` `BFS` `递归` `栈`
-

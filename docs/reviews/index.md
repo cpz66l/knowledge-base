@@ -33,4 +33,4 @@
 ### 其他复盘
 
 - 项目复盘：[Backpack Survivor V0.1 战斗核心原型](2026/backpack-survivor-v0.1-review.md)
-- 面试复盘：待添加
+- 面试复盘：[Backpack Survivor 面试复盘第 01 阶段](2026/backpack-survivor-interview-stage-01.md)

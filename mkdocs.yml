@@ -53,6 +53,12 @@ not_in_nav: |
   csharp/leetcode/linked-list/add-two-numbers.md
   csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md
   csharp/leetcode/linked-list/swap-nodes-in-pairs.md
+  csharp/leetcode/linked-list/copy-list-with-random-pointer.md
+  csharp/leetcode/linked-list/sort-list.md
+  csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md
+  csharp/leetcode/binary-tree/maximum-depth-of-binary-tree.md
+  csharp/leetcode/binary-tree/invert-binary-tree.md
+  csharp/leetcode/binary-tree/symmetric-tree.md
 
 theme:
   name: material
@@ -195,6 +201,7 @@ nav:
   - 网络编程:
       - networking/index.md
       - 计算机网络基础概念: networking/network-foundations.md
+      - IP 与路由基础: networking/ip-routing-basics.md
       - TCP/UDP 基础: networking/tcp-udp-basics.md
   - 项目实践:
       - projects/index.md
