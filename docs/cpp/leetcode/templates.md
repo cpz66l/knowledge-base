@@ -228,6 +228,61 @@ while (!queue.empty())
 - `queue.size()` 必须在处理本层前固定下来；循环中新增的是下一层节点，不能混入当前层计数。
 - DFS 辅助空间取决于树高 `h`；BFS 辅助空间取决于最大层宽 `w`。
 
+## 二叉树层序输出：外层结果要先创建当前层
+
+在 [LC 102 二叉树的层序遍历](../../csharp/leetcode/binary-tree/binary-tree-level-order-traversal.md)中已经使用：
+
+```cpp
+std::vector<std::vector<int>> result;
+std::queue<TreeNode*> queue;
+queue.push(root);
+
+while (!queue.empty())
+{
+    int levelSize = static_cast<int>(queue.size());
+    result.push_back(std::vector<int>());
+
+    for (int i = 0; i < levelSize; i++)
+    {
+        TreeNode* node = queue.front();
+        queue.pop();
+        result.back().push_back(node->val);
+
+        if (node->left != nullptr) queue.push(node->left);
+        if (node->right != nullptr) queue.push(node->right);
+    }
+}
+```
+
+- 外层 `std::vector<std::vector<int>>` 创建后，内层 `vector<int>` 不会自动存在。
+- 每处理一层前先 `result.push_back(std::vector<int>())`，再用 `result.back()` 写当前层。
+- 左右孩子入队前先判空，避免下一轮访问空指针。
+
+## 有序数组建平衡 BST：中点切分
+
+在 [LC 108 将有序数组转换为二叉搜索树](../../csharp/leetcode/binary-tree/convert-sorted-array-to-binary-search-tree.md)中已经使用：
+
+```cpp
+TreeNode* build(std::vector<int>& nums, int left, int right)
+{
+    if (left > right)
+    {
+        return nullptr;
+    }
+
+    int mid = left + (right - left) / 2;
+    TreeNode* root = new TreeNode(nums[mid]);
+    root->left = build(nums, left, mid - 1);
+    root->right = build(nums, mid + 1, right);
+    return root;
+}
+```
+
+- 有序数组中点天然适合作为 BST 根节点；左半边进左子树，右半边进右子树。
+- 终止条件是 `left > right`，单元素区间仍要创建节点。
+- `left + (right - left) / 2` 是更稳妥的中点写法。
+- LeetCode 建树时可以返回裸指针；普通工程中要额外设计整棵树的释放责任。
+
 ## 二叉树翻转：先保存再交换
 
 在 [LC 226 翻转二叉树](../../csharp/leetcode/binary-tree/invert-binary-tree.md)中已经使用：
@@ -278,6 +333,30 @@ bool isMirror(TreeNode* left, TreeNode* right)
 - 队列写法中，入队也要保持成对顺序：`left->left/right->right`，再 `left->right/right->left`。
 - 两个节点都为空时表示这一对镜像位置通过；只有一个为空时才失败。
 
+## 二叉树直径：返回深度，更新全局答案
+
+在 [LC 543 二叉树的直径](../../csharp/leetcode/binary-tree/diameter-of-binary-tree.md)中已经使用：
+
+```cpp
+int depth(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return 0;
+    }
+
+    int leftDepth = depth(root->left);
+    int rightDepth = depth(root->right);
+    maxNodeCount = std::max(maxNodeCount, leftDepth + rightDepth + 1);
+    return std::max(leftDepth, rightDepth) + 1;
+}
+```
+
+- `depth()` 返回给父节点的是当前子树高度，不是直径。
+- 全局答案需要在每个节点更新一次，因为最长路径可能不经过根节点。
+- 题目要求返回边数；如果全局记录的是节点数，最后要减 1。
+- 入口函数要初始化全局状态，避免多组测试之间残留。
+
 ## 计划整理内容
 
 - 常用头文件和命名空间
@@ -297,6 +376,6 @@ bool isMirror(TreeNode* left, TreeNode* right)
 
 ## 当前状态
 
-- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、随机指针深拷贝、链表归并排序、二叉树 DFS、二叉树 BFS 层序、`std::stack`、`std::queue`
-- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)、[LC 94 二叉树的中序遍历](../../csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md)、[LC 101 对称二叉树](../../csharp/leetcode/binary-tree/symmetric-tree.md)、[LC 104 二叉树的最大深度](../../csharp/leetcode/binary-tree/maximum-depth-of-binary-tree.md)、[LC 138 复制带随机指针的链表](../../csharp/leetcode/linked-list/copy-list-with-random-pointer.md)、[LC 148 排序链表](../../csharp/leetcode/linked-list/sort-list.md)、[LC 226 翻转二叉树](../../csharp/leetcode/binary-tree/invert-binary-tree.md)
+- 已使用模板：链表哨兵节点、尾指针拼接、新结果链表构造、删除节点前驱定位、相邻节点重连、随机指针深拷贝、链表归并排序、二叉树 DFS、二叉树 BFS 层序、二叉树层序输出数组、递归中点建树、`std::stack`、`std::queue`
+- 已验证题目：[LC 2 两数相加](../../csharp/leetcode/linked-list/add-two-numbers.md)、[LC 19 删除链表的倒数第 N 个结点](../../csharp/leetcode/linked-list/remove-nth-node-from-end-of-list.md)、[LC 21 合并两个有序链表](../../csharp/leetcode/linked-list/merge-two-sorted-lists.md)、[LC 24 两两交换链表中的节点](../../csharp/leetcode/linked-list/swap-nodes-in-pairs.md)、[LC 94 二叉树的中序遍历](../../csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md)、[LC 101 对称二叉树](../../csharp/leetcode/binary-tree/symmetric-tree.md)、[LC 102 二叉树的层序遍历](../../csharp/leetcode/binary-tree/binary-tree-level-order-traversal.md)、[LC 104 二叉树的最大深度](../../csharp/leetcode/binary-tree/maximum-depth-of-binary-tree.md)、[LC 108 将有序数组转换为二叉搜索树](../../csharp/leetcode/binary-tree/convert-sorted-array-to-binary-search-tree.md)、[LC 138 复制带随机指针的链表](../../csharp/leetcode/linked-list/copy-list-with-random-pointer.md)、[LC 148 排序链表](../../csharp/leetcode/linked-list/sort-list.md)、[LC 226 翻转二叉树](../../csharp/leetcode/binary-tree/invert-binary-tree.md)、[LC 543 二叉树的直径](../../csharp/leetcode/binary-tree/diameter-of-binary-tree.md)
 - 待整理问题：其他容器和算法模板等待实际练习后补充

@@ -54,7 +54,7 @@
 ## 当前项目
 
 - [Backpack Survivor（背包幸存者）](../projects/backpack-survivor/index.md)
-- 已完成阶段：V0.1 战斗核心原型
+- 已完成阶段：V0.3.6 设置菜单与基础选项；V0.2 正式演示包已完成
 - 项目中使用：[第 1 课：伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
 - 项目中使用：[第 2 课：敌人追击、近战与死亡流程](../projects/backpack-survivor/enemy-ai-and-melee.md)
 - 项目中使用：[第 3 课：目标注册表、自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md)
@@ -90,11 +90,17 @@
 - 项目中使用：[第 34 课：完整 15 分钟通关验收](../projects/backpack-survivor/full-run-acceptance.md)
 - 项目中使用：[第 35 课：Profiler 快扫与低风险优化](../projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md)
 - 项目中使用：[第 36 课：Build 与演示包](../projects/backpack-survivor/build-and-demo-package.md)
+- 项目中使用：[第 37 课：升级候选池模块](../projects/backpack-survivor/level-up-option-pool.md)
+- 项目中使用：[第 38 课：邻接效果架构升级](../projects/backpack-survivor/adjacency-effect-architecture.md)
+- 项目中使用：[第 39 课：背包构筑效果扩展](../projects/backpack-survivor/backpack-build-effects-extension.md)
+- 项目中使用：[第 40 课：内容池扩展与价值平衡](../projects/backpack-survivor/content-pool-and-value-balance.md)
+- 项目中使用：[第 41 课：基础音频系统与 BGM](../projects/backpack-survivor/audio-system-and-bgm.md)
+- 项目中使用：[第 42 课：设置菜单与基础选项](../projects/backpack-survivor/settings-menu-and-basic-options.md)
 - 项目记录：[Bug 记录簿](../projects/backpack-survivor/bug-log.md)
 - 项目记录：[性能优化记录](../projects/backpack-survivor/performance-optimization-log.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.2，项目中使用，已记录至第 36 课，正式 Windows 演示包已由用户验收
-- 下一步：第 37 课作品材料整理；第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：V0.3.6，项目中使用，已整理至第 42 课；正式 Windows 演示包仍以 V0.2 验收记录为准，V0.3.6 以用户复盘和本环境文档整理为证据
+- 下一步：V0.3.7 敌人寻路与群体移动优化；第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

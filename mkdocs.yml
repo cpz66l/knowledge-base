@@ -57,8 +57,11 @@ not_in_nav: |
   csharp/leetcode/linked-list/sort-list.md
   csharp/leetcode/binary-tree/binary-tree-inorder-traversal.md
   csharp/leetcode/binary-tree/maximum-depth-of-binary-tree.md
+  csharp/leetcode/binary-tree/binary-tree-level-order-traversal.md
   csharp/leetcode/binary-tree/invert-binary-tree.md
   csharp/leetcode/binary-tree/symmetric-tree.md
+  csharp/leetcode/binary-tree/diameter-of-binary-tree.md
+  csharp/leetcode/binary-tree/convert-sorted-array-to-binary-search-tree.md
 
 theme:
   name: material
@@ -114,6 +117,7 @@ nav:
       - 周学习记录:
           - 周记录索引: learning/weekly/index.md
           - 2026-W33: learning/weekly/2026-W33.md
+          - 2026-W34: learning/weekly/2026-W34.md
   - C#:
       - csharp/index.md
       - 1. 语言与面向对象:
@@ -203,6 +207,7 @@ nav:
       - 计算机网络基础概念: networking/network-foundations.md
       - IP 与路由基础: networking/ip-routing-basics.md
       - TCP/UDP 基础: networking/tcp-udp-basics.md
+      - 应用层基础协议: networking/application-layer-basics.md
   - 项目实践:
       - projects/index.md
       - Backpack Survivor:
@@ -242,6 +247,12 @@ nav:
           - 第 34 课：完整 15 分钟通关验收: projects/backpack-survivor/full-run-acceptance.md
           - 第 35 课：Profiler 快扫与低风险优化: projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md
           - 第 36 课：Build 与演示包: projects/backpack-survivor/build-and-demo-package.md
+          - 第 37 课：升级候选池模块: projects/backpack-survivor/level-up-option-pool.md
+          - 第 38 课：邻接效果架构升级: projects/backpack-survivor/adjacency-effect-architecture.md
+          - 第 39 课：背包构筑效果扩展: projects/backpack-survivor/backpack-build-effects-extension.md
+          - 第 40 课：内容池扩展与价值平衡: projects/backpack-survivor/content-pool-and-value-balance.md
+          - 第 41 课：基础音频系统与 BGM: projects/backpack-survivor/audio-system-and-bgm.md
+          - 第 42 课：设置菜单与基础选项: projects/backpack-survivor/settings-menu-and-basic-options.md
           - Bug 记录簿: projects/backpack-survivor/bug-log.md
           - 性能优化记录: projects/backpack-survivor/performance-optimization-log.md
   - 热更新 (Lua):

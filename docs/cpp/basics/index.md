@@ -217,6 +217,73 @@ std::cout << value; // 11
 
 阅读口诀：`const` 修饰它右边的东西；如果右边没有东西，就修饰左边。
 
+## 2026-08-17 Modern C++ 入门笔记
+
+> 证据归属：用户学习笔记与智能指针截图。以下内容是已阅读 / 待验证的语法记录；本次没有额外创建 C++ 工程编译。
+
+### `enum class`：更安全的枚举
+
+```cpp
+enum class WeaponType
+{
+    Sword,
+    Bow,
+    Staff,
+    Axe,
+};
+
+WeaponType weapon = WeaponType::Sword;
+int rawValue = static_cast<int>(weapon);
+```
+
+- `enum class` 不会隐式转换为 `int`，比旧式 `enum` 更不容易误用。
+- 使用时需要写枚举类型作用域，例如 `WeaponType::Sword`。
+- 如果确实需要数字值，要显式 `static_cast<int>(weapon)`。
+
+### 结构化绑定
+
+```cpp
+std::map<std::string, int> scores = {
+    {"Alice", 98},
+    {"Bob", 90},
+};
+
+for (const auto& [name, score] : scores)
+{
+    std::cout << name << ":" << score << std::endl;
+}
+
+struct Point
+{
+    float x;
+    float y;
+};
+
+Point p{10.0f, 20.0f};
+auto [px, py] = p;
+```
+
+- 结构化绑定可以拆 `std::pair`、`std::tuple` 或简单聚合结构体。
+- 遍历 `map` 时常写 `const auto& [key, value]`，避免拷贝键值对。
+
+### `nullptr` 与统一初始化
+
+```cpp
+int* ptr = nullptr;
+if (ptr == nullptr)
+{
+    std::cout << "ptr 是空指针" << std::endl;
+}
+
+int a{10};
+double b{3.14};
+std::vector<int> values{1, 2, 3, 4, 5};
+std::string text{"Hello"};
+```
+
+- `nullptr` 是类型安全的空指针字面量，优先替代旧的 `NULL` 或 `0`。
+- 花括号初始化能统一基础类型、容器和对象初始化写法，也能减少部分窄化转换问题。
+
 ## 最小练习
 
 - [ ] 独立完成一个多函数 C++ 小程序

@@ -19,7 +19,7 @@
 
 ## 当前记录
 
-- 已接触：`vector`、`string`、`unordered_map`、`stack`
+- 已接触：`vector`、`string`、`unordered_map`、`map`、`stack`、`queue`
 - 系统掌握：未完成，仍需用题目和小程序验证
 - 待补内容：迭代器失效、容器复杂度、`map` / `set`、`queue`、`priority_queue`
 
@@ -98,3 +98,26 @@ std::string s3(5, '*'); // "*****"
 - `substr(0, 5)` 是从下标 0 开始取 5 个字符，不是取到下标 5。
 - `std::string::npos` 常用于判断 `find` 是否失败。
 - `s[s.size() - 1]` 前要确保字符串非空。
+
+## 2026-08-17 `std::map` 与结构化绑定笔记
+
+> 证据归属：用户 C++ 学习笔记。以下是已阅读 / 待验证用法，后续仍需通过小程序或题目补充复杂度和迭代器规则。
+
+```cpp
+std::map<std::string, int> scores;
+scores["GuanYu"] = 95;
+scores["ZhangFei"] = 88;
+scores["ZhugeLiang"] = 100;
+
+for (const auto& [name, score] : scores)
+{
+    std::cout << name << ":" << score << std::endl;
+}
+```
+
+当前先记住：
+
+- `map` 保存键值对，按 key 有序组织。
+- `scores[key] = value` 可以插入或修改值。
+- `operator[]` 访问不存在的 key 会插入默认值；如果只想查询，后续要学习 `find()` 或 `contains()`。
+- 遍历键值对时，结构化绑定能直接拆成 `[name, score]`。

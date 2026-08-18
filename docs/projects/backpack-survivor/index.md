@@ -2,7 +2,7 @@
 
 > 状态：项目中使用
 >
-> 当前进度：V0.2 已记录至第 36 课，正式 Windows 演示包已由用户验收，下一步进入第 37 课作品材料整理
+> 当前进度：V0.3.6 已整理至第 42 课；V0.2 正式 Windows 演示包已由用户验收，V0.3 已进入构筑内容池、音频反馈和设置菜单扩展
 >
 > 首次记录：2026-07-20
 >
@@ -58,6 +58,18 @@ V0.2 已开始扩展掉落与背包构筑：
 - 用 Profiler 快扫证据包、Build 试玩反馈、显式运行时视觉材质和 `MaterialPropertyBlock`，把性能疑点与 Build 颜色异常分开处理。
 - 用 Windows Build Profile、Player Settings、场景顺序、输入资产引用和独立 exe 验收，把项目推进到 V0.2 正式演示包。
 
+V0.3 已开始围绕构筑深度继续扩展：
+
+- 用 `LevelUpOptionDefinition`、`LevelUpOptionGenerator`、权重、等级门槛和选择次数记录，把升级系统从固定三选一扩展成可维护候选池。
+- 用 `PlayerRunStats` 统一承接伤害、暴击、射程、拾取、经济、生命和武器上限等本局升级属性，并接到真实消费侧。
+- 用 `BackpackItemModifier` 和 `BackpackEffectCollector` 把数值类邻接效果从 `BackpackWeaponActivator` 中拆出，让攻速、伤害、暴击等单武器收益走统一汇总链路。
+- 用 `BackpackGlobalModifier` 和 `BackpackPassiveCollector` 把机械臂、护甲、磁吸核心等“放入背包即生效”的全局被动收益与邻接收益分层。
+- 用瞄准镜暴击邻接、机械臂武器上限、护甲免伤、磁吸核心拾取范围和 Tooltip 说明验证 V0.3 架构可继续扩内容。
+- 用内容池扩展、`scoreValue / effectValue` 价值分层、`Item.Id` 优先图标解析和同类武器槽位上限，把构筑规则落到可感知内容和数值投放。
+- 用 `SfxPlayer` cue 表、`WeaponSfxId`、通用 `SfxId`、场景 BGM 和跨场景 UI 点击音，把反馈系统从零散音效升级为可扩展音频链路。
+- 用 `GameSettings`、`SettingsService`、`SettingsPanelView`、`PlayerPrefs`、音量倍率和分辨率 / 窗口模式，把设置菜单从 UI 控件扩展为可持久化、可跨场景生效的基础选项系统。
+- 记录 `PickUpMagnet` 多掉落物重复订阅背包变化的性能挂账，后续由 Profiler 和掉落量级决定是否引入共享被动缓存服务。
+
 ## 实践记录
 
 | 课次 | 内容 | 状态 |
@@ -97,6 +109,12 @@ V0.2 已开始扩展掉落与背包构筑：
 | 第 34 课 | [完整 15 分钟通关验收](full-run-acceptance.md) | 项目中使用；用户记录完整链路验收和外部试玩理解门槛，本环境静态复核玩法说明入口与主动瞄准高度平面修正 |
 | 第 35 课 | [Profiler 快扫与低风险优化](profiler-sweep-and-low-risk-optimization.md) | 项目中使用；用户记录 Build 后期无明显卡顿和 BUG-025 修复，本环境静态复核 Profiler 证据包、显式材质与 MPB 链路 |
 | 第 36 课 | [Build 与演示包](build-and-demo-package.md) | 项目中使用；用户记录正式 Windows exe 独立验收通过，本环境静态复核 Build Profile、Player Settings、场景顺序、输入资产和 Build 输出 |
+| 第 37 课 | [升级候选池模块](level-up-option-pool.md) | 项目中使用；用户复盘记录候选池、权重、等级门槛、选择次数和真实消费侧，本环境整理文档，未运行 Unity |
+| 第 38 课 | [邻接效果架构升级](adjacency-effect-architecture.md) | 项目中使用；用户记录一轮实机试玩回归未发现问题，本环境整理文档，未运行 Unity |
+| 第 39 课 | [背包构筑效果扩展](backpack-build-effects-extension.md) | 项目中使用；用户记录瞄准镜、机械臂、护甲、磁吸核心和 Tooltip 回归通过，本环境整理文档，未运行 Unity / Profiler |
+| 第 40 课 | [内容池扩展与价值平衡](content-pool-and-value-balance.md) | 项目中使用；用户记录内容池、价值曲线、图标、Tooltip、宝箱和武器槽位实机回归全绿，本环境整理文档，未运行 Unity |
+| 第 41 课 | [基础音频系统与 BGM](audio-system-and-bgm.md) | 项目中使用；用户记录武器音效、通用短音效、BGM、跨场景按钮音实机效果良好，本环境整理文档，未运行 Unity |
+| 第 42 课 | [设置菜单与基础选项](settings-menu-and-basic-options.md) | 项目中使用；用户记录设置面板、音量倍率、分辨率、跨场景保留和 `dotnet build` 通过，本环境整理文档，未重复运行 Unity / dotnet build |
 
 项目级记录：[Bug 记录簿](bug-log.md)、[性能优化记录](performance-optimization-log.md)。
 
@@ -140,12 +158,18 @@ V0.2 已开始扩展掉落与背包构筑：
 - 第 34 课课程记录描述了完整 15 分钟试玩验收、外部试玩反馈、主菜单玩法说明和主动射击高度平面修正；用户记录称已通过代码巡检和基础构建验证。本环境只读复核了外部 Unity 工程中的 `MainMenuController.cs`、`InputReader.cs`、`ActiveWeapon.cs`、`PlayerController.cs`、`MainMenu.unity` 和 `01-Run.unity` 关键 YAML 引用；未运行 Unity Editor / Play Mode、Profiler 或 Player Build。
 - 第 35 课课程记录描述了 Profiler 快扫、Build 后期无明显卡顿、BUG-025 颜色异常修复和大体积 Profiler 捕获忽略策略；用户记录称 Build 实测约 `6000` 分无明显卡顿。本环境只读复核了外部项目 `Docs/ProfilerEvidence/README.md`、Profiler 轻量截图存在性、`.gitignore`、`Projectile.cs`、`DropItem.cs`、运行时视觉材质 Prefab 引用和脚本危险 using / 日志扫描；未运行 Unity Profiler 或 Player Build。
 - 第 36 课课程记录描述了正式 Windows 演示包输出、Build Profile、Player Settings、UI Input Module 引用修复、日志清理和独立 exe 验收；用户记录称正式包独立运行验收通过。本环境只读复核了外部 Unity 工程 Windows Build Profile、`ProjectSettings.asset`、`EditorBuildSettings.asset`、MainMenu / Run 场景输入资产引用、Build 目录和 zip 文件存在性，以及 `Assets/BackpackSurvivor` `.meta` 配对情况；未运行 exe。
+- 第 37 课 V0.3.1 复盘记录描述了升级候选池、权重、等级门槛、选择次数、同轮不重复、`PlayerRunStats` 扩展和真实消费侧接入；本环境整理为知识页，未运行 Unity Editor / Play Mode 或 Player Build。
+- 第 38 课 V0.3.2 复盘记录描述了 `BackpackItemModifier`、`BackpackEffectCollector`、数值类邻接收益汇总和现有双持 / 芯片行为回归；用户记录一轮实机试玩未发现问题，本环境未运行 Unity Editor / Play Mode 或 Player Build。
+- 第 39 课 V0.3.3 复盘记录描述了 `CritBoost`、`BackpackGlobalModifier`、`BackpackPassiveCollector`、机械臂 / 护甲 / 磁吸核心消费侧和 Tooltip 说明；用户记录实机回归通过，本环境未运行 Unity Editor、Profiler 或 Player Build。
+- 第 40 课 V0.3.4 复盘记录描述了内容池扩展、五档掉落池、价值曲线、`Item.Id` 优先图标解析、Tooltip、宝箱投放和同类武器槽位；用户记录实机回归全绿，本环境未运行 Unity Editor、Profiler 或 Player Build。
+- 第 41 课 V0.3.5 复盘记录描述了 `SfxPlayer` cue 表、`WeaponSfxId`、通用短音效、BGM、跨场景按钮音和胜负反馈；用户记录实机测试效果良好，本环境未运行 Unity Editor、Profiler 或 Player Build。
+- 第 42 课 V0.3.6 复盘记录描述了 `GameSettings`、`SettingsService`、`SettingsPanelView`、`PlayerPrefs`、音量倍率、分辨率和窗口模式；用户记录 `dotnet build BackpackSurvivor/BackpackSurvivor.sln --no-restore` 通过，本环境未重复运行 Unity 或 dotnet build。
 
 ## 下一步
 
-- 第 37 课进入作品材料整理，优先准备 README、操作说明、截图 / 视频、已知问题和面试讲解口径。
+- 下一步进入 V0.3.7 敌人寻路与群体移动优化，重点检查敌人数量上来后的挤压、贴边、目标方向重复计算、停距策略和后期性能压力。
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
-- 基础芯片更多邻接、物品/规则配置进一步数据化、最终评分模型、金币结算字段、Tooltip 生效收益区分和真实冷却遮罩继续挂账。
+- 物品/规则配置进一步数据化、最终评分模型、金币结算字段、Tooltip 生效收益区分、真实冷却遮罩和 `PickUpMagnet` 背包被动共享缓存继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。
 - 补做低帧率、多 Collider、命中缓冲区满载、刷怪点合法性、跨池归还、批量拾取、拖拽中断、交互拾取失败、宝箱生成、宝箱品质样本、精英生成比例、金币掉落/飞行/磁吸/HUD、金币重开清零、ItemView / TotalValueText / ChestDistanceText 射线、合并升级收益、Tooltip、FireRateBoost / DamageBoost 样本、波次血量与 TTK、旋转邻接、图标 Sprite 显示、金色接边 alpha、15 分钟重复试玩样本、Build 目标平台回归和作品材料复核。
 - 使用 Profiler 做系统化前后对照：预热量、扩容次数、索敌、物理查询、UI 重绘、图标 / 接边布局、经验球 / 金币吸附、宝箱生成、散落协程、邻接扫描、背包武器激活刷新、Tooltip、升级面板、波次 HUD、结算面板、终局刷怪压力、伤害数字池、闪白材质替换、音效播放、Cinemachine 震屏和 GC Alloc。

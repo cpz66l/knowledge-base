@@ -8,7 +8,7 @@
 >
 > 对应项目：[Backpack Survivor](index.md)
 >
-> 下一步：第 37 课作品材料整理
+> 下一步：V0.3 已推进到内容池、音频和设置系统；作品材料整理继续作为求职展示支线推进
 >
 > 日期：2026-08-08
 >
@@ -36,7 +36,7 @@ Build Profile / Player Settings / EditorBuildSettings
   -> Run
   -> Result
   -> Restart / MainMenu
-  -> 进入作品材料整理
+  -> 进入作品材料整理 / V0.3 内容、反馈和设置扩展
 ```
 
 ## 交付范围
@@ -146,7 +146,7 @@ E:\YouXiKaiFa\Backpack Survivor\Builds\BackpackSurvivor_v0.2_Windows_20260808-20
 
 ### 待补验证
 
-- 为第 37 课准备演示视频、截图、README、操作说明和作品集讲解稿。
+- 准备演示视频、截图、README、操作说明和作品集讲解稿；V0.3 后续继续检查新增构筑物品投放节奏。
 - 复核 `PickupLogger` 是否仍属于临时脚本，发布材料前决定保留、禁用或移除。
 - 后续视觉整理时清理 Missing/Test Volume 组件，避免项目审阅时产生噪音。
 - 如果要投递或分享 zip，补版本变更说明和已知问题列表。

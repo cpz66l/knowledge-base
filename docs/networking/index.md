@@ -49,6 +49,7 @@
 | [计算机网络基础概念](network-foundations.md) | 用户学习笔记；已整理网络/互联网、交换方式、性能指标和五层模型，尚未完成抓包或通信实验 |
 | [IP 与路由基础](ip-routing-basics.md) | 用户学习笔记；已整理网络层服务、IPv4/CIDR、ARP、NAT、IPv6、RIP/OSPF/BGP，尚未完成抓包、路由配置或子网计算验证 |
 | [TCP/UDP 基础](tcp-udp-basics.md) | 用户学习笔记与学习规划；已建立 TCP/UDP、HTTP/HTTPS、Socket 和游戏同步的面试学习范围，尚未完成抓包、Socket 或联机实验 |
+| [应用层基础协议](application-layer-basics.md) | 用户学习笔记与截图；已整理 DNS、FTP、URL/HTTP/HTML 和常见应用层端口，尚未完成 DNS 查询或 HTTP 抓包 |
 
 ## 后续计划主题
 

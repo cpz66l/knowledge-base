@@ -26,9 +26,9 @@
 
 ## 当前重点
 
-截至 2026-08-08，当前只保留三条高优先级主线：
+截至 2026-08-16，当前只保留三条高优先级主线：
 
-- **项目主线**：推进 Backpack Survivor Demo。当前已记录到 V0.2 Build 与演示包，下一步整理第 37 课作品材料。
+- **项目主线**：推进 Backpack Survivor Demo。当前已整理到 V0.3.6，重点从 V0.2 演示包扩展到升级候选池、邻接架构、背包构筑收益、内容池、音频反馈和设置菜单。
 - **算法主线**：继续维护 C# / C++ 双语 LeetCode 题解，优先补链表、树、图、动态规划、堆和常见面试题型。
 - **基础主线**：补 C++ 基础语法、指针引用、STL、操作系统、网络和图形学的面试可解释版本。
 
@@ -69,6 +69,11 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor：背包构筑效果扩展](projects/backpack-survivor/backpack-build-effects-extension.md)
+- [Backpack Survivor：邻接效果架构升级](projects/backpack-survivor/adjacency-effect-architecture.md)
+- [Backpack Survivor：升级候选池模块](projects/backpack-survivor/level-up-option-pool.md)
+- [LC 543 二叉树的直径](csharp/leetcode/binary-tree/diameter-of-binary-tree.md)
+- [计算机网络：应用层基础协议](networking/application-layer-basics.md)
 - [Backpack Survivor：Build 与演示包](projects/backpack-survivor/build-and-demo-package.md)
 - [Backpack Survivor：Profiler 快扫与低风险优化](projects/backpack-survivor/profiler-sweep-and-low-risk-optimization.md)
 - [Backpack Survivor：完整 15 分钟通关验收](projects/backpack-survivor/full-run-acceptance.md)
