@@ -8,13 +8,13 @@
 >
 > 关联专题：[性能优化](../../performance/index.md)、[优化小 Tips](../../performance/perf-tips.md)
 >
-> 日期：2026-08-08
+> 日期：2026-08-20
 
 ## 记录定位
 
 性能优化记录不只保存“做了什么优化”，也保存“为什么不优化”。项目规模还小时，很多看起来更高级的结构会增加复杂度，却没有可证明收益。正式记录应保留判断依据、证据等级和后续触发条件。
 
-当前下一条编号从 `OPT-004` 开始。
+当前下一条编号从 `OPT-006` 开始。
 
 ## 决策索引
 
@@ -29,6 +29,8 @@
 | OPT-001 | `ItemView` 每次生成做一次全场景查找 | 第 31 课前后 | 表现层资源查找应缓存或显式注入，避免重复场景查询 |
 | OPT-002 | Profiler 快扫后决定不做大重构 | 第 35 课 | Editor/Profiler 尖刺未在 Build 中形成阻断卡顿，当前只做低风险修复 |
 | OPT-003 | `PickUpMagnet` 重复汇总背包被动暂不优化 | 第 39 课 | 每个掉落物订阅背包变化存在量级风险；当前 Demo 记录为挂账，等待 Profiler 或掉落规模触发 |
+| OPT-004 | 敌群移动采用低频错峰采样和局部转向 | 第 43 课 | 不上完整全局寻路，先用局部分离、障碍避让、方向平滑和错峰查询解决挤压与贴边问题 |
+| OPT-005 | V0.3 Release 前暂不做大规模性能重构 | 第 46 课 | 用户记录 Build / Profiler / 试玩未形成发布阻断，当前优先发布验收与后续性能挂账 |
 
 ## 重点复盘
 
@@ -52,12 +54,25 @@ V0.3.3 中 `PickUpMagnet` 会订阅 `InventoryGrid.OnChanged`，背包变化时�
 
 挂账原因：如果后续同屏掉落物数量明显增加，整理背包时可能出现 N 个掉落物重复计算 `BackpackPassiveCollector.Collect()` 的瞬时尖刺。可选优化是引入 `BackpackPassiveRuntime` 或类似服务，只订阅一次背包变化并缓存 `BackpackGlobalModifier`，让 `PickUpMagnet`、`Health` 和 `BackpackWeaponActivator` 读取共享结果。
 
+### OPT-004 · 敌群移动采用低频错峰采样和局部转向
+
+V0.3.7 没有把当前开放地图升级成完整寻路系统，而是拆出 `EnemyMovement`，用局部分离力、障碍避让、方向平滑和绕行方向记忆处理敌群挤压、贴边和抖动问题。
+
+性能取舍在于：目标方向与避障查询不必每个敌人每帧同步刷新。低频错峰采样可以降低同一帧物理查询和方向重算的集中压力，同时保留足够的追击响应。用户记录实机跑局后敌群移动明显更稳，且 `dotnet build BackpackSurvivor/BackpackSurvivor.sln --no-restore` 通过；本环境未重复运行 Unity、Profiler 或构建。
+
+### OPT-005 · V0.3 Release 前暂不做大规模性能重构
+
+V0.3.11 的目标是把当前版本打包成可展示 Demo，而不是在发布前引入高风险重构。用户记录 Windows Build、Profiler 快扫和试玩没有出现发布阻断级问题，因此当前把性能重点放在证据留存和挂账，而不是临近发布时重写波次、敌人或背包链路。
+
+后续如果要把 V0.3 作为正式作品集版本继续打磨，应补同一场景下的 Player Build Profiler 前后对照：敌人数量、远程投射物数量、掉落物数量、GC Alloc、CPU 主线程热点和帧率区间。
+
 ## 后续触发条件
 
 | 待评估项 | 触发条件 | 可能动作 |
 |---|---|---|
 | `HazardZone` 每帧遍历 `targetsInZone` | 危险区目标数量上升且 Profiler 指向该路径 | 分桶、事件驱动或降低 tick 频率 |
 | `TargetRegistry` 线性找最近目标 | 敌群规模上升且索敌成为 CPU 热点 | 空间划分、按阵营缓存或限制查询频率 |
+| `EnemyMovement` 局部转向查询 | 敌群数量上升且物理查询 / 方向重算成为 CPU 热点 | 调低采样频率、限制避障半径、共享目标方向或引入更明确的空间查询策略 |
 | 背包 UI 全量重绘 | 图标、接边、星星、Tooltip 组合后 UI 重建成本明显 | 局部刷新、脏格队列、视图复用 |
 | TMP / 图标首次展开上传 | Player Build 中复现首次打开面板卡顿 | 预热字体、图集或关键面板 |
 | 伤害数字 / 掉落物池扩容 | 终局波次出现 GC Alloc 或 Instantiate 峰值 | 提高预热量、记录峰值、调整归还策略 |
@@ -70,13 +85,15 @@ V0.3.3 中 `PickUpMagnet` 会订阅 `InventoryGrid.OnChanged`，背包变化时�
 | OPT-000A～OPT-002 来自用户项目性能记录 | B | 来自用户放入 Inbox 的 `性能优化记录.md` |
 | 第 35 课 Build 试玩约 `6000` 分无明显卡顿 | B | 来自用户实践记录和外部项目 Profiler 证据 README |
 | V0.3.3 中 `PickUpMagnet` 重复订阅风险 | B | 来自用户 V0.3.3 项目复盘；当前记录为性能挂账，不代表已复现尖刺 |
+| V0.3.7 敌群移动明显更稳、构建通过 | B | 来自用户 V0.3.7 项目复盘；本环境只整理文档，未运行 Unity / Profiler / dotnet build |
+| V0.3.11 Release 前暂不做大规模性能重构 | B | 来自用户 V0.3 Release 文案和阶段复盘；Build / Profiler / 试玩结论为用户记录 |
 | 外部项目 `Docs/ProfilerEvidence/README.md` 静态记录了 EditorLoop、资源上传和 Live Display 观察结论 | C | 本环境只读查看外部项目证据包 |
 | `.gitignore` 静态可见 `BackpackSurvivor/ProfilerCaptures/` 被忽略 | C | 本环境只读查看外部项目 `.gitignore` |
 | 当前环境亲自采样 Profiler 或对比优化前后数据 | D | 本次未运行 Unity Profiler |
 
 ## 维护规则
 
-- 新优化记录从 `OPT-004` 开始。
+- 新优化记录从 `OPT-006` 开始。
 - 每条记录尽量包含：场景、观测指标、决策、代价、证据等级和后续触发条件。
 - 只有“优化前后数据 + 同一场景复测”齐全时，才写成已验证优化收益。
 - “决定不优化”也要记录原因，避免后续重复消耗精力。

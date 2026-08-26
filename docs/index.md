@@ -26,9 +26,9 @@
 
 ## 当前重点
 
-截至 2026-08-16，当前只保留三条高优先级主线：
+截至 2026-08-20，当前只保留三条高优先级主线：
 
-- **项目主线**：推进 Backpack Survivor Demo。当前已整理到 V0.3.6，重点从 V0.2 演示包扩展到升级候选池、邻接架构、背包构筑收益、内容池、音频反馈和设置菜单。
+- **项目主线**：推进 Backpack Survivor Demo。当前已整理到 V0.3.11 / V0.3 Release，重点从 V0.2 演示包扩展到升级候选池、邻接架构、背包构筑收益、内容池、音频反馈、设置菜单、敌群移动、远程敌人、本地存档和发布验收。
 - **算法主线**：继续维护 C# / C++ 双语 LeetCode 题解，优先补链表、树、图、动态规划、堆和常见面试题型。
 - **基础主线**：补 C++ 基础语法、指针引用、STL、操作系统、网络和图形学的面试可解释版本。
 
@@ -69,6 +69,12 @@
 
 ## 最近沉淀
 
+- [Backpack Survivor V0.3 阶段复盘](reviews/2026/backpack-survivor-v0.3-review.md)
+- [Backpack Survivor：V0.3 Release 文案与发布验收](projects/backpack-survivor/v0.3-release-notes.md)
+- [Backpack Survivor：本地存档与最高纪录](projects/backpack-survivor/local-save-and-records.md)
+- [Backpack Survivor：远程敌人与波次混编](projects/backpack-survivor/ranged-enemies-and-wave-mix.md)
+- [Backpack Survivor：敌人寻路与群体移动优化](projects/backpack-survivor/enemy-movement-steering.md)
+- [LC 98 验证二叉搜索树](csharp/leetcode/binary-tree/validate-binary-search-tree.md)
 - [Backpack Survivor：背包构筑效果扩展](projects/backpack-survivor/backpack-build-effects-extension.md)
 - [Backpack Survivor：邻接效果架构升级](projects/backpack-survivor/adjacency-effect-architecture.md)
 - [Backpack Survivor：升级候选池模块](projects/backpack-survivor/level-up-option-pool.md)

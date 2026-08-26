@@ -150,7 +150,6 @@ Dropdown 保存的是索引，因此 `SettingsPanelView` 维护分辨率选项�
 - 分辨率系统暂不处理刷新率、多显示器和独占全屏。
 - `SettingsPanelView` 通过 `MainMenuController` 播按钮音，有轻微 UI 耦合；复用到 Run 时应改为直接调用 `SfxPlayer` 或统一 UI 音效入口。
 - 用户复盘提示外部项目存在 `Assets/_Recovery/`，提交前需要清理或忽略，避免误提交。
-- 下一模块建议进入 V0.3.7 敌人寻路与群体移动优化。
+- 下一模块已进入 [V0.3.7 敌人寻路与群体移动优化](enemy-movement-steering.md)，后续重点从设置可用性转向敌群移动稳定性和性能边界。
 
 > 标签：`Backpack Survivor` `设置菜单` `PlayerPrefs` `Unity Audio` `项目复盘`
-

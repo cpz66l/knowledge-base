@@ -46,10 +46,15 @@
 - 新增证据：[内容池扩展与价值平衡](../projects/backpack-survivor/content-pool-and-value-balance.md)记录了五档内容池、`scoreValue / effectValue` 分层、`Item.Id` 优先图标解析、宝箱投放和同类武器槽位上限。
 - 新增证据：[基础音频系统与 BGM](../projects/backpack-survivor/audio-system-and-bgm.md)记录了 `SfxPlayer` cue 表、武器音效分型、通用短音效、BGM 和跨场景按钮音。
 - 新增证据：[设置菜单与基础选项](../projects/backpack-survivor/settings-menu-and-basic-options.md)记录了 `GameSettings`、`SettingsService`、`SettingsPanelView`、`PlayerPrefs`、音量倍率、分辨率和窗口模式。
+- 新增证据：[敌人寻路与群体移动优化](../projects/backpack-survivor/enemy-movement-steering.md)记录了 `EnemyMovement`、局部分离力、障碍避让、低频错峰采样、方向平滑和绕行方向记忆。
+- 新增证据：[远程敌人与波次混编](../projects/backpack-survivor/ranged-enemies-and-wave-mix.md)记录了 `RangedEnemyAI`、远程投射物复用、`ProjectilePoolProvider`、敌人配置扩展和波次近远混编。
+- 新增证据：[本地存档与最高纪录](../projects/backpack-survivor/local-save-and-records.md)记录了 `SaveData`、`SaveService`、`RunResult`、`MainMenuRecordView`、JSON 存档和坏档回退。
+- 新增证据：[V0.3 Release 文案与发布验收](../projects/backpack-survivor/v0.3-release-notes.md)记录了 V0.3.0 Windows Demo 更新说明、运行方式、操作说明、已知边界和发布前验证口径。
 - 项目记录：[Bug 记录簿](../projects/backpack-survivor/bug-log.md)和[性能优化记录](../projects/backpack-survivor/performance-optimization-log.md)用于集中查询问题家族和优化决策。
 - 生命周期证据：[Unity 生命周期](../unity/lifecycle.md)与第 5 课记录了 `Awake` / `Start`、`OnEnable` / `OnDisable`、池化取出/归还和事件订阅修复；用户转述 Kimi 已检查代码与 Unity 场景。
 - 复盘证据：[Backpack Survivor V0.1 阶段复盘](../reviews/2026/backpack-survivor-v0.1-review.md)。
+- 复盘证据：[Backpack Survivor V0.3 阶段复盘](../reviews/2026/backpack-survivor-v0.3-review.md)记录了 V0.3 内容深度、敌人变化、本地留存、Release 口径和下一阶段方向；阶段数据来自用户复盘，本环境未重新统计外部项目。
 - 尚缺证据：系统化 Profiler 前后对照数据（含终局波次压力、战斗反馈、结算面板和 GC Alloc）、目标平台关键性能预算、多 Collider、低帧率、缓冲区满载、切场景静态状态 Play Mode 复测、跨池归还、完整调用顺序矩阵、掉落概率/保底单元测试、批量拾取副作用测试、拖拽中断回滚、宝箱生成、宝箱品质权重样本、精英生成比例样本、金币掉落/飞行/磁吸/HUD、金币重开清零、GoldOrb 池化与磁吸状态复位、GLB 闪白视觉确认、丢弃回捡、交互失败反馈、合并升级、邻接扫描、背包武器激活、DualWield 真实激活、三把手枪防三持、validEffects UI 高亮、暂停恢复、胜负入口、升级选择、倍率消费、多级连升队列、波次切换、Wave HUD 文案/颜色、胜利/失败后的刷怪停止、波次压力与对象池峰值、伤害数字位置/回池、SfxPlayer 资源接线、玩家受击震屏强度、结算面板显示、BackpackValue 结算快照、Restart 场景重载、QuitButton Build 行为、XP 圆环、HUD Slider Navigation、ItemView / TotalValueText 纯展示射线、唯一物品总价值、拖拽/合并后的总价值刷新、合并升级当前价值 / 效果、Tooltip 显示 / 隐藏 / 射线、FireRateBoost 升级收益、伤害数字格式、ItemView 覆盖层 UI、LevelUpChoiceView 接线和实际 `.asmdef` / `.meta` / Prefab / Canvas / Input Actions / Layer 资产复核、FireRateBoost Play Mode 射速变化、2.0x 攻速封顶、伤害显示 / 真实扣血一致性、波次血量 TTK 样本、ChestDistanceText 射线、宝箱距离目标引导、15 分钟重复试玩样本、LootChest 静态列表重开清理 Play Mode 复测、TMP Player Build 中文显示、旋转接口四方向 Play Mode 复测、正反向邻接触发样本、丢弃再拾取旋转态取舍验证、掉落经济正式概率和当前环境对正式 exe 的复测。
 - 第 29 课仍缺：Play Mode 武器稀有度 / 等级伤害样本、Lv.2 / Lv.3 合并后即时刷新、DualWield 第二把武器倍率、Legendary 配置、Resolver / Tooltip / `TryMerge` 回归测试和 Profiler / Player Build 复核。
 - 第 30 / 31 课仍缺：Play Mode 攻击芯片伤害样本、DamageBoost 叠加封顶、移除芯片后倍率回落、图标 Sprite 显示、透明图标射线、旋转后接边 / 星星重排、金色接边 alpha 修正确认和 Player Build 复核。
-- 下一项改进：进入 V0.3.7 敌人寻路与群体移动优化，并为敌人数量压力、挤压 / 贴边、目标方向重复计算、远程敌人站位前置条件和后期性能压力补齐可重复验证。
+- 下一项改进：把 V0.3.7-V0.3.11 压缩成作品集 / 面试表达，并继续为敌群规模、远程敌人站位、本地存档坏档、Release Build、Profiler 前后对照和目标平台性能预算补齐可重复验证。

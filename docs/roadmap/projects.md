@@ -54,7 +54,7 @@
 ## 当前项目
 
 - [Backpack Survivor（背包幸存者）](../projects/backpack-survivor/index.md)
-- 已完成阶段：V0.3.6 设置菜单与基础选项；V0.2 正式演示包已完成
+- 已完成阶段：V0.3.11 / V0.3 Release 文案与发布验收；V0.2 正式演示包已完成
 - 项目中使用：[第 1 课：伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
 - 项目中使用：[第 2 课：敌人追击、近战与死亡流程](../projects/backpack-survivor/enemy-ai-and-melee.md)
 - 项目中使用：[第 3 课：目标注册表、自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md)
@@ -96,11 +96,16 @@
 - 项目中使用：[第 40 课：内容池扩展与价值平衡](../projects/backpack-survivor/content-pool-and-value-balance.md)
 - 项目中使用：[第 41 课：基础音频系统与 BGM](../projects/backpack-survivor/audio-system-and-bgm.md)
 - 项目中使用：[第 42 课：设置菜单与基础选项](../projects/backpack-survivor/settings-menu-and-basic-options.md)
+- 项目中使用：[第 43 课：敌人寻路与群体移动优化](../projects/backpack-survivor/enemy-movement-steering.md)
+- 项目中使用：[第 44 课：远程敌人与波次混编](../projects/backpack-survivor/ranged-enemies-and-wave-mix.md)
+- 项目中使用：[第 45 课：本地存档与最高纪录](../projects/backpack-survivor/local-save-and-records.md)
+- 项目中使用：[第 46 课：V0.3 Release 文案与发布验收](../projects/backpack-survivor/v0.3-release-notes.md)
 - 项目记录：[Bug 记录簿](../projects/backpack-survivor/bug-log.md)
 - 项目记录：[性能优化记录](../projects/backpack-survivor/performance-optimization-log.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
-- 当前阶段：V0.3.6，项目中使用，已整理至第 42 课；正式 Windows 演示包仍以 V0.2 验收记录为准，V0.3.6 以用户复盘和本环境文档整理为证据
-- 下一步：V0.3.7 敌人寻路与群体移动优化；第 6 课工程 hygiene 资料收到后再补入库
+- 阶段复盘：[Backpack Survivor V0.3 内容深度、反馈与留存](../reviews/2026/backpack-survivor-v0.3-review.md)
+- 当前阶段：V0.3.11，项目中使用，已整理至第 46 课；V0.3 Release、Build、Profiler 和试玩结论来自用户阶段复盘，本环境未重新运行 Unity / Profiler / Windows Build
+- 下一步：把 V0.3 压缩成作品集与面试表达；项目后续优先围绕内容深度、经济出口、构筑展示和可验证性能数据推进。第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

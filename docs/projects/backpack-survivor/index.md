@@ -2,7 +2,7 @@
 
 > 状态：项目中使用
 >
-> 当前进度：V0.3.6 已整理至第 42 课；V0.2 正式 Windows 演示包已由用户验收，V0.3 已进入构筑内容池、音频反馈和设置菜单扩展
+> 当前进度：V0.3.11 已整理至第 46 课；V0.2 正式 Windows 演示包已由用户验收，V0.3 已完成内容深度、反馈包装、敌人变化、设置能力、本地留存和 Release 文案整理
 >
 > 首次记录：2026-07-20
 >
@@ -68,6 +68,10 @@ V0.3 已开始围绕构筑深度继续扩展：
 - 用内容池扩展、`scoreValue / effectValue` 价值分层、`Item.Id` 优先图标解析和同类武器槽位上限，把构筑规则落到可感知内容和数值投放。
 - 用 `SfxPlayer` cue 表、`WeaponSfxId`、通用 `SfxId`、场景 BGM 和跨场景 UI 点击音，把反馈系统从零散音效升级为可扩展音频链路。
 - 用 `GameSettings`、`SettingsService`、`SettingsPanelView`、`PlayerPrefs`、音量倍率和分辨率 / 窗口模式，把设置菜单从 UI 控件扩展为可持久化、可跨场景生效的基础选项系统。
+- 用 `EnemyMovement`、分离力、障碍避让、低频错峰采样和方向平滑，把敌群移动从直接追击推进到开放竞技场局部 steering。
+- 用 `RangedEnemyAI`、`ProjectilePoolProvider`、`EnemySpawner` 和 `WaveDirector` 把远程敌人接入正式波次混编，让中后期战斗加入走位压力。
+- 用 `SaveData`、`SaveService`、`RunResult` 和 `MainMenuRecordView` 补第一版本地 JSON 战绩存档，让总局数、胜场、最高背包价值、局外金币和传说带出数据跨重启保留。
+- 用 V0.3 Release 文案和阶段复盘，把构筑深度、反馈包装、敌人变化、局外留存和发布验证整理成作品集表达材料。
 - 记录 `PickUpMagnet` 多掉落物重复订阅背包变化的性能挂账，后续由 Profiler 和掉落量级决定是否引入共享被动缓存服务。
 
 ## 实践记录
@@ -115,10 +119,14 @@ V0.3 已开始围绕构筑深度继续扩展：
 | 第 40 课 | [内容池扩展与价值平衡](content-pool-and-value-balance.md) | 项目中使用；用户记录内容池、价值曲线、图标、Tooltip、宝箱和武器槽位实机回归全绿，本环境整理文档，未运行 Unity |
 | 第 41 课 | [基础音频系统与 BGM](audio-system-and-bgm.md) | 项目中使用；用户记录武器音效、通用短音效、BGM、跨场景按钮音实机效果良好，本环境整理文档，未运行 Unity |
 | 第 42 课 | [设置菜单与基础选项](settings-menu-and-basic-options.md) | 项目中使用；用户记录设置面板、音量倍率、分辨率、跨场景保留和 `dotnet build` 通过，本环境整理文档，未重复运行 Unity / dotnet build |
+| 第 43 课 | [敌人寻路与群体移动优化](enemy-movement-steering.md) | 项目中使用；用户记录敌群移动更稳、完整跑局无大问题和 `dotnet build` 通过，本环境整理文档，未重复运行 Unity / dotnet build |
+| 第 44 课 | [远程敌人与波次混编](ranged-enemies-and-wave-mix.md) | 项目中使用；用户记录远程敌人生成、射击、命中、死亡掉落和波次混编完整跑局无明显问题，本环境整理文档，未重复运行 Unity / dotnet build |
+| 第 45 课 | [本地存档与最高纪录](local-save-and-records.md) | 项目中使用；用户记录 JSON 存档、重启保留、坏档兜底和弹窗遮罩验收，本环境整理文档，未重复运行 Unity / dotnet build |
+| 第 46 课 | [V0.3 Release 文案与发布验收](v0.3-release-notes.md) | 发布准备；用户草稿记录 V0.3 Windows Build、设置、Profiler 快扫和实机试玩结论，本环境整理文档，未运行 Build |
 
 项目级记录：[Bug 记录簿](bug-log.md)、[性能优化记录](performance-optimization-log.md)。
 
-阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)。
+阶段总结：[V0.1 阶段复盘](../../reviews/2026/backpack-survivor-v0.1-review.md)、[V0.3 版本复盘](../../reviews/2026/backpack-survivor-v0.3-review.md)。
 
 面试表达：[面试复盘第 01 阶段](../../reviews/2026/backpack-survivor-interview-stage-01.md)。
 
@@ -164,10 +172,14 @@ V0.3 已开始围绕构筑深度继续扩展：
 - 第 40 课 V0.3.4 复盘记录描述了内容池扩展、五档掉落池、价值曲线、`Item.Id` 优先图标解析、Tooltip、宝箱投放和同类武器槽位；用户记录实机回归全绿，本环境未运行 Unity Editor、Profiler 或 Player Build。
 - 第 41 课 V0.3.5 复盘记录描述了 `SfxPlayer` cue 表、`WeaponSfxId`、通用短音效、BGM、跨场景按钮音和胜负反馈；用户记录实机测试效果良好，本环境未运行 Unity Editor、Profiler 或 Player Build。
 - 第 42 课 V0.3.6 复盘记录描述了 `GameSettings`、`SettingsService`、`SettingsPanelView`、`PlayerPrefs`、音量倍率、分辨率和窗口模式；用户记录 `dotnet build BackpackSurvivor/BackpackSurvivor.sln --no-restore` 通过，本环境未重复运行 Unity 或 dotnet build。
+- 第 43 课 V0.3.7 复盘记录描述了 `EnemyMovement`、局部分离力、障碍避让、低频错峰采样、方向平滑和绕行方向记忆；用户记录实机跑局后移动明显更稳且 `dotnet build` 通过，本环境未重复运行 Unity、Profiler 或 dotnet build。
+- 第 44 课 V0.3.8-V0.3.9 复盘记录描述了 `RangedEnemyAI`、`ProjectilePoolProvider`、远程敌方子弹复用、`EnemySpawner` 远程概率和 `WaveDirector` 混编；用户记录完整跑局无明显问题且 `dotnet build` 通过，本环境未重复运行 Unity、Profiler 或 dotnet build。
+- 第 45 课 V0.3.10 复盘记录描述了 `SaveData`、`SaveService`、`RunResult` 扩展、`MainMenuRecordView`、JSON 持久化、坏档兜底和弹窗遮罩；用户记录重启保留和 `dotnet build` 通过，本环境未重复运行 Unity 或 dotnet build。
+- 第 46 课 V0.3.11 Release 文案记录了 V0.3.0 Windows Demo 的主要更新、运行方式、操作说明、已知说明和验证结论；Build、Profiler 和试玩结论来自用户记录，本环境未运行 Build 或发布流程。
 
 ## 下一步
 
-- 下一步进入 V0.3.7 敌人寻路与群体移动优化，重点检查敌人数量上来后的挤压、贴边、目标方向重复计算、停距策略和后期性能压力。
+- V0.3 阶段已经形成[版本复盘](../../reviews/2026/backpack-survivor-v0.3-review.md)。下一步不建议立刻追 Boss 或大系统，优先围绕构筑内容深度、收益展示、局外金币消费出口和作品集表达继续推进。
 - 第 6 课工程 hygiene 资料尚未入库，后续收到后再补。
 - 物品/规则配置进一步数据化、最终评分模型、金币结算字段、Tooltip 生效收益区分、真实冷却遮罩和 `PickUpMagnet` 背包被动共享缓存继续挂账。
 - 为 `TargetRegistry` 增加场景/Play Mode 清理、按阵营计数和失效目标处理。

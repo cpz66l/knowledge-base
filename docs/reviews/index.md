@@ -30,8 +30,10 @@
 
 - [2026 年第 29 周：语言与算法学习](2026/2026-W29.md)
 - [2026 年第 33 周：算法 / C++ / 项目表达节奏](2026/2026-W33.md)
+- [2026 年第 34 周：外出中断后的学习收尾](2026/2026-W34.md)
 
 ### 其他复盘
 
 - 项目复盘：[Backpack Survivor V0.1 战斗核心原型](2026/backpack-survivor-v0.1-review.md)
+- 项目复盘：[Backpack Survivor V0.3 内容深度、反馈与留存](2026/backpack-survivor-v0.3-review.md)
 - 面试复盘：[Backpack Survivor 面试复盘第 01 阶段](2026/backpack-survivor-interview-stage-01.md)

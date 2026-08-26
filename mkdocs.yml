@@ -62,6 +62,7 @@ not_in_nav: |
   csharp/leetcode/binary-tree/symmetric-tree.md
   csharp/leetcode/binary-tree/diameter-of-binary-tree.md
   csharp/leetcode/binary-tree/convert-sorted-array-to-binary-search-tree.md
+  csharp/leetcode/binary-tree/validate-binary-search-tree.md
 
 theme:
   name: material
@@ -118,6 +119,7 @@ nav:
           - 周记录索引: learning/weekly/index.md
           - 2026-W33: learning/weekly/2026-W33.md
           - 2026-W34: learning/weekly/2026-W34.md
+          - 2026-W35: learning/weekly/2026-W35.md
   - C#:
       - csharp/index.md
       - 1. 语言与面向对象:
@@ -253,6 +255,10 @@ nav:
           - 第 40 课：内容池扩展与价值平衡: projects/backpack-survivor/content-pool-and-value-balance.md
           - 第 41 课：基础音频系统与 BGM: projects/backpack-survivor/audio-system-and-bgm.md
           - 第 42 课：设置菜单与基础选项: projects/backpack-survivor/settings-menu-and-basic-options.md
+          - 第 43 课：敌人寻路与群体移动优化: projects/backpack-survivor/enemy-movement-steering.md
+          - 第 44 课：远程敌人与波次混编: projects/backpack-survivor/ranged-enemies-and-wave-mix.md
+          - 第 45 课：本地存档与最高纪录: projects/backpack-survivor/local-save-and-records.md
+          - 第 46 课：V0.3 Release 文案与发布验收: projects/backpack-survivor/v0.3-release-notes.md
           - Bug 记录簿: projects/backpack-survivor/bug-log.md
           - 性能优化记录: projects/backpack-survivor/performance-optimization-log.md
   - 热更新 (Lua):
