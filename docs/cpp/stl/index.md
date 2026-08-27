@@ -19,9 +19,9 @@
 
 ## 当前记录
 
-- 已接触：`vector`、`string`、`unordered_map`、`map`、`stack`、`queue`
+- 已接触：`vector`、`string`、`unordered_map`、`map`、`stack`、`queue`、`sort`、`for_each`、lambda 比较器、`std::function`
 - 系统掌握：未完成，仍需用题目和小程序验证
-- 待补内容：迭代器失效、容器复杂度、`map` / `set`、`queue`、`priority_queue`
+- 待补内容：迭代器失效、容器复杂度、`map` / `set`、`queue`、`priority_queue`、比较器严格弱序、常用标准算法
 
 ## 2026-08-10/11 容器笔记
 
@@ -121,3 +121,60 @@ for (const auto& [name, score] : scores)
 - `scores[key] = value` 可以插入或修改值。
 - `operator[]` 访问不存在的 key 会插入默认值；如果只想查询，后续要学习 `find()` 或 `contains()`。
 - 遍历键值对时，结构化绑定能直接拆成 `[name, score]`。
+
+## 2026-08-26 标准算法与 lambda 比较器
+
+> 证据归属：用户 `inbox/8月26号C++.txt` 学习记录；用户标注代码已运行。当前环境未安装 C++ 编译器，本次只做文档整理和静态审查。
+
+### `std::sort`
+
+```cpp
+#include <algorithm>
+#include <vector>
+
+std::vector<int> nums{3, 5, 8, 6, 9, 1};
+
+std::sort(nums.begin(), nums.end(), [](int a, int b)
+{
+    return a > b; // 降序
+});
+```
+
+`std::sort` 的第三个参数是排序规则。比较器返回 `true` 表示“第一个元素应该排在第二个元素前面”。
+
+结构体排序时，建议把主排序和次排序写清楚：
+
+```cpp
+struct Student
+{
+    std::string name;
+    int score;
+};
+
+std::sort(students.begin(), students.end(), [](const Student& a, const Student& b)
+{
+    if (a.score != b.score)
+    {
+        return a.score > b.score;
+    }
+
+    return a.name < b.name;
+});
+```
+
+### `std::for_each`
+
+```cpp
+std::for_each(nums.begin(), nums.end(), [](int value)
+{
+    std::cout << value << ",";
+});
+```
+
+`for_each` 适合把一个动作应用到区间中的每个元素；只是打印时也可以用范围 for，代码通常更直观。
+
+### 当前注意点
+
+- `std::sort` 常见实现是 introsort；标准约束复杂度和排序行为，但不保证某一个固定底层算法，不应在面试里死背成“就是快排”。
+- 比较器必须保持一致性，尤其是同分、相等或多字段排序时。
+- 大对象遍历优先使用 `const auto&`，例如 `for (const auto& student : students)`。

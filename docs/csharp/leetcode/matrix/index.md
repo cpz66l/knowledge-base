@@ -11,6 +11,8 @@
 | [旋转图像](rotate-image.md) | Medium | 转置 + 翻转、原地旋转 |
 | [搜索二维矩阵 II](search-a-2d-matrix-ii.md) | Medium | Z 字查找、搜索空间缩减 |
 
+相关二分题：[搜索二维矩阵 I（LC74）](../binary-search/search-a-2d-matrix.md) 属于“整张矩阵可按行展开为一维有序数组”的全局二分题，主索引放在[二分查找](../binary-search/index.md)。
+
 ---
 
 ## 核心技巧

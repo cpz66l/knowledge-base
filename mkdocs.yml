@@ -44,6 +44,8 @@ not_in_nav: |
   csharp/leetcode/matrix/spiral-matrix.md
   csharp/leetcode/matrix/rotate-image.md
   csharp/leetcode/matrix/search-a-2d-matrix-ii.md
+  csharp/leetcode/binary-search/search-insert-position.md
+  csharp/leetcode/binary-search/search-a-2d-matrix.md
   csharp/leetcode/linked-list/intersection-of-two-linked-lists.md
   csharp/leetcode/linked-list/merge-two-sorted-lists.md
   csharp/leetcode/linked-list/reverse-linked-list.md
@@ -170,7 +172,7 @@ nav:
       - 二叉树: csharp/leetcode/binary-tree/index.md
       - 图论: csharp/leetcode/graph.md
       - 回溯: csharp/leetcode/backtracking.md
-      - 二分查找: csharp/leetcode/binary-search.md
+      - 二分查找: csharp/leetcode/binary-search/index.md
       - 栈: csharp/leetcode/stack.md
       - 堆: csharp/leetcode/heap.md
       - 贪心算法: csharp/leetcode/greedy.md

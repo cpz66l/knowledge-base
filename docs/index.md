@@ -69,6 +69,10 @@
 
 ## 最近沉淀
 
+- [LC 74 搜索二维矩阵](csharp/leetcode/binary-search/search-a-2d-matrix.md)
+- [LC 35 搜索插入位置](csharp/leetcode/binary-search/search-insert-position.md)
+- [C++ Modern：lambda 与 std::function 入门](cpp/modern-cpp/index.md)
+- [C++ STL：std::sort 与 lambda 比较器](cpp/stl/index.md)
 - [Backpack Survivor V0.3 阶段复盘](reviews/2026/backpack-survivor-v0.3-review.md)
 - [Backpack Survivor：V0.3 Release 文案与发布验收](projects/backpack-survivor/v0.3-release-notes.md)
 - [Backpack Survivor：本地存档与最高纪录](projects/backpack-survivor/local-save-and-records.md)

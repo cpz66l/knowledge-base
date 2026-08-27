@@ -107,7 +107,7 @@ public class Solution
 
 - **可从右上角出发**也等价：`matrix[i][j] > target → j--`（往左），`< target → i++`（往下）
 - **为什么不能从左上/右下出发？** 左上角往右和往下都是变大，没法判断该走哪边；右下角同理都是变小
-- 这题和 [搜索二维矩阵 I（LeetCode 74）](https://leetcode.cn/problems/search-a-2d-matrix/) 不同——那题是"整行串联有序"，可以用全局二分 O(log mn)；这题只有行/列各自有序，必须用 Z 字查找
+- 这题和 [搜索二维矩阵 I（LeetCode 74）](../binary-search/search-a-2d-matrix.md) 不同——那题是"整行串联有序"，可以用全局二分 O(log mn)；这题只有行/列各自有序，必须用 Z 字查找
 
 !!! tip "与 LeetCode 74 的区别"
     | | LC 74 | LC 240（本题）|
