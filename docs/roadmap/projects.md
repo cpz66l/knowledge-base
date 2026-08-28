@@ -54,7 +54,9 @@
 ## 当前项目
 
 - [Backpack Survivor（背包幸存者）](../projects/backpack-survivor/index.md)
-- 已完成阶段：V0.3.11 / V0.3 Release 文案与发布验收；V0.2 正式演示包已完成
+- [Online Action RPG Demo（线上动作 RPG Demo）](../projects/online-action-rpg-demo/index.md)
+- Backpack Survivor 已完成阶段：V0.3.11 / V0.3 Release 文案与发布验收；V0.2 正式演示包已完成
+- Online Action RPG Demo 当前阶段：00-01B 通信、调试面板和账号链路已整理；02A 服务端大厅 / 房间状态容器和 `RoomStateNtf` 广播已整理；02B Unity Lobby 接入进行中，尚未完成双客户端验证或战斗同步
 - 项目中使用：[第 1 课：伤害管线与危险区](../projects/backpack-survivor/damage-pipeline-and-hazard-zone.md)
 - 项目中使用：[第 2 课：敌人追击、近战与死亡流程](../projects/backpack-survivor/enemy-ai-and-melee.md)
 - 项目中使用：[第 3 课：目标注册表、自动武器与投射物](../projects/backpack-survivor/target-registry-and-auto-weapon.md)
@@ -104,8 +106,8 @@
 - 项目记录：[性能优化记录](../projects/backpack-survivor/performance-optimization-log.md)
 - 阶段复盘：[Backpack Survivor V0.1](../reviews/2026/backpack-survivor-v0.1-review.md)
 - 阶段复盘：[Backpack Survivor V0.3 内容深度、反馈与留存](../reviews/2026/backpack-survivor-v0.3-review.md)
-- 当前阶段：V0.3.11，项目中使用，已整理至第 46 课；V0.3 Release、Build、Profiler 和试玩结论来自用户阶段复盘，本环境未重新运行 Unity / Profiler / Windows Build
-- 下一步：把 V0.3 压缩成作品集与面试表达；项目后续优先围绕内容深度、经济出口、构筑展示和可验证性能数据推进。第 6 课工程 hygiene 资料收到后再补入库
+- 当前阶段：Backpack Survivor 为 V0.3.11，项目中使用，已整理至第 46 课；V0.3 Release、Build、Profiler 和试玩结论来自用户阶段复盘，本环境未重新运行 Unity / Profiler / Windows Build
+- 下一步：Backpack Survivor 继续压缩作品集与面试表达；Online Action RPG Demo 优先完成 02B Unity Lobby 双客户端验证，再进入 Ready / StartBattle 和最小战斗同步。第 6 课工程 hygiene 资料收到后再补入库
 
 ---
 

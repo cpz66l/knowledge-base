@@ -30,7 +30,7 @@ C++ 底层副线：约 20%
 | [C++ 底层副线](cpp.md) | 学习中 | C++ 板块与刷题记录 | 按路线逐步消化，不与主线抢占时间 |
 | [计算机基础路线](computer-science.md) | 未开始 | 算法练习与后续实验 | 按实习和项目需求逐步进入 |
 | [专项能力](specializations.md) | 准备启动 | 性能已学习中；Shader 作为作品集加分项准备最小实验；网络、热更新仍待项目需求 | 先用一个可观察 Shader 小实验补证据，不抢 P0 时间 |
-| [项目实践路线](projects.md) | 项目中使用 | Backpack Survivor V0.3.11 已整理至第 46 课，V0.3 Release 材料完成 | 用项目验证已学习的知识，并把 V0.3 敌群、远程敌人、存档、发布验收和阶段复盘压缩成作品集 / 面试表达 |
+| [项目实践路线](projects.md) | 项目中使用 | Backpack Survivor V0.3.11 已整理至第 46 课；Online Action RPG Demo 已整理通信、账号和服务端房间状态容器 | 用 Backpack Survivor 证明单机玩法闭环，用 Online Action RPG Demo 补联网客户端专项证据；下一步完成 Lobby 双客户端验证 |
 
 ---
 

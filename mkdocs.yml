@@ -46,6 +46,7 @@ not_in_nav: |
   csharp/leetcode/matrix/search-a-2d-matrix-ii.md
   csharp/leetcode/binary-search/search-insert-position.md
   csharp/leetcode/binary-search/search-a-2d-matrix.md
+  csharp/leetcode/binary-search/find-first-and-last-position-of-element-in-sorted-array.md
   csharp/leetcode/linked-list/intersection-of-two-linked-lists.md
   csharp/leetcode/linked-list/merge-two-sorted-lists.md
   csharp/leetcode/linked-list/reverse-linked-list.md
@@ -263,6 +264,12 @@ nav:
           - 第 46 课：V0.3 Release 文案与发布验收: projects/backpack-survivor/v0.3-release-notes.md
           - Bug 记录簿: projects/backpack-survivor/bug-log.md
           - 性能优化记录: projects/backpack-survivor/performance-optimization-log.md
+      - Online Action RPG Demo:
+          - 项目总览: projects/online-action-rpg-demo/index.md
+          - 项目骨架、通信验证与 Unity 调试面板: projects/online-action-rpg-demo/communication-and-debug-panel.md
+          - 账号注册 / 登录闭环: projects/online-action-rpg-demo/account-login-loop.md
+          - 大厅 / 房间闭环: projects/online-action-rpg-demo/lobby-room-loop.md
+          - 项目含金量分析: projects/online-action-rpg-demo/project-value-analysis.md
   - 热更新 (Lua):
       - hotupdate/index.md
   - 检查与复盘:

@@ -26,9 +26,9 @@
 
 ## 当前重点
 
-截至 2026-08-20，当前只保留三条高优先级主线：
+截至 2026-08-29，当前只保留三条高优先级主线：
 
-- **项目主线**：推进 Backpack Survivor Demo。当前已整理到 V0.3.11 / V0.3 Release，重点从 V0.2 演示包扩展到升级候选池、邻接架构、背包构筑收益、内容池、音频反馈、设置菜单、敌群移动、远程敌人、本地存档和发布验收。
+- **项目主线**：Backpack Survivor 已整理到 V0.3.11 / V0.3 Release；Online Action RPG Demo 已启动联网专项，当前完成通信、账号和服务端房间状态容器整理，下一步补 Unity Lobby 双客户端验证。
 - **算法主线**：继续维护 C# / C++ 双语 LeetCode 题解，优先补链表、树、图、动态规划、堆和常见面试题型。
 - **基础主线**：补 C++ 基础语法、指针引用、STL、操作系统、网络和图形学的面试可解释版本。
 
@@ -57,7 +57,7 @@
 | [C#](csharp/index.md) | OOP、泛型、委托事件、GC、异步、工程实践 | Unity 客户端主语言能力 |
 | [C++](cpp/index.md) | 基础语法、STL、内存、Modern C++、工具链 | 面试和底层能力补齐 |
 | [Unity](unity/index.md) | 生命周期、UGUI、Prefab、资源、动画、编辑器工具 | 客户端工程基础 |
-| [项目实践](projects/index.md) | Backpack Survivor 系列开发日志 | 把知识转成可运行 Demo |
+| [项目实践](projects/index.md) | Backpack Survivor、Online Action RPG Demo 系列开发日志 | 把知识转成可运行 Demo |
 | [性能优化](performance/index.md) | Profiler、GC、对象池、渲染和 CPU 优化 | 项目稳定性和面试深度 |
 | [图形学](graphics/index.md) | 渲染管线、Shader、光照、PBR、阴影 | 客户端长期竞争力 |
 | [网络编程](networking/index.md) | TCP/UDP、状态同步、帧同步、锁步 | 游戏客户端专项储备 |
@@ -69,6 +69,12 @@
 
 ## 最近沉淀
 
+- [Online Action RPG Demo：项目含金量分析](projects/online-action-rpg-demo/project-value-analysis.md)
+- [Online Action RPG Demo：大厅 / 房间闭环](projects/online-action-rpg-demo/lobby-room-loop.md)
+- [Online Action RPG Demo：账号注册 / 登录闭环](projects/online-action-rpg-demo/account-login-loop.md)
+- [Online Action RPG Demo：项目骨架、通信验证与 Unity 调试面板](projects/online-action-rpg-demo/communication-and-debug-panel.md)
+- [LC 34 在排序数组中查找元素的第一个和最后一个位置](csharp/leetcode/binary-search/find-first-and-last-position-of-element-in-sorted-array.md)
+- [C++ 模板与泛型](cpp/templates/index.md)
 - [LC 74 搜索二维矩阵](csharp/leetcode/binary-search/search-a-2d-matrix.md)
 - [LC 35 搜索插入位置](csharp/leetcode/binary-search/search-insert-position.md)
 - [C++ Modern：lambda 与 std::function 入门](cpp/modern-cpp/index.md)

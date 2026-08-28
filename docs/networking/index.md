@@ -51,6 +51,12 @@
 | [TCP/UDP 基础](tcp-udp-basics.md) | 用户学习笔记与学习规划；已建立 TCP/UDP、HTTP/HTTPS、Socket 和游戏同步的面试学习范围，尚未完成抓包、Socket 或联机实验 |
 | [应用层基础协议](application-layer-basics.md) | 用户学习笔记与截图；已整理 DNS、FTP、URL/HTTP/HTML 和常见应用层端口，尚未完成 DNS 查询或 HTTP 抓包 |
 
+## 项目实践证据
+
+| 项目 | 证据边界 |
+|---|---|
+| [Online Action RPG Demo](../projects/online-action-rpg-demo/index.md) | 用户项目记录已包含 WebSocket + JSON Ping / Pong、Unity 调试面板、账号注册 / 登录、token 会话、服务端大厅 / 房间状态容器和 `RoomStateNtf` 广播；本次整理未重新运行 Unity、服务端或 smoke test，战斗同步仍待实现 |
+
 ## 后续计划主题
 
 | 主题 | 计划验证内容 |
