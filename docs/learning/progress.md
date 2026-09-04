@@ -1,9 +1,9 @@
 # 学习进度
 
-> 当前日期：2026-08-29
+> 当前日期：2026-09-04
 > 当前阶段：大三上前准备期，目标是把《游戏客户端学习路线总纲要》落到每周计划和证据记录中。  
 > 总纲入口：[游戏客户端学习路线总纲要](../roadmap/game-client-learning-roadmap.md)  
-> 本周记录入口：[2026-W35](weekly/2026-W35.md)
+> 本周记录入口：[2026-W36](weekly/2026-W36.md)
 
 ---
 
@@ -20,16 +20,16 @@
 
 | 方向 | 当前状态 | 证据来源 | 当前判断 | 下一步 |
 |---|---|---|---|---|
-| Unity / C# 项目能力 | 项目中使用 | Backpack Survivor V0.3.11、项目页、检查清单、正式包用户验收记录、2026-W33 第 3 批面试复盘、第 5 批 V0.3 项目复盘、2026-W34 第 1-2 批项目复盘和 V0.3 阶段复盘；Online Action RPG Demo 00-02A 开发记录与 2026-W35 第 2 批整理 | 当前最强项仍是 Backpack Survivor 的完整单机交付；Online Action RPG Demo 开始补联网客户端专项证据，已覆盖通信、账号和服务端房间状态容器，但尚未完成 Unity Lobby 双客户端验证和战斗同步 | W35 剩余时间优先完成 Online Action RPG Demo 02B 双客户端 Lobby 验证，同时保留 Backpack Survivor V0.3 的 1 分钟表达稿 |
+| Unity / C# 项目能力 | 项目中使用 | Backpack Survivor V0.3.11、项目页、检查清单、正式包用户验收记录、2026-W33 第 3 批面试复盘、第 5 批 V0.3 项目复盘、2026-W34 第 1-2 批项目复盘和 V0.3 阶段复盘；Online Action RPG Demo 00-02A 开发记录、2026-W35 第 2 批整理和 W35 复盘 | 当前最强项仍是 Backpack Survivor 的完整单机交付；Online Action RPG Demo 开始补联网客户端专项证据，已覆盖通信、账号和服务端房间状态容器，但尚未完成 Unity Lobby 双客户端验证和战斗同步 | W36 只推进一个可展示小闭环：优先 Online Action RPG Demo 02B 双客户端 Lobby 验证；若状态差，则只整理 Backpack Survivor / Online RPG 各 1 分钟表述 |
 | C# 工程能力 | 学习中 / 项目中使用 | `interface`、事件、纯 C# 背包、对象池、asmdef、UGUI 投影、Build 记录；Online Action RPG Demo 中 `NetworkClient`、`AccountClient`、`ClientSession`、`LoginPanel` 和后续 `LobbyClient` 分层记录 | 有真实项目证据，并开始出现网络业务分层、异步回调、UI 状态快照和请求响应匹配；系统化 GC、异步、日志、异常策略仍待补 | 用 Online Action RPG Demo 补网络客户端分层、断线 / 超时 / 日志策略；用 Backpack Survivor 继续补 GC / Profiler 证据 |
-| 算法 / LeetCode | 学习中 | 当前记录 37 道题，其中 5 道 C# / C++ 双语对照；2026-W35 新增 LC 35、LC 74、LC 34 三道 C++ 二分练习 | W35 已开始离开二叉树 / BST 舒适区，新增二分、二维映射和左右边界题；仍需要保持日刷、错题复盘，并继续补栈 / 堆 / 回溯覆盖 | 后续刷题优先用 C++，每题保留复杂度、错点和提交证据；W35 剩余题目优先补栈 / 堆 / 回溯入口 |
-| C++ | 学习中 | C++ 基础语法 / STL / OOP / 内存笔记、部分 LeetCode；新增指针/引用、类与对象、栈 / 堆、继承 / 多态、虚析构、浅拷贝风险、`enum class`、结构化绑定、`map`、智能指针概念、BST 上下界 / 中序模板、二分模板、lambda、`std::sort` 比较器、`std::function`、函数模板、类模板、非类型模板参数和多道 C++ LeetCode 练习 | 能起步刷题，已接触 `vector`、`string`、`unordered_map`、`map`、`stack`、`queue`、`sort`、lambda、`std::function`、模板、递归上下界、二分边界、指针、引用、`nullptr`、初始化列表、`new/delete`、继承、虚函数和智能指针概念；但生命周期、浅拷贝、RAII、严格弱序、模板约束和可复核编译运行证据仍是短板 | W35 继续补 1 个带编译命令和输出的小程序，优先智能指针、浅拷贝风险、RAII 或模板异常边界；模板练习已有用户运行输出但仍需源文件路径 / 编译命令 |
-| 计算机网络 | 学习中 / 项目中使用 | 简历写“了解 TCP/UDP”；2026-W33 新增网络基础、网络层 / IP / 路由、TCP/UDP 和应用层协议笔记；2026-W35 新增 Online Action RPG Demo 的 WebSocket + JSON、Ping / Pong、账号、token、大厅 / 房间和 `RoomStateNtf` 项目证据 | 已从纯笔记推进到项目实践：能围绕 WebSocket、协议日志、请求响应、服务端通知和房间权威状态讲项目链路；但 TCP/UDP 高频面试、弱网、重连、抓包、UDP / KCP 和战斗同步仍待补 | W35 先完成 02B Unity Lobby 双客户端验证；基础学习继续补 DNS / HTTP / TCP 高频问答和最小命令证据 |
-| 操作系统 | 待系统学习 / 简历层了解 | 简历写“了解进程/线程/内存”；知识库 OS 内容仍未系统沉淀 | 当前缺少实验和题库证据 | 先补进程、线程、同步、虚拟内存和死锁基础 |
-| 图形学 / Shader | 准备启动 / 待实验 | 简历写“了解图形渲染管线”；用户希望为作品集补 Shader 编写能力；`docs/graphics/shader-basics.md` 已建立最小实验计划 | 可作为作品集加分项预热，但尚无可复核渲染实验，不能写成掌握或已能实现复杂 Shader | 本周只从缓冲中抽 1-2h 做一个最小 Shader 实验准备；不挤占 C++、算法和项目表达 |
+| 算法 / LeetCode | 学习中 | 当前记录 37 道题，其中 5 道 C# / C++ 双语对照；2026-W35 新增 LC 35、LC 74、LC 34 三道 C++ 二分练习 | W35 已开始离开二叉树 / BST 舒适区，但题型集中在二分；2026-08-30 后到 2026-09-04 前节奏中断，需要先恢复连续性 | 后续刷题优先用 C++，W36 先完成 1-2 道题，至少 1 道非二分；当前 `inbox/9月4号leetcode.txt` 已存在，等用户要求整理 inbox 时再入库 |
+| C++ | 学习中 | C++ 基础语法 / STL / OOP / 内存笔记、部分 LeetCode；新增指针/引用、类与对象、栈 / 堆、继承 / 多态、虚析构、浅拷贝风险、`enum class`、结构化绑定、`map`、智能指针概念、BST 上下界 / 中序模板、二分模板、lambda、`std::sort` 比较器、`std::function`、函数模板、类模板、非类型模板参数和多道 C++ LeetCode 练习 | 能起步刷题，已接触 `vector`、`string`、`unordered_map`、`map`、`stack`、`queue`、`sort`、lambda、`std::function`、模板、递归上下界、二分边界、指针、引用、`nullptr`、初始化列表、`new/delete`、继承、虚函数和智能指针概念；但生命周期、浅拷贝、RAII、严格弱序、模板约束和可复核编译运行证据仍是短板 | W36 补 1 个带编译命令和输出的小程序，优先智能指针生命周期或模板异常边界；只贴代码不够，至少要有运行输出 |
+| 计算机网络 | 学习中 / 项目中使用 | 简历写“了解 TCP/UDP”；2026-W33 新增网络基础、网络层 / IP / 路由、TCP/UDP 和应用层协议笔记；2026-W35 新增 Online Action RPG Demo 的 WebSocket + JSON、Ping / Pong、账号、token、大厅 / 房间和 `RoomStateNtf` 项目证据 | 已从纯笔记推进到项目实践：能围绕 WebSocket、协议日志、请求响应、服务端通知和房间权威状态讲项目链路；但 TCP/UDP 高频面试、弱网、重连、抓包、UDP / KCP 和战斗同步仍待补 | W36 完成 2 条高频问答卡，优先 TCP 三次握手、HTTP 请求流程；项目侧只补 02B Lobby 双客户端验证 |
+| 操作系统 | 待系统学习 / 简历层了解 | 简历写“了解进程/线程/内存”；知识库 OS 内容仍未系统沉淀；W35 未新增证据 | 当前缺少实验和题库证据 | W36 至少补 1 条“进程 vs 线程 / Unity 主线程边界”问答卡 |
+| 图形学 / Shader | 准备启动 / 待实验 | 简历写“了解图形渲染管线”；用户希望为作品集补 Shader 编写能力；`docs/graphics/shader-basics.md` 已建立最小实验计划 | 可作为作品集加分项预热，但尚无可复核渲染实验，不能写成掌握或已能实现复杂 Shader | W36 不主动推进 Shader，除非算法 / C++ / 计网 OS 当天保底已完成 |
 | Lua / 热更新 | 未开始 | 热更新目录为规划入口 | 当前不应写成会用 | 大三下再补 Lua 基础和热更新流程 |
 | 性能优化 | 学习中 / 项目中使用 | 对象池、NonAlloc、sqrMagnitude、Profiler 快扫、Build 颜色修复、`PickUpMagnet` 背包被动重复汇总挂账、V0.3.7 敌群低频错峰移动和 V0.3 Release 前暂不大重构决策 | 有项目经验和取舍记录，但缺系统化前后数据；已能记录“暂不优化”和“先发布后挂账”的触发条件 | 准备一段面试表达：Profiler 如何判断“不重构”；后续用 V0.3 掉落量级和敌群规模验证 `PickUpMagnet` / `EnemyMovement` 是否需要共享缓存或更强空间查询 |
-| 面试表达 | 准备中 | 简历、项目复盘、路线总纲、[Backpack Survivor 面试复盘第 01 阶段](../reviews/2026/backpack-survivor-interview-stage-01.md)、[Backpack Survivor V0.3 阶段复盘](../reviews/2026/backpack-survivor-v0.3-review.md)、[2026-W34 复盘](../reviews/2026/2026-W34.md)、[Online Action RPG Demo 项目含金量分析](../projects/online-action-rpg-demo/project-value-analysis.md) | 项目素材足，Backpack Survivor 适合作为完整单机项目主线；Online Action RPG Demo 适合作为联网专项潜力项目，但完成战斗同步前只能表达为通信 / 账号 / 房间状态容器，不能包装成完整联机动作 RPG | W35 同时压缩 Backpack Survivor V0.3 1 分钟稿，并给 Online Action RPG Demo 准备“当前已完成 / 尚未完成 / 下一步”的诚实表述 |
+| 面试表达 | 准备中 | 简历、项目复盘、路线总纲、[Backpack Survivor 面试复盘第 01 阶段](../reviews/2026/backpack-survivor-interview-stage-01.md)、[Backpack Survivor V0.3 阶段复盘](../reviews/2026/backpack-survivor-v0.3-review.md)、[2026-W34 复盘](../reviews/2026/2026-W34.md)、[Online Action RPG Demo 项目含金量分析](../projects/online-action-rpg-demo/project-value-analysis.md)、[2026-W35 复盘](../reviews/2026/2026-W35.md) | 项目素材足，Backpack Survivor 适合作为完整单机项目主线；Online Action RPG Demo 适合作为联网专项潜力项目，但完成战斗同步前只能表达为通信 / 账号 / 房间状态容器，不能包装成完整联机动作 RPG | W36 先写两个 1 分钟骨架：Backpack Survivor 完整单机闭环、Online Action RPG Demo 联网早期证据；不用一次写 3 分钟长稿 |
 | 求职材料 | 准备中 | 简历 PDF、项目复盘、路线总纲 | 已有基础简历和项目事实，但存在 Git 提交数差异 | 投递前统一“46 次 / 49 次提交”等数据口径 |
 
 ## 当前已掌握或接近掌握的基础
@@ -90,7 +90,7 @@
 仍待补强：
 
 - 每日稳定刷题节奏。
-- 图、回溯、栈、堆、贪心、动态规划；二分已开始补 LC35、LC74 和 LC34，但 W35 仍要继续离开二叉树舒适区，不能只刷二分。
+- 图、回溯、栈、堆、贪心、动态规划；二分已开始补 LC35、LC74 和 LC34，但 W36 仍要继续离开二分舒适区，至少补 1 道非二分题。
 - 错题复盘和复杂度口头表达。
 - C++ 手写熟练度，尤其是随机指针、链表拆分、归并、二叉树镜像递归、树高全局答案和空指针边界。
 
@@ -180,13 +180,13 @@
 
 ## 本周学习安排来源
 
-根据当前基线、[2026-W34 复盘](../reviews/2026/2026-W34.md)和 [2026-W35 第 2 批整理](weekly/2026-W35.md)，W35 原计划是不急着开新项目，但本周实际启动了 Online Action RPG Demo。后续需要把这个新项目压成可验证小闭环，避免挤掉算法和 C++：
+根据当前基线、[2026-W35 复盘](../reviews/2026/2026-W35.md)和用户 2026-09-04 反馈“这些天没怎么学，有点懈怠了”，W36 不做补债式计划，先恢复最低闭环：
 
-1. 算法恢复：本周已补 3 道 C++ 二分题，剩余优先补栈、堆或回溯；每题保留复杂度、边界和错点。
-2. C++ 基础：lambda / `std::function` 和模板已有用户运行记录，下一步补 1 个带编译命令和输出的最小程序，优先智能指针、浅拷贝风险、RAII 或模板异常边界。
-3. 项目表达：Backpack Survivor 继续压缩 1 分钟 V0.3 总览稿；Online Action RPG Demo 优先完成 02B Unity Lobby 双客户端验证，并保留截图 / 录屏 / 服务端日志。
-4. 计网 / OS：网络已开始通过项目落地，仍要每天小步补 DNS / HTTP / TCP 高频问答；OS 先补进程 / 线程。
-5. Shader：仍作为可选缓冲，P0 未完成时不推进简历表述。
-6. 进度系统：用第一篇周学习记录验证“计划 -> 执行 -> 证据 -> 复盘 -> 更新进度”的闭环。
+1. 节奏恢复：2026-09-04 至 2026-09-06 连续 3 天，每天至少留下 1 条学习证据。
+2. 算法 / C++：完成 1-2 道 C++ 题，至少 1 道非二分；或完成 1 个带编译命令和输出的 C++ 小程序。
+3. 计网 / OS：完成 2 条高频问答卡，优先 TCP 三次握手、HTTP 请求流程、进程 vs 线程。
+4. 项目：Online Action RPG Demo 只推进 02B Lobby 双客户端验证，不新开 Ready / StartBattle 或战斗同步。
+5. Shader：本周不主动推进，除非当天算法 / C++ / 计网 OS 保底已完成。
+6. 进度系统：当前 `inbox/9月4号leetcode.txt` 作为待整理原始材料保留；本次不执行 inbox 入库和归档。
 
-具体计划见：[2026-W35 周学习记录](weekly/2026-W35.md)。
+具体计划见：[2026-W36 周学习记录](weekly/2026-W36.md)。
